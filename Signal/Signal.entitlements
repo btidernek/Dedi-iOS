@@ -20,11 +20,12 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.org.whispersystems.signal.group</string>
+		<string>group.org.btider.dedi</string>
+		<string>group.org.btider.dedi.group</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)org.whispersystems.signal</string>
+		<string>$(AppIdentifierPrefix)org.btider.dedi</string>
 	</array>
 </dict>
 </plist>

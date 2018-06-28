@@ -23,12 +23,12 @@ typedef NS_ENUM(NSInteger, TSWhisperMessageType) {
 //#ifndef DEBUG
 
 // Production
-#define textSecureWebSocketAPI @"wss://textsecure-service.whispersystems.org/v1/websocket/"
-#define textSecureServerURL @"https://textsecure-service.whispersystems.org/"
-#define textSecureCDNServerURL @"https://cdn.signal.org"
-// Use same reflector for service and CDN
-#define textSecureServiceReflectorHost @"textsecure-service-reflected.whispersystems.org"
-#define textSecureCDNReflectorHost @"textsecure-service-reflected.whispersystems.org"
+//https://test.dedi.com.tr/
+#define textSecureWebSocketAPI @"wss://test.dedi.com.tr:443/v1/websocket/"
+#define textSecureServerURL @"https://test.dedi.com.tr:443/"
+#define textSecureCDNServerURL @"https://test.dedi.com.tr:9000/dedi"
+#define textSecureServiceReflectorHost @"https://test.dedi.com.tr:443/"
+#define textSecureCDNReflectorHost @"https://test.dedi.com.tr:9000/dedi"
 
 //#else
 //
@@ -57,6 +57,6 @@ typedef NS_ENUM(NSInteger, TSWhisperMessageType) {
 #define textSecureProfileAvatarFormAPI @"v1/profile/form/avatar"
 #define textSecure2FAAPI @"/v1/accounts/pin"
 
-#define SignalApplicationGroup @"group.org.whispersystems.signal.group"
+#define SignalApplicationGroup @"group.org.btider.dedi.group"
 
 #endif

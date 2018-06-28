@@ -26,25 +26,18 @@
 	<dict>
 		<key>NSExceptionDomains</key>
 		<dict>
-			<key>amazonaws.com</key>
+			<key>btk.gov.tr</key>
 			<dict>
 				<key>NSIncludesSubdomains</key>
 				<true/>
 				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
-				<false/>
-			</dict>
-			<key>signal.org</key>
-			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
-				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
-			<key>whispersystems.org</key>
+			<key>dedi.com.tr</key>
 			<dict>
-				<key>NSExceptionAllowsInsecureHTTPLoads</key>
-				<true/>
 				<key>NSIncludesSubdomains</key>
+				<true/>
+				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
 				<true/>
 			</dict>
 		</dict>
