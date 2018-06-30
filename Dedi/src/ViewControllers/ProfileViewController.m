@@ -172,9 +172,10 @@ NSString *const kProfileView_LastPresentedDate = @"kProfileView_LastPresentedDat
     // Information
 
     UIView *infoRow = [UIView containerView];
-    infoRow.userInteractionEnabled = YES;
-    [infoRow
-        addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(infoRowTapped:)]];
+    //BTKDISABLED
+//    infoRow.userInteractionEnabled = YES;
+//    [infoRow
+//        addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(infoRowTapped:)]];
     [rows addObject:infoRow];
 
     UILabel *infoLabel = [UILabel new];
@@ -187,14 +188,15 @@ NSString *const kProfileView_LastPresentedDate = @"kProfileView_LastPresentedDat
                                                         @"Description of the user profile.")
                                          attributes:@{}]];
     [text appendAttributedString:[[NSAttributedString alloc] initWithString:@" " attributes:@{}]];
-    [text appendAttributedString:[[NSAttributedString alloc]
-                                     initWithString:NSLocalizedString(@"PROFILE_VIEW_PROFILE_DESCRIPTION_LINK",
-                                                        @"Link to more information about the user profile.")
-                                         attributes:@{
-                                             NSUnderlineStyleAttributeName :
-                                                 @(NSUnderlineStyleSingle | NSUnderlinePatternSolid),
-                                             NSForegroundColorAttributeName : [UIColor ows_materialBlueColor],
-                                         }]];
+    //BTKDISABLED
+//    [text appendAttributedString:[[NSAttributedString alloc]
+//                                     initWithString:NSLocalizedString(@"PROFILE_VIEW_PROFILE_DESCRIPTION_LINK",
+//                                                        @"Link to more information about the user profile.")
+//                                         attributes:@{
+//                                             NSUnderlineStyleAttributeName :
+//                                                 @(NSUnderlineStyleSingle | NSUnderlinePatternSolid),
+//                                             NSForegroundColorAttributeName : [UIColor ows_materialBlueColor],
+//                                         }]];
     infoLabel.attributedText = text;
     infoLabel.numberOfLines = 0;
     infoLabel.lineBreakMode = NSLineBreakByWordWrapping;

@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Yeni Güvenlik Numarasını Kabul et";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Signal Araması";
+"ACTION_AUDIO_CALL" = "Dedi Araması";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Signal'e davet et";
+"ACTION_INVITE" = "Dedi'ye Davet Et";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Mesaj Gönder";
@@ -35,10 +35,10 @@
 "ADD_GROUP_TO_PROFILE_WHITELIST_OFFER" = "Profilinizi bu grup ile paylaşmak ister misiniz?";
 
 /* Message shown in conversation view that offers to add an unknown user to your phone's contacts. */
-"ADD_TO_CONTACTS_OFFER" = "Bu kullanıcıyı kişilerinize eklemek ister misiniz?";
+"ADD_TO_CONTACTS_OFFER" = "Bu kullanıcıyı kişilerinize eklemek ister misin?";
 
 /* Message shown in conversation view that offers to share your profile with a user. */
-"ADD_USER_TO_PROFILE_WHITELIST_OFFER" = "Profilinizi bu kullanıcı ile paylaşmak ister misiniz?";
+"ADD_USER_TO_PROFILE_WHITELIST_OFFER" = "Profilinizi bu kullanıcı ile paylaşmak ister misiniz ?";
 
 /* The label for the 'discard' button in alerts and action sheets. */
 "ALERT_DISCARD_BUTTON" = "İptal et";
@@ -65,10 +65,10 @@
 "APN_MESSAGE_IN_GROUP" = "Grupta mesaj";
 
 /* No comment provided by engineer. */
-"APN_MESSAGE_IN_GROUP_DETAILED" = "%@, şu grupta %@: %@";
+"APN_MESSAGE_IN_GROUP_DETAILED" = "%@ grubundaki %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal başlatılamıyor. Lütfen bu sorunu çözmemiz için hata ayıklama günlüklerinizi ekibimize gönderin.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi başlatılamıyor. Lütfen bu sorunu çözmek için hata ayıklama günlüklerinizi ekibimize gönderin.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Hata";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "Sürüm %@ şimdi App Store'dan edinilebilir.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Signal'in Yeni Bir Sürümü Mevcut";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Dedi'nin yeni bir sürümü mevcut";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Güncelle";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Arşivle";
@@ -96,6 +96,9 @@
 
 /* One line label indicating the user can add no more text to the attachment caption. */
 "ATTACHMENT_APPROVAL_CAPTION_LENGTH_LIMIT_REACHED" = "Mesaj limitine ulaşıldı.";
+
+/* Title for the 'attachment approval' dialog. */
+"ATTACHMENT_APPROVAL_DIALOG_TITLE" = "Ek";
 
 /* Format string for file extension label in call interstitial view */
 "ATTACHMENT_APPROVAL_FILE_EXTENSION_FORMAT" = "Dosya türü: %@";
@@ -119,7 +122,7 @@
 "ATTACHMENT_DOWNLOADING_STATUS_QUEUED" = "Sıraya eklendi";
 
 /* The title of the 'attachment error' alert. */
-"ATTACHMENT_ERROR_ALERT_TITLE" = "Ek Gönderilirken Hata";
+"ATTACHMENT_ERROR_ALERT_TITLE" = "Eki göndermede hata";
 
 /* Attachment error message for image attachments which could not be converted to JPEG */
 "ATTACHMENT_ERROR_COULD_NOT_CONVERT_TO_JPEG" = "Resim eki yeniden boyutlandırılamadı.";
@@ -131,10 +134,10 @@
 "ATTACHMENT_ERROR_COULD_NOT_PARSE_IMAGE" = "Resim eki ayrıştırılamadı.";
 
 /* Attachment error message for image attachments in which metadata could not be removed */
-"ATTACHMENT_ERROR_COULD_NOT_REMOVE_METADATA" = "Bu görüntüdeki metaveriler kaldırılamadı.";
+"ATTACHMENT_ERROR_COULD_NOT_REMOVE_METADATA" = "Görselden meta veriler kaldırılamıyor.";
 
 /* Attachment error message for image attachments which could not be resized */
-"ATTACHMENT_ERROR_COULD_NOT_RESIZE_IMAGE" = "Resim boyutlandırılamadı.";
+"ATTACHMENT_ERROR_COULD_NOT_RESIZE_IMAGE" = "Resim yeniden boyutlandırılamadı.";
 
 /* Attachment error message for attachments whose data exceed file size limits */
 "ATTACHMENT_ERROR_FILE_SIZE_TOO_LARGE" = "Ek çok büyük.";
@@ -143,7 +146,7 @@
 "ATTACHMENT_ERROR_INVALID_DATA" = "Ekte geçersiz içerik var.";
 
 /* Attachment error message for attachments with an invalid file format */
-"ATTACHMENT_ERROR_INVALID_FILE_FORMAT" = "Ek geçersiz dosya biçimine sahip.";
+"ATTACHMENT_ERROR_INVALID_FILE_FORMAT" = "Ek geçersiz formatta.";
 
 /* Attachment error message for attachments without any data */
 "ATTACHMENT_ERROR_MISSING_DATA" = "Ek boş.";
@@ -161,7 +164,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Doküman seçimi başarısız.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal bu dosyayı olduğu gibi işleyemez. Göndermeden önce sıkıştırmayı deneyin.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi bu tür bir dosyayı olduğu gibi işleyemez. Göndermeden önce sıkıştırmayı deneyin.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Desteklenmeyen dosya";
@@ -179,7 +182,7 @@
 "BACKUP_EXPORT_ERROR_COULD_NOT_EXPORT" = "Yedek verisi dışarı aktarılamadı.";
 
 /* Error indicating that the app received an invalid response from CloudKit. */
-"BACKUP_EXPORT_ERROR_INVALID_CLOUDKIT_RESPONSE" = "Geçersiz Hizmet Yanıtı";
+"BACKUP_EXPORT_ERROR_INVALID_CLOUDKIT_RESPONSE" = "Geçersiz Servis Cevabı";
 
 /* Error indicating the backup export failed to save a file to the cloud. */
 "BACKUP_EXPORT_ERROR_SAVE_FILE_TO_CLOUD_FAILED" = "Yedek verisi karşıya yüklenemedi.";
@@ -188,7 +191,7 @@
 "BACKUP_EXPORT_PHASE_CLEAN_UP" = "Yedek Temizleniyor";
 
 /* Indicates that the backup export is being configured. */
-"BACKUP_EXPORT_PHASE_CONFIGURATION" = "Yedek Kuruluyor";
+"BACKUP_EXPORT_PHASE_CONFIGURATION" = "Yedek Yükleniyor";
 
 /* Indicates that the database data is being exported. */
 "BACKUP_EXPORT_PHASE_DATABASE_EXPORT" = "Veri Dışarı Aktarılıyor";
@@ -257,7 +260,7 @@
 "BLOCK_LIST_VIEW_CANT_BLOCK_SELF_ALERT_TITLE" = "Hata";
 
 /* The title of the 'unblock user failed' alert. */
-"BLOCK_LIST_VIEW_UNBLOCK_FAILED_ALERT_MESSAGE" = "Kullanıcı Engeli Kaldırılamadı";
+"BLOCK_LIST_VIEW_UNBLOCK_FAILED_ALERT_MESSAGE" = "Kullanıcı Engeli Kaldırılırken Hata Oluştu.";
 
 /* The title of the 'unblock user failed' alert. */
 "BLOCK_LIST_VIEW_UNBLOCK_FAILED_ALERT_TITLE" = "Hata";
@@ -266,16 +269,13 @@
 "BLOCK_LIST_VIEW_UNBLOCKED_ALERT_MESSAGE_FORMAT" = "%@ kullanıcısının engeli kaldırıldı.";
 
 /* The title of the 'user unblocked' alert. */
-"BLOCK_LIST_VIEW_UNBLOCKED_ALERT_TITLE" = "Kullanıcının Engeli Kaldırıldı";
+"BLOCK_LIST_VIEW_UNBLOCKED_ALERT_TITLE" = "Kullanıcının engeli kaldırıldı";
 
 /* Action sheet that will block an unknown user. */
 "BLOCK_OFFER_ACTIONSHEET_BLOCK_ACTION" = "Engelle";
 
 /* Title format for action sheet that offers to block an unknown user.Embeds {{the unknown user's name or phone number}}. */
 "BLOCK_OFFER_ACTIONSHEET_TITLE_FORMAT" = "%@ engellensin mi?";
-
-/* Label for 'continue' button. */
-"BUTTON_CONTINUE" = "Devam et";
 
 /* Label for generic done button. */
 "BUTTON_DONE" = "Tamam";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Seç";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Signal, arama yapmak ve sesli mesajlar kaydetmek için mikrofonunuza erişime ihtiyaç duyar. Bu izni Ayarlar uygulamasından verebilirsiniz.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Dedi, arama yapmak ve sesli mesajlar kaydetmek için mikrofonunuza erişime ihtiyaç duyar. Bu izni Ayarlar uygulamasından verebilirsiniz.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Mikrofon Erişimi Gerekiyor";
@@ -293,16 +293,16 @@
 "CALL_LABEL" = "Ara";
 
 /* Call setup status label after outgoing call times out */
-"CALL_SCREEN_STATUS_NO_ANSWER" = "Yanıt Yok.";
+"CALL_SCREEN_STATUS_NO_ANSWER" = "Yanıt yok.";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Ara";
 
 /* Message format for alert offering to call a user. Embeds {{the user's display name or phone number}}. */
-"CALL_USER_ALERT_MESSAGE_FORMAT" = "%@ kişisini aramak ister misiniz?";
+"CALL_USER_ALERT_MESSAGE_FORMAT" = "%@ aransın ister misiniz?";
 
 /* Title for alert offering to call a user. */
 "CALL_USER_ALERT_TITLE" = "Ara?";
@@ -317,16 +317,16 @@
 "CALL_VIEW_DECLINE_INCOMING_CALL_LABEL" = "Gelen aramayı reddet";
 
 /* Accessibility label for hang up call */
-"CALL_VIEW_HANGUP_LABEL" = "Aramayı sonlandır";
+"CALL_VIEW_HANGUP_LABEL" = "Aramayı bitir";
 
 /* Accessibility label for muting the microphone */
 "CALL_VIEW_MUTE_LABEL" = "Sessiz";
 
 /* Reminder to the user of the benefits of enabling CallKit and disabling CallKit privacy. */
-"CALL_VIEW_SETTINGS_NAG_DESCRIPTION_ALL" = "Eğer ayarlarınızı değiştirirseniz gelen aramaları kilit ekranınızdan yanıtlayabilir ve gelen aramalardaki ismi ve numarayı görebilirsiniz.\n\nDetaylar için gizlilik ayarlarına göz atın.";
+"CALL_VIEW_SETTINGS_NAG_DESCRIPTION_ALL" = "Telefonunuzun kilit ekranından gelen aramaları cevaplayabilir, çağrının adını ve telefon numarasını görebilirsiniz. \n\n Ayrıntılı bilgi için gizlilik ayarlarına bakınız.";
 
 /* Reminder to the user of the benefits of disabling CallKit privacy. */
-"CALL_VIEW_SETTINGS_NAG_DESCRIPTION_PRIVACY" = "Eğer ayarlarınızı değiştirirseniz gelen aramalardaki ismi ve numarayı görebilirsiniz.\n\nDetaylar için gizlilik ayarlarına göz atın.";
+"CALL_VIEW_SETTINGS_NAG_DESCRIPTION_PRIVACY" = "Ayarlarınızı değiştirirseniz, gelen çağrıların isim ve telefon numaralarını görebilirsiniz. \nAyrıntılar için gizlilik ayarlarına bakın.";
 
 /* Label for button that dismiss the call view's settings nag. */
 "CALL_VIEW_SETTINGS_NAG_NOT_NOW_BUTTON" = "Şimdi Değil";
@@ -335,25 +335,25 @@
 "CALL_VIEW_SETTINGS_NAG_SHOW_CALL_SETTINGS" = "Gizlilik Ayarlarını Göster";
 
 /* Accessibility label to toggle front vs. rear facing camera */
-"CALL_VIEW_SWITCH_CAMERA_DIRECTION" = "Kamera Yönünü Değştir";
+"CALL_VIEW_SWITCH_CAMERA_DIRECTION" = "Kamerayı Değiştir";
 
 /* Accessibility label to switch to audio only */
 "CALL_VIEW_SWITCH_TO_AUDIO_LABEL" = "Sesli aramaya geç";
 
 /* Accessibility label to switch to video call */
-"CALL_VIEW_SWITCH_TO_VIDEO_LABEL" = "Görüntülü aramaya geç";
+"CALL_VIEW_SWITCH_TO_VIDEO_LABEL" = "Görüntülü görüşmeye geç";
 
 /* Label for the 'return to call' banner. */
 "CALL_WINDOW_RETURN_TO_CALL" = "Aramaya dönmek için dokunun";
 
 /* notification action */
-"CALLBACK_BUTTON_TITLE" = "Geri Ara";
+"CALLBACK_BUTTON_TITLE" = "Geri ara";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signal Kullanıcısı";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dedi Kullanıcısı";
 
 /* Message for alert explaining that a user cannot be verified. */
-"CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Bu kullanıcı ile mesajlaşılmadan doğrulanamaz.";
+"CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Onunla mesaj alışverişi yapmadan bu kullanıcı doğrulanamaz";
 
 /* Title for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_TITLE" = "Hata";
@@ -362,16 +362,16 @@
 "CENSORSHIP_CIRCUMVENTION_COUNTRY_VIEW_TITLE" = "Ülke Seçin";
 
 /* Error indicating that the app could not determine that user's CloudKit account status */
-"CLOUDKIT_STATUS_COULD_NOT_DETERMINE" = "Yedekler için iCloud ile iletişim kurulurken hata oluştu.";
+"CLOUDKIT_STATUS_COULD_NOT_DETERMINE" = "Yedekler için iCloud ile iletişim kurulurken bir hata meydana geldi.";
 
 /* Error indicating that user does not have an iCloud account. */
-"CLOUDKIT_STATUS_NO_ACCOUNT" = "Yedekleriniz için bir iCloud Hesabınız bulunmamaktadır.";
+"CLOUDKIT_STATUS_NO_ACCOUNT" = "Yedekleriniz için bir iCloud Hesap bulunamadı.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Yedekler için Signal'in iCloud hesabınıza erişmesine izin verilmedi.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi'nin iCloud hesap'ınıza erişim izni olmadığı için yedeklerinize ulaşılamadı.";
 
 /* Activity Sheet label */
-"COMPARE_SAFETY_NUMBER_ACTION" = "Panodaki ile Karşılaştır";
+"COMPARE_SAFETY_NUMBER_ACTION" = "Panodaki ile karşılaştır.";
 
 /* Table section header for contact listing when composing a new message */
 "COMPOSE_MESSAGE_CONTACT_SECTION_TITLE" = "Kişiler";
@@ -383,31 +383,31 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Davet et";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Kişilerinizden kimlerin Signal kullanıcısı olduğunu görmek için, sistem ayarlarınızdan kişilere erişime izin verin.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Kişilerinizden kimlerin Dedi kullanıcısı olduğunu görmek için, sistem ayarlarınızdan kişilere erişime izin verin.";
 
 /* No comment provided by engineer. */
-"CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Bu işlem mesajlarınızı silerek ve sunucu kaydınızı silerek uygulamayı sıfırlayacaktır. Verilerin silinmesinden sonra uygulama kapanacaktır.";
+"CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Bu işlem mesajlarınızı silerek ve sunucudan kaydını kaldırarak uygulamayı sıfırlayacaktır. Uygulama, verilerin silinmesinden sonra kapanacaktır.";
 
 /* No comment provided by engineer. */
-"CONFIRM_ACCOUNT_DESTRUCTION_TITLE" = "Hesabınızı silmek istediğinizden emin misiniz?";
+"CONFIRM_ACCOUNT_DESTRUCTION_TITLE" = "Hesabınızı silmek istediğinizden emin misin?";
 
 /* Alert body */
-"CONFIRM_LEAVE_GROUP_DESCRIPTION" = "Bu gruptan artık mesaj almayacak ve gönderemeyeceksiniz.";
+"CONFIRM_LEAVE_GROUP_DESCRIPTION" = "Bu grupta artık mesaj gönderip alamazsınız.";
 
 /* Alert title */
-"CONFIRM_LEAVE_GROUP_TITLE" = "Gerçekten ayrılmak istiyor musunuz?";
+"CONFIRM_LEAVE_GROUP_TITLE" = "Gerçekten ayrılmak istiyor musun?";
 
 /* Button text */
 "CONFIRM_LINK_NEW_DEVICE_ACTION" = "Yeni Cihaz Bağla";
 
 /* Action sheet body presented when a user's SN has recently changed. Embeds {{contact's name or phone number}} */
-"CONFIRM_SENDING_TO_CHANGED_IDENTITY_BODY_FORMAT" = "%@ yeniden kurulum yapmış veya cihaz değiştirmiş olabilir. Gizlilikten emin olmak için güvenlik numaranızı doğrulayın.";
+"CONFIRM_SENDING_TO_CHANGED_IDENTITY_BODY_FORMAT" = "%@ yeniden kurulum yapmış veya cihaz değiştirmiş olabilir. Gizlilikten emin olmak için, onlarla güvenlik numaranızı doğrulayın.";
 
 /* Action sheet title presented when a user's SN has recently changed. Embeds {{contact's name or phone number}} */
-"CONFIRM_SENDING_TO_CHANGED_IDENTITY_TITLE_FORMAT" = "%@ ile olan güvenlik numarası değişti";
+"CONFIRM_SENDING_TO_CHANGED_IDENTITY_TITLE_FORMAT" = "%@ ile güvenlik numarası değişti";
 
 /* Generic button text to proceed with an action */
-"CONFIRMATION_TITLE" = "Onayla";
+"CONFIRMATION_TITLE" = "Onay";
 
 /* Label for a contact's postal address. */
 "CONTACT_ADDRESS" = "Adres";
@@ -419,13 +419,13 @@
 "CONTACT_CELL_IS_NO_LONGER_VERIFIED" = "Onaylanmadı";
 
 /* No comment provided by engineer. */
-"CONTACT_DETAIL_COMM_TYPE_INSECURE" = "Kayıtsız Numara";
+"CONTACT_DETAIL_COMM_TYPE_INSECURE" = "Rehberde kayıtlı olmayan numara";
 
 /* Label for the 'edit name' button in the contact share approval view. */
 "CONTACT_EDIT_NAME_BUTTON" = "Düzenle";
 
 /* Label for a contact's email address. */
-"CONTACT_EMAIL" = "Eposta";
+"CONTACT_EMAIL" = "Email";
 
 /* Label for the 'city' field of a contact's address. */
 "CONTACT_FIELD_ADDRESS_CITY" = "Şehir";
@@ -434,7 +434,7 @@
 "CONTACT_FIELD_ADDRESS_COUNTRY" = "Ülke";
 
 /* Label for the 'neighborhood' field of a contact's address. */
-"CONTACT_FIELD_ADDRESS_NEIGHBORHOOD" = "Mahalle";
+"CONTACT_FIELD_ADDRESS_NEIGHBORHOOD" = "Semt";
 
 /* Label for the 'pobox' field of a contact's address. */
 "CONTACT_FIELD_ADDRESS_POBOX" = "Posta Kutusu";
@@ -449,13 +449,13 @@
 "CONTACT_FIELD_ADDRESS_STREET" = "Sokak";
 
 /* Label for the 'family name' field of a contact. */
-"CONTACT_FIELD_FAMILY_NAME" = "Soyad";
+"CONTACT_FIELD_FAMILY_NAME" = "Soyadı";
 
 /* Label for the 'given name' field of a contact. */
-"CONTACT_FIELD_GIVEN_NAME" = "Birinci ad";
+"CONTACT_FIELD_GIVEN_NAME" = "Adı";
 
 /* Label for the 'middle name' field of a contact. */
-"CONTACT_FIELD_MIDDLE_NAME" = "İkinci ad";
+"CONTACT_FIELD_MIDDLE_NAME" = "İkinci adı";
 
 /* Label for the 'name prefix' field of a contact. */
 "CONTACT_FIELD_NAME_PREFIX" = "Ön ek";
@@ -464,37 +464,37 @@
 "CONTACT_FIELD_NAME_SUFFIX" = "Son ek";
 
 /* Label for the 'organization' field of a contact. */
-"CONTACT_FIELD_ORGANIZATION" = "Kuruluş";
+"CONTACT_FIELD_ORGANIZATION" = "Organizasyon";
 
 /* Label for a contact's phone number. */
 "CONTACT_PHONE" = "Telefon";
 
 /* table cell subtitle when contact card has no email */
-"CONTACT_PICKER_NO_EMAILS_AVAILABLE" = "Eposta bulunmamaktadır.";
+"CONTACT_PICKER_NO_EMAILS_AVAILABLE" = "E-Posta yok.";
 
 /* table cell subtitle when contact card has no known phone number */
-"CONTACT_PICKER_NO_PHONE_NUMBERS_AVAILABLE" = "Telefon numarası bulunmamaktadır.";
+"CONTACT_PICKER_NO_PHONE_NUMBERS_AVAILABLE" = "Telefon numarası yok";
 
 /* navbar title for contact picker when sharing a contact */
-"CONTACT_PICKER_TITLE" = "Kişiyi Seç";
+"CONTACT_PICKER_TITLE" = "Kişi Seç";
 
 /* Title for the 'Approve contact share' view. */
-"CONTACT_SHARE_APPROVAL_VIEW_TITLE" = "Kişiyi Paylaş";
+"CONTACT_SHARE_APPROVAL_VIEW_TITLE" = "Kişi Paylaş";
 
 /* Title for the 'edit contact share name' view. */
-"CONTACT_SHARE_EDIT_NAME_VIEW_TITLE" = "Adı Düzenle";
+"CONTACT_SHARE_EDIT_NAME_VIEW_TITLE" = "İsmi Düzenle";
 
 /* Error indicating that an invalid contact cannot be shared. */
-"CONTACT_SHARE_INVALID_CONTACT" = "Geçersiz kişi.";
+"CONTACT_SHARE_INVALID_CONTACT" = "Geçersiz Kişi.";
 
 /* Error indicating that at least one contact field must be selected before sharing a contact. */
-"CONTACT_SHARE_NO_FIELDS_SELECTED" = "İletişim alanı seçilmedi.";
+"CONTACT_SHARE_NO_FIELDS_SELECTED" = "Kişi alanı seçilmedi.";
 
 /* Label for 'open address in maps app' button in contact view. */
-"CONTACT_VIEW_OPEN_ADDRESS_IN_MAPS_APP" = "Haritalarda Aç";
+"CONTACT_VIEW_OPEN_ADDRESS_IN_MAPS_APP" = "Haritada Aç";
 
 /* Label for 'open email in email app' button in contact view. */
-"CONTACT_VIEW_OPEN_EMAIL_IN_EMAIL_APP" = "Eposta Gönder";
+"CONTACT_VIEW_OPEN_EMAIL_IN_EMAIL_APP" = "Email Gönder";
 
 /* Indicates that a contact has no name. */
 "CONTACT_WITHOUT_NAME" = "İsimsiz Kişi";
@@ -648,12 +648,12 @@
 "DEBUG_LOG_GITHUB_ISSUE_ALERT_TITLE" = "GıtHub'a Yönlendirme";
 
 /* Label for button that lets users re-register using the same phone number. */
-"DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
+"DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Bu telefon numarasını tekrar kaydet";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Cihaz artık kayıtlı değil. Telefon numaranız farklı bir cihazda Dedi ile kaydedilmiş olabilir. Yeniden kayıt yapmak için dokunun.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Son görülme: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -666,7 +666,7 @@
 "DISAPPEARING_MESSAGES" = "Kaybolan Mesajlar ";
 
 /* Info Message when added to a group which has enabled disappearing messages. Embeds {{time amount}} before messages disappear, see the *_TIME_AMOUNT strings for context. */
-"DISAPPEARING_MESSAGES_CONFIGURATION_GROUP_EXISTING_FORMAT" = "Messages in this conversation will disappear after %@.";
+"DISAPPEARING_MESSAGES_CONFIGURATION_GROUP_EXISTING_FORMAT" = "Bu görüşmedeki mesajlar %@ sonra kaybolacak.";
 
 /* subheading in conversation settings */
 "DISAPPEARING_MESSAGES_DESCRIPTION" = "Etkinleştirildiğinde, bu sohbetteki gönderilen ve alınan mesajlar görüldükten sonra kaybolur.";
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Sansür Atlatma Lokasyonu";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Ayarlar uygulamasından erişim verebilirsiniz";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Signal Kişi Bilgilerini Düzenlemek İçin Kişi Erişimine İhtiyacı Var";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Dedi Kişi Bilgilerini Düzenlemek İçin Kişi Erişimine İhtiyacı Var";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Grubu düzenle";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Düzenle";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Merhaba,\n\nSon zamanlarda iPhone'umdaki konuşmalarımı gizli tutmak için Signal kullanıyorum. Size de kurmanızı öneririm, böylelikle mesajlarımızın ve aramalarımızın aramızda kaldığından emin olabiliriz.\n\nSignal, iPhone ve Android için kullanılabilir. Şu adresten edinebilirsiniz: %@ \n\nSignal mevcut mesajlaşma uygulamanız gibi çalışır. Resim ve video gönderebilir, arama yapabilir ve grup sohbetlerine başlayabiliriz. En iyi yanı ise yapımcıları dahil hiçkimsenin göremeyecek olması!\n\nSignal'ı yapan Open Whisper Systems hakkında daha fazla bilgi için şu adresi ziyaret edebilirsin: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Merhaba,\n\nSon zamanlarda iPhone'umdaki konuşmalarımı gizli tutmak için Dedi kullanıyorum. Size de kurmanızı öneririm, böylelikle mesajlarımızın ve aramalarımızın aramızda kaldığından emin olabiliriz.\n\nDedi, iPhone ve Android için kullanılabilir. Şu adresten edinebilirsiniz: %@ \n\nDedi mevcut mesajlaşma uygulamanız gibi çalışır. Resim ve video gönderebilir, arama yapabilir ve grup sohbetlerine başlayabiliriz. En iyi yanı ise tüm bu konuşmaları Dedi'yi geliştirenler dahil hiçkimsenin göremeyecek olması!\n\nDedi'yi geliştirenler hakkında daha fazla bilgi için şu adresi ziyaret edebilirsin: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Haydi Signal'e geçelim";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Haydi Dedi'ye geçelim";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Oluşturma düğmesine dokun.";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "İlk Signal görüşmene başla!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "İlk Dedi görüşmene başla!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Gelen kutunuzdaki eski görüşmelerinizi arşivleyebilirsiniz.";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Görüşmelerini Temizle.";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Temasların hiçbirinde Sinyal yok.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Kişilerinin hiçbirinde Dedi yok.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Neden birini davet etmiyorsun?";
@@ -762,7 +762,7 @@
 "EMPTY_INBOX_FIRST_TITLE" = "Bitti. Bitti. Bitti.";
 
 /* No comment provided by engineer. */
-"EMPTY_INBOX_TEXT" = "Yok. Sıfır. Bomboş. Nada.";
+"EMPTY_INBOX_TEXT" = "Yok. Sıfır. Bomboş.";
 
 /* No comment provided by engineer. */
 "EMPTY_INBOX_TITLE" = "Tertemiz.";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN kodu eşleşmiyor.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Bir kayıt kilidi PIN'i giriniz. Bu telefon numarasıyla Signal'a tekrar kaydolduğunuzda bu PIN kodu sorulacaktır.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Bir kayıt kilidi PIN'i giriniz. Bu telefon numarasıyla Dedi'ye tekrar kaydolduğunuzda bu PIN kodu sorulacaktır.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Arttırılmış güvenlik için, bu telefon numarasıyla Signal'e tekrar kaydolduğunuzda sorulmak üzere bir kayıt kilidi PIN'i aktifleştirin.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Arttırılmış güvenlik için, bu telefon numarasıyla Dedi'ye tekrar kaydolduğunuzda sorulmak üzere bir kayıt kilidi PIN'i aktifleştirin.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Kayıt Kilidi aktifleştirildi. Bu numarayla Signal'e tekrar kaydolduğunuzda PIN kodunuzu girmeniz gerekecek.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Kayıt Kilidi aktifleştirildi. Bu numarayla Dedi'ye tekrar kaydolduğunuzda PIN kodunuzu girmeniz gerekecek.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Kayıt Kilidi";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Ek yazımı başarısız olduğundan gönderilemedi.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Sinyal internete bağlanamadı. Lütfen başka bir WiFi ağından deneyin veya mobil veri kullanın.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi internete bağlanamadı. Lütfen başka bir WiFi ağından deneyin veya mobil veri kullanın.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Mesaj gönderimi, geçerli alıcı olmadığından başarısız oldu.";
@@ -831,13 +831,13 @@
 "ERROR_DESCRIPTION_REQUEST_FAILED" = "Ağ isteği başarısız oldu.";
 
 /* Error indicating that a socket request timed out. */
-"ERROR_DESCRIPTION_REQUEST_TIMED_OUT" = "Network request timed out.";
+"ERROR_DESCRIPTION_REQUEST_TIMED_OUT" = "Ağ isteği zaman aşımına uğradı.";
 
 /* Error indicating that a socket response failed. */
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Hizmetten geçersiz yanıt.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Cihazınız artık telefon numaranız için kayıtlı değil. Signal'ı kaldırıp tekrar kurmalısınız.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Cihazınız artık telefon numaranız için kayıtlı değil. Dedi'yi kaldırıp tekrar kurmalısınız.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Sunucu hatası. Lütfen daha sonra tekrar deneyiniz.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Bilinmeyen bir hata oluştu";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kişi bir Signal kullanıcısı değil.";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kişi bir Dedi kullanıcısı değil.";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Başarısız: Göndericiden Signal'i güncellemesini ya da yeniden göndermesini isteyin.";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Başarısız: Göndericiden Dedi'yi güncellemesini ya da yeniden göndermesini isteyin.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Tekrarlanan bir ileti alındı.";
@@ -866,11 +866,11 @@
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_NO_SESSION" = "Kişi için oturum mevcut değil";
 
-/* Shown when signal users safety numbers changed */
+/* Shown when Dedi users safety numbers changed */
 "ERROR_MESSAGE_NON_BLOCKING_IDENTITY_CHANGE" = "Güvenlik numarası değişti";
 
-/* Shown when signal users safety numbers changed, embeds the user's {{name or phone number}} */
-"ERROR_MESSAGE_NON_BLOCKING_IDENTITY_CHANGE_FORMAT" = "%@ile olan güvenlik numaranız değişti.";
+/* Shown when Dedi users safety numbers changed, embeds the user's {{name or phone number}} */
+"ERROR_MESSAGE_NON_BLOCKING_IDENTITY_CHANGE_FORMAT" = "%@ ile olan güvenlik numaranız değişti.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_UNKNOWN_ERROR" = "Bilinmeyen bir hata oluştu.";
@@ -878,7 +878,7 @@
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_WRONG_TRUSTED_IDENTITY_KEY" = "Güvenlik numarası değişti. Doğrulamak için dokunun";
 
-/* Format string for 'unregistered user' error. Embeds {{the unregistered user's name or signal id}}. */
+/* Format string for 'unregistered user' error. Embeds {{the unregistered user's name or Dedi id}}. */
 "ERROR_UNREGISTERED_USER_FORMAT" = "Kayıtlı Olmayan Kullanıcı: %@";
 
 /* action sheet header when re-sending message which failed because of too many attempts */
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Arşiv";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Bağlanıyor...";
@@ -1049,14 +1049,14 @@
 /* Message for the alert indicating that an audio file is invalid. */
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "Geçersiz ses dosyası";
 
-/* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Kişilerinizi davet etmek için, Ayarlar uygulamasından Signal'in kişilerinize erişimine izin vermelisiniz";
+/* Alert body when contacts disabled while trying to invite contacts to Dedi */
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Kişilerinizi davet etmek için, Ayarlar uygulamasından Dedi'nin kişilerinize erişimine izin vermelisiniz";
 
-/* Alert title when contacts disabled while trying to invite contacts to signal */
+/* Alert title when contacts disabled while trying to invite contacts to Dedi */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Kişi Erişimine İzin Ver";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Signal'a arkadaşlarınızı davet edin";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Dedi'ye arkadaşlarınızı davet edin";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Ara";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Okundu";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Atlandı";
 
 /* message status while message is sending. */
@@ -1227,13 +1227,13 @@
 "MESSAGE_STATUS_UPLOADING" = "Yükleniyor…";
 
 /* Indicates that one member of this group conversation is no longer verified. Embeds {{user's name or phone number}}. */
-"MESSAGES_VIEW_1_MEMBER_NO_LONGER_VERIFIED_FORMAT" = "%@artık doğrulanmış olarak işaretlenmiyor. Seçenekler için dokunun. ";
+"MESSAGES_VIEW_1_MEMBER_NO_LONGER_VERIFIED_FORMAT" = "%@ artık doğrulanmış olarak işaretlenmiyor. Seçenekler için dokunun. ";
 
 /* Indicates that this 1:1 conversation has been blocked. */
 "MESSAGES_VIEW_CONTACT_BLOCKED" = "Bu Kullanıcıyı Engellediniz";
 
 /* Indicates that this 1:1 conversation is no longer verified. Embeds {{user's name or phone number}}. */
-"MESSAGES_VIEW_CONTACT_NO_LONGER_VERIFIED_FORMAT" = "%@artık doğrulanmış olarak işaretlenmiyor. Seçenekler için dokunun. ";
+"MESSAGES_VIEW_CONTACT_NO_LONGER_VERIFIED_FORMAT" = "%@ artık doğrulanmış olarak işaretlenmiyor. Seçenekler için dokunun. ";
 
 /* Action sheet title after tapping on failed download. */
 "MESSAGES_VIEW_FAILED_DOWNLOAD_ACTIONSHEET_TITLE" = "İndirme Başarısız Oldu.";
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Signal görüntülü aramalar için kameraya erişim istiyor. Erişimi açmak için Ayarlar >> Gizlilik >>> Kamera >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Dedi görüntülü aramalar için kameraya erişim istiyor. Erişimi açmak için Ayarlar >> Gizlilik >>> Kamera >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal'in kamera erişimine ihtiyacı var.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi'in kamera erişimine ihtiyacı var.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Bu izni Ayarlar uygulamasından açabilirsiniz.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Bu işlemi yapmak için Signal Medya Kütüphanenize erişim iznine ihtiyaç duyar.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Bu işlemi yapmak için Dedi Medya Kütüphanenize erişim iznine ihtiyaç duyar.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "%@ tarafından cevapsız arama.";
@@ -1316,7 +1316,7 @@
 "NETWORK_STATUS_CONNECTING" = "Bağlanıyor";
 
 /* Error indicating that this device is no longer registered. */
-"NETWORK_STATUS_DEREGISTERED" = "No Longer Registered";
+"NETWORK_STATUS_DEREGISTERED" = "Artık Kayıtlı Değil";
 
 /* No comment provided by engineer. */
 "NETWORK_STATUS_HEADER" = "Ağ Durumu";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "İsim veya İçerik Yok";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Uygulama Açıkken Oynat";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@ Kaybolan mesaj süresini %@ olarak ayarladı.";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi teknik zorluklarla karşılaşıyor. Hizmeti mümkün olduğunca çabuk geri getirmek için çok çalışıyoruz.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Giden çağrı";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Panonuzdaki sayı bu konuşma için doğru güvenlik numarasına benzemiyor.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal, panonuzda herhangi bir güvenlik numarası bulamadı. Doğru şekilde kopyaladınız mı?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi, panonuzda herhangi bir güvenlik numarası bulamadı. Doğru şekilde kopyaladınız mı?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Signal kullanıcılarının her çifti ayrı bir güvenlik numarası paylaşıyor. %@ *sizin* emniyet numaranızı gösterdiğini tekrar kontrol edin.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Dedi kullanıcılarının her çifti ayrı bir güvenlik numarası paylaşıyor. %@ *sizin* emniyet numaranızı gösterdiğini tekrar kontrol edin.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Eski bir Signal sürümünü çalıştırıyorsunuz. Doğrulamadan önce güncellemeniz gerekiyor.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Eski bir Dedi sürümünü çalıştırıyorsunuz. Doğrulamadan önce güncellemeniz gerekiyor.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Karşıdaki kişi Signal'in eski bir sürümünü çalıştırıyor. Doğrulamadan önce güncelleme yapılmalıdır.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Karşıdaki kişi Dedi'nin eski bir sürümünü çalıştırıyor. Doğrulamadan önce güncelleme yapılmalıdır.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Taranan kod bir güvenlik numarası kodu gibi görünmüyor. İkiniz de Signal'in güncel bir sürümünü mü kullanıyorsunuz?";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Taranan kod bir güvenlik numarası kodu gibi görünmüyor. İkiniz de Dedi'nin güncel bir sürümünü mü kullanıyorsunuz?";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Uçtan uca şifrelemenin güvenliğini %@ ile doğrulamak isterseniz, yukarıdaki numaraları kendi cihazlarındaki numaralarla karşılaştırın.\n\nAlternatif olarak, kodunu telefonlarında tarayabilir veya kodunu taramanızı rica edebilirsiniz.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Avatar";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Yeni bir konuşma başlattığınızda ve diğer kullanıcı ve gruplar ile paylaştığınızda Signal Profiliniz kişileriniz tarafından görünebilir olacak.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Yeni bir konuşma başlattığınızda ve diğer kullanıcı ve gruplar ile paylaştığınızda Dedi Profiliniz kişileriniz tarafından görünebilir olacak.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Daha fazla öğrenmek için buraya dokunun.";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Özel görüşmeler yapmak için Signal'ı kullanmaktan hoşlanıyorsan, projemize oy vererek destekte bulunabilirsin. Bu işlem bir dakikadan uzun sürmez ve başka insanların biraz mahremiyet bulmasına yardımcı olur.";
+"RATING_MSG" = "Özel görüşmeler yapmak için Dedi'yi kullanmaktan hoşlanıyorsan, projemize oy vererek destekte bulunabilirsin. Bu işlem bir dakikadan uzun sürmez ve başka insanların biraz mahremiyet bulmasına yardımcı olur.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Signal'a Oy Ver";
+"RATING_RATE" = "Dedi'ye Oy Ver";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Signal'ı Destekle!";
+"RATING_TITLE" = "Dedi'yi Destekle!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "PIN kodumu unuttum.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Bu telefon numarasının kaydı, numaranın en son Signal üzerinde aktif olmasının üzerinden 7 gün geçtikten sonra Kayıt Kilidi PIN'iniz olmadan mümkün olabilecektir.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Bu telefon numarasının kaydı, numaranın en son Dedi üzerinde aktif olmasının üzerinden 7 gün geçtikten sonra Kayıt Kilidi PIN'iniz olmadan mümkün olabilecektir.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Bu telefon numarası Kayıt Kilidi etkin. Lütfen Kayıt Kilidi PIN kodunu giriniz.\n\nKayıt Kilidi PIN'iniz, son adımda telefonunuza gönderilen otomatik doğrulama kodundan ayrıdır.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Sizi gönderdiğimiz kodu doğrulayana kadar hesabınızı aktive edemiyoruz.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Şimdi kayıt olmak, bu telefon numarasına kayıtlı olan diğer cihazlarda Dedi'yi devre dışı bırakacaktır.";
 
 /* button text to proceed with registration when on an iPad */
-"REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
+"REGISTRATION_IPAD_CONFIRM_BUTTON" = "Bu iPad'i kaydet.";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Zaten bir Dedi hesabın var mı?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Şartlar ve Gizlilik Politikası";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Bu cihazı kaydederek Signal'ın %@kabul etmiş olursunuz.";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Bu cihazı kaydederek Dedi'nin %@kabul etmiş olursunuz.";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "şartlar";
@@ -1682,7 +1682,7 @@
 "REGISTRATION_VERIFICATION_FAILED_WRONG_PIN" = "Hatalı Kayıt Kilidi PIN'i.";
 
 /* No comment provided by engineer. */
-"REGISTRATION_VERIFY_DEVICE" = "Register";
+"REGISTRATION_VERIFY_DEVICE" = "Bu cihazı etkinleştir";
 
 /* Message of alert indicating that users needs to enter a valid phone number to register. */
 "REGISTRATION_VIEW_INVALID_PHONE_NUMBER_ALERT_MESSAGE" = "Kayıt için geçerli bir telefon numarası giriniz";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Kayıt etmeye çalıştığın telefon numarası zaten başka bir sunucuda kayıtlı, lütfen oradan kayıdını kaldır ve tekrar dene. ";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Telefon numaranız için Kayıt Kilidi etkinleştirildi. Kayıt Kilitleme PIN'inizi ezberlemenize yardımcı olmak için Signal onu periyodik olarak onaylamanızı ister.";
+"REMINDER_2FA_BODY" = "Telefon numaranız için Kayıt Kilidi etkinleştirildi. Kayıt Kilitleme PIN'inizi ezberlemenize yardımcı olmak için Dedi onu periyodik olarak onaylamanızı ister.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Hatırlatıcı:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Kayıt Kilidi, telefon numaranızın yetkisiz kayıt girişimlerinden korunmasına yardımcı olur. Bu özellik, Signal gizlilik ayarlarınızda herhangi bir zamanda devre dışı bırakılabilir.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Kayıt Kilidi, telefon numaranızın yetkisiz kayıt girişimlerinden korunmasına yardımcı olur. Bu özellik, Dedi gizlilik ayarlarınızda herhangi bir zamanda devre dışı bırakılabilir.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Kayıt Kilidi PIN'inizi Girin";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Yine de gönder";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "Bizim Signal Güvenlik Numarası:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "Bizim Dedi Güvenlik Numarası:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "%@ ile güvenlik numaranız değişti. Doğrulamak isteyebilirsiniz.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "Ekran Kilidini kullanmak için iOS ayarlarınızdan bir şifre belirlemelisiniz.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Signal'i açmak için kimlik doğrulaması yapın.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Dedi'yi açmak için kimlik doğrulaması yapın.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Kimlik doğrulama başarısız oldu.";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Signal'ın Kilidini Açın";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Dedi'nin Kilidini Açın";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "İsim ya da numara bul";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Davetiye gönderilemedi, lütfen daha sonra tekrar deneyin.";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Arkadaşınızı Signal kullanmaya davet ettiniz!";
+"SEND_INVITE_SUCCESS" = "Arkadaşınızı Dedi kullanmaya davet ettiniz!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "SMS ile davet et:%@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Arkadaşın güvensiz SMS ile davet edilsin mi?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Şu numarayı Signal'a davet etmek ister misin";
+"SEND_SMS_INVITE_TITLE" = "Şu numarayı Dedi'ye davet etmek ister misin";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Hakkında";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Konum: %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Etkinleştirildiğinde, Signal sansür önlemini sağlamaya çalışacaktır Signal'in engellendiği bir konumda olmadığınız sürece bu özelliği etkinleştirmeyin.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Etkinleştirildiğinde, Dedi sansür önlemini sağlamaya çalışacaktır Dedi'nin engellendiği bir konumda olmadığınız sürece bu özelliği etkinleştirmeyin.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Sansür önleme, hesabınızın telefon numarasına bağlı olarak aktifleştirildi.";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Sansür önleme, sadece Internet'e bağlıyken aktifleştirilebilir.";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Sansür önleme gerekli değil; zaten Signal hizmetine  bağlısınız.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Sansür önleme gerekli değil; zaten Dedi hizmetine  bağlısınız.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Sansür Önleme";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Ekle...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Signal'de hiç kişiniz yok.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Dedi'de hiç kişiniz yok.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Arama sonucu yok";
@@ -1922,13 +1922,14 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Daima Aktarma Çağrılar";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "IP adresinizi kişinize göstermekten kaçınmak için tüm aramaları Signal sunucusundan aktarın. Etkinleştirme, çağrı kalitesini düşürecektir.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "IP adresinizi kişinize göstermekten kaçınmak için tüm aramaları Dedi sunucusundan aktarın. Etkinleştirme, çağrı kalitesini düşürecektir.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Sohbet Geçmişini Temizle";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Hakları Open Whisper Systems'a aittir\nGPLv3'e göre lisanslıdır";
+"SETTINGS_COPYRIGHT" = "GPLv3'e göre lisanslıdır";
+//BTKDISABLED "Hakları Open Whisper Systems'a aittir\n"
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Hesabı sil";
@@ -1955,7 +1956,7 @@
 "SETTINGS_INVITE_TITLE" = "Arkadaşlarınızı davet edin";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "@signalapp kullanarak bana ulaşabilirsiniz. Hemen edinin: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "Dedi kullanarak bana ulaşabilirsiniz. Hemen edinin: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Mesaj Sesi";
@@ -1997,13 +1998,13 @@
 "SETTINGS_READ_RECEIPTS_SECTION_FOOTER" = "İletiler okunduğunda görün ve paylaşın. Bu ayar isteğe bağlıdır ve tüm sohbetler için geçerlidir.";
 
 /* Label for re-registration button. */
-"SETTINGS_REREGISTER_BUTTON" = "Re-register";
+"SETTINGS_REREGISTER_BUTTON" = "Tekrar kaydet";
 
 /* Label for the 'screen lock activity timeout' setting of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Ekran Kilidi Zaman Aşımı";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Touch ID, Face ID, veya iOS cihaz şifrenizi kullanarak Signal'ın kilidini açın. Ekran Kilidi etkinken gelen aramaları cevaplayabilir ve mesaj bildirimleri alabilirsiniz. Signal'ın bildirim ayarları, görüntülenen bilgileri özelleştirmenizi sağlar.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Touch ID, Face ID, veya iOS cihaz şifrenizi kullanarak Dedi'nin kilidini açın. Ekran Kilidi etkinken gelen aramaları cevaplayabilir ve mesaj bildirimleri alabilirsiniz. Dedi'nin bildirim ayarları, görüntülenen bilgileri özelleştirmenizi sağlar.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Ekran Kilidi";
@@ -2015,10 +2016,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Ekran Güvenliğini Etkinleştir";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Uygulama geçişleri esnasında Signal önizlemelerinin görülmez.";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Uygulama geçişleri esnasında Dedi önizlemelerinin görülmez.";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "IOS Çağrı Entegrasyonu, Signal çağrılarını kilit ekranınızda ve sistemin arama geçmişinde gösterir. İsteğe bağlı olarak kişinin adını ve numarasını da gösterebilirsiniz. ICloud etkinleştirilirse, bu arama geçmişi Apple ile paylaşılacaktır.";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "IOS Çağrı Entegrasyonu, Dedi çağrılarını kilit ekranınızda ve sistemin arama geçmişinde gösterir. İsteğe bağlı olarak kişinin adını ve numarasını da gösterebilirsiniz. ICloud etkinleştirilirse, bu arama geçmişi Apple ile paylaşılacaktır.";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Bildirimler";
@@ -2054,7 +2055,7 @@
 "SHARE_ACTION_MAIL" = "Posta";
 
 /* action sheet item to open native messages app */
-"SHARE_ACTION_MESSAGE" = "İleti";
+"SHARE_ACTION_MESSAGE" = "SMS";
 
 /* action sheet item */
 "SHARE_ACTION_TWEET" = "Twitter";
@@ -2066,13 +2067,13 @@
 "SHARE_EXTENSION_LOADING" = "Yükleniyor...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Kayıt olmak için Signal uygulamasını başlatın";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Kayıt olmak için Dedi uygulamasını başlatın";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Kayıtlı Değil";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Güncellemek veya kayıt olmak için Signal uygulamasını başlatın.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Güncellemek veya kayıt olmak için Dedi uygulamasını başlatın.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Hazır Değil";
@@ -2083,11 +2084,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Yükleniyor...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Ek Dosyayı Hazırlama Başarısız Oldu";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Signal'de Paylaş";
+"SHARE_EXTENSION_VIEW_TITLE" = "Dedi'de Paylaş";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Yeni Güvenlik Numarasını Göster";
@@ -2095,8 +2096,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Görüşmeyi göster";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Seni Signal kullanmaya davet ediyorum! İşte link:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Seni Dedi kullanmaya davet ediyorum! İşte link:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Hiçbiri";
@@ -2180,13 +2181,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "\"%@\" bağlantısını kaldır?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Signal cihazınızın bağlantısını kaldıramadı.";
+"UNLINKING_FAILED_ALERT_TITLE" = "Dedi cihazınızın bağlantısını kaldıramadı.";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "İsimsiz Cihaz";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Signal'den kaydınızı kaldırmada hata oluştu";
+"UNREGISTER_SIGNAL_FAIL" = "Dedi'den kaydınızı kaldırmada hata oluştu";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Desteklenmeyen eklenti tipi alındı";
@@ -2222,7 +2223,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Profilinizi Ayarlayın";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Artık Signal'de arkadaşlarınızla bir profil fotoğrafı ve ismi paylaşabilirsiniz.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Artık Dedi'de arkadaşlarınızla bir profil fotoğrafı ve ismi paylaşabilirsiniz.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Yakın Çekime Hazır Mısınız?";
@@ -2237,19 +2238,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Okundu İletileriyle Tanışın";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal artık güvenli görüntülü aramaları destekliyor. Her zamanki gibi bir arama başlatın, kamera tuşuna basın, ve selam verin.";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi artık güvenli görüntülü aramaları destekliyor. Her zamanki gibi bir arama başlatın, kamera tuşuna basın, ve selam verin.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Merhaba Güvenli Görüntülü Aramalar!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal iOS 9 veya üstü gerektirir. Lütfen Ayarlar uygulamasında >> Genel >> Yazılım Güncelleme'den iOS'u yükseltin.";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi iOS 9 veya üstü gerektirir. Lütfen Ayarlar uygulamasında >> Genel >> Yazılım Güncelleme'den iOS'u yükseltin.";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "iOS'u Güncelle";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Signal yükseltiliyor ...";
+"Upgrading Dedi ..." = "Dedi yükseltiliyor ...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Geri";
@@ -2303,7 +2304,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Sesli Mesaj";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Signalın Masaüstündeki kurulumu bitir.";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Dedi'nin Masaüstündeki kurulumu bitir.";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Kaybolan mesajları devre dışı bıraktın.";

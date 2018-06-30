@@ -11,7 +11,7 @@
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)org.btider.dedi.shareextension</string>
+		<string>$(AppIdentifierPrefix)org.btider.dedi</string>
 	</array>
 </dict>
 </plist>

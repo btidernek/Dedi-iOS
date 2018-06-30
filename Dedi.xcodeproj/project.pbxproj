@@ -2299,7 +2299,7 @@
 		D221A07E169C9E5E00537ABF = {
 			isa = PBXGroup;
 			children = (
-				D221A093169C9E5E00537ABF /* Signal */,
+				D221A093169C9E5E00537ABF /* Dedi */,
 				45F170B01E2F0A35003FC1F2 /* Libraries */,
 				453518691FC635DD00210559 /* SignalShareExtension */,
 				453518931FC63DBF00210559 /* SignalMessaging */,
@@ -2362,7 +2362,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D221A093169C9E5E00537ABF /* Signal */ = {
+		D221A093169C9E5E00537ABF /* Dedi */ = {
 			isa = PBXGroup;
 			children = (
 				34330A581E7875FB00DF2FB9 /* Fonts */,
@@ -2375,7 +2375,6 @@
 				D221A094169C9E5E00537ABF /* Supporting Files */,
 				B660F66C1C29867F00687D6E /* test */,
 			);
-			name = Signal;
 			path = Dedi;
 			sourceTree = "<group>";
 		};

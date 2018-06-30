@@ -16,8 +16,8 @@ class InviteFlow: NSObject, MFMessageComposeViewControllerDelegate, MFMailCompos
 
     let TAG = "[ShareActions]"
 
-    let installUrl = "https://signal.org/install/"
-    let homepageUrl = "https://signal.org"
+    let installUrl = "http://dedi.link"
+    let homepageUrl = "http://btider.org.tr"
 
     @objc
     let actionSheetController: UIAlertController

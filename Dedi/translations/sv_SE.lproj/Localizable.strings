@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Acceptera nytt säkerhetsnummer";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Ring med Signal";
+"ACTION_AUDIO_CALL" = "Ring med Dedi";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Bjud in till Signal";
+"ACTION_INVITE" = "Bjud in till Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Skicka meddelande";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@ i grupp %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal kan inte starta. Skicka in dina debugloggar till vårt team så kan vi försöka lösa problemet.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi kan inte starta. Skicka in dina debugloggar till vårt team så kan vi försöka lösa problemet.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Fel";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "Version %@ finns nu tillgänglig i App Store.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "En ny version av Signal finns nu tillgänglig.";
+"APP_UPDATE_NAG_ALERT_TITLE" = "En ny version av Dedi finns nu tillgänglig.";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Uppdatera";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Arkivera";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Kunde inte välja dokument.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal kan inte hantera filen. Prova att zippa ihop den innan du skickar.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi kan inte hantera filen. Prova att zippa ihop den innan du skickar.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Filtypen stöds ej";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Välj";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Signal behöver åtkomst till mikrofonen för samtal och röstmeddelanden. Du kan tillåta det i appen Inställningar.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Dedi behöver åtkomst till mikrofonen för samtal och röstmeddelanden. Du kan tillåta det i appen Inställningar.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Åtkomst till mikrofon krävs";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "Inget svar.";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Ring";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "Ring tillbaka";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signalanvändare";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dedianvändare";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Användaren kan inte verifieras innan du har skickat eller tagit emot meddelanden.";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "Du har inte något iCloud-konto för säkerhetskopior.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal hade inte tillåtelse att komma åt ditt iCloud-konto för säkerhetskopior.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi hade inte tillåtelse att komma åt ditt iCloud-konto för säkerhetskopior.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "Jämför med urklipp";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Bjud in";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "För att se vilka av dina kontakter som använder Signal behöver du tillåta åtkomst till kontakter i appen Inställningar.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "För att se vilka av dina kontakter som använder Dedi behöver du tillåta åtkomst till kontakter i appen Inställningar.";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Det här kommer återställa appen, radera dina meddelanden och avregistrera dig från servern. Appen kommer stängas när datan är raderad.";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Senast aktiv: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Kringgå censur för platsen";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Du kan ge åtkomst i appen Inställningar.";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Signal behöver åtkomst för att ändra kontaktinformation";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Dedi behöver åtkomst för att ändra kontaktinformation";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Ändra grupp";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Ändra";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Hej,\n\nDen senaste tiden har jag använt Signal för att hålla mina konversationer på min iPhone privata. Jag vill att du installerar det också, så att vi kan vara säkra på att endast du och jag kan läsa våra meddelanden eller höra våra samtal.\n\nSignal finns tillgänglig för iPhone och för Android. Hämta den här: %@\n\nSignal fungerar som din redan befintliga meddelande-app. Vi kan skicka bilder och video, ringa samtal, och starta gruppkonversationer. Den bästa delen med det är att ingen annan kan se något av det, inte ens de som gör Signal!\n\nDu kan läsa mer om Open Whisper Systems, och de som ligger bakom hör: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Hej,\n\nDen senaste tiden har jag använt Dedi för att hålla mina konversationer på min iPhone privata. Jag vill att du installerar det också, så att vi kan vara säkra på att endast du och jag kan läsa våra meddelanden eller höra våra samtal.\n\nDedi finns tillgänglig för iPhone och för Android. Hämta den här: %@\n\nDedi fungerar som din redan befintliga meddelande-app. Vi kan skicka bilder och video, ringa samtal, och starta gruppkonversationer. Den bästa delen med det är att ingen annan kan se något av det, inte ens de som gör Dedi!\n\nDu kan läsa mer om , och de som ligger bakom hör: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Låt oss byta till Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Låt oss byta till Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Tryck på knappen för nytt meddelande.";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "Starta din första konversation i Signal!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "Starta din första konversation i Dedi!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Du kan arkivera inaktiva konversationer för senare från din Inkorg.";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Rensa bland konversationerna.";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Inga av dina kontakter har Signal.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Inga av dina kontakter har Dedi.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Varför inte bjuda in någon?";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN-koderna är inte samma.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Ange en registreringslås-PIN. Du kommer att behöva ange denna PIN nästa gång du registrerar detta telefonnummer med Signal.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Ange en registreringslås-PIN. Du kommer att behöva ange denna PIN nästa gång du registrerar detta telefonnummer med Dedi.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "För ökad säkerhet kan du aktivera en registreringslås-PIN som kommer att krävas för att kunna registrera detta telefonnummer med Signal igen.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "För ökad säkerhet kan du aktivera en registreringslås-PIN som kommer att krävas för att kunna registrera detta telefonnummer med Dedi igen.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registreringslås är aktiverat. Du kommer att behöva ange din PIN när du registrerar ditt telefonnummer med Signal igen.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registreringslås är aktiverat. Du kommer att behöva ange din PIN när du registrerar ditt telefonnummer med Dedi igen.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Registeringslås";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Misslyckades, skrivfel för bifogad fil.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal kunde inte nå ut på internet. Försök igen från ett annat trådlöst nätverk eller använd mobildata.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi kunde inte nå ut på internet. Försök igen från ett annat trådlöst nätverk eller använd mobildata.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Kunde inte skicka meddelandet, det saknas giltig mottagare.";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Ogiltigt svar från tjänsten.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Din enhet är inte längre registrerad till ditt telefonnummer. Du behöver ta bort och ominstallera Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Din enhet är inte längre registrerad till ditt telefonnummer. Du behöver ta bort och ominstallera Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Serverfel. Försök igen senare.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Ett okänt fel inträffade.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontakten är inte en Signal-användare.";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontakten är inte en Dedi-användare.";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Misslyckades: Be personen uppdatera Signal och skicka igen.";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Misslyckades: Be personen uppdatera Dedi och skicka igen.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Fick ett duplicerat meddelande.";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Arkiv";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Ansluter...";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "Ogiltig ljudfil.";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "För att bjuda in kontakter behöver du ge Signal åtkomst till dina kontakter i appen Systeminställningar.";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "För att bjuda in kontakter behöver du ge Dedi åtkomst till dina kontakter i appen Systeminställningar.";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Tillåt åtkomst till kontakter";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Bjud in vänner till Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Bjud in vänner till Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Sök";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Läst";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Skippad";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Signal behöver åtkomst till kameran för videosamtal. Du kan tillåta det i Inställningar >> Integritetsskydd >> Kamera >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Dedi behöver åtkomst till kameran för videosamtal. Du kan tillåta det i Inställningar >> Integritetsskydd >> Kamera >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal behöver åtkomst till din kamera.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi behöver åtkomst till din kamera.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Du kan tillåta detta i appen Inställningar.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Signal behöver åtkomst till ditt mediabibliotek för att kunna göra det här.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Dedi behöver åtkomst till ditt mediabibliotek för att kunna göra det här.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "Missat samtal från %@";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "Inget namn eller meddelande";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Spela när appen är öppen";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@ satte tid innan meddelanden försvinner till %@.";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Utgående samtal";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Numret i urklippet ser inte ut som ett korrekt säkerhetsnummer för den här konversationen.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal kunde inte hitta något säkerhetsnummer i ditt urklipp. Har du kopierat det korrekt?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi kunde inte hitta något säkerhetsnummer i ditt urklipp. Har du kopierat det korrekt?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Varje par av Signal-användare delar ett unikt säkerhetsnummer. Kontrollera noga att %@ visar *ditt* säkerhetsnummer.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Varje par av Dedi-användare delar ett unikt säkerhetsnummer. Kontrollera noga att %@ visar *ditt* säkerhetsnummer.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Du kör en gammal version av Signal. Du behöver uppdatera innan du kan bekräfta.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Du kör en gammal version av Dedi. Du behöver uppdatera innan du kan bekräfta.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Din partner kör en gammal version av Signal. De behöver uppdatera innan du kan bekräfta.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Din partner kör en gammal version av Dedi. De behöver uppdatera innan du kan bekräfta.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Koden som lästes in verkar inte vara ett säkerhetsnummer. Är du säker att ni båda två har en uppdaterad version av Signal?";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Koden som lästes in verkar inte vara ett säkerhetsnummer. Är du säker att ni båda två har en uppdaterad version av Dedi?";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Om du vill vara säker på att din kommunikation med %@ är krypterad hela vägen, jämför numren ovan med numren på den andra enheten.\n\nEtt alternativ är att du läser av koden på deras telefon eller be dem läsa av din kod.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Avatar";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Dina kontakter kommer kunna se din Signalprofil när du startar nya konversationer och när du delar den med andra användare eller grupper.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Dina kontakter kommer kunna se din Dediprofil när du startar nya konversationer och när du delar den med andra användare eller grupper.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Tryck här för att veta mer. ";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Om du gillar att använda Signal för att ha privata konversationer så kan du stödja vårt projekt genom att betygsätta det. Det tar inte mer än en minut, och hjälper andra att förbättra sin integritet.";
+"RATING_MSG" = "Om du gillar att använda Dedi för att ha privata konversationer så kan du stödja vårt projekt genom att betygsätta det. Det tar inte mer än en minut, och hjälper andra att förbättra sin integritet.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Betygsätt Signal";
+"RATING_RATE" = "Betygsätt Dedi";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Stöd Signal!";
+"RATING_TITLE" = "Stöd Dedi!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "Jag har glömt PIN-koden.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Efter att 7 dagar har gått sen telefonnumret senast var aktivt i Signal så kan det här telefonnumret registreras igen utan din pinkod för registreringslås.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Efter att 7 dagar har gått sen telefonnumret senast var aktivt i Dedi så kan det här telefonnumret registreras igen utan din pinkod för registreringslås.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Det här telefonnumret har registreringslås aktiverat. Ange pinkoden för registreringslås.\n\nDin pinkod för registreringslås är inte samma som den automatiska verifieringskoden som skickades till din telefon i förra steget.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Vi kan inte aktivera ditt konto förrän du har bekräftat koden vi skickat till dig.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Villkor & Dataskyddspolicy";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Genom att registrera denna enhet godkänner du Signals %@";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Genom att registrera denna enhet godkänner du Dedis %@";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "villkor";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Telefonnumret som du försöker registrera finns redan på en annan server, avregistrera dig därifrån och försök igen.";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Registreringslås är aktiverat för ditt telefonnummer. För att hjälpa dig komma ihåg PIN-koden till ditt registreringslås kommer Signal fråga dig då och då.";
+"REMINDER_2FA_BODY" = "Registreringslås är aktiverat för ditt telefonnummer. För att hjälpa dig komma ihåg PIN-koden till ditt registreringslås kommer Dedi fråga dig då och då.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Påminnelse:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registreringslås skyddar ditt telefonnummer ifall andra personer försöker registrera sig. Funktionen kan inaktiveras när som helst i Signal under Inställningar - Integritetsskydd.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registreringslås skyddar ditt telefonnummer ifall andra personer försöker registrera sig. Funktionen kan inaktiveras när som helst i Dedi under Inställningar - Integritetsskydd.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Ange PIN-koden till registreringslås";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Skicka ändå";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "Vårt säkerhetsnummer för Signal:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "Vårt säkerhetsnummer för Dedi:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "Ditt säkerhetsnummer med %@ har ändrats. Du vill nog bekräfta det.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "Du måste aktivera en lösenkod i dina iOS Inställningar för att kunna använda Skärmlås.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autentisera för att öppna Signal";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autentisera för att öppna Dedi";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Autentisering misslyckades";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Lås upp Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Lås upp Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "Sök via namn eller nummer";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Kunde inte skicka inbjudan, vänligen försök senare.";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Du har bjudit in din vän att använda Signal!";
+"SEND_INVITE_SUCCESS" = "Du har bjudit in din vän att använda Dedi!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "Bjud in via SMS: %@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Bjud in en vän via osäkert SMS?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Vill du bjuda in följande nummer till Signal:";
+"SEND_SMS_INVITE_TITLE" = "Vill du bjuda in följande nummer till Dedi:";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Om";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Plats: %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Om påslaget så kommer Signal försöka kringgå censur. Slå bara på den här funktionen om du är på en plats där Signal censureras.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Om påslaget så kommer Dedi försöka kringgå censur. Slå bara på den här funktionen om du är på en plats där Dedi censureras.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Kringgå censur har aktiverats baserat på ditt kontos telefonnummer";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Kringgå censur kan bara aktiveras när då internet är tillgängligt";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Kringgå censur är inte nödvändigt; du är redan uppkopplad mot Signal-tjänsten.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Kringgå censur är inte nödvändigt; du är redan uppkopplad mot Dedi-tjänsten.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Kringgå censur";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Lägg till...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Du har inga kontakter med Signal.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Du har inga kontakter med Dedi.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Inga sökresultat";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Vidarebefordra alltid samtal";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Vidarebefordra alla samtal genom Signal-servern för att undvika att avslöja ditt IP-nummer till din kontakt. Detta kommer att reducera samtalskvaliteten.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Vidarebefordra alla samtal genom Dedi-servern för att undvika att avslöja ditt IP-nummer till din kontakt. Detta kommer att reducera samtalskvaliteten.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Rensa konversationshistorik";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Copyright Open Whisper Systems \nLicenserad under GPLv3";
+"SETTINGS_COPYRIGHT" = "Copyright  \nLicenserad under GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Radera konto";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "Bjud in dina vänner";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "Du kan nå mig med @signalapp. Skaffa appen nu: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "Du kan nå mig med Dedi. Skaffa appen nu: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Meddelandeljud";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Timeout för skärmlås";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Lås upp Signals skärm med Touch ID, Face ID eller din iOS enhets lösenkod. Du kan fortfarande svara på inkommande samtal och få notiser om nya meddelanden när skärmlås är aktiverat. I notisinställningarna i Signal kan du välja hur information ska visas.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Lås upp Dedis skärm med Touch ID, Face ID eller din iOS enhets lösenkod. Du kan fortfarande svara på inkommande samtal och få notiser om nya meddelanden när skärmlås är aktiverat. I notisinställningarna i Dedi kan du välja hur information ska visas.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Skärmlås";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Aktivera skärmsäkerhet";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Förhindra Signals förhandsvisning från att visas i app-bytaren.";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Förhindra Dedis förhandsvisning från att visas i app-bytaren.";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS Call Integration visar Signalsamtal på din låsskärm och i systemets samtalshistorik. Du kan välja att visa din kontakts namn och nummer. Ifall iCloud är påslaget kan denna samtalshistorik delas med Apple.";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS Call Integration visar Dedisamtal på din låsskärm och i systemets samtalshistorik. Du kan välja att visa din kontakts namn och nummer. Ifall iCloud är påslaget kan denna samtalshistorik delas med Apple.";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Notiser";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Hämtar in...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Starta appen Signal för att registrera.";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Starta appen Dedi för att registrera.";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Inte registrerad";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Starta appen Signal för att uppdatera eller registrera.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Starta appen Dedi för att uppdatera eller registrera.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Inte klar";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Laddar upp...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Kunde inte förbereda bilagan";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Dela till Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Dela till Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Visa nytt säkerhetsnummer";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Visa konversation";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Jag vill gärna att du installerar Signal! Här är länken:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Jag vill gärna att du installerar Dedi! Här är länken:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Inget";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "Avlänka \"%@\"?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Signal kunde inte avlänka din enhet.";
+"UNLINKING_FAILED_ALERT_TITLE" = "Dedi kunde inte avlänka din enhet.";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "Namnlös enhet";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Kunde inte avregistrera från Signal.";
+"UNREGISTER_SIGNAL_FAIL" = "Kunde inte avregistrera från Dedi.";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Tog emot bifogad fil av en typ som det saknas stöd för.";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Skapa din profil";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Du kan nu dela ett profilfoto och namn med dina vänner på Signal.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Du kan nu dela ett profilfoto och namn med dina vänner på Dedi.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Redo för en närbild?";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Introducerar läskvittenser";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal har nu stöd för säkra videosamtal. Påbörja ett samtal som vanligt, tryck på kameraknappen och vinka hej.";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi har nu stöd för säkra videosamtal. Påbörja ett samtal som vanligt, tryck på kameraknappen och vinka hej.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Hallå säkra videosamtal!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal kräver iOS 9 eller senare. Uppgradera i appen Inställningar >> Allmänt >> Programuppdatering.";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi kräver iOS 9 eller senare. Uppgradera i appen Inställningar >> Allmänt >> Programuppdatering.";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "Uppgradera iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Uppgraderar Signal ...";
+"Upgrading Dedi ..." = "Uppgraderar Dedi ...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Tillbaka";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Röstmeddelande";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Färdigställ länkningen i Signal Desktop.";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Färdigställ länkningen i Dedi Desktop.";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Du stängde av att meddelanden försvinner.";

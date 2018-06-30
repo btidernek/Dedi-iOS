@@ -131,7 +131,7 @@ NS_ASSUME_NONNULL_BEGIN
                               OWSProdInfo([OWSAnalyticsEvents registrationRegisteringSubmittedCode]);
                               [[OWS2FAManager sharedManager] mark2FAAsEnabledWithPin:pinCode];
 
-                              DDLogInfo(@"%@ Successfully registered Signal account.", weakSelf.logTag);
+                              DDLogInfo(@"%@ Successfully registered Dedi account.", weakSelf.logTag);
                               dispatch_async(dispatch_get_main_queue(), ^{
                                   [modalActivityIndicator dismissWithCompletion:^{
                                       OWSAssertIsOnMainThread();

@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Accetta nuovo numero sicuro";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Chiamata Signal";
+"ACTION_AUDIO_CALL" = "Chiamata Dedi";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Invita a Signal";
+"ACTION_INVITE" = "Invita a Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Manda messaggio";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@ in gruppo %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal non riesce ad avviarsi. Invia i tuoi log di debug al nostro team cosicchè cercheremo di risolvere il problema.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi non riesce ad avviarsi. Invia i tuoi log di debug al nostro team cosicchè cercheremo di risolvere il problema.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Errore";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "La versione %@ è ora disponibile nell' App Store.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "È disponibile una nuova versione di Signal";
+"APP_UPDATE_NAG_ALERT_TITLE" = "È disponibile una nuova versione di Dedi";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Aggiorna";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Archivia";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Scelta del documento fallita.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal non può gestire questo file così com'è. Prova a comprimerlo prima di inviarlo.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi non può gestire questo file così com'è. Prova a comprimerlo prima di inviarlo.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Documento non supportato";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Seleziona";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Signal richiede l'accesso al tuo microfono per effettuare chiamate e registrare messaggi vocali. Puoi consentire questo accesso dall'app Impostazioni.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Dedi richiede l'accesso al tuo microfono per effettuare chiamate e registrare messaggi vocali. Puoi consentire questo accesso dall'app Impostazioni.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Accesso microfono richiesto";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "Nessuna risposta.";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Chiama";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "Richiama";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Utente Signal";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Utente Dedi";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Questo utente non può essere verificato finché non verranno scambiati dei messaggi con lui.";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "Non hai un account iCloud per i backup.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal non ha l'accesso al tuo account iCloud per i backup.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi non ha l'accesso al tuo account iCloud per i backup.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "Confronta con gli appunti";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Invita";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Per visualizzare quale dei tuoi contatti è un utente Signal, autorizza l'accesso ai contatti nelle impostazioni di sistema.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Per visualizzare quale dei tuoi contatti è un utente Dedi, autorizza l'accesso ai contatti nelle impostazioni di sistema.";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Questo azzererà l'applicazione cancellando i messaggi e cancellando la tua registrazione nel server. L'applicazione si chiuderà dopo la cancellazione dei dati.";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Ultima attività: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Raggiro Luogo Censura";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Puoi dare l'accesso nelle impostazioni di sistema.";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Signal richiede l'accesso ai contatti per modificarne il contenuto.";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Dedi richiede l'accesso ai contatti per modificarne il contenuto.";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Modifica gruppo";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Modifica";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Ehi,\n\nUltimamente sto usando Signal per mantenere private le conversazioni sul mio iPhone. Vorrei che anche te la installassi, così potremo essere sicuri che saremo gli unici a poter leggere i nostri messaggi e ad ascoltare le nostre chiamate.\n\nSignal è disponibile per gli iPhone e per Android. Scaricalo qui: %@\n\nSignal funziona come la tua solita app di messaggistica. Possiamo mandarci immagini, video, fare chiamate e creare chat di gruppo. Ma la ciliegina sulla torta è che nessuno potrà vedere né sentire nulla di tutto ciò, nemmeno chi sta dietro a Signal!\n\nPuoi scoprire di più su Open Whisper Systems, i creatori di Signal, qui: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Ehi,\n\nUltimamente sto usando Dedi per mantenere private le conversazioni sul mio iPhone. Vorrei che anche te la installassi, così potremo essere sicuri che saremo gli unici a poter leggere i nostri messaggi e ad ascoltare le nostre chiamate.\n\nDedi è disponibile per gli iPhone e per Android. Scaricalo qui: %@\n\nDedi funziona come la tua solita app di messaggistica. Possiamo mandarci immagini, video, fare chiamate e creare chat di gruppo. Ma la ciliegina sulla torta è che nessuno potrà vedere né sentire nulla di tutto ciò, nemmeno chi sta dietro a Dedi!\n\nPuoi scoprire di più su , i creatori di Dedi, qui: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Passiamo a Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Passiamo a Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Tocca il tasto \"composizione\"";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "Inizia la tua prima conversazione su Signal!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "Inizia la tua prima conversazione su Dedi!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Puoi archiviare conversazioni inattive dalla lista Chat per consultarle successivamente.";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Pulisci le tue Conversazioni";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Nessuno dei tuoi contatti ha Signal.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Nessuno dei tuoi contatti ha Dedi.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Perché non inviti qualcuno?";
@@ -792,10 +792,10 @@
 "ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Inserisci un PIN per il Blocco Registrazione. Questo PIN ti verrà richiesto la prossima volta che verrà effettuata una registrazione con questo numero di telefono.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Per aumentare la sicurezza, attiva il PIN di Blocco Registrazione che diventerà necessario per registrare nuovamente questo numero di telefono con Signal.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Per aumentare la sicurezza, attiva il PIN di Blocco Registrazione che diventerà necessario per registrare nuovamente questo numero di telefono con Dedi.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "È attivo il Blocco Registrazione. Dovrai inserire il tuo PIN quando registrerai nuovamente il tuo numero di telefono con Signal.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "È attivo il Blocco Registrazione. Dovrai inserire il tuo PIN quando registrerai nuovamente il tuo numero di telefono con Dedi.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Blocco Registrazione";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Fallito a causa di un problema in scrittura.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal non è in grado di connettersi ad Internet. Riprovare da un'altra rete WiFi o tramite rete dati.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi non è in grado di connettersi ad Internet. Riprovare da un'altra rete WiFi o tramite rete dati.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Invio messaggio fallito per mancanza di un valido destinatario.";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Risposta del servizio non valida.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Il dispositivo non è più registrato per il tuo numero di telefono Devi rimuovere e reinstallare Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Il dispositivo non è più registrato per il tuo numero di telefono Devi rimuovere e reinstallare Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Errore del server. Si prega di riprovare.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Errore sconosciuto.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Il contatto non è un utente Signal";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Il contatto non è un utente Dedi";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Errore: Chiedi al mittente di aggiornare Signal e rispedire. ";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Errore: Chiedi al mittente di aggiornare Dedi e rispedire. ";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Ricevuto messaggio duplicato.";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Archivio";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Connessione...";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "Audio file non valido.";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Per invitare i tuoi contatti, devi abilitare l'accesso dei tuoi contatti a Signal nelle impostazioni di sistema.";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Per invitare i tuoi contatti, devi abilitare l'accesso dei tuoi contatti a Dedi nelle impostazioni di sistema.";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Abilita Accesso Contatti";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Invita i tuoi amici su Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Invita i tuoi amici su Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Cerca";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Letto";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Saltato";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Signal ha bisogno di accedere alla tua fotocamera per le video chiamate. Puoi consentire l'accesso nell'app Impostazioni >> Privacy >> Camera >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Dedi ha bisogno di accedere alla tua fotocamera per le video chiamate. Puoi consentire l'accesso nell'app Impostazioni >> Privacy >> Camera >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal ha bisogno di accedere alla tua fotocamera.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi ha bisogno di accedere alla tua fotocamera.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Puoi abilitare questo permesso dall'app Impostazioni.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Signal necessita dell'accesso alla galleria multimediale per fare questo.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Dedi necessita dell'accesso alla galleria multimediale per fare questo.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "Chiamata persa da %@.";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "Nessun Nome o Contenuto";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Riproduci mentre l'app è aperta";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@ ha impostato il tempo di scomparsa dei messaggi a %@.";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Chiamata in uscita";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Il codice di sicurezza negli appunti non sembra quello corretto per la conversazione corrente.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal non ha trovato un codice di sicurezza negli appunti. Lo hai copiato correttamente?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi non ha trovato un codice di sicurezza negli appunti. Lo hai copiato correttamente?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Ogni coppia di utenti Signal condivide codici di sicurezza diversi. Fai un doppio controllo che %@ stia mostrando il *tuo* codice di sicurezza.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Ogni coppia di utenti Dedi condivide codici di sicurezza diversi. Fai un doppio controllo che %@ stia mostrando il *tuo* codice di sicurezza.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Stai usando una vecchia versione di Signal. Devi aggiornarla prima di poter verificare.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Stai usando una vecchia versione di Dedi. Devi aggiornarla prima di poter verificare.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "I tuoi compagni stanno usando una vecchia versione di Signal. Devono aggiornarla prima di poter verificare.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "I tuoi compagni stanno usando una vecchia versione di Dedi. Devono aggiornarla prima di poter verificare.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Il codice letto non sembra quello di un codice di sicurezza. State usando entrambi una versione aggiornata di Signal?";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Il codice letto non sembra quello di un codice di sicurezza. State usando entrambi una versione aggiornata di Dedi?";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Se desideri verificare la sicurezza della tua codifica end-to-end con %@, confronta i numeri precedenti con quelli del suo dispositivo.\n\nIn alternativa puoi fare uno scan del codice sul suo telefono o chiedergli di fare una scansione del tuo.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Avatar";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Il tuo profilo Signal sarà visibile ai tuoi contatti quando inizi una nuova conversazione e quando lo condividi con altri utenti e gruppi.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Il tuo profilo Dedi sarà visibile ai tuoi contatti quando inizi una nuova conversazione e quando lo condividi con altri utenti e gruppi.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Tocca qui per maggiori informazioni.";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Se hai apprezzato l'uso di Signal per avere conversazioni private, puoi supportare il nostro progetto lasciando una recensione. Non richiederà più di un minuto ed aiuterà altre persone ad avere un po' di privacy.";
+"RATING_MSG" = "Se hai apprezzato l'uso di Dedi per avere conversazioni private, puoi supportare il nostro progetto lasciando una recensione. Non richiederà più di un minuto ed aiuterà altre persone ad avere un po' di privacy.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Valuta Signal";
+"RATING_RATE" = "Valuta Dedi";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Supporta Signal!";
+"RATING_TITLE" = "Supporta Dedi!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "Ho dimenticato il mio PIN.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "La registrazione di questo numero di telefono sarà possibile senza il PIN di Blocco Registrazione passati 7 giorni dall'ultima attività su Signal.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "La registrazione di questo numero di telefono sarà possibile senza il PIN di Blocco Registrazione passati 7 giorni dall'ultima attività su Dedi.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Questo numero ha il Blocco Registrazione attivo. Inserire il PIN di Blocco Registrazione.\n\nIl tuo PIN di Blocco Registrazione è separato dal codice di verifica automatico che è stato inviato al tuo telefono durante la fase precedente.\n";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Non possiamo attivare il tuo accanto fintanto che non verificherai il codice che ti abbiamo inviato.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Politica e termini sulla privacy";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Registrando questo dispositivo, accetti %@ di Signal";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Registrando questo dispositivo, accetti %@ di Dedi";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "termini";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Il numero di telefono che stai cercando di registrare risulta già iscritto in un altro server, rimuovilo da tale server e riprova nuovamente.";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Il Blocco Registrazione è attivo per il tuo numero di telefono. Per aiutarti a memorizzare il PIN di Blocco Registrazione, Signal ti chiederà di confermarlo periodicamente.";
+"REMINDER_2FA_BODY" = "Il Blocco Registrazione è attivo per il tuo numero di telefono. Per aiutarti a memorizzare il PIN di Blocco Registrazione, Dedi ti chiederà di confermarlo periodicamente.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Promemoria:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Il Blocco Registrazione aiuta a proteggere il tuo numero di telefono da tentativi di registrazione non autorizzati. Questa funzionalità può essere disattivata in qualsiasi momento dalle impostazioni di privacy di Signal.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Il Blocco Registrazione aiuta a proteggere il tuo numero di telefono da tentativi di registrazione non autorizzati. Questa funzionalità può essere disattivata in qualsiasi momento dalle impostazioni di privacy di Dedi.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Inserisci il tuo PIN di Blocco Registrazione";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Invia lo stesso";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "I nostri codici di sicurezza Signal:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "I nostri codici di sicurezza Dedi:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "Il tuo codice di sicurezza con %@ è cambiato. Dovresti verificarlo.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "Devi abilitare il codice nelle impostazioni iOS per poter usare il blocco schermo.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autenticarsi per aprire Signal.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autenticarsi per aprire Dedi.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Autenticazione fallita";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Sblocca Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Sblocca Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "Cerca per nome o numero di telefono";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Invio dell'invito fallito, riprova più tardi";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Hai invitato il tuo amico ad usare Signal!";
+"SEND_INVITE_SUCCESS" = "Hai invitato il tuo amico ad usare Dedi!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "Invita %@ via SMS";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Invita un amico usando un SMS insicuro?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Vuoi invitare il seguente numero a Signal:";
+"SEND_SMS_INVITE_TITLE" = "Vuoi invitare il seguente numero a Dedi:";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Dettagli";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Posizione: %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Se attivo, Signal cercerà di raggirare la censura. Non attivare questa funzione a meno che vi troviate in un luogo dove Signal è soggetto a censura.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Se attivo, Dedi cercerà di raggirare la censura. Non attivare questa funzione a meno che vi troviate in un luogo dove Dedi è soggetto a censura.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Il raggiro della censura è stato attivato sulla base del vostro numero telefonico.";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Il raggiro della censura può essere attivato solo se connessi ad Internet.";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Il raggiro della censura non è necessario; siete già connessi al servizio Signal.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Il raggiro della censura non è necessario; siete già connessi al servizio Dedi.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Raggiro Censura";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Aggiungi...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Non hai contatti su Signal.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Non hai contatti su Dedi.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Nessun risultato ";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Inoltra sempre le chiamate";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Inoltra sempre le chiamate tramite il server Signal per evitare di rivelare il tuo indirizzo IP ai tuoi contatti. L'attivazione riduce la qualità delle chiamate.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Inoltra sempre le chiamate tramite il server Dedi per evitare di rivelare il tuo indirizzo IP ai tuoi contatti. L'attivazione riduce la qualità delle chiamate.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Svuota Conversazione";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Copyright Open Whisper Systems\nLicenza secondo direttive GPLv3";
+"SETTINGS_COPYRIGHT" = "Copyright \nLicenza secondo direttive GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Cancella Account";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "Invita i tuoi amici";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "Puoi contattarmi usando Signal @signalapp, scaricala ora: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "Puoi contattarmi usando Dedi Dedi, scaricala ora: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Suono Messaggio";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Timeout blocco schermo";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Sblocca Signal usando Touch ID, Face ID o il tuo codice iOS. Mentre il blocco schermo è attivo potrai continuare a rispondere alla chiamate in arrivo e riceve notifiche di messaggi. Le impostazioni di notifica di Signal ti permetteranno di personalizzare le informazioni visualizzate.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Sblocca Dedi usando Touch ID, Face ID o il tuo codice iOS. Mentre il blocco schermo è attivo potrai continuare a rispondere alla chiamate in arrivo e riceve notifiche di messaggi. Le impostazioni di notifica di Dedi ti permetteranno di personalizzare le informazioni visualizzate.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Blocco schermo";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Attiva sicurezza schermo";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Evita di mostrare l'anteprima di Signal nel passaggio tra app.";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Evita di mostrare l'anteprima di Dedi nel passaggio tra app.";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "L'integrazione chiamate iOS mostra le chiamate Signal nella schermata di blocco and nella cronologia di chiamate di sistema. Se iCloud è abilitato tale cronologia sarà condivisa con Apple. Puoi scegliere di abilitare o meno la visualizzazione del nome e numero del contatto.";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "L'integrazione chiamate iOS mostra le chiamate Dedi nella schermata di blocco and nella cronologia di chiamate di sistema. Se iCloud è abilitato tale cronologia sarà condivisa con Apple. Puoi scegliere di abilitare o meno la visualizzazione del nome e numero del contatto.";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Notifiche";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Caricamento...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Apri l'app Signal per la registrazione";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Apri l'app Dedi per la registrazione";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Non registrato";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Avvia l'app Signal per aggiornarla o registrarti. ";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Avvia l'app Dedi per aggiornarla o registrarti. ";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Non pronto";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Invio in corso...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Predisposizione allegato non riuscita";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Condividi con Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Condividi con Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Mostra nuovo codice di sicurezza";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Mostra conversazione";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Ti sto invitando a installare Signal! Ecco il lnk:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Ti sto invitando a installare Dedi! Ecco il lnk:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Nessuno";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "Dissocia \"%@\" ?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Signal non è riuscito a dissociare il tuo dispositivo.";
+"UNLINKING_FAILED_ALERT_TITLE" = "Dedi non è riuscito a dissociare il tuo dispositivo.";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "Dispositivo Senza Nome";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Cancellazione da Signal fallita.";
+"UNREGISTER_SIGNAL_FAIL" = "Cancellazione da Dedi fallita.";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Ricevuto un tipo di allegato non supportato.";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Imposta il tuo profilo";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Puoi condividere nome e foto proflo con i tuoi amici su Signal.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Puoi condividere nome e foto proflo con i tuoi amici su Dedi.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Pronto per un primo piano?";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Introduzione delle ricevute di lettura";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal ora supporta le chiamate video sicure. Inizia la chiamata come di consueto, tocca il pulsante della telecamere e fai ciao.";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi ora supporta le chiamate video sicure. Inizia la chiamata come di consueto, tocca il pulsante della telecamere e fai ciao.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Chiamate Video Sicure!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal richiede iOS 9 o successivo. Per aggiornare: App Impostazioni >> Generali >> Aggiornamento Software. ";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi richiede iOS 9 o successivo. Per aggiornare: App Impostazioni >> Generali >> Aggiornamento Software. ";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "Aggiornare iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Aggiornamento Signal...";
+"Upgrading Dedi ..." = "Aggiornamento Dedi...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Indietro";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Messaggio Vocale";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Completa la configurazione su Signal Desktop.";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Completa la configurazione su Dedi Desktop.";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Hai disabilitato la scomparsa dei messaggi.";

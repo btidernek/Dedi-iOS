@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Terima Nomor Keamanan Baru";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Panggilan Signal";
+"ACTION_AUDIO_CALL" = "Panggilan Dedi";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Undang gabung ke Signal";
+"ACTION_INVITE" = "Undang gabung ke Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Kirim Pesan";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@ di dalam grup %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal tidak dapat diluncurkan. Kirimkan catatan awakutu Anda ke tim kami agar isu ini dapat diselesaikan.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi tidak dapat diluncurkan. Kirimkan catatan awakutu Anda ke tim kami agar isu ini dapat diselesaikan.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Galat";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "Versi %@ telah tersedia di App Store.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Sebuah Versi Baru Signal Tersedia";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Sebuah Versi Baru Dedi Tersedia";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Pembaruan";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Arsip";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Gagal memilih dokumen.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal tidak bisa menangani file ini. Cobalah padatkan sebelum mengirimkan.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi tidak bisa menangani file ini. Cobalah padatkan sebelum mengirimkan.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Berkas tidak didukung.";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Pilih";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Signal memerlukan akses ke mikrofon Anda untuk membuat panggilan dan merekam pesan suara. Anda dapat memberikan izin di Pengaturan.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Dedi memerlukan akses ke mikrofon Anda untuk membuat panggilan dan merekam pesan suara. Anda dapat memberikan izin di Pengaturan.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Akses Mikropon Diperlukan";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "Tak Terjawab";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Panggil";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "Anda tidak memiliki akun iCloud untuk membuat pencadangan.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal tidak diperbolehkan untuk mengakses akun iCloud Anda untuk membuat cadangan.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi tidak diperbolehkan untuk mengakses akun iCloud Anda untuk membuat cadangan.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "Bandingkan dengan papan klip";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Undang";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Untuk melihat kontak Anda yang menggunakan Signal, izinkan mengakses kontak di dalam setelan sistem Anda.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Untuk melihat kontak Anda yang menggunakan Dedi, izinkan mengakses kontak di dalam setelan sistem Anda.";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Tindakan ini akan mengatur kembali aplikasi dengan menghapus pesan Anda dan menghapus Anda dari peladen. Aplikasi akan menutup setelah menghapus semua data.";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Daftarkan ulang nomor telpon ini";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Perangkat tidak lagi terdaftar. Nomor telpon Anda mungkin terdaftar ke Signal di perangkat lain. Ketuk untuk daftar ulang.";
+"DEREGISTRATION_WARNING" = "Perangkat tidak lagi terdaftar. Nomor telpon Anda mungkin terdaftar ke Dedi di perangkat lain. Ketuk untuk daftar ulang.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Terakir aktif: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Lokasi penghindar penyensoran";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Anda dapat memberi akses ke Pengaturan aplikasi.";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Signal Butuh Akses Kontak untuk Mengubah Informasi Kontak";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Dedi Butuh Akses Kontak untuk Mengubah Informasi Kontak";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Ubah Grup";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Ubah";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Hai,\n\nBelakangan ini saya menggunakan Signal untuk menjaga percakapan di iPhone tetap privat. Saya ingin Anda memasangnya juga, agar kita bisa yakin bahwa hanya Anda dan saya yang bisa membaca pesan dan mendengar percakapan kita.\n\nSignal tersedia untuk iPhone dan Android. Dapatkan di sini: %@\n\nSignal bekerja seperti aplikasi bertukar pesan Anda yang sudah ada. Kita dapat mengirim gambar dan video, membuat panggilan, dan memulai percakapan grup. Bagian terbaiknya adalah, tidak ada yang bisa melihatnya, bahkan orang yang membuat Signal!\n\nAnda dapat membaca lebih lanjut tentang Open Whisper Systems, orang-orang yang membuat Signal, di sini: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Hai,\n\nBelakangan ini saya menggunakan Dedi untuk menjaga percakapan di iPhone tetap privat. Saya ingin Anda memasangnya juga, agar kita bisa yakin bahwa hanya Anda dan saya yang bisa membaca pesan dan mendengar percakapan kita.\n\nDedi tersedia untuk iPhone dan Android. Dapatkan di sini: %@\n\nDedi bekerja seperti aplikasi bertukar pesan Anda yang sudah ada. Kita dapat mengirim gambar dan video, membuat panggilan, dan memulai percakapan grup. Bagian terbaiknya adalah, tidak ada yang bisa melihatnya, bahkan orang yang membuat Dedi!\n\nAnda dapat membaca lebih lanjut tentang , orang-orang yang membuat Dedi, di sini: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Pindah ke Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Pindah ke Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Sentuh pada tombol menulis";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "Mulai percakapan pertama Anda di Signal!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "Mulai percakapan pertama Anda di Dedi!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Percakapan yang tidak aktif dapat anda simpan dalam arsip untuk kebutuhan mendatang";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Bersihkan Percakapan Anda.";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Tak satupun kontak Anda memiliki Signal";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Tak satupun kontak Anda memiliki Dedi";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Mengapa Anda tidak mengundang seseorang?";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN tidak sesuai.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Masukkan PIN Kunci Pendaftaran. Anda akan diminta untuk memasukkan lagi PIN ini ketika Anda mendaftarkan nomor telpon dengan Signal.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Masukkan PIN Kunci Pendaftaran. Anda akan diminta untuk memasukkan lagi PIN ini ketika Anda mendaftarkan nomor telpon dengan Dedi.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Untuk meningkatkan keamanan, aktifkan PIN Kunci Pendaftaran yang akan dibutuhkan untuk mendaftarkan nomor telpon ini dengan Signal lagi.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Untuk meningkatkan keamanan, aktifkan PIN Kunci Pendaftaran yang akan dibutuhkan untuk mendaftarkan nomor telpon ini dengan Dedi lagi.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Kunci Pendaftaran diaktifkan. Anda perlu memasukkan nomor PIN Anda ketika mendaftarkan nomor telpon dengan Signal lagi.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Kunci Pendaftaran diaktifkan. Anda perlu memasukkan nomor PIN Anda ketika mendaftarkan nomor telpon dengan Dedi lagi.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Kunci Pendaftaran";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Gagal karena gagal menulis pada lampiran.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal tidak dapat terhubung dengan internet. Mohon mencoba dari jaringan Wifi lain atau gunakan koneksi mobile.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi tidak dapat terhubung dengan internet. Mohon mencoba dari jaringan Wifi lain atau gunakan koneksi mobile.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Pesan gagal terkirim karena kekurangan penerima valid.";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Tanggapan tidak valid dari layanan.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Peralatan Anda tidak lagi terdaftar dengan nomor telepon Anda. Anda mesti membuang dan memasang ulang Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Peralatan Anda tidak lagi terdaftar dengan nomor telepon Anda. Anda mesti membuang dan memasang ulang Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Server Gagal. Mohon coba lagi nanti.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Sebuah kegagagalan tak dikenal muncul.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontak bukan pengguna Signal.";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontak bukan pengguna Dedi.";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Gagal: Tanyakan pengirim untuk memperbarui Signal dan mengirim kembali.";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Gagal: Tanyakan pengirim untuk memperbarui Dedi dan mengirim kembali.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Menerima pesan ganda";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Arsip";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Terhubung...";
@@ -1056,7 +1056,7 @@
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Perbolehkan Akses Kontak";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Undang Kawan ke Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Undang Kawan ke Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Cari";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Baca";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Terlompati";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Signal butuh akses kamera Anda untuk panggilan video. Anda dapat mengabulkan permintaan ini di Settings app >> Privacy >> Camera >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Dedi butuh akses kamera Anda untuk panggilan video. Anda dapat mengabulkan permintaan ini di Settings app >> Privacy >> Camera >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal butuh akses ke kamera Anda.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi butuh akses ke kamera Anda.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Anda dapat mengubah izin akses di Pengaturan aplikasi.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Signal Membutuhkan Akses ke Perpustakaan Media Anda untuk melakukan ini.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Dedi Membutuhkan Akses ke Perpustakaan Media Anda untuk melakukan ini.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "Panggilan tak terjawab dari %@.";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "Tanpa Nama atau Isi";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Mainkan Ketika Aplikasi sedang Terbuka";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@mengatur waktu penghilangan pesan menjadi %@";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal sedang mengalami kesulitan teknis. Kami bekerja keras untuk memulihkan layanan secepat mungkin.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi sedang mengalami kesulitan teknis. Kami bekerja keras untuk memulihkan layanan secepat mungkin.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Panggilan keluar";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Nomor di dalam papan klip Anda tak tampak seperti nomor keamanan yang benar untuk percakapan ini.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal tak dapat menemukan sejumlah nomor keamanan di dalam papan klip Anda. Apakah Anda sudah menyalin dengan benar?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi tak dapat menemukan sejumlah nomor keamanan di dalam papan klip Anda. Apakah Anda sudah menyalin dengan benar?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Tiap pasangan pengguna Signal berbagi nomor keamanan yang berbeda. Periksa kembali bahwa%@menampilkan nomor keamanan Anda secara jelas.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Tiap pasangan pengguna Dedi berbagi nomor keamanan yang berbeda. Periksa kembali bahwa%@menampilkan nomor keamanan Anda secara jelas.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Anda sedang menjalankan versi lama Signal. Anda perlu pembaruan sebelum Anda memverifikasi.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Anda sedang menjalankan versi lama Dedi. Anda perlu pembaruan sebelum Anda memverifikasi.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Teman Anda masih menggunakan Signal versi lama. Mereka perlu pembaruan sebelum Anda memverifikasi.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Teman Anda masih menggunakan Dedi versi lama. Mereka perlu pembaruan sebelum Anda memverifikasi.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Kode yang diperiksa tidak tampak seperti sebuah sandi nomor keamanan. Apakah kalian belum memperbarui Signal versi terbaru?";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Kode yang diperiksa tidak tampak seperti sebuah sandi nomor keamanan. Apakah kalian belum memperbarui Dedi versi terbaru?";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Jika Anda meminta untuk verifikasi keseluruhan enskripsi dengan %@, bandingkan nomor di atas dengan nomor di dalam perangkat mereka.\n\nCara lain, Anda bisa memindai kode di dalam gawai mereka, atau minta mereka untuk memindai kode Anda.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Avatar";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Profil Signal Anda akan ditampilkan dalam buku kontak, ketika Anda memulai percakapan, dan saat Anda membagikannya dengan pengguna lain dan grup.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Profil Dedi Anda akan ditampilkan dalam buku kontak, ketika Anda memulai percakapan, dan saat Anda membagikannya dengan pengguna lain dan grup.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Ketuk di sini untuk lebih lanjut.";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Jika Anda menikmati menggunakan Signal untuk memiliki percakapan pribadi, Anda dapat mendukung proyek kami dengan rating itu. Ini tidak akan mengambil lebih dari satu menit, dan akan membantu orang lain menemukan beberapa privasi.";
+"RATING_MSG" = "Jika Anda menikmati menggunakan Dedi untuk memiliki percakapan pribadi, Anda dapat mendukung proyek kami dengan rating itu. Ini tidak akan mengambil lebih dari satu menit, dan akan membantu orang lain menemukan beberapa privasi.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Nilai Signal";
+"RATING_RATE" = "Nilai Dedi";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Dukung Signal!";
+"RATING_TITLE" = "Dukung Dedi!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "Saya lupa PIN saya.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Pendaftaran nomor telpon ini dapat dilakukan tanpa PIN Kunci Pendaftaran jika 7 hari telah berlalu semenjak nomor telpon tersebut terakhir aktif di Signal.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Pendaftaran nomor telpon ini dapat dilakukan tanpa PIN Kunci Pendaftaran jika 7 hari telah berlalu semenjak nomor telpon tersebut terakhir aktif di Dedi.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Nomor telpon ini memiliki Kunci Pendaftaran aktif. Masukkan PIN Kunci Pendaftaran.\n\nPIN Kunci Pendaftaran Anda terpisah dari kode verifikasi otomatis yang dikirimkan ke telpon Anda di langkah terakhir.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Kami tidak bisa mengaktifkan akun Anda hingga setelah Anda memverifikasi kode yang kami kirimkan.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Mendaftar sekarang akan menonaktifkan Signal di perangkat lain yang terdaftar dengan nomor telpon ini.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Mendaftar sekarang akan menonaktifkan Dedi di perangkat lain yang terdaftar dengan nomor telpon ini.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Daftarkan iPad ini";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Sudah memiliki akun Signal?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Sudah memiliki akun Dedi?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Syarat & Kebijakan Privasi";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Dengan mendaftarkan perangkat ini, Anda menyetujui %@ Signal";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Dengan mendaftarkan perangkat ini, Anda menyetujui %@ Dedi";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "syarat";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Nomor telepon yang Anda coba daftarkan telah terdaftar di peladen lain, harap keluar dari peladen tersebut dan coba kembali.";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Kunci Pendaftaran telah diaktifkan untuk nomor telpon Anda. Untuk membantu Anda mengingat PIN Kunci Pendaftaran, Signal akan secara berkala menanyakannya pada Anda untuk mengkonfirmasinya.";
+"REMINDER_2FA_BODY" = "Kunci Pendaftaran telah diaktifkan untuk nomor telpon Anda. Untuk membantu Anda mengingat PIN Kunci Pendaftaran, Dedi akan secara berkala menanyakannya pada Anda untuk mengkonfirmasinya.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Pengingat:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Kunci Pendaftaran membantu melindungi nomor telpon Anda dari upaya pendaftaran tanpa otorisasi. Fitur ini dapat dinonaktifkan kapanpun melalui pengaturan privasi Signal.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Kunci Pendaftaran membantu melindungi nomor telpon Anda dari upaya pendaftaran tanpa otorisasi. Fitur ini dapat dinonaktifkan kapanpun melalui pengaturan privasi Dedi.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Masukkan PIN Kunci Pendaftaran Anda";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Kirimkan saja";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "Nomor aman Signal kami \n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "Nomor aman Dedi kami \n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "Nomor keamanan Anda dengan %@ telah berubah. Anda mungkin mau memverifikasi.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "Anda harus mengaktifkan kode sandi dalam Pengaturan iOS untuk menggunakan Kunci Layar.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autentikasi untuk membuka Signal.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Autentikasi untuk membuka Dedi.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Autentikasi gagal.";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Buka kunci Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Buka kunci Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "Cari berdasarkan nama atau nomer";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Pengiriman undangan gagal, mohon nanti mencoba kembali";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Anda telah mengundang kawan Anda untuk menggunakan Signal!";
+"SEND_INVITE_SUCCESS" = "Anda telah mengundang kawan Anda untuk menggunakan Dedi!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "Undang melalui %@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Undang teman melalui SMS tidak aman?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Apakah kamu akan mengundang beberapa nomor untuk bergabung Signal:";
+"SEND_SMS_INVITE_TITLE" = "Apakah kamu akan mengundang beberapa nomor untuk bergabung Dedi:";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Tentang";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Lokasi %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Jika diaktifkan, Signal akan menggagalkan penyensoran. Jangan nonaktifkan fitur ini kecuali Anda berada di lokasi di mana Signal disensor.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Jika diaktifkan, Dedi akan menggagalkan penyensoran. Jangan nonaktifkan fitur ini kecuali Anda berada di lokasi di mana Dedi disensor.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Pengelabuan Penyensoran telah diaktifkan berdasarkan nomor telepon Anda.";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Penghindar penyensoran hanya dapat diaktifkan ketika terkoneksi dengan internet";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Pengelabuan penyensoran tidak diperlukan; Anda telah terhubung dengan layanan Signal.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Pengelabuan penyensoran tidak diperlukan; Anda telah terhubung dengan layanan Dedi.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Menghindari Penyensoran ";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Tambahkan";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Anda tidak mempunyai kontak di Signal.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Anda tidak mempunyai kontak di Dedi.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Tidak ada hasil pencarian";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Selalu relay panggilan";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Siarkan semua panggilan melalui peladen Signal untuk menghindari pengungkapan alamat IP Anda ke kontak Anda. Mengaktifkannya akan mengurangi kualitas panggilan.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Siarkan semua panggilan melalui peladen Dedi untuk menghindari pengungkapan alamat IP Anda ke kontak Anda. Mengaktifkannya akan mengurangi kualitas panggilan.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Hapus Riwayat Percakapan";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Hak Cipta Open Whisper Systems\nDibawah Lisensi GPLv3";
+"SETTINGS_COPYRIGHT" = "Hak Cipta \nDibawah Lisensi GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Hapus Akun";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "Undang Temanmu";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "Anda bisa menghubungi saya melalui @signalapp. Dapatkan sekarang: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "Anda bisa menghubungi saya melalui Dedi. Dapatkan sekarang: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Suara Pesan";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Batas waktu kunci layar";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Buka kunci layar Signal menggunakan Touch ID, Face ID, atau kode sandi iOS. Anda masih dapat menjawab telpon masuk dan menerima pemberitahuan pesan ketika Kunci Layar diaktifkan. Pengaturan pemberitahuan Signal memperbolehkan Anda menyesuaikan informasi yang ditampilkan.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Buka kunci layar Dedi menggunakan Touch ID, Face ID, atau kode sandi iOS. Anda masih dapat menjawab telpon masuk dan menerima pemberitahuan pesan ketika Kunci Layar diaktifkan. Pengaturan pemberitahuan Dedi memperbolehkan Anda menyesuaikan informasi yang ditampilkan.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Kunci Layar";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Ijinkan layar Aman";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Cegah Signal pra-tinjau muncul pada app switcher";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Cegah Dedi pra-tinjau muncul pada app switcher";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "Integrasi panggilan iOS menunjukkan Signal panggilan pada layar kunci dan riwayat sistem panggilan. Anda mungkin secara pilihan dapat menunjukkan nama dan nomor kontak. Jika iClound diaktifkan, riwayat panggilan akan dibagikan dengan Apple. ";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "Integrasi panggilan iOS menunjukkan Dedi panggilan pada layar kunci dan riwayat sistem panggilan. Anda mungkin secara pilihan dapat menunjukkan nama dan nomor kontak. Jika iClound diaktifkan, riwayat panggilan akan dibagikan dengan Apple. ";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Notifikasi";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Memuat...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Luncurkan Signal untuk mendaftar.";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Luncurkan Dedi untuk mendaftar.";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Tidak Terdaftar";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Luncurkan Signal untuk memperbarui atau mendaftar.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Luncurkan Dedi untuk memperbarui atau mendaftar.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Tidak Siap";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Mengunggah...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Tidak Dapat Menyiapkan Lampiran";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Bagikan ke Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Bagikan ke Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Tunjukkan nomor keamanan yang baru";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Tunjukkan pembicaraan";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Saya mengundang Anda untuk memasang Signal! Tautan tersedia di sini:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Saya mengundang Anda untuk memasang Dedi! Tautan tersedia di sini:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Kosong";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "Buang kaitan %@'?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Signal tidak dapat menautkan perangkat anda";
+"UNLINKING_FAILED_ALERT_TITLE" = "Dedi tidak dapat menautkan perangkat anda";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "Perangkat Tak Bernama";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Gagal unregister dari Signal";
+"UNREGISTER_SIGNAL_FAIL" = "Gagal unregister dari Dedi";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Penerima tidak mendukung tipe lampiran.";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Siapkan profil Anda";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Sekarang Anda dapat membagikan nama dan foto profil dengan kawan Anda di Signal.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Sekarang Anda dapat membagikan nama dan foto profil dengan kawan Anda di Dedi.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Siap foto wajah";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Perkenalkan pesan terbaca";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal saat ini mendukung panggilan video aman. Mulailah sebuah panggilah seperti biasa, ketuk tombol kamera, dan lampai hello";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi saat ini mendukung panggilan video aman. Mulailah sebuah panggilah seperti biasa, ketuk tombol kamera, dan lampai hello";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Hallo panggilan video aman!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal membutuhkan iOS 9 atau lebih baru. Mohon perbarui iOS dalam Pengaturan app >> Umum >> Pembaruan Perangkat Lunak.";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi membutuhkan iOS 9 atau lebih baru. Mohon perbarui iOS dalam Pengaturan app >> Umum >> Pembaruan Perangkat Lunak.";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "Perbarui iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Memperbarui Signal ...";
+"Upgrading Dedi ..." = "Memperbarui Dedi ...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Kembali";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Pesan suara";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Selesaikan setelan pada Signal Desktop";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Selesaikan setelan pada Dedi Desktop";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Nonaktif pesan tersembunyi";

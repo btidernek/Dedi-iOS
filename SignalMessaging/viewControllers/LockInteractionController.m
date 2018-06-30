@@ -37,7 +37,7 @@
 
     LockInteractionController *sharedController = [LockInteractionController sharedController];
     sharedController.alertController =
-        [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Upgrading Signal ...", nil)
+        [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Upgrading Dedi ...", nil)
                                             message:nil
                                      preferredStyle:UIAlertControllerStyleAlert];
 
@@ -73,7 +73,7 @@
     LIControllerRetryBlock retryBlock = ^void(
         LIControllerBlockingOperation blockingOperation, LIControllerCompletionBlock completionBlock) {
         UIAlertController *retryController =
-            [UIAlertController alertControllerWithTitle:@"Upgrading Signal failed"
+            [UIAlertController alertControllerWithTitle:@"Upgrading Dedi failed"
                                                 message:@"An network error occured while upgrading, please check "
                                                         @"your connectivity and try again."
                                          preferredStyle:UIAlertControllerStyleAlert];

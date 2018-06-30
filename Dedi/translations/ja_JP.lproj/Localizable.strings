@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "バージョン%@がApp Storeに出ています";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Signalの最新版が出ています";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Dediの最新版が出ています";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "更新する";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "アーカイブ";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "応答なし";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "通話";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "折り返す";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signalユーザー";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dediユーザー";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "メッセージ交換するまではユーザーの確認はできません";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "バックアップの為のicloudアカウントがありません。";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "SignalにiCloudアカウントへのアクセス権限がありません。";
+"CLOUDKIT_STATUS_RESTRICTED" = "DediにiCloudアカウントへのアクセス権限がありません。";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "クリップボードと比較する";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "招待する";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "連絡先にいるSignalユーザーを確認するには，連絡先へのアクセスが必要です。許可を出すにはiOSの設定に進んでください。";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "連絡先にいるDediユーザーを確認するには，連絡先へのアクセスが必要です。許可を出すにはiOSの設定に進んでください。";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "アプリをリセットします。メッセージや登録情報をサーバから削除します。削除が終わり次第アプリを終了します。";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "最終活動：%@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,10 +683,10 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "検閲回避場所";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "アクセスの許可はiOSの設定で出せます。";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "連絡先を編集するには連絡先へのアクセスが必要です。";
 
 /* table cell label in conversation settings */
@@ -731,11 +731,11 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "編集";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "こんにちは。私は最近，携帯電話での会話・チャットをSignalというアプリで行っています。このアプリを使うと，会話内容が他人に傍受されないという安心感が持てますので，あなたもインストールしてみませんか？iPhoneでもAndroidでも使えます。こちらからインストールできます：%@\n\nSignalは普通のメッセージアプリと同じように使えます。写真や動画も送れますし，電話もできますし，３人以上でのチャットもできます。一番いいところは，通信内容が他人から傍受されないことです。アプリの制作者でさえ傍受できない仕組みになっており、非常に安全です。\n\nSignalの制作者であるOpen Whisper Systemsについての詳細はここを見て下さい：%@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "こんにちは。私は最近，携帯電話での会話・チャットをDediというアプリで行っています。このアプリを使うと，会話内容が他人に傍受されないという安心感が持てますので，あなたもインストールしてみませんか？iPhoneでもAndroidでも使えます。こちらからインストールできます：%@\n\nDediは普通のメッセージアプリと同じように使えます。写真や動画も送れますし，電話もできますし，３人以上でのチャットもできます。一番いいところは，通信内容が他人から傍受されないことです。アプリの制作者でさえ傍受できない仕組みになっており、非常に安全です。\n\nDediの制作者であるについての詳細はここを見て下さい：%@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "チャットアプリをSignalに変更しましょう。";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "チャットアプリをDediに変更しましょう。";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "右上の記入ボタンを押して下さい";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "会話を整理しよう";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "連絡先にSignalユーザーはいないようです";
+"EMPTY_CONTACTS_LABEL_LINE1" = "連絡先にDediユーザーはいないようです";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "だれかを招待しませんか";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "暗証番号が一致しません";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "登録鍵の暗証番号を入力してください。この電話機を再度Signalに登録する場合に必要になります。";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "登録鍵の暗証番号を入力してください。この電話機を再度Dediに登録する場合に必要になります。";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "安全のため，暗証番号による登録鍵を有効にしてください。この電話機をSignalに再登録するときに要求されます。";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "安全のため，暗証番号による登録鍵を有効にしてください。この電話機をDediに再登録するときに要求されます。";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "登録鍵が有効になりました。この電話機を再度Signalに登録するには暗証番号が必要となります。";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "登録鍵が有効になりました。この電話機を再度Dediに登録するには暗証番号が必要となります。";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "登録鍵";
@@ -821,7 +821,7 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "添付ファイルの書き込み失敗による送信失敗";
 
-/* Generic error used whenever Signal can't contact the server */
+/* Generic error used whenever Dedi can't contact the server */
 "ERROR_DESCRIPTION_NO_INTERNET" = "インターネットに接続できませんでした。Wi-Fiのネットワークを変えるか，モバイルデータ通信を使ってみてください。";
 
 /* Error indicating that an outgoing message had no valid recipients. */
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "無効な応答をサービスが返しました";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "電話番号と端末との結び付きがないようです。Signalを削除してインストールし直してください。";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "電話番号と端末との結び付きがないようです。Dediを削除してインストールし直してください。";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "サーバーにエラーが発生しました。少し待って再試行してください。";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "不明なエラーが発生しました";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "連絡先はSignalのユーザーではありません";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "連絡先はDediのユーザーではありません";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "エラー：送信者にSignalを更新して再送してもらってください";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "エラー：送信者にDediを更新して再送してもらってください";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "重複メッセージを受信しました";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "アーカイブ";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "接続中";
@@ -1056,7 +1056,7 @@
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "連絡先へのアクセスを許可する";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "友だちをSignalに招待する";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "友だちをDediに招待する";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "検索";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "既読";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "スキップされました";
 
 /* message status while message is sending. */
@@ -1276,7 +1276,7 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "ビデオ電話をするにはカメラへのアクセスが必要です。アクセスを許可するには，設定→プライバシー→カメラ→Signal，と進んでください。";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "ビデオ電話をするにはカメラへのアクセスが必要です。アクセスを許可するには，設定→プライバシー→カメラ→Dedi，と進んでください。";
 
 /* Alert title
    Alert title when camera is not authorized */
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "名前もメッセージも無し";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "アプリが開いている場合のみ再生";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@がメッセージの消失時間を%@に設定しました";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "発信";
@@ -1487,16 +1487,16 @@
 "PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "クリップボードのなかに安全番号はみつかりませんでした。正しくコピーしましたか？";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "安全番号はSignalユーザーの組合せごとに異なります。%@が表示している安全番号があなたとの番号か確認してください。";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "安全番号はDediユーザーの組合せごとに異なります。%@が表示している安全番号があなたとの番号か確認してください。";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "古いバージョンのSignalを使っています。最新版に更新してください。";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "古いバージョンのDediを使っています。最新版に更新してください。";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "相手先が古いバージョンのSignalを使っています。最新版に更新するようお願いしてください。";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "相手先が古いバージョンのDediを使っています。最新版に更新するようお願いしてください。";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "読み取ったQRコードは安全番号のコードと異なります。双方ともに最新版のSignalを使っているか確認してください。";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "読み取ったQRコードは安全番号のコードと異なります。双方ともに最新版のDediを使っているか確認してください。";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "%@との端末間の暗号化が完全かどうかを確認するには，上記の番号と相手方に表示されている番号を比べてください。\n\nあるいは，相手方の端末上のQRコードを読み取るか，こちらのQRコードを相手に読み取ってもらってください。";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "動画";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Signalを使ってプライベートな会話を楽しんでいる方に評価アンケートをお願いしています。１分もかかりませんし，他のユーザーのプライバシー確保の手助けになりますので、ご協力をお願いします。";
+"RATING_MSG" = "Dediを使ってプライベートな会話を楽しんでいる方に評価アンケートをお願いしています。１分もかかりませんし，他のユーザーのプライバシー確保の手助けになりますので、ご協力をお願いします。";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Signalを評価する";
+"RATING_RATE" = "Dediを評価する";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Signalを支援する";
+"RATING_TITLE" = "Dediを支援する";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "暗証番号を忘れた";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "この電話機を暗証番号なしで登録できるようになるには，Signalを使用しない日が７日以上続く必要があります。";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "この電話機を暗証番号なしで登録できるようになるには，Dediを使用しない日が７日以上続く必要があります。";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "登録鍵が有効になっていますので，登録鍵の暗証番号を入力してください。\n\n登録鍵の暗証番号は，最後のステップで自動的に送信された確認コードとは違います。";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "アカウントを有効化するには，お送りしたコードの確認を行ってください。";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "利用規約と個人情報保護";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "このデバイスを登録すると、Signalの%@に同意を示します";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "このデバイスを登録すると、Dediの%@に同意を示します";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "\n利用規約";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "画面ロックを使うにはiOSでパスコードを設定してください。";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Signalの起動を認証する";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Dediの起動を認証する";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "認証失敗";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Signalを解錠する";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Dediを解錠する";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "名前や電話番号で検索";
@@ -1814,19 +1814,19 @@
 "SEND_INVITE_FAILURE" = "招待の送信に失敗しました。後でもう一度行ってください。";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "友だちをSignalに招待しました";
+"SEND_INVITE_SUCCESS" = "友だちをDediに招待しました";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "SMSで招待する：%@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "安全性の低いSMSで招待しますか？";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "この番号をSignalに招待しますか？";
+"SEND_SMS_INVITE_TITLE" = "この番号をDediに招待しますか？";
 
 /* Navbar title */
-"SETTINGS_ABOUT" = "Signalについて";
+"SETTINGS_ABOUT" = "Dediについて";
 
 /* Title for the 'block contact' section of the 'add to block list' view. */
 "SETTINGS_ADD_TO_BLOCK_LIST_BLOCK_CONTACT_TITLE" = "連絡先を拒否";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "場所：%@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "有効にすると検閲回避を試します。Signalが検閲される場所にいない場合は有効にしないでください。";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "有効にすると検閲回避を試します。Dediが検閲される場所にいない場合は有効にしないでください。";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "検閲回避が登録番号のもとで有効になりました";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "検閲回避はネットに接続されているときのみ有効となります";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "検閲回避は不要です。Signalに接続済みです。";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "検閲回避は不要です。Dediに接続済みです。";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "検閲回避";
@@ -1906,7 +1906,7 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "追加する";
 
-/* A label that indicates the user has no Signal contacts. */
+/* A label that indicates the user has no Dedi contacts. */
 "SETTINGS_BLOCK_LIST_NO_CONTACTS" = "連絡先がありません";
 
 /* A label that indicates the user's search has no matching results. */
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "IPアドレスを隠す";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "すべての通話をSignalサーバーに中継して，IPアドレスが相手に見えないようにします。ただし通話の質は下がります。";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "すべての通話をDediサーバーに中継して，IPアドレスが相手に見えないようにします。ただし通話の質は下がります。";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "会話履歴の消去";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Copyright Open Whisper Systems\nLicensed under the GPLv3";
+"SETTINGS_COPYRIGHT" = "Copyright \nLicensed under the GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "アカウントを削除";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "友だちを招待する";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "私への連絡は@signalappを使ってください。アプリのダウンロード先はhttps://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "私への連絡はDediを使ってください。アプリのダウンロード先はhttp://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "メッセージ";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "画面ロックまでの時間";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Touch IDや，Face ID，パスワードで画面ロックを解除します。画面がロック中でも電話に出たり通知を受け取ることはできます。ロック中に表示させる情報はSignalの通知設定で変更できます。";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Touch IDや，Face ID，パスワードで画面ロックを解除します。画面がロック中でも電話に出たり通知を受け取ることはできます。ロック中に表示させる情報はDediの通知設定で変更できます。";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "画面ロック";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "スクリーンセキュリティを有効化";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Signalの画面をアプリ変更時に表示しません。";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Dediの画面をアプリ変更時に表示しません。";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "通話をiOSに統合すると，Signalでの通話がiOSのロック画面や通話履歴に表示されます。通話相手の名前と番号を表示することも可能になります。ただしiCloudが有効の場合は，通話履歴がAppleと共有されます。";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "通話をiOSに統合すると，Dediでの通話がiOSのロック画面や通話履歴に表示されます。通話相手の名前と番号を表示することも可能になります。ただしiCloudが有効の場合は，通話履歴がAppleと共有されます。";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "通知";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "読み込み中";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "ユーザー登録を行うためにSignalを起動します";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "ユーザー登録を行うためにDediを起動します";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "ユーザー未登録";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Signalを立ち上げ、登録・更新してください。";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Dediを立ち上げ、登録・更新してください。";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "準備不足";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "アップロード中";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "添付ファイル作成に失敗";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Signalと共有";
+"SHARE_EXTENSION_VIEW_TITLE" = "Dediと共有";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "新しい安全番号を表示する";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "会話を表示する";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Signalのインストールをお勧めします。このリンクから入手してください：";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Dediのインストールをお勧めします。このリンクから入手してください：";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "音声なし";
@@ -2243,13 +2243,13 @@
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "安全なビデオ電話にようこそ！";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "SignalはiOS 9以上で動きます。設定>>一般>>ソフトウエア・アップデートでiOSを最新版に更新してください。";
+"UPGRADE_IOS_ALERT_MESSAGE" = "DediはiOS 9以上で動きます。設定>>一般>>ソフトウエア・アップデートでiOSを最新版に更新してください。";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "iOSを更新する";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Signalをアップグレードしています……";
+"Upgrading Dedi ..." = "Dediをアップグレードしています……";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "もどる";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "音声メッセージ";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Signal Desktopが設定を行っています";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Dedi Desktopが設定を行っています";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "メッセージの消失をオフにしました";

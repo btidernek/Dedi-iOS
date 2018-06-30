@@ -684,7 +684,9 @@ private class SignalCallData: NSObject {
             // a TURN connection, so as not to reveal any connectivity information (IP/port) to the caller.
             let unknownCaller = self.contactsManager.signalAccount(forRecipientId: thread.contactIdentifier()) == nil
 
-            let useTurnOnly = unknownCaller || Environment.current().preferences.doCallsHideIPAddress()
+            //BTKDISABLED
+            let useTurnOnly = false
+                //unknownCaller || Environment.current().preferences.doCallsHideIPAddress()
 
             Logger.debug("\(self.logTag) setting peerConnectionClient in \(#function) for: \(newCall.identifiersForLogs)")
             let peerConnectionClient = PeerConnectionClient(iceServers: iceServers, delegate: self, callDirection: .incoming, useTurnOnly: useTurnOnly)

@@ -159,7 +159,7 @@ NSString *const kOWSSoundsStorageGlobalNotificationKey = @"kOWSSoundsStorageGlob
         case OWSSound_Synth:
             return @"Synth";
         case OWSSound_SignalClassic:
-            return @"Signal Classic";
+            return @"Dedi Classic";
 
         // Call Audio
         case OWSSound_Opening:

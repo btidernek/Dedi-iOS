@@ -87,25 +87,26 @@ NS_ASSUME_NONNULL_BEGIN
 
     __weak AdvancedSettingsTableViewController *weakSelf = self;
 
-    OWSTableSection *loggingSection = [OWSTableSection new];
-    loggingSection.headerTitle = NSLocalizedString(@"LOGGING_SECTION", nil);
-    [loggingSection addItem:[OWSTableItem switchItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_DEBUGLOG", @"")
-                                                        isOn:[OWSPreferences isLoggingEnabled]
-                                                      target:weakSelf
-                                                    selector:@selector(didToggleEnableLogSwitch:)]];
-
-
-    if ([OWSPreferences isLoggingEnabled]) {
-        [loggingSection
-            addItem:[OWSTableItem actionItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_SUBMIT_DEBUGLOG", @"")
-                                         actionBlock:^{
-                                             DDLogInfo(@"%@ Submitting debug logs", weakSelf.logTag);
-                                             [DDLog flushLog];
-                                             [Pastelog submitLogs];
-                                         }]];
-    }
-
-    [contents addSection:loggingSection];
+    //BTKDISABLED
+//    OWSTableSection *loggingSection = [OWSTableSection new];
+//    loggingSection.headerTitle = NSLocalizedString(@"LOGGING_SECTION", nil);
+//    [loggingSection addItem:[OWSTableItem switchItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_DEBUGLOG", @"")
+//                                                        isOn:[OWSPreferences isLoggingEnabled]
+//                                                      target:weakSelf
+//                                                    selector:@selector(didToggleEnableLogSwitch:)]];
+//
+//
+//    if ([OWSPreferences isLoggingEnabled]) {
+//        [loggingSection
+//            addItem:[OWSTableItem actionItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_SUBMIT_DEBUGLOG", @"")
+//                                         actionBlock:^{
+//                                             DDLogInfo(@"%@ Submitting debug logs", weakSelf.logTag);
+//                                             [DDLog flushLog];
+//                                             [Pastelog submitLogs];
+//                                         }]];
+//    }
+//
+//    [contents addSection:loggingSection];
 
     OWSTableSection *pushNotificationsSection = [OWSTableSection new];
     pushNotificationsSection.headerTitle

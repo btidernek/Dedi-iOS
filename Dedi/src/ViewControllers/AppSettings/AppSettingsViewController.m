@@ -206,7 +206,8 @@
     BOOL isBackupEnabled = [OWSBackup.sharedManager isBackupEnabled];
     BOOL showBackup = isBackupEnabled;
 #ifdef DEBUG
-    showBackup = YES;
+    //BTKDISABLED
+    showBackup = NO;
 #endif
     if (showBackup) {
         [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SETTINGS_BACKUP",

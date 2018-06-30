@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Αποδοχή νέου αριθμού ασφαλείας";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Signal Call";
+"ACTION_AUDIO_CALL" = "Dedi Call";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Invite to Signal";
+"ACTION_INVITE" = "Invite to Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Send Message";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@ στην ομάδα %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Το Signal δεν μπορεί να εκκινηθεί. Παρακαλούμε να στείλετε τα αρχεία καταγραφής εντοπισμού σφαλμάτων στην ομάδα μας, ώστε να μπορέσουμε να προσπαθήσουμε να επιλυθεί αυτό το ζήτημα.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Το Dedi δεν μπορεί να εκκινηθεί. Παρακαλούμε να στείλετε τα αρχεία καταγραφής εντοπισμού σφαλμάτων στην ομάδα μας, ώστε να μπορέσουμε να προσπαθήσουμε να επιλυθεί αυτό το ζήτημα.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Σφάλμα";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "Η έκδοση %@ είναι τώρα διαθέσιμη στο App Store.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Μια νέα έκδοση του Signal είναι διαθέσιμη";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Μια νέα έκδοση του Dedi είναι διαθέσιμη";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Αναβάθμιση";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Αρχειοθέτηση";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Αποτυχία επιλογής εγγράφου.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Το Signal δεν μπορεί να διαχειριστεί αυτό το αρχείο ως έχει. Προσπάθησε να το συμπιέσεις πριν το στείλεις.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Το Dedi δεν μπορεί να διαχειριστεί αυτό το αρχείο ως έχει. Προσπάθησε να το συμπιέσεις πριν το στείλεις.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Μη υποστηριζόμενο αρχείο";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Select";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Το Signal χρειάζεται πρόσβαση στο μικρόφωνό σου για να πραγματοποιήσει κλήσεις και να ηχογραφήσει μηνύματα φωνής. Μπορείς να δώσεις αυτήν την πρόσβαση στην εφαρμογή Ρυθμίσεις.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Το Dedi χρειάζεται πρόσβαση στο μικρόφωνό σου για να πραγματοποιήσει κλήσεις και να ηχογραφήσει μηνύματα φωνής. Μπορείς να δώσεις αυτήν την πρόσβαση στην εφαρμογή Ρυθμίσεις.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Απαιτείται πρόσβαση στο μικρόφωνο";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "Καμία απάντηση.";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Το Signal %@";
+"CALL_STATUS_FORMAT" = "Το Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Κλήση";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "Κάλεσε Πίσω";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Χρήστης Signal";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Χρήστης Dedi";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Αυτός ο χρήστης δεν μπορεί να επιβεβαιωθεί μέχρι να ανταλλάξετε μηνύματα.";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "You do not have an iCloud Account for backups.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal was not allowed to access your iCloud account for backups.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi was not allowed to access your iCloud account for backups.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "Σύγκριση με Πρόχειρο";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Πρόσκληση";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Για να δείς ποιές από τις επαφές σου είναι χρήστες του Signal, επέτρεψε πρόσβαση στις επαφές στις ρυθμίσεις του συστήματος.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Για να δείς ποιές από τις επαφές σου είναι χρήστες του Dedi, επέτρεψε πρόσβαση στις επαφές στις ρυθμίσεις του συστήματος.";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Αυτό θα επαναφέρει την εφαρμογή στην αρχική κατάσταση, διαγράφοντας τα μηνύματα και το λογαριασμό σου από τον εξυπηρετητή. Μετά τη διαγραφή των δεδομένων, η εφαρμογή θα κλείσει.";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Τελευταία ενεργός/ή: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Τοποθεσία παράκαμψης λογοκρισίας";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Μπορείς να δώσεις πρόσβαση στην εφαρμογή Ρυθμίσεις";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Το Signal χρειάζεται πρόσβαση στις επαφές για να επεξεργαστεί πληροφορίες επαφές";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Το Dedi χρειάζεται πρόσβαση στις επαφές για να επεξεργαστεί πληροφορίες επαφές";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Επεξεργασία Ομάδας";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Επεξεργασία";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Γειά,\n\nτελευταία χρησιμοποιώ το Signal για να κρατήσω τα μηνύματα στο iPhone μου ιδιωτικά. Θα ήθελα να το εγκαταστήσεις και συ, για να είμαστε σίγουροι οτι μόνο εμείς οι δυο μπορούμε να διαβάσουμε τα μηνύματα μας και να ακούσουμε τις συνομιλίες μας.\n\nΤο Signal είναι διαθέσιμο για το iPhone και το Android εδώ: %@\n\nΔουλεύει σαν την εφαρμογή μηνυμάτων που ήδη χρησιμοποιείς. Μπορούμε να στείλουμε φωτογραφίες και βίντεο, να κάνουμε κλήσεις, και να αρχίσουμε ομαδικές συνομιλίες. Το καλύτερο είναι οτι κανείς δεν θα μπορεί να τα δει, ούτε καν αυτοί που έφτιαξαν το Signal!\n\nΜπορείς να διαβάσεις περισσότερα για το Open Whisper Systems, τον οργανισμό που έφτιαξε το Signal, εδώ: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Γειά,\n\nτελευταία χρησιμοποιώ το Dedi για να κρατήσω τα μηνύματα στο iPhone μου ιδιωτικά. Θα ήθελα να το εγκαταστήσεις και συ, για να είμαστε σίγουροι οτι μόνο εμείς οι δυο μπορούμε να διαβάσουμε τα μηνύματα μας και να ακούσουμε τις συνομιλίες μας.\n\nΤο Dedi είναι διαθέσιμο για το iPhone και το Android εδώ: %@\n\nΔουλεύει σαν την εφαρμογή μηνυμάτων που ήδη χρησιμοποιείς. Μπορούμε να στείλουμε φωτογραφίες και βίντεο, να κάνουμε κλήσεις, και να αρχίσουμε ομαδικές συνομιλίες. Το καλύτερο είναι οτι κανείς δεν θα μπορεί να τα δει, ούτε καν αυτοί που έφτιαξαν το Dedi!\n\nΜπορείς να διαβάσεις περισσότερα για το , τον οργανισμό που έφτιαξε το Dedi, εδώ: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Ας χρησιμοποιήσουμε το Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Ας χρησιμοποιήσουμε το Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Πάτα το κουμπί σύνθεσης";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "Άρχισε την πρώτη συζήτησή σου στο Signal!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "Άρχισε την πρώτη συζήτησή σου στο Dedi!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Μπορείς να αρχειοθετήσεις όλες τις μη ενεργές συζητήσεις από τα εισερχόμενά σου για να τις έχεις διαθέσιμες αργότερα.";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Ξεκαθάρισμα των Συζητήσεών σου";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Καμία απο τις επαφές σου δεν χρησιμοποιεί το Signal.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Καμία απο τις επαφές σου δεν χρησιμοποιεί το Dedi.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Γιατί δεν προσκαλείς κάποιον/α;";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "Τα PIN δεν ταιριάζουν.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Πληκτρολόγησε ένα PIN κλειδώματος εγγραφής. Θα σου ζητηθεί να εισάγεις αυτό το ΡΙΝ την επόμενη φορά που θα εγγράψεις τον αριθμό τηλεφώνου σου στο Signal.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Πληκτρολόγησε ένα PIN κλειδώματος εγγραφής. Θα σου ζητηθεί να εισάγεις αυτό το ΡΙΝ την επόμενη φορά που θα εγγράψεις τον αριθμό τηλεφώνου σου στο Dedi.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Για αυξημένη ασφάλεια, ενεργοποίησε το PIN κλείδωματος εγγραφής που θα απαιτείται για να επανεγγράψεις τον αριθμό τηλεφώνου σου στο Signal.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Για αυξημένη ασφάλεια, ενεργοποίησε το PIN κλείδωματος εγγραφής που θα απαιτείται για να επανεγγράψεις τον αριθμό τηλεφώνου σου στο Dedi.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Το κλείδωμα εγγραφής είναι ενεργοποιημένο. Θα χρειαστεί να εισάγεις το PIN σας κατά την επανεγγραφή του αριθμού τηλεφώνου σου με το Signal.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Το κλείδωμα εγγραφής είναι ενεργοποιημένο. Θα χρειαστεί να εισάγεις το PIN σας κατά την επανεγγραφή του αριθμού τηλεφώνου σου με το Dedi.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Κλείδωμα εγγραφής";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Αποτυχία λόγω αποτυχίας εγγραφής συνημμένου.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Το Signal δεν μπόρεσε να συνδεθεί στο διαδίκτυο. Παρακαλώ προσπάθησε να συνδεθείς σε άλλο δίκτυο WiFi ή να χρησιμοποιήσεις τα δεδομένα της κινητής.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Το Dedi δεν μπόρεσε να συνδεθεί στο διαδίκτυο. Παρακαλώ προσπάθησε να συνδεθείς σε άλλο δίκτυο WiFi ή να χρησιμοποιήσεις τα δεδομένα της κινητής.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Αποτυχία αποστολής μηνύματος λόγω απουσίας έγκυρων παραληπτών.";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Invalid response from service.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Η συσκευή σου δεν είναι πλέον εγγεγραμμένη για τον αριθμό τηλεφώνου σου. Θα πρέπει να απεγκαταστήσεις και επανεγκαταστήσεις το Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Η συσκευή σου δεν είναι πλέον εγγεγραμμένη για τον αριθμό τηλεφώνου σου. Θα πρέπει να απεγκαταστήσεις και επανεγκαταστήσεις το Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Σφάλμα διακομιστή. Παρακαλώ ξαναδοκίμασε αργότερα.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Συνέβη ένα άγνωστο σφάλμα.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Η επαφή δεν χρησιμοποιεί Signal.";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Η επαφή δεν χρησιμοποιεί Dedi.";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Αποτυχία: Ζήτα από τον/την αποστολέα να αναβαθμίσει το Signal και να ξαναστείλει.";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Αποτυχία: Ζήτα από τον/την αποστολέα να αναβαθμίσει το Dedi και να ξαναστείλει.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Λάβαμε διπλότυπο μήνυμα.";
@@ -861,7 +861,7 @@
 "ERROR_MESSAGE_INVALID_MESSAGE" = "Το μήνυμα που λάβαμε δεν ήταν συγχρονισμένο. Πάτα για επαναφορά της ασφαλούς συνεδρίας.";
 
 /* No comment provided by engineer. */
-"ERROR_MESSAGE_INVALID_VERSION" = "Λήψη μηνύματος το οποίο δεν είναι συμβατό με αυτή την έκδοση του Signal.";
+"ERROR_MESSAGE_INVALID_VERSION" = "Λήψη μηνύματος το οποίο δεν είναι συμβατό με αυτή την έκδοση του Dedi.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_NO_SESSION" = "Δεν υπάρχει διαθέσιμή συνεδρία για αυτή την επαφή.";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Archive";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Συνδέεται...";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "Μη έγκυρο αρχείο ήχου.";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Για να προσκαλέσεις τις επαφές σου, πρέπει να δώσεις πρόσβαση στις επαφές σου στο Signal από την εφαρμογή Ρυθμίσεις.";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Για να προσκαλέσεις τις επαφές σου, πρέπει να δώσεις πρόσβαση στις επαφές σου στο Dedi από την εφαρμογή Ρυθμίσεις.";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Επέτρεψε Πρόσβαση στις Επαφές";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Προσκληση φίλων στο Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Προσκληση φίλων στο Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Αναζήτηση";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Διαβάστηκε";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Skipped";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Το Signal χρειάζεται πρόσβαση στην κάμερα για βιντεοκλήσεις. Μπορείς να παραχωρήσεις αυτή την άδεια στην εφαρμογή Ρυθμίσεις >> Ιδιωτικότητα >> Κάμερα >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Το Dedi χρειάζεται πρόσβαση στην κάμερα για βιντεοκλήσεις. Μπορείς να παραχωρήσεις αυτή την άδεια στην εφαρμογή Ρυθμίσεις >> Ιδιωτικότητα >> Κάμερα >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Το Signal χρειάζεται πρόσβαση στη κάμερα.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Το Dedi χρειάζεται πρόσβαση στη κάμερα.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Μπορείτε να εκχωρήσετε αυτό το δικαίωμα στις Ρυθμίσεις.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Το Signal απαιτεί πρόσβαση στην βιβλιοθήκη πολυμέσων για να γίνει αυτό.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Το Dedi απαιτεί πρόσβαση στην βιβλιοθήκη πολυμέσων για να γίνει αυτό.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "Αναπάντητη κλήση απο τον/την %@.";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "Κανένα όνομα η περιεχόμενο";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Αναπαραγωγή οσο είναι ανοιχτή η εφαρμογή";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Ο/Η %@ όρισε τον χρόνο εξαφάνισης μηνυμάτων σε %@.";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Εξερχόμενη κλήση";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Ο αριθμός στο πρόχειρο δεν μοιάζει με τον σωστό αριθμό ασφαλείας για αυτή την συζήτηση.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Το Signal δεν βρήκε αριθμό ασφαλείας στο πρόχειρό σου. Το αντέγραψες σωστά;";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Το Dedi δεν βρήκε αριθμό ασφαλείας στο πρόχειρό σου. Το αντέγραψες σωστά;";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Κάθε ζευγάρι χρηστών Signal μοιράζεται έναν ξεχωριστό αριθμό ασφαλείας, Έλεγξε καλά ότι ο/η %@ σου δείχνει τον *δικό σου* ξεχωριστό αριθμό ασφαλείας.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Κάθε ζευγάρι χρηστών Dedi μοιράζεται έναν ξεχωριστό αριθμό ασφαλείας, Έλεγξε καλά ότι ο/η %@ σου δείχνει τον *δικό σου* ξεχωριστό αριθμό ασφαλείας.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Χρησιμοποιείς μια παλιά έκδοση του Signal. Πρέπει να το αναβαθμίσεις προτού μπορέσεις να επιβεβαιώσεις.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Χρησιμοποιείς μια παλιά έκδοση του Dedi. Πρέπει να το αναβαθμίσεις προτού μπορέσεις να επιβεβαιώσεις.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Ο/Η συνομιλητής/τρια χρησιμοποιεί μια παλιά έκδοση του Signal. Πρέπει να το αναβαθμίσει προτού μπορέσεις να επιβεβαιώσεις.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Ο/Η συνομιλητής/τρια χρησιμοποιεί μια παλιά έκδοση του Dedi. Πρέπει να το αναβαθμίσει προτού μπορέσεις να επιβεβαιώσεις.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Ο σκαναρισμένος κωδικός δεν μοιάζει με κωδικό αριθμού ασφαλείας. Χρησιμοποιείτε και οι δυο σας την αναβαθμισμένη έκδοση του Signal;";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Ο σκαναρισμένος κωδικός δεν μοιάζει με κωδικό αριθμού ασφαλείας. Χρησιμοποιείτε και οι δυο σας την αναβαθμισμένη έκδοση του Dedi;";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Αν επιθυμείς να επιβεβαιώσεις την ασφάλεια της κρυπτογράφησης από άκρο σε άκρο με τον/την %@, σύγκρινε τους παραπάνω αριθμούς με τους αριθμούς στην συσκευή του/της.\n\nΕναλλακτικά, μπορείς να σκανάρεις τον κωδικό στο τηλέφωνό του/της, ή να του/της ζητήσεις να σκανάρει τον δικό σου κωδικό.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Εικόνα προφίλ";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Το Προφίλ Signal σου θα είναι ορατό από τις επαφές σου, όταν ξεκινάς νέες συζητήσεις και όταν το μοιράζεσαι με άλλους χρήστες και ομάδες.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Το Προφίλ Dedi σου θα είναι ορατό από τις επαφές σου, όταν ξεκινάς νέες συζητήσεις και όταν το μοιράζεσαι με άλλους χρήστες και ομάδες.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Πάτα εδώ για να μάθεις περισσότερα.";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Αν σου αρέσει να χρησιμοποιείς το Signal για να έχεις ιδιωτικές συνομιλίες, μπορείς να υποστηρίξεις το έργο μας αξιολογώντας την εφαρμογή. Δεν θα σου πάρει περισσότερο από ένα λεπτό, και θα βοηθήσει και άλλους να βρουν κάποια προστασία της ιδιωτικής τους ζωής.";
+"RATING_MSG" = "Αν σου αρέσει να χρησιμοποιείς το Dedi για να έχεις ιδιωτικές συνομιλίες, μπορείς να υποστηρίξεις το έργο μας αξιολογώντας την εφαρμογή. Δεν θα σου πάρει περισσότερο από ένα λεπτό, και θα βοηθήσει και άλλους να βρουν κάποια προστασία της ιδιωτικής τους ζωής.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Αξιολόγηση του Signal";
+"RATING_RATE" = "Αξιολόγηση του Dedi";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Υποστήριξε το Signal!";
+"RATING_TITLE" = "Υποστήριξε το Dedi!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "Ξέχασα το ΡΙΝ μου.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Η εγγραφή από αυτό τον αριθμό τηλεφώνου θα είναι δυνατή χωρίς το PIN κλειδώματος εγγραφής αφού περάσουν 7 ημέρες από την τελευταία φορά που αυτός ο αριθμός τηλεφώνου ήταν ενεργός στο Signal. ";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Η εγγραφή από αυτό τον αριθμό τηλεφώνου θα είναι δυνατή χωρίς το PIN κλειδώματος εγγραφής αφού περάσουν 7 ημέρες από την τελευταία φορά που αυτός ο αριθμός τηλεφώνου ήταν ενεργός στο Dedi. ";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Το κλείδωμα εγγραφής για αυτό τον αριθμό τηλεφώνου είναι ενεργοποιημένο. Παρακαλώ γράψε το PIN κλειδώματος εγγραφής.\n\nΤο PIN κλειδώματος εγγραφής είναι διαφορετικό από τον αυτοματοποιημένο κωδικό επαλήθευσης που είχε σταλεί στον αριθμό τηλεφώνου σου κατά το προηγούμενο βήμα.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Δεν μπορούμε να ενεργοποιήσουμε τον λογαριασμό σου μέχρι να επιβεβαιώσεις τον κωδικό που σου στείλαμε.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Terms & Privacy Policy";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "By registering this device, you agree to Signal's %@";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "By registering this device, you agree to Dedi's %@";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "terms";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Ο αριθμός που προσπαθείς να καταχωρήσεις έχει ήδη καταχωρηθεί σε κάποιον άλλον εξυπηρετητή. παρακαλώ απεγγράψου από εκεί και ξαναδοκίμασε.";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Το κλείδωμα εγγραφής είναι ενεργοποιημένο για τον αριθμό τηλεφώνου σου. Για να σε βοηθήσουμε να απομνημονεύσεις το PIN κλειδώματος εγγραφής, το Signal θα σου ζητήσει περιστασιακά να το επιβεβαιώνεις.";
+"REMINDER_2FA_BODY" = "Το κλείδωμα εγγραφής είναι ενεργοποιημένο για τον αριθμό τηλεφώνου σου. Για να σε βοηθήσουμε να απομνημονεύσεις το PIN κλειδώματος εγγραφής, το Dedi θα σου ζητήσει περιστασιακά να το επιβεβαιώνεις.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Υπενθύμιση:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Το κλείδωμα εγγραφής προστατεύει το αριθμό τηλεφώνου σου από προσπάθειες μη εξουσιοδοτημένης εγγραφής. Αυτή η δυνατότητα μπορεί να απενεργοποιηθεί οποιαδήποτε στιγμή στις ρυθμίσεις ιδιωτικότητας του Signal.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Το κλείδωμα εγγραφής προστατεύει το αριθμό τηλεφώνου σου από προσπάθειες μη εξουσιοδοτημένης εγγραφής. Αυτή η δυνατότητα μπορεί να απενεργοποιηθεί οποιαδήποτε στιγμή στις ρυθμίσεις ιδιωτικότητας του Dedi.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Γράψε το ΡΙΝ κλειδώματος εγγραφής σου";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Αποστολή παρ'όλα αυτά";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "Ο αριθμός ασφαλείας Signal μας:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "Ο αριθμός ασφαλείας Dedi μας:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "Ο αριθμός ασφαλείας με τον/την %@ άλλαξε. Ίσως θέλεις να τον επιβεβαιώσεις.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "You must enable a passcode in your iOS Settings in order to use Screen Lock.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticate to open Signal.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticate to open Dedi.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Authentication Failed";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Unlock Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Unlock Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "Αναζήτηση με όνομα ή αριθμό";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Η αποστολή της πρόσκλησης απέτυχε, παρακαλώ δοκίμασε ξανά αργότερα.";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Προσκάλεσες τον/την φίλο/η σου να χρησιμοποιήσει το Signal!";
+"SEND_INVITE_SUCCESS" = "Προσκάλεσες τον/την φίλο/η σου να χρησιμοποιήσει το Dedi!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "Πρόσκληση μέσω SMS: %@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Πρόσκληση φίλου/ης μέσω μη-ασφαλούς SMS;";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Θέλεις να προσκαλέσεις τον ακόλουθο αριθμό στο Signal:";
+"SEND_SMS_INVITE_TITLE" = "Θέλεις να προσκαλέσεις τον ακόλουθο αριθμό στο Dedi:";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Για εμάς";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Τοποθεσία: %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Αν είναι ενεργοποιημένο, το Signal θα προσπαθήσει να παρακάμψει την λογοκρισία. Μην ενεργοποιήσεις αυτή την επιλογή εκτός και αν βρίσκεσαι σε περιοχή όπου το Signal έχει λογοκριθεί/μπλοκαριστεί.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Αν είναι ενεργοποιημένο, το Dedi θα προσπαθήσει να παρακάμψει την λογοκρισία. Μην ενεργοποιήσεις αυτή την επιλογή εκτός και αν βρίσκεσαι σε περιοχή όπου το Dedi έχει λογοκριθεί/μπλοκαριστεί.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Η παράκαμψη λογοκρισίας ενεργοποιήθηκε βάσει του αριθμού τηλεφώνου του λογαριασμού σου.";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Η παράκαμψη λογοκρισίας μπορεί να ενεργοποιηθεί μόνο όταν υπάρχει σύνδεση στο διαδίκτυο.";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Η παράκαμψη λογοκρισίας δεν είναι απαραίτητη, είσαι ήδη συνδεδεμένος/η στις υπηρεσίες του Signal.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Η παράκαμψη λογοκρισίας δεν είναι απαραίτητη, είσαι ήδη συνδεδεμένος/η στις υπηρεσίες του Dedi.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Παράκαμψη Λογοκρισίας";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Προσθήκη...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Δεν έχεις επαφές στο Signal.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Δεν έχεις επαφές στο Dedi.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Δεν βρέθηκαν αποτελέσματα";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Πάντα να αναμεταδίδονται οι κλήσεις";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Αναμετάδοση όλων των κλήσεων μέσω του διακομιστή Signal για να αποφύγεις την αποκάλυψη της IP διεύθυνσής σου στην επαφή σου. Η ενεργοποίηση θα ρίξει την ποιότητα των κλήσεων.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Αναμετάδοση όλων των κλήσεων μέσω του διακομιστή Dedi για να αποφύγεις την αποκάλυψη της IP διεύθυνσής σου στην επαφή σου. Η ενεργοποίηση θα ρίξει την ποιότητα των κλήσεων.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Εκκαθάριση ιστορικού συνομιλιών";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Πνευματική ιδιοκτησία Open Whisper Systems\nΥπό την άδεια GPLv3";
+"SETTINGS_COPYRIGHT" = "Πνευματική ιδιοκτησία \nΥπό την άδεια GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Διαγραφή Λογαριασμού";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "Προσκάλεσε τους φίλους και τις φίλες σου";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "You can reach me using @signalapp. Get it now: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "You can reach me using Dedi. Get it now: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Ήχος μηνυμάτων";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Screen Lock Timeout";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Unlock Signal's screen using Touch ID, Face ID, or your iOS device passcode. You can still answer incoming calls and receive message notifications while Screen Lock is enabled. Signal's notification settings allow you to customize the information that is displayed.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Unlock Dedi's screen using Touch ID, Face ID, or your iOS device passcode. You can still answer incoming calls and receive message notifications while Screen Lock is enabled. Dedi's notification settings allow you to customize the information that is displayed.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Screen Lock";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Ενεργοποίηση Ασφάλειας Οθόνης";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Να μην εμφανίζονται προεπισκοπήσεις του Signal στον εναλλαγέα εφαρμογών.";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Να μην εμφανίζονται προεπισκοπήσεις του Dedi στον εναλλαγέα εφαρμογών.";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "Η ενσωμάτωση κλήσεων iOS εμφανίζει τις κλήσεις Signal στην οθόνη κλειδώματος και στο ιστορικό κλήσεων του συστήματος. Μπορείς προαιρετικά να εμφανίζεις το όνομα και τον αριθμό της επαφής σου. Αν το iCloud είναι ενεργοποιημένο, αυτό το ιστορικό κλήσεων θα αποστέλλεται στην Apple.";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "Η ενσωμάτωση κλήσεων iOS εμφανίζει τις κλήσεις Dedi στην οθόνη κλειδώματος και στο ιστορικό κλήσεων του συστήματος. Μπορείς προαιρετικά να εμφανίζεις το όνομα και τον αριθμό της επαφής σου. Αν το iCloud είναι ενεργοποιημένο, αυτό το ιστορικό κλήσεων θα αποστέλλεται στην Apple.";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Ειδοποιήσεις";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Φορτώνει...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Άνοιξε την εφαρμογή Signal για να εγγραφείς.";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Άνοιξε την εφαρμογή Dedi για να εγγραφείς.";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Μη εγγεγραμμένος";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Άνοιγμα της εφαρμογής Signal για εγγραφή.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Άνοιγμα της εφαρμογής Dedi για εγγραφή.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Όχι ακόμα έτοιμο";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Μεταφόρτωση...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Αδυναμία προετοιμασίας συνημμένου";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Κοινοποίηση τού Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Κοινοποίηση τού Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Εμφάνιση νέου αριθμού ασφαλείας";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Εμφάνιση συζήτησης";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Σε προσκαλώ να εγκαταστήσεις το Signal! Να ο σύνδεσμος:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Σε προσκαλώ να εγκαταστήσεις το Dedi! Να ο σύνδεσμος:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Κανένας";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "Αποσύνδεση του/της \"%@\";";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Το Signal δεν μπόρεσε να αποσυνδέσει την συσκευή σου.";
+"UNLINKING_FAILED_ALERT_TITLE" = "Το Dedi δεν μπόρεσε να αποσυνδέσει την συσκευή σου.";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "Ανώνυμη συσκευή";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Αποτυχία απεγγραφής από το Signal.";
+"UNREGISTER_SIGNAL_FAIL" = "Αποτυχία απεγγραφής από το Dedi.";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Λήψη συνημμένου του οποίου ο τύπος δεν υποστηρίζεται.";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Σετάρισμα του προφίλ σου";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Μπορείς πλέον να μοιράζεσαι μια φωτογραφία προφίλ και ένα όνομα με τους/τις φίλους/ες σου στο Signal.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Μπορείς πλέον να μοιράζεσαι μια φωτογραφία προφίλ και ένα όνομα με τους/τις φίλους/ες σου στο Dedi.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Έτοιμος/η για μια φωτογραφία;";
@@ -2237,7 +2237,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Ήρθαν τα αποδεικτικά ανάγνωσης";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Το Signal υποστηρίζει  πλέον ασφαλείς βιντεοκλήσεις. Απλά κάνε μια κλήση Signal όπως συνήθως, πάτα το κουμπί για το βίντεο, και χαμογέλα.";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Το Dedi υποστηρίζει  πλέον ασφαλείς βιντεοκλήσεις. Απλά κάνε μια κλήση Dedi όπως συνήθως, πάτα το κουμπί για το βίντεο, και χαμογέλα.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Καλωσορίσατε, Ασφαλείς βιντεοκλησεις!";
@@ -2249,7 +2249,7 @@
 "UPGRADE_IOS_ALERT_TITLE" = "Αναβάθμιση iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Το Signal αναβαθμίζεται...";
+"Upgrading Dedi ..." = "Το Dedi αναβαθμίζεται...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Πίσω";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Μήνυμα φωνής";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Ολοκλήρωσε την εγκατάσταση στο Signal Desktop.";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Ολοκλήρωσε την εγκατάσταση στο Dedi Desktop.";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Απενεργοποίησες τα μηνύματα που εξαφανίζονται.";

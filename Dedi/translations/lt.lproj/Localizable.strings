@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "Priimti naują saugumo numerį";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Signal skambutis";
+"ACTION_AUDIO_CALL" = "Dedi skambutis";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Pakviesti į Signal";
+"ACTION_INVITE" = "Pakviesti į Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Siųsti žinutę";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@, grupėje %@: %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Nepavyksta paleisti Signal. Prašome, atsiųskite savo derinimo žurnalus mūsų komandai, kad mes galėtume išspręsti šią problemą.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Nepavyksta paleisti Dedi. Prašome, atsiųskite savo derinimo žurnalus mūsų komandai, kad mes galėtume išspręsti šią problemą.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Klaida";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "Versija %@ yra prieinama App Store.";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Yra prieinama nauja Signal versija";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Yra prieinama nauja Dedi versija";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "Atnaujinti";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "Archyvuoti";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "Nepavyko pasirinkti dokumento.";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal negali apdoroti failo tokiu pavidalu. Prieš siųsdami, pabandykite jį suglaudinti į zip failą.";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi negali apdoroti failo tokiu pavidalu. Prieš siųsdami, pabandykite jį suglaudinti į zip failą.";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "Nepalaikomas failas";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Pasirinkti";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Tam, kad galėtų skambinti ir įrašinėti balso žinutes, Signal reikia prieigos prie jūsų mikrofono. Jūs galite suteikti šį leidimą Nustatymų (angl. Settings) programėlėje.";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Tam, kad galėtų skambinti ir įrašinėti balso žinutes, Dedi reikia prieigos prie jūsų mikrofono. Jūs galite suteikti šį leidimą Nustatymų (angl. Settings) programėlėje.";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "Reikalinga prieiga prie mikrofono";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "Nėra atsakymo.";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "Skambinti";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "Perskambinti";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signal naudotojas";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dedi naudotojas";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "Šis naudotojas negali būti patvirtintas tol, kol jūs neapsikeitėte su juo žinutėmis.";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "Jūs neturite iCloud paskyros, skirtos atsarginėms kopijoms.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal nebuvo leista gauti prieigą prie jūsų iCloud paskyros, skirtos atsarginėms kopijoms.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi nebuvo leista gauti prieigą prie jūsų iCloud paskyros, skirtos atsarginėms kopijoms.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "Palyginti su iškarpine";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "Pakviesti";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Norėdami matyti, kurie jūsų kontaktai yra Signal naudotojai, leiskite savo sistemos nustatymuose kontaktų prieigą.";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "Norėdami matyti, kurie jūsų kontaktai yra Dedi naudotojai, leiskite savo sistemos nustatymuose kontaktų prieigą.";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "Tai atstatys programą, ištrinant jūsų žinutes ir išregistruojant jus iš serverio. Po duomenų ištrynimo programa užsivers.";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Iš naujo registruoti šį telefono numerį";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Įrenginys daugiau nebėra registruotas. Jūsų telefono numeris gali būti registruojamas su Signal kitame įrenginyje. Bakstelėkite, norėdami registruoti iš naujo.";
+"DEREGISTRATION_WARNING" = "Įrenginys daugiau nebėra registruotas. Jūsų telefono numeris gali būti registruojamas su Dedi kitame įrenginyje. Bakstelėkite, norėdami registruoti iš naujo.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "Paskutinį kartą aktyvus: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "Cenzūravimo apėjimo vieta";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "Jūs galite suteikti prieigą Nustatymų (angl. Settings) programėlėje.";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Norint taisyti kontaktinę informaciją, Signal reikia kontaktų prieigos";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Norint taisyti kontaktinę informaciją, Dedi reikia kontaktų prieigos";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "Taisyti grupę";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "Taisyti";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "Labas,\n\nPaskutiniu metu, tam kad savo iPhone telefone išlaikyčiau pokalbius privačius, aš naudoju Signal. Norėčiau, kad ir tu įsidiegtum šią programėlę, taigi, tokiu būdu mes galėtume būti tikri, kad tik tu ir aš galime skaityti savo žinutes ir girdėti savo skambučius.\n\nSignal yra prieinama iPhone ir Android telefonams. Atsisiųsk ją iš čia: %@\n\nSignal veikia panašiai kaip tavo dabartinė susirašinėjimo programėlė. Mes galime siųsti paveikslus ir vaizdo įrašus, skambinti ir pradėti grupės pokalbius. Geriausia yra tai, kad niekas negali to pamatyti, netgi žmonės, kurie sukūrė Signal!\n\nGali daugiau paskaityti apie Open Whisper Systems (žmones, kurie sukūrė Signal) čia: %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "Labas,\n\nPaskutiniu metu, tam kad savo iPhone telefone išlaikyčiau pokalbius privačius, aš naudoju Dedi. Norėčiau, kad ir tu įsidiegtum šią programėlę, taigi, tokiu būdu mes galėtume būti tikri, kad tik tu ir aš galime skaityti savo žinutes ir girdėti savo skambučius.\n\nDedi yra prieinama iPhone ir Android telefonams. Atsisiųsk ją iš čia: %@\n\nDedi veikia panašiai kaip tavo dabartinė susirašinėjimo programėlė. Mes galime siųsti paveikslus ir vaizdo įrašus, skambinti ir pradėti grupės pokalbius. Geriausia yra tai, kad niekas negali to pamatyti, netgi žmonės, kurie sukūrė Dedi!\n\nGali daugiau paskaityti apie  (žmones, kurie sukūrė Dedi) čia: %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Persijunkime į Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Persijunkime į Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "Bakstelėkite ant mygtuko, kuriame pavaizduotas pieštukas.";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "Pradėkite savo pirmąjį Signal pokalbį!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "Pradėkite savo pirmąjį Dedi pokalbį!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "Iš savo skyrelio Gauta, galite archyvuoti pasyvius pokalbius vėlesniam naudojimui.";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "Išvalyti savo pokalbius.";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "Nei vienas iš jūsų kontaktų neturi Signal.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "Nei vienas iš jūsų kontaktų neturi Dedi.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "Kodėl gi jums ko nors nepakvietus?";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN nesutampa.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Įveskite Registracijos užrakto PIN. Kita kartą jums registruojant šį telefono numerį su Signal, jūsų bus prašoma įvesti šį PIN.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Įveskite Registracijos užrakto PIN. Kita kartą jums registruojant šį telefono numerį su Dedi, jūsų bus prašoma įvesti šį PIN.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Padidintam saugumui, įjunkite Registracijos užraktą, kurio bus reikalaujama norint vėl registruoti šį telefono numerį su Signal.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "Padidintam saugumui, įjunkite Registracijos užraktą, kurio bus reikalaujama norint vėl registruoti šį telefono numerį su Dedi.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registracijos užraktas įjungtas. Kitą kartą vėl registruodami savo telefono numerį su Signal, turėsite įvesti savo PIN.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registracijos užraktas įjungtas. Kitą kartą vėl registruodami savo telefono numerį su Dedi, turėsite įvesti savo PIN.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Registracijos užraktas";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "Patyrė nesėkmę dėl nepavykusio įrašyti priedo.";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal nepavyko prisijungti prie interneto. Prašome pabandyti iš kito bevielio (WiFi) tinklo arba naudoti mobiliuosius duomenis.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi nepavyko prisijungti prie interneto. Prašome pabandyti iš kito bevielio (WiFi) tinklo arba naudoti mobiliuosius duomenis.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "Žinutės išsiuntimas nepavyko dėl teisingų gavėjų trūkumo.";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Neteisingas atsakymas iš paslaugos.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Jūsų įrenginys daugiau nebėra priregistruotas prie jūsų telefono numerio. Jūs privalote pašalinti ir iš naujo įdiegti Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "Jūsų įrenginys daugiau nebėra priregistruotas prie jūsų telefono numerio. Jūs privalote pašalinti ir iš naujo įdiegti Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "Serverio klaida. Prašome vėliau bandyti dar kartą.";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "Įvyko nežinoma klaida.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontaktas nėra Signal naudotojas.";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "Kontaktas nėra Dedi naudotojas.";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Nesėkmė: Paprašykite, kad siuntėjas atsinaujintų Signal ir siųstų iš naujo.";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "Nesėkmė: Paprašykite, kad siuntėjas atsinaujintų Dedi ir siųstų iš naujo.";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "Gauta dviguba žinutė.";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Archyvuoti";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "Jungiamasi…";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "Neteisingas garso failas.";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Norint pakviesti savo kontaktus, jums reikia Nustatymų (angl. Settings) programėlėje leisti programėlei Signal prieigą prie savo kontaktų.";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "Norint pakviesti savo kontaktus, jums reikia Nustatymų (angl. Settings) programėlėje leisti programėlei Dedi prieigą prie savo kontaktų.";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "Leisti kontaktų prieigą";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Pakviesti draugus į Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "Pakviesti draugus į Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "Ieškoti";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "Perskaitytos";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Praleista";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Norint skambinti su vaizdu, Signal reikia prieigos prie jūsų kameros. Jūs galite suteikti šį leidimą Nustatymų (angl. Settings) programėlėje >> Privatumas (angl. Privacy) >> Kamera (angl. Camera) >> Signal";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Norint skambinti su vaizdu, Dedi reikia prieigos prie jūsų kameros. Jūs galite suteikti šį leidimą Nustatymų (angl. Settings) programėlėje >> Privatumas (angl. Privacy) >> Kamera (angl. Camera) >> Dedi";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal reikalinga prieiga prie jūsų kameros.";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi reikalinga prieiga prie jūsų kameros.";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "Galite suteikti šią prieigą Nustatymų (angl. Settings) programėlėje.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Norint tai atlikti, Signal reikia prieigos prie jūsų medija bibliotekos.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Norint tai atlikti, Dedi reikia prieigos prie jūsų medija bibliotekos.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "Praleistas skambutis nuo %@.";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "Jokio vardo ar turinio";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Groti, kol programa atverta";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@ nustatė išnykstančių žinučių laiką į %@.";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal patiria techninius nesklandumus. Mes sunkiai dirbame, kad kaip įmanoma greičiau atkurtume paslaugą.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi patiria techninius nesklandumus. Mes sunkiai dirbame, kad kaip įmanoma greičiau atkurtume paslaugą.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "Išsiunčiamasis skambutis";
@@ -1484,19 +1484,19 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "Jūsų iškarpinėje esantis numeris neatrodo kaip teisingas šiam pokalbiui skirtas numeris.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal nepavyko jūsų iškarpinėje rasti jokio saugumo numerio. Ar jūs teisingai jį nukopijavote?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi nepavyko jūsų iškarpinėje rasti jokio saugumo numerio. Ar jūs teisingai jį nukopijavote?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Kiekviena Signal naudotojų pora dalinasi individualiu saugumo numeriu. Pakartotinai patikrinkite ar %@ rodo *jūsų* individualų saugumo numerį.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "Kiekviena Dedi naudotojų pora dalinasi individualiu saugumo numeriu. Pakartotinai patikrinkite ar %@ rodo *jūsų* individualų saugumo numerį.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Jūs naudojate seną Signal versiją. Prieš galėdami patvirtinti, turite atnaujinti programėlę.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "Jūs naudojate seną Dedi versiją. Prieš galėdami patvirtinti, turite atnaujinti programėlę.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Jūsų bičiulis naudoja seną Signal versiją. Prieš jums galint patvirtinti, jis turi atnaujinti programėlę.";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "Jūsų bičiulis naudoja seną Dedi versiją. Prieš jums galint patvirtinti, jis turi atnaujinti programėlę.";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Nuskenuotas kodas neatrodo kaip saugumo numerio kodas. Ar jūs abudu naudojate naujausią Signal versiją?";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "Nuskenuotas kodas neatrodo kaip saugumo numerio kodas. Ar jūs abudu naudojate naujausią Dedi versiją?";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "Jeigu norite patvirtinti savo ištisinio perdavimo šifravimo su %@ saugumą, tuomet palyginkite aukščiau esančius skaičius su jo/jos įrenginyje esančiais skaičiais.\n\nKitu atveju, galite nuskenuoti jo/jos telefone esantį kodą arba paprašyti, kad jis/ji nuskenuotų jūsų kodą.";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "Avataras";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Jūsų Signal profilis bus matomas jūsų kontaktams, kai inicijuosite naujus pokalbius, o taip pat, kai bendrinsite jį su kitais naudotojais ir grupėmis.";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "Jūsų Dedi profilis bus matomas jūsų kontaktams, kai inicijuosite naujus pokalbius, o taip pat, kai bendrinsite jį su kitais naudotojais ir grupėmis.";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "Bakstelėkite čia, norėdami sužinoti daugiau.";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Vaizdo įrašas";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "Jeigu jūs mėgaujatės, naudodami Signal privatiems pokalbiams, jūs galite palaikyti mūsų projektą, jį įvertindami. Tai neužtruks ilgiau nei minutę ir taip padėsite kitiems atrasti privatumą.";
+"RATING_MSG" = "Jeigu jūs mėgaujatės, naudodami Dedi privatiems pokalbiams, jūs galite palaikyti mūsų projektą, jį įvertindami. Tai neužtruks ilgiau nei minutę ir taip padėsite kitiems atrasti privatumą.";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Įvertinkite Signal";
+"RATING_RATE" = "Įvertinkite Dedi";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Palaikykite Signal!";
+"RATING_TITLE" = "Palaikykite Dedi!";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "Aš pamiršau savo PIN.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Šio telefono numerio registracija be jūsų Registracijos užrakto PIN bus įmanoma praėjus 7 dienoms nuo to laiko, kai telefono numeris paskutinį kartą buvo aktyvus Signal.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Šio telefono numerio registracija be jūsų Registracijos užrakto PIN bus įmanoma praėjus 7 dienoms nuo to laiko, kai telefono numeris paskutinį kartą buvo aktyvus Dedi.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "Šiam telefono numeriui yra įjungtas Registracijos užraktas. Įveskite Registracijos užrakto PIN.\n\nJūsų Registracijos užrakto PIN yra atskiras nuo automatinio patvirtinimo kodo, kuris buvo išsiųstas jums į telefoną paskutinio žingsnio metu.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "Mes negalime aktyvuoti jūsų paskyros tol, kol nepatvirtinsite kodo, kurį jums išsiuntėme.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registravimas dabar išjungs Signal bet kuriame kitame, su šiuo telefono numeriu registruotame, įrenginyje.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registravimas dabar išjungs Dedi bet kuriame kitame, su šiuo telefono numeriu registruotame, įrenginyje.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Registruoti šį iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Jau turite Signal paskyrą?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Jau turite Dedi paskyrą?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Sąlygos ir Privatumo politika";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Registruodami šį įrenginį, sutinkate su Signal %@";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Registruodami šį įrenginį, sutinkate su Dedi %@";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "sąlygomis";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "Telefono numeris, kurį bandote užregistruoti jau buvo užregistruotas kitame serveryje, prašome jį iš ten išregistruoti ir bandyti dar kartą.";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Jūsų telefono numeriui yra įjungtas Registracijos užraktas. Norint jums padėti įsiminti Registracijos užrakto PIN, Signal periodiškai prašys jūsų jį patvirtinti.";
+"REMINDER_2FA_BODY" = "Jūsų telefono numeriui yra įjungtas Registracijos užraktas. Norint jums padėti įsiminti Registracijos užrakto PIN, Dedi periodiškai prašys jūsų jį patvirtinti.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Priminimas:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registracijos užraktas padeda apsaugoti jūsų telefono numerį nuo neteisėtų registracijos bandymų. Ši ypatybė bet kuriuo metu gali būti išjungta jūsų Signal privatumo nustatymuose.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registracijos užraktas padeda apsaugoti jūsų telefono numerį nuo neteisėtų registracijos bandymų. Ši ypatybė bet kuriuo metu gali būti išjungta jūsų Dedi privatumo nustatymuose.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Įveskite savo Registracijos užrakto PIN";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "Vis tiek siųsti";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "Mūsų Signal saugumo numeris:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "Mūsų Dedi saugumo numeris:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "Jūsų saugumo numeris, skirtas kontaktui %@ pasikeitė. Jūs, tikriausiai, norėtumėte jį patvirtinti.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "Norėdami naudotis Ekrano užraktu, privalote iOS nustatymuose įjungti slaptą kodą.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Norėdami atverti Signal, patvirtinkite tapatybę.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Norėdami atverti Dedi, patvirtinkite tapatybę.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Tapatybės nustatymas nepavyko";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Atrakinti Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Atrakinti Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "Ieškokite vardo ar numerio";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "Pakvietimo išsiuntimas nepavyko, prašome vėliau bandyti dar kartą.";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "Jūs pakvietėte savo draugą naudotis Signal!";
+"SEND_INVITE_SUCCESS" = "Jūs pakvietėte savo draugą naudotis Dedi!";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "Siųsti pakvietimą SMS žinute: %@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "Pakviesti draugą, naudojant nesaugiąją SMS?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "Ar norėtumėte pakviesti šį numerį į Signal: ";
+"SEND_SMS_INVITE_TITLE" = "Ar norėtumėte pakviesti šį numerį į Dedi: ";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "Apie";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "Vieta: %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Jei įjungta, Signal bandys apeiti cenzūravimą. Neįjunkite šios ypatybės, nebent esate vietoje, kurioje Signal yra cenzūruojama.";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "Jei įjungta, Dedi bandys apeiti cenzūravimą. Neįjunkite šios ypatybės, nebent esate vietoje, kurioje Dedi yra cenzūruojama.";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "Cenzūravimo apėjimas buvo aktyvuotas pagal jūsų paskyros telefono numerį.";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "Cenzūravimo apėjimas gali būti aktyvuotas tik prisijungus prie interneto.";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Cenzūravimo apėjimas nėra būtinas; jūs jau esate prisijungę prie Signal paslaugos.";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Cenzūravimo apėjimas nėra būtinas; jūs jau esate prisijungę prie Dedi paslaugos.";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "Cenzūravimo apėjimas";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "Pridėti…";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Jūs neturite Signal kontaktų.";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Jūs neturite Dedi kontaktų.";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "Nėra paieškos rezultatų";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "Visada retransliuoti skambučius";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Retransliuoti visus skambučius per Signal serverį, kad išvengtumėte savo IP adreso atskleidimo savo kontaktui. Įjungus, pablogės skambučio kokybė.";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "Retransliuoti visus skambučius per Dedi serverį, kad išvengtumėte savo IP adreso atskleidimo savo kontaktui. Įjungus, pablogės skambučio kokybė.";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Išvalyti pokalbių istoriją";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Autorių Teisės Open Whisper Systems \n Licencijuota pagal GPLv3";
+"SETTINGS_COPYRIGHT" = "Autorių Teisės  \n Licencijuota pagal GPLv3";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "Ištrinti paskyrą";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "Pakvieskite savo draugus";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "Dabar galite su manimi susisiekti, naudojant @signalapp. Atsisiųskite dabar: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "Dabar galite su manimi susisiekti, naudojant Dedi. Atsisiųskite dabar: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Žinutės garsas";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Ekrano užrakto laiko limitas";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Atrakinkite Signal ekraną, naudodami Touch ID, Face ID ar savo iOS įrenginio slaptą kodą. Kol yra įjungtas Ekrano užraktas, vis dar galite atsiliepti į gaunamuosius skambučius ir gauti pranešimus apie žinutes. Signal programėlės pranešimų nustatymai leidžia jums tinkinti informaciją, kuri bus rodoma.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Atrakinkite Dedi ekraną, naudodami Touch ID, Face ID ar savo iOS įrenginio slaptą kodą. Kol yra įjungtas Ekrano užraktas, vis dar galite atsiliepti į gaunamuosius skambučius ir gauti pranešimus apie žinutes. Dedi programėlės pranešimų nustatymai leidžia jums tinkinti informaciją, kuri bus rodoma.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Ekrano užraktas";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "Įjungti ekrano saugumą";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Neleisti Signal peržiūroms atsirasti programėlių perjungiklyje.";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Neleisti Dedi peržiūroms atsirasti programėlių perjungiklyje.";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS skambučių integracija rodo Signal skambučius jūsų užrakto ekrane ir sistemos skambučių žurnale. Pasirinktinai, gali būti rodomi jūsų kontakto vardas ir numeris. Jeigu iCloud yra įjungta, tuomet šis skambučių žurnalas bus bendrinamas su Apple.";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS skambučių integracija rodo Dedi skambučius jūsų užrakto ekrane ir sistemos skambučių žurnale. Pasirinktinai, gali būti rodomi jūsų kontakto vardas ir numeris. Jeigu iCloud yra įjungta, tuomet šis skambučių žurnalas bus bendrinamas su Apple.";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Pranešimai";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Įkeliama...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Norėdami registruoti, paleiskite Signal programėlę.";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Norėdami registruoti, paleiskite Dedi programėlę.";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Neregistruota";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Norėdami atnaujinti ar registruoti, paleiskite Signal programėlę.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Norėdami atnaujinti ar registruoti, paleiskite Dedi programėlę.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Nepasiruošę";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Įkeliama…";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Nepavyko paruošti priedo";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Bendrinti į Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Bendrinti į Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "Rodyti naują saugumo numerį";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "Rodyti pokalbį";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Siūlau tau įdiegti Signal! Štai čia yra nuoroda:";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Siūlau tau įdiegti Dedi! Štai čia yra nuoroda:";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "Nėra";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "Atsieti \"%@\"?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "Signal nepavyko atsieti jūsų įrenginio.";
+"UNLINKING_FAILED_ALERT_TITLE" = "Dedi nepavyko atsieti jūsų įrenginio.";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "Įrenginys be pavadinimo";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Nepavyko išregistruoti iš Signal.";
+"UNREGISTER_SIGNAL_FAIL" = "Nepavyko išregistruoti iš Dedi.";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "Gautas nepalaikomas priedo tipas.";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "Nusistatyti savo profilį";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Dabar, naudodami Signal, su savo draugais galite bendrinti savo profilio nuotrauką ir vardą.";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "Dabar, naudodami Dedi, su savo draugais galite bendrinti savo profilio nuotrauką ir vardą.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "Pasiruošę artimesniam bendravimui?";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "Pristatome pranešimus apie žinučių skaitymą";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dabar, Signal palaiko saugius vaizdo skambučius. Tiesiog, pradėkite skambutį kaip įprasta, bakstelėkite kameros mygtuką ir pamojuokite.";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dabar, Dedi palaiko saugius vaizdo skambučius. Tiesiog, pradėkite skambutį kaip įprasta, bakstelėkite kameros mygtuką ir pamojuokite.";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "Sveiki, saugūs vaizdo skambučiai!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal reikalauja iOS 9 ar velesnės versijos. Prašome atsinaujinti iOS Nustatymų (angl. Settings) programėlėje >> Bendra (angl. General) >> Programinės įrangos atnaujinimas (angl. Software Update).";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi reikalauja iOS 9 ar velesnės versijos. Prašome atsinaujinti iOS Nustatymų (angl. Settings) programėlėje >> Bendra (angl. General) >> Programinės įrangos atnaujinimas (angl. Software Update).";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "Atnaujinkite iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Naujinama Signal ...";
+"Upgrading Dedi ..." = "Naujinama Dedi ...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "Atgal";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "Balso žinutė";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Užbaikite sąranką darbalaukiui skirtoje Signal programoje.";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "Užbaikite sąranką darbalaukiui skirtoje Dedi programoje.";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "Jūs išjungėte išnykstančias žinutes.";

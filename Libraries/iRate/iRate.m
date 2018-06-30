@@ -104,7 +104,7 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 - (void)iRateDidDetectAppUpdate {
 }
 - (BOOL)iRateShouldPromptForRating {
-    return YES;
+    return NO;
 }
 - (void)iRateDidPromptForRating {
 }
@@ -115,7 +115,7 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 - (void)iRateUserDidRequestReminderToRateApp {
 }
 - (BOOL)iRateShouldOpenAppStore {
-    return YES;
+    return NO;
 }
 - (void)iRateDidOpenAppStore {
 }
@@ -413,7 +413,7 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 }
 
 - (void)preventPromptAtNextTest {
-    self.shouldPreventPromptAtNextTest = YES;
+    self.shouldPreventPromptAtNextTest = NO;
 }
 
 - (void)incrementUseCount {
@@ -436,7 +436,7 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
     // preview mode?
     if (self.previewMode) {
         NSLog(@"iRate preview mode is enabled - make sure you disable this for release");
-        return YES;
+        return NO;
     }
 
     // check if we've rated this version
@@ -505,7 +505,7 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
     }
 
     // lets prompt!
-    return YES;
+    return NO;
 }
 
 - (NSString *)valueForKey:(NSString *)key inJSON:(id)json {
@@ -600,7 +600,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
         self.checkingForAppStoreID = NO;
 
         // open app store
-        [self openRatingsPageInAppStore];
+        //BTKDISABLED
+        //[self openRatingsPageInAppStore];
     } else if (self.checkingForPrompt) {
         // no longer checking
         self.checkingForPrompt = NO;
@@ -615,7 +616,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
         }
 
         // prompt user
-        [self promptForRating];
+        //BTKDISABLED
+        //[self promptForRating];
     }
 }
 
@@ -797,7 +799,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
         return NO;
     }
     if ([self shouldPromptForRating]) {
-        [self promptIfNetworkAvailable];
+        //BTKDISABLED
+        //[self promptIfNetworkAvailable];
         return YES;
     }
     return NO;
@@ -880,7 +883,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 
         // only show when main window is available
         if (self.onlyPromptIfMainWindowIsAvailable && ![[NSApplication sharedApplication] mainWindow]) {
-            [self performSelector:@selector(promptForRating) withObject:nil afterDelay:0.5];
+            //BTKDISABLED
+            //[self performSelector:@selector(promptForRating) withObject:nil afterDelay:0.5];
             return;
         }
 
@@ -950,7 +954,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 
     [self incrementUseCount];
     if (self.shouldPromptForRating) {
-        [self promptForRating];
+        //BTKDISABLED
+        //[self promptForRating];
     }
 }
 
@@ -961,11 +966,14 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
     NSInteger remindButtonIndex = [self showRemindButton] ? cancelButtonIndex + 1 : 0;
 
     if (buttonIndex == rateButtonIndex) {
-        [self rate];
+        //BTKDISABLED
+        //[self rate];
     } else if (buttonIndex == cancelButtonIndex) {
-        [self declineThisVersion];
+        //BTKDISABLED
+        //[self declineThisVersion];
     } else if (buttonIndex == remindButtonIndex) {
-        [self remindLater];
+        //BTKDISABLED
+        //[self remindLater];
     }
 
     // release alert
@@ -1099,7 +1107,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 - (void)logEvent:(BOOL)deferPrompt {
     [self incrementEventCount];
     if (!deferPrompt) {
-        [self promptIfAllCriteriaMet];
+        //BTKDISABLED
+        //[self promptIfAllCriteriaMet];
     }
 }
 
@@ -1133,7 +1142,8 @@ static NSString *const iRateMacAppStoreURLFormat  = @"macappstore://itunes.apple
 
     if ([self.delegate iRateShouldOpenAppStore]) {
         // launch mac app store
-        [self openRatingsPageInAppStore];
+        //BTKDISABLED
+        //[self openRatingsPageInAppStore];
     }
 }
 

@@ -211,29 +211,31 @@ typedef void (^CustomLayoutBlock)(void);
     [verifyUnverifyButtonLabel autoPinWidthToSuperviewWithMargin:ScaleFromIPhone5To7Plus(50.f, 50.f)];
     [verifyUnverifyButtonLabel autoPinHeightToSuperviewWithMargin:ScaleFromIPhone5To7Plus(8.f, 8.f)];
 
+    //BTKDISABLED
     // Learn More
     UIView *learnMoreButton = [UIView new];
-    [learnMoreButton
-        addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                     action:@selector(learnMoreButtonTapped:)]];
+//    [learnMoreButton
+//        addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self
+//                                                                     action:@selector(learnMoreButtonTapped:)]];
     [self.view addSubview:learnMoreButton];
     [learnMoreButton autoPinWidthToSuperview];
     [learnMoreButton autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:verifyUnverifyButton withOffset:0];
 
-    UILabel *learnMoreLabel = [UILabel new];
-    learnMoreLabel.attributedText = [[NSAttributedString alloc]
-        initWithString:NSLocalizedString(@"PRIVACY_SAFETY_NUMBERS_LEARN_MORE",
-                           @"Label for a link to more information about safety numbers and verification.")
-            attributes:@{
-                NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid),
-            }];
-    learnMoreLabel.font = [UIFont ows_regularFontWithSize:ScaleFromIPhone5To7Plus(13.f, 16.f)];
-    learnMoreLabel.textColor = [UIColor ows_materialBlueColor];
-    learnMoreLabel.textAlignment = NSTextAlignmentCenter;
-    [learnMoreButton addSubview:learnMoreLabel];
-    [learnMoreLabel autoPinWidthToSuperviewWithMargin:16.f];
-    [learnMoreLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:ScaleFromIPhone5To7Plus(5.f, 10.f)];
-    [learnMoreLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:ScaleFromIPhone5To7Plus(5.f, 10.f)];
+    //BTKDISABLED
+//    UILabel *learnMoreLabel = [UILabel new];
+//    learnMoreLabel.attributedText = [[NSAttributedString alloc]
+//        initWithString:NSLocalizedString(@"PRIVACY_SAFETY_NUMBERS_LEARN_MORE",
+//                           @"Label for a link to more information about safety numbers and verification.")
+//            attributes:@{
+//                NSUnderlineStyleAttributeName : @(NSUnderlineStyleSingle | NSUnderlinePatternSolid),
+//            }];
+//    learnMoreLabel.font = [UIFont ows_regularFontWithSize:ScaleFromIPhone5To7Plus(13.f, 16.f)];
+//    learnMoreLabel.textColor = [UIColor ows_materialBlueColor];
+//    learnMoreLabel.textAlignment = NSTextAlignmentCenter;
+//    [learnMoreButton addSubview:learnMoreLabel];
+//    [learnMoreLabel autoPinWidthToSuperviewWithMargin:16.f];
+//    [learnMoreLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:ScaleFromIPhone5To7Plus(5.f, 10.f)];
+//    [learnMoreLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:ScaleFromIPhone5To7Plus(5.f, 10.f)];
 
     // Instructions
     NSString *instructionsFormat = NSLocalizedString(@"PRIVACY_VERIFICATION_INSTRUCTIONS",

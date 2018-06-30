@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "လုံခြုံရေးနံပါတ်အသစ်ကိုလက်ခံသည် ";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Signal Call";
+"ACTION_AUDIO_CALL" = "Dedi Call";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "Invite to Signal";
+"ACTION_INVITE" = "Invite to Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "Send Message";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@အဖွဲ့တွင် %@၊ %@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal can't launch. Please send your debug logs to our team so that we can try to resolve this issue.";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi can't launch. Please send your debug logs to our team so that we can try to resolve this issue.";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "Error";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "ဗားရှင်း %@ကို  App Store တွင်ရရှိနိုင်ပါသည်။ ";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Signal ဗားရှင်းအသစ်ရရှိနိုင်ပါပြီ ";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Dedi ဗားရှင်းအသစ်ရရှိနိုင်ပါပြီ ";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "မွမ်းမံ ";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "မှတ်တမ်း ";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "စာရွက်စာတမ်းကို ရွေးချယ်၍ မရပါ။ ";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "ယင်းဖိုင်ကို Signal ကမချိတ်နိုင်ပါ။ ယင်းကို ဇစ်ဖိုင်အဖြစ်ချုံ့၍ ပြန်ပို့ကြည့်ပါ။ ";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "ယင်းဖိုင်ကို Dedi ကမချိတ်နိုင်ပါ။ ယင်းကို ဇစ်ဖိုင်အဖြစ်ချုံ့၍ ပြန်ပို့ကြည့်ပါ။ ";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "ဖွင့်မရသောဖိုင် ";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "Select";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "ဖုန်းခေါ်ဆိုမှုများနှင့် အသံဖမ်းယူခြင်းပြုလုပ်ရန်အတွက် Signal ကမိုက်ခရိုဖုန်း နှင့်ချိတ်ဆက်ရန်လိုအပ်သည်။ ပြင်ဆင်ခြင်း app ကိုသွား၍ ခွင့်ပြုချက်ပေးနိုင်ပါသည်။ ";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "ဖုန်းခေါ်ဆိုမှုများနှင့် အသံဖမ်းယူခြင်းပြုလုပ်ရန်အတွက် Dedi ကမိုက်ခရိုဖုန်း နှင့်ချိတ်ဆက်ရန်လိုအပ်သည်။ ပြင်ဆင်ခြင်း app ကိုသွား၍ ခွင့်ပြုချက်ပေးနိုင်ပါသည်။ ";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "မိုက်ခရိုဖုန်းချိတ်ဆက်ရန်လိုအပ်သည် ";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "မဖြေဆိုပါ";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal%@";
+"CALL_STATUS_FORMAT" = "Dedi%@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "ဖုန်းခေါ်ဆိုမှု ";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "ပြန်ခေါ်မည် ";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signal အသုံးပြုသူ ";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dedi အသုံးပြုသူ ";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "သူနှင့် စာတိုအဆက်အသွယ်မပြုပဲ ယင်းသူကို ဆန်းစစ်အတည်ပြုမရပါ။ ";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "You do not have an iCloud Account for backups.";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal was not allowed to access your iCloud account for backups.";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi was not allowed to access your iCloud account for backups.";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "ကလစ်ဘုတ်နှင့် နှိုင်းယှဉ်ပါ ";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "ဖိတ်ခေါ်သည် ";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "သင့်မိတ်ဆွေများအနက် ဘယ်သူ Signal သုံးသလဲသိနိုင်ရန် ဖုန်းစနစ်အပြင်အဆင်တွင် လိပ်စာများကို ချိတ်ဆက်ခွင့်ပြုပါ။ ";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "သင့်မိတ်ဆွေများအနက် ဘယ်သူ Dedi သုံးသလဲသိနိုင်ရန် ဖုန်းစနစ်အပြင်အဆင်တွင် လိပ်စာများကို ချိတ်ဆက်ခွင့်ပြုပါ။ ";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "ဤသို့လုပ်ခြင်းဖြင့် App ကိုပြန်လည်ပြင်ဆင်ပြီး သင့်စာတိုသတင်းစကားများကို ဖျက်၍သင့်ကို ဆာဗာနှင့်ချိတ်ဆက်မှုပယ်ဖျက်ပါတော့မည်။ အချက်အလက်များပယ်ဖျက်ပြီးပါက app ကိုပိတ်ပါမည်။ ";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "%@ကသုံးခဲ့သည် ";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "ပိတ်ဆို့မှုဖြတ်ကျော်နေရာ ";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "အပြင်အဆင် app တွင်အသုံးပြုခွင့်ပေးနိုင်ပါသည်။ ";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "သူ၏အချက်အလက်ကို တည်းဖြတ်ရန် Signal ကလိပ်စာစာအုပ်ကို ချိတ်ဆက်ရန်လိုအပ်သည် ";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "သူ၏အချက်အလက်ကို တည်းဖြတ်ရန် Dedi ကလိပ်စာစာအုပ်ကို ချိတ်ဆက်ရန်လိုအပ်သည် ";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "အဖွဲ့ကိုတည်းဖြတ်သည် ";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "တည်းဖြတ်သည် ";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "ဟေး\n\niPhone မှာ သီးသန့် ကိုယ်ရေးစကားပြောဝိုင်းအတွက် Signal သုံးပါတယ်။ မင်းကိုလဲ သုံးကြည့်စေချင်တယ်၊ ဒါဆိုရင် တို့တွေ စိတ်ချရတဲ့ဆက်သွယ်ရေးလမ်းကြောင်းနဲ့ သတင်းစကားပို့နိုင်သလို ဖုန်းခေါ်ဆိုမှုပြုလုပ်နိုင်မယ်။ \n\nSignal ကို iPhones နှင့် Android မှာသုံးနိုင်ပါတယ်။ %@ ရယူပါ။ \n\nSignal ကမူလပါလာတဲ့ စာတို app နဲ့ဆင်တူပါတယ်။ ဓါတ်ပုံ နှင့် ဗွီဒီယို တွေပို့နိုင်တယ်၊ ဖုန်းခေါ်နိုင်တယ်၊ အဖွဲ့လိုက်စကားဝိုင်းတွေပြောနိုင်တယ်။ အကောင်းဆုံးကတော့ တို့တွေရဲ့ပြောစကားတွေကိုတို့တွေကိုယ်တိုင်ကလွဲပြီး  Signal ဖန်တီးသူတွေအပါအဝင် တခြားဘယ်သူမှ ကြည့်လို့မရနိုင်တာပဲ။ \n\nSignal ကိုဖန်တီးတဲ့သူတွေဖြစ်တဲ့ Open Whisper Systems အကြောင်းကို ဒီနေရာမှာ %@ဖတ်ကြည့်နိုင်ပါတယ်။ ";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "ဟေး\n\niPhone မှာ သီးသန့် ကိုယ်ရေးစကားပြောဝိုင်းအတွက် Dedi သုံးပါတယ်။ မင်းကိုလဲ သုံးကြည့်စေချင်တယ်၊ ဒါဆိုရင် တို့တွေ စိတ်ချရတဲ့ဆက်သွယ်ရေးလမ်းကြောင်းနဲ့ သတင်းစကားပို့နိုင်သလို ဖုန်းခေါ်ဆိုမှုပြုလုပ်နိုင်မယ်။ \n\nDedi ကို iPhones နှင့် Android မှာသုံးနိုင်ပါတယ်။ %@ ရယူပါ။ \n\nDedi ကမူလပါလာတဲ့ စာတို app နဲ့ဆင်တူပါတယ်။ ဓါတ်ပုံ နှင့် ဗွီဒီယို တွေပို့နိုင်တယ်၊ ဖုန်းခေါ်နိုင်တယ်၊ အဖွဲ့လိုက်စကားဝိုင်းတွေပြောနိုင်တယ်။ အကောင်းဆုံးကတော့ တို့တွေရဲ့ပြောစကားတွေကိုတို့တွေကိုယ်တိုင်ကလွဲပြီး  Dedi ဖန်တီးသူတွေအပါအဝင် တခြားဘယ်သူမှ ကြည့်လို့မရနိုင်တာပဲ။ \n\nDedi ကိုဖန်တီးတဲ့သူတွေဖြစ်တဲ့  အကြောင်းကို ဒီနေရာမှာ %@ဖတ်ကြည့်နိုင်ပါတယ်။ ";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "Signal ကိုပြောင်းသုံးကြပါစို့ ";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "Dedi ကိုပြောင်းသုံးကြပါစို့ ";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "စာရေးရန် ခလုပ်ကိုနှိပ်ပါ။ ";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "သင်၏ပထမဆုံး Signal စကားဝိုင်းကို စတင်လိုက်ပါ!";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "သင်၏ပထမဆုံး Dedi စကားဝိုင်းကို စတင်လိုက်ပါ!";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "သင်၏စာတိုက်ပုံးထဲမှ တိတ်ဆိတ်နေသော ပြောစကားများကို နောက်နောင်အတွက် မှတ်တမ်း archive ပြုထားနိုင်ပါသည်။ ";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "သင်၏ပြောစကားများကို ရှင်းလင်းမည် ";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "သင့်မိတ်ဆွေတစ်ယောက်မှ Signal တွင်မရှိပါ ";
+"EMPTY_CONTACTS_LABEL_LINE1" = "သင့်မိတ်ဆွေတစ်ယောက်မှ Dedi တွင်မရှိပါ ";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "သူများတွေကို ဖိတ်ရအောင်နော် ";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN does not match.";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Enter a Registration Lock PIN. You will be asked to enter this PIN the next time you register this phone number with Signal.";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "Enter a Registration Lock PIN. You will be asked to enter this PIN the next time you register this phone number with Dedi.";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "For increased security, enable a Registration Lock PIN that will be required in order to register this phone number with Signal again.";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "For increased security, enable a Registration Lock PIN that will be required in order to register this phone number with Dedi again.";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registration Lock is enabled. You'll need to enter your PIN when registering your phone number with Signal again.";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "Registration Lock is enabled. You'll need to enter your PIN when registering your phone number with Dedi again.";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "Registration Lock";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "ပူးတွဲ ဖိုင်ချိတ်ခြင်း မအောင်မြင်ပါ။ ";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal ကအင်တာနက်မချိတ်နိုင်ပါ။ အခြားဝိုင်ယာလက်ကွန်ယက် သို့မဟုတ် ဖုန်းဒေတာကွန်ယက်သို့ချိတ်ဆက်၍ ကြိုးစားကြည့်ပါ။ ";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi ကအင်တာနက်မချိတ်နိုင်ပါ။ အခြားဝိုင်ယာလက်ကွန်ယက် သို့မဟုတ် ဖုန်းဒေတာကွန်ယက်သို့ချိတ်ဆက်၍ ကြိုးစားကြည့်ပါ။ ";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "လက်ခံမည့်သူ အကျုံးမဝင်သောကြောင့် စာပို့ခြင်း မအောင်မြင်ပါ။";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "Invalid response from service.";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "သင့်ဖုန်းသည် ဤဖုန်းနံပါတ်နှင့် စာရင်းသွင်းထားခြင်းမရှိတော့ပါ။ Signal ကိုပြန်ဖယ်ပြီး ပြန်သွင်းရပါမည်။ ";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "သင့်ဖုန်းသည် ဤဖုန်းနံပါတ်နှင့် စာရင်းသွင်းထားခြင်းမရှိတော့ပါ။ Dedi ကိုပြန်ဖယ်ပြီး ပြန်သွင်းရပါမည်။ ";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "ဆာဗာပြဿနာ။ ထပ်မံ ကြိုးစားကြည့်ပါ။ ";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "အကျိုးအကြောင်းမသိသည့် ပြဿနာ ဖြစ်လာသည်။";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "သူသည် Signal အသုံးပြုသူ မဟုတ်ပါ။";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "သူသည် Dedi အသုံးပြုသူ မဟုတ်ပါ။";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "မအောင်မြင်ပါ၊ ပေးပို့သူကို Signal အားအဆင့်မြင့်၍ ထပ်မံပေးပို့ခိုင်းပါ။ ";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "မအောင်မြင်ပါ၊ ပေးပို့သူကို Dedi အားအဆင့်မြင့်၍ ထပ်မံပေးပို့ခိုင်းပါ။ ";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "ထပ်တူသတင်းစကားကိုလက်ခံရရှိသည်။ ";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "Archive";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "ချိတ်ဆက်နေသည်...";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "ဖိုင်စနစ်မှားနေသော အသံဖိုင်";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "လိပ်စာစာရင်းထဲမှလူများကို ဖိတ်ရန်၊ ဖုန်း၏ပြင်ဆင်ချက် ဆက်တင်များထဲမှ contacts တွင် Signal ကိုဝင်ရောက်နိုင်ရန် ဆက်တင်ချိန်ပေးပါ။";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "လိပ်စာစာရင်းထဲမှလူများကို ဖိတ်ရန်၊ ဖုန်း၏ပြင်ဆင်ချက် ဆက်တင်များထဲမှ contacts တွင် Dedi ကိုဝင်ရောက်နိုင်ရန် ဆက်တင်ချိန်ပေးပါ။";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "လိပ်စာစာရင်းကို ဝင်ရောက်ခွင့်ပြုသည်";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "သူငယ်ချင်းများကို Signal အသုံးပြုဖို့ ဖိတ်ရန်";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "သူငယ်ချင်းများကို Dedi အသုံးပြုဖို့ ဖိတ်ရန်";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "ရှာရန်";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "ဖတ်ပြီး";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "Skipped";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "ဗွီဒီယိုဖုန်း ခေါ်ဆိုပြုလုပ်ရန်အတွက် Signal ကဖုန်းကင်မရာ နှင့်ချိတ်ဆက်ရန်လိုအပ်သည်။ ချိတ်ဆက်မှုပြုလုပ်ရန်အတွက် ပြင်ဆင်ချက် ဆက်တင်ထဲမှ >> ကိုယ်ရေးအချက်အလက်လုံခြုံမှု>>ကင်မရာ>> signal ကိုသွားပါ။";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "ဗွီဒီယိုဖုန်း ခေါ်ဆိုပြုလုပ်ရန်အတွက် Dedi ကဖုန်းကင်မရာ နှင့်ချိတ်ဆက်ရန်လိုအပ်သည်။ ချိတ်ဆက်မှုပြုလုပ်ရန်အတွက် ပြင်ဆင်ချက် ဆက်တင်ထဲမှ >> ကိုယ်ရေးအချက်အလက်လုံခြုံမှု>>ကင်မရာ>> signal ကိုသွားပါ။";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "သင်၏ ကင်မရာအား Signal မှအသုံးပြုလိုပါသည်။";
+"MISSING_CAMERA_PERMISSION_TITLE" = "သင်၏ ကင်မရာအား Dedi မှအသုံးပြုလိုပါသည်။";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "You can grant this permission in the Settings app.";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Signal Requires Access to your Media Library to do this.";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Dedi Requires Access to your Media Library to do this.";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "%@ထံမှ အဝင်ခေါ်ဆိုလွဲသွားသည်။";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "No Name or Content";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "Play While App is Open";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@က သတင်းစကားပျောက်ကွယ်ရန်အချိန်ကို %@ဟုသတ်မှတ်သည်။ ";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "ဖုန်းခေါ်ဆိုမှု";
@@ -1490,13 +1490,13 @@
 "PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "အသုံးပြုသူ အတွဲတိုင်းတွင် တူညီသော လုံခြုံရေးနံပါတ်များရှိကြသည်။ %@ သည် သင်တို့ ၂ ယောက်၏ တူညီသော လုံခြုံရေးနံပါတ်ကိုပြနေပါသည်။";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "သင့် Signal ဗားရှင်းဟောင်းနေပြီ။ အတည်မပြုခင် အဆင့်မြှင့်ပါ။ ";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "သင့် Dedi ဗားရှင်းဟောင်းနေပြီ။ အတည်မပြုခင် အဆင့်မြှင့်ပါ။ ";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "သင့်မိတ်ဆွေသည် Signal ဗားရှင်းအဟောင်းကို အသုံးပြုထားပါသည်။ အတည်ပြုမှုမပြုလုပ်ခင် ဗားရှင်းမြှင့်ခိုင်းလိုက်ပါ။";
+"PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "သင့်မိတ်ဆွေသည် Dedi ဗားရှင်းအဟောင်းကို အသုံးပြုထားပါသည်။ အတည်ပြုမှုမပြုလုပ်ခင် ဗားရှင်းမြှင့်ခိုင်းလိုက်ပါ။";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "စကန်ဖတ်ထားသော ကုဒ်မှာ လုံခြုံရေးနံပါတ်ကုဒ်မဟုတ်ပါ။ သင်တို့နှစ်ဦးလုံး Signal နောက်ဆုံးဗားရှင်းသုံးနေတာ ဟုတ်ပါရဲ့လား။ ";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "စကန်ဖတ်ထားသော ကုဒ်မှာ လုံခြုံရေးနံပါတ်ကုဒ်မဟုတ်ပါ။ သင်တို့နှစ်ဦးလုံး Dedi နောက်ဆုံးဗားရှင်းသုံးနေတာ ဟုတ်ပါရဲ့လား။ ";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "%@ဖြင့် end to end encrypt လုပ်ထားခြင်းအား အတည်ပြုလိုပါက အထပ်တွင်ပေါ်နေသော ဂဏန်းများကို သူ့ဖုန်းတွင်ပေါ်သောဂဏန်းများဖြင့်နှိုင်းယှဉ်ကြည့်ပါ။\n\nနောက်တစ်မျိုးမှာ QR code အချင်းချင်းကို စကန်ဖတ်ပြီး နှိုင်းယှဉ်ကြည့်ပါ။";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "Video";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "လုံခြုံတဲ့ စကားဝိုင်း​တွေအတွက် Signal ကို အသုံးပြုရတာ ကြိုက်တယ်ဆိုရင် ကိုယ်တို့ရဲ့ စီမံကိန်းကို အမှတ်ပေးပြီ:တော့ အထောက်အပံ့လုပ်လိုက်ပါ။ တစ်မိနစ်တောင် မကြာပါဘူး။ ပြီးတော့ သူများတွေကိုလည်း လုံခြုံမှုရှာတဲ့နေရာမှာ အကူအညီဖြစ်မှာပါ။";
+"RATING_MSG" = "လုံခြုံတဲ့ စကားဝိုင်း​တွေအတွက် Dedi ကို အသုံးပြုရတာ ကြိုက်တယ်ဆိုရင် ကိုယ်တို့ရဲ့ စီမံကိန်းကို အမှတ်ပေးပြီ:တော့ အထောက်အပံ့လုပ်လိုက်ပါ။ တစ်မိနစ်တောင် မကြာပါဘူး။ ပြီးတော့ သူများတွေကိုလည်း လုံခြုံမှုရှာတဲ့နေရာမှာ အကူအညီဖြစ်မှာပါ။";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "Signal ကိုအမှတ်ပေး";
+"RATING_RATE" = "Dedi ကိုအမှတ်ပေး";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "Signal ကိုကူညီပါ";
+"RATING_TITLE" = "Dedi ကိုကူညီပါ";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "I forgot my PIN.";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registration of this phone number will be possible without your Registration Lock PIN after 7 days have passed since the phone number was last active on Signal.";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registration of this phone number will be possible without your Registration Lock PIN after 7 days have passed since the phone number was last active on Dedi.";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "This phone number has Registration Lock enabled. Please enter the Registration Lock PIN.\n\nYour Registration Lock PIN is separate from the automated verification code that was sent to your phone during the last step.";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "ပို့လိုက်သည့် ကုဒ်ဖြင့် အတည်မပြုနိုင်ပါက သင့်ကိုယ်ပိုင်စာရင်း ကိုအတည်ပြုပေးလို့ မရပါ။";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "Terms & Privacy Policy";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "By registering this device, you agree to Signal's %@";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "By registering this device, you agree to Dedi's %@";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "terms";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "သင်စာရင်းသွင်းရန်ကြိုးစားနေသည့် ဖုန်းနံပါတ်သည် အခြားဆာဗာတွင် စာရင်းသွင်းပြီး ဖြစ်ပါသည်။ ယင်းဆာဗာမှ ပြန်ထွက်၍ ထပ်မံကြိုးစားကြည့်ပါ။ ";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "Registration Lock is enabled for your phone number. To help you memorize your Registration Lock PIN, Signal will periodically ask you to confirm it.";
+"REMINDER_2FA_BODY" = "Registration Lock is enabled for your phone number. To help you memorize your Registration Lock PIN, Dedi will periodically ask you to confirm it.";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "Reminder:";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registration Lock helps protect your phone number from unauthorized registration attempts. This feature can be disabled at any time in your Signal privacy settings.";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "Registration Lock helps protect your phone number from unauthorized registration attempts. This feature can be disabled at any time in your Dedi privacy settings.";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "Enter Your Registration Lock PIN";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "ပို့သာ ပို့လိုက်ပါ";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "ကိုယ်တို့ရဲ့ Signal လုံခြုံရေးနံပါတ် \n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "ကိုယ်တို့ရဲ့ Dedi လုံခြုံရေးနံပါတ် \n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "သင်နှင့် %@ ၏ လုံခြုံရေးနံပါတ် ပြောင်းသွားသည်။ အတည်ပြုလိုက ပြုနိုင်ပါသည်။";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "You must enable a passcode in your iOS Settings in order to use Screen Lock.";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticate to open Signal.";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "Authenticate to open Dedi.";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "Authentication Failed";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "Unlock Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "Unlock Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "အမည် သို့မဟုတ် နံပါတ်နှင့် ရှာပါ";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "ဖိတ်လို့မရပါ၊ နောက်တကြိမ် ကြိုးစားကြည့်ပါ။";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "သင့်သူငယ်ချင်းကို Signal ကနေ ဖိတ်လိုက်ပြီ။";
+"SEND_INVITE_SUCCESS" = "သင့်သူငယ်ချင်းကို Dedi ကနေ ဖိတ်လိုက်ပြီ။";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "SMS မှ တဆင့် ဖိတ်ပါ %@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "သူငယ်ချင်းကို မလုံခြုံသည့် SMS မှ ဖိတ်မလား?";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "အဆိုပါနံပါတ်ကို Signal ကို ဖိတ်ချင်ပါသလား";
+"SEND_SMS_INVITE_TITLE" = "အဆိုပါနံပါတ်ကို Dedi ကို ဖိတ်ချင်ပါသလား";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "အကြောင်း";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "တည်နေရာ၊ %@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "ဒါကိုဖွင့်ထားပါက signal အနေဖြင့် ပိတ်ထားခြင်းများကို ကျော်သွားရန်ကြိုးစားပါလိမ့်မည်။ Signal အားပိတ်ထားသောနေရာတွင်အသုံးပြုနေခြင်းမဟုတ်ပါက ဒါကိုသုံးရန်မလိုပါ။";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "ဒါကိုဖွင့်ထားပါက signal အနေဖြင့် ပိတ်ထားခြင်းများကို ကျော်သွားရန်ကြိုးစားပါလိမ့်မည်။ Dedi အားပိတ်ထားသောနေရာတွင်အသုံးပြုနေခြင်းမဟုတ်ပါက ဒါကိုသုံးရန်မလိုပါ။";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "သင့်ကိုယ်ပိုင်စာရင်း ၏ဖုန်းနံပါတ်အပေါ် မူတည်၍ ဆင်ဆာဖြတ်တောက်မှုရှောင်ကွင်းခြင်းကို ပြုလုပ်ပြီး ဖြစ်သည်။";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "ဆင်ဆာဖြတ်တောက်မှု ရှောင်ကွင်းခြင်းကို အင်တာနက် ချိတ်ထားမှသာ သုံးလို့ရမည်။";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Signal ကို ချိတ်ဆက်ပြီးသား ဖြစ်သောကြောင့် ဆင်ဆာဖြတ်တောက်မှု ရှောင်ကွင်းခြင်းကို မလိုအပ်ပါ။";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "Dedi ကို ချိတ်ဆက်ပြီးသား ဖြစ်သောကြောင့် ဆင်ဆာဖြတ်တောက်မှု ရှောင်ကွင်းခြင်းကို မလိုအပ်ပါ။";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "ဆင်ဆာဖြတ်တောက်မှုရှောင်ကွင်းခြင်း";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "ထည့်သည်...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Signal ပေါ်တွင် သင့်လိပ်စာစာရင်းထဲမှ လူတစ်ယောက်မှ မရှိပါ။";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "Dedi ပေါ်တွင် သင့်လိပ်စာစာရင်းထဲမှ လူတစ်ယောက်မှ မရှိပါ။";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "ရှာဖွေလို့ မရပါ";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "ဖုန်းခေါ်ဆိုမှုများကို လွှဲပြောင်းပါ";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "သင်၏ လိပ်စာစာရင်းတွင် သင့် IP address ပေါ်လာခြင်းကို ရှောင်လွှဲရန်အတွက် ဖုန်းခေါ်ဆိုမှုများ အားလုံးကို Signal ဆာဗာကို လွှဲပြောင်းပါ။ ဤသို့ လွှဲပြောင်းလိုက်ပါက ဖုန်းခေါ်ဆိုမှု အရည်အသွေး ကျသွားနိုင်ပါသည်။";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "သင်၏ လိပ်စာစာရင်းတွင် သင့် IP address ပေါ်လာခြင်းကို ရှောင်လွှဲရန်အတွက် ဖုန်းခေါ်ဆိုမှုများ အားလုံးကို Dedi ဆာဗာကို လွှဲပြောင်းပါ။ ဤသို့ လွှဲပြောင်းလိုက်ပါက ဖုန်းခေါ်ဆိုမှု အရည်အသွေး ကျသွားနိုင်ပါသည်။";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "Clear Conversation History";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "Open Whisper Systems ၏ မူပိုင်ခွင့်\nလိုင်စင် GPLv3 အောက်တွင် တင်ထားသည်";
+"SETTINGS_COPYRIGHT" = " ၏ မူပိုင်ခွင့်\nလိုင်စင် GPLv3 အောက်တွင် တင်ထားသည်";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "ကိုယ်ပိုင်စာရင်း ကိုဖျက်ပါ";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "သင့်ရဲ့ သူငယ်ချင်းတွေကို ဖိတ်လိုက်ပါ";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "You can reach me using @signalapp. Get it now: https://signal.org/download/";
+"SETTINGS_INVITE_TWITTER_TEXT" = "You can reach me using Dedi. Get it now: http://dedi.link";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "Message Sound";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "Screen Lock Timeout";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Unlock Signal's screen using Touch ID, Face ID, or your iOS device passcode. You can still answer incoming calls and receive message notifications while Screen Lock is enabled. Signal's notification settings allow you to customize the information that is displayed.";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "Unlock Dedi's screen using Touch ID, Face ID, or your iOS device passcode. You can still answer incoming calls and receive message notifications while Screen Lock is enabled. Dedi's notification settings allow you to customize the information that is displayed.";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "Screen Lock";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "မျက်နှာပြင်လုံခြုံရေးကို လုပ်ဆောင်ပါ";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "Signal အစမ်းကြည့်ရှုခြင်းကို app switcher တွင်မပေါ်ရန် ပိတ်ထားသည်။ ";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "Dedi အစမ်းကြည့်ရှုခြင်းကို app switcher တွင်မပေါ်ရန် ပိတ်ထားသည်။ ";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS ဖုန်းခေါ်ဆိုမှုကို ချိတ်ထားခြင်းက Signal မှ ဖုန်းခေါ်ဆိုမှုများကို သင်၏ သော့ချထားသည့် မျက်နှာပြင်တွင် ပြမည်ဖြစ်ပြီး ဖုန်း၏ ဖုန်းခေါ်ဆိုထားမှု စာရင်းထဲတွင်လည်း ပြမည်ဖြစ်သည်။ သင်၏လိပ်စာစာရင်း အမည်နှင့် နံပါတ်ပြခြင်း/ မပြခြင်းကို ရွေးချယ်နိုင်ပါသည်။ iCloud ကို လုပ်ဆောင်ထားပါက ဖုန်းခေါ်ဆိုထားသည့် စာရင်းသည် Apple နှင့် မျှဝေထားမည် ဖြစ်သည်။ဖြစ်သည်။";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS ဖုန်းခေါ်ဆိုမှုကို ချိတ်ထားခြင်းက Dedi မှ ဖုန်းခေါ်ဆိုမှုများကို သင်၏ သော့ချထားသည့် မျက်နှာပြင်တွင် ပြမည်ဖြစ်ပြီး ဖုန်း၏ ဖုန်းခေါ်ဆိုထားမှု စာရင်းထဲတွင်လည်း ပြမည်ဖြစ်သည်။ သင်၏လိပ်စာစာရင်း အမည်နှင့် နံပါတ်ပြခြင်း/ မပြခြင်းကို ရွေးချယ်နိုင်ပါသည်။ iCloud ကို လုပ်ဆောင်ထားပါက ဖုန်းခေါ်ဆိုထားသည့် စာရင်းသည် Apple နှင့် မျှဝေထားမည် ဖြစ်သည်။ဖြစ်သည်။";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "Notifications";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "Loading...";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Launch the Signal app to register.";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "Launch the Dedi app to register.";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "Not Registered";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Launch the Signal app to update or register.";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "Launch the Dedi app to update or register.";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "Not Ready";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "Uploading…";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "Unable to Prepare Attachment";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "Share to Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "Share to Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "လုံခြုံရေးနံပါတ်အသစ်ကို ပြပါ";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "စကားဝိုင်းကို ပြပါ";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "Signal ကို ထည့်သွင်းဖို့အတွက် လှမ်းဖိတ်တာပါ။ လင့်က ဒီမှာ ";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "Dedi ကို ထည့်သွင်းဖို့အတွက် လှမ်းဖိတ်တာပါ။ လင့်က ဒီမှာ ";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "None";
@@ -2180,13 +2180,13 @@
 "UNLINK_CONFIRMATION_ALERT_TITLE" = "\"%@\" ချိတ်ဆက်မှု ဖြုတ်မယ်?";
 
 /* Alert title when unlinking device fails */
-"UNLINKING_FAILED_ALERT_TITLE" = "သင့်ဖုန်း/ကွန်ပျူတာကို Signal မှ ချိတ်ဆက်မှုကို ဖြုတ်လို့မရ ဖြစ်နေသည်။";
+"UNLINKING_FAILED_ALERT_TITLE" = "သင့်ဖုန်း/ကွန်ပျူတာကို Dedi မှ ချိတ်ဆက်မှုကို ဖြုတ်လို့မရ ဖြစ်နေသည်။";
 
 /* Label text in device manager for a device with no name */
 "UNNAMED_DEVICE" = "အမည်မရှိသော ဖုန်း/ကွန်ပျူတာ";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "Signal မှ ထွက်ရန် လုပ်ဆောင်မှု အဆင်မ​ပြေပါ။";
+"UNREGISTER_SIGNAL_FAIL" = "Dedi မှ ထွက်ရန် လုပ်ဆောင်မှု အဆင်မ​ပြေပါ။";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "ဖွင့်မရသော ပူးတွဲဖိုင်အမျိုးအစားကို လက်ခံရရှိသည်။";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "ကိုယ့်ရဲ့ အချက်အလက်ကို တပ်ဆင်ပါ";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "အခုဆိုရင် Signal ပေါ်မှာ ကိုယ့်ရဲ့ ပုံနဲ့ နာမည်ကို သူငယ်ချင်းတွေနဲ့ မျှဝေလို့ ရပါပြီ။";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "အခုဆိုရင် Dedi ပေါ်မှာ ကိုယ့်ရဲ့ ပုံနဲ့ နာမည်ကို သူငယ်ချင်းတွေနဲ့ မျှဝေလို့ ရပါပြီ။";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "အနီးကပ်အတွက် အဆင်သင့်ဖြစ်ပြီလား?";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "ဖတ်ပြီးကြောင်းပြသည့် သင်္ကေတ ကိုမိတ်ဆက်ခြင်း";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal မှ ဗီဒီယိုခေါ်ဆိုမှု ရပါပြီ။ သာမန်ခေါ်ဆိုမှုလိုမျိုးပဲ ကင်မရာကို နှိပ်ပါ ပြီးရင် စပြောလို့ ရပါပြီ။";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi မှ ဗီဒီယိုခေါ်ဆိုမှု ရပါပြီ။ သာမန်ခေါ်ဆိုမှုလိုမျိုးပဲ ကင်မရာကို နှိပ်ပါ ပြီးရင် စပြောလို့ ရပါပြီ။";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "မင်္ဂလာပါ လုံခြုံမှုရှိတဲ့ ဗီဒီယိုခေါ်ဆိုမှုရေ!";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal requires iOS 9 or later. Please upgrade iOS in Settings app >> General >> Software Update.";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi requires iOS 9 or later. Please upgrade iOS in Settings app >> General >> Software Update.";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "iOS ကို မြှင့်ပါ";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "Signal ကို မြှင့်တင်နေသည် ...";
+"Upgrading Dedi ..." = "Dedi ကို မြှင့်တင်နေသည် ...";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "နောက်သို့";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "အသံသတင်းစကား";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "ကွန်ပျူတာတွင် Signal ကို အပြီးတပ်ဆင်ပါ။";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "ကွန်ပျူတာတွင် Dedi ကို အပြီးတပ်ဆင်ပါ။";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "စာများ ပျက်သွားစေရန် လုပ်ထားချက်ကို ရပ်လိုက်သည်။";

@@ -5,10 +5,10 @@
 "ACCEPT_NEW_IDENTITY_ACTION" = "接受新的安全码";
 
 /* Label for 'audio call' button in contact view. */
-"ACTION_AUDIO_CALL" = "Signal 呼叫";
+"ACTION_AUDIO_CALL" = "Dedi 呼叫";
 
 /* Label for 'invite' button in contact view. */
-"ACTION_INVITE" = "邀请其使用 Signal";
+"ACTION_INVITE" = "邀请其使用 Dedi";
 
 /* Label for 'sent message' button in contact view. */
 "ACTION_SEND_MESSAGE" = "发送消息";
@@ -68,7 +68,7 @@
 "APN_MESSAGE_IN_GROUP_DETAILED" = "%@ 在 %@ 群组中：%@";
 
 /* Message for the 'app launch failed' alert. */
-"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Signal 无法正常启动。请将您的调试日志发送给我们的开发团队，以让我们帮助您解决这个问题。";
+"APP_LAUNCH_FAILURE_ALERT_MESSAGE" = "Dedi 无法正常启动。请将您的调试日志发送给我们的开发团队，以让我们帮助您解决这个问题。";
 
 /* Title for the 'app launch failed' alert. */
 "APP_LAUNCH_FAILURE_ALERT_TITLE" = "错误";
@@ -80,13 +80,13 @@
 "APP_UPDATE_NAG_ALERT_MESSAGE_FORMAT" = "%@ 版已在 App Store 上线。";
 
 /* Title for the 'new app version available' alert. */
-"APP_UPDATE_NAG_ALERT_TITLE" = "Signal 有新版本啦";
+"APP_UPDATE_NAG_ALERT_TITLE" = "Dedi 有新版本啦";
 
 /* Label for the 'update' button in the 'new app version available' alert. */
 "APP_UPDATE_NAG_ALERT_UPDATE_BUTTON" = "更新";
 
 /* Name of application */
-"APPLICATION_NAME" = "Signal";
+"APPLICATION_NAME" = "Dedi";
 
 /* Pressing this button moves a thread from the inbox to the archive */
 "ARCHIVE_ACTION" = "存档";
@@ -161,7 +161,7 @@
 "ATTACHMENT_PICKER_DOCUMENTS_FAILED_ALERT_TITLE" = "文件选取失败。";
 
 /* Alert body when picking a document fails because user picked a directory/bundle */
-"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Signal 不能处理此文件，请尝试压缩后重试。";
+"ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_BODY" = "Dedi 不能处理此文件，请尝试压缩后重试。";
 
 /* Alert title when picking a document fails because user picked a directory/bundle */
 "ATTACHMENT_PICKER_DOCUMENTS_PICKED_DIRECTORY_FAILED_ALERT_TITLE" = "不支持的文件";
@@ -284,7 +284,7 @@
 "BUTTON_SELECT" = "选择";
 
 /* Alert message when calling and permissions for microphone are missing */
-"CALL_AUDIO_PERMISSION_MESSAGE" = "Signal 需要访问您的麦克风用于通话和录取语音消息。您可以在系统设置中授予访问权限。";
+"CALL_AUDIO_PERMISSION_MESSAGE" = "Dedi 需要访问您的麦克风用于通话和录取语音消息。您可以在系统设置中授予访问权限。";
 
 /* Alert title when calling and permissions for microphone are missing */
 "CALL_AUDIO_PERMISSION_TITLE" = "请求访问麦克风";
@@ -296,7 +296,7 @@
 "CALL_SCREEN_STATUS_NO_ANSWER" = "没有应答。";
 
 /* embeds {{Call Status}} in call screen label. For ongoing calls, {{Call Status}} is a seconds timer like 01:23, otherwise {{Call Status}} is a short text like 'Ringing', 'Busy', or 'Failed Call' */
-"CALL_STATUS_FORMAT" = "Signal %@";
+"CALL_STATUS_FORMAT" = "Dedi %@";
 
 /* Label for call button for alert offering to call a user. */
 "CALL_USER_ALERT_CALL_BUTTON" = "拨号";
@@ -350,7 +350,7 @@
 "CALLBACK_BUTTON_TITLE" = "回拨";
 
 /* The generic name used for calls if CallKit privacy is enabled */
-"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Signal 用户";
+"CALLKIT_ANONYMOUS_CONTACT_NAME" = "Dedi 用户";
 
 /* Message for alert explaining that a user cannot be verified. */
 "CANT_VERIFY_IDENTITY_ALERT_MESSAGE" = "此用户在您和他通信之前将不能被验证。";
@@ -368,7 +368,7 @@
 "CLOUDKIT_STATUS_NO_ACCOUNT" = "您没有可用于备份的 iCloud 账户。";
 
 /* Error indicating that the app was prevented from accessing the user's CloudKit account. */
-"CLOUDKIT_STATUS_RESTRICTED" = "Signal 没有访问您 iCloud 账户的权限。";
+"CLOUDKIT_STATUS_RESTRICTED" = "Dedi 没有访问您 iCloud 账户的权限。";
 
 /* Activity Sheet label */
 "COMPARE_SAFETY_NUMBER_ACTION" = "和剪切版比较";
@@ -383,7 +383,7 @@
 "COMPOSE_MESSAGE_INVITE_SECTION_TITLE" = "邀请";
 
 /* Multi-line label explaining why compose-screen contact picker is empty. */
-"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "如果想查看您的哪些联系人是 Signal 用户，请在系统设置中允许 Signal 访问联系人。";
+"COMPOSE_SCREEN_MISSING_CONTACTS_PERMISSION" = "如果想查看您的哪些联系人是 Dedi 用户，请在系统设置中允许 Dedi 访问联系人。";
 
 /* No comment provided by engineer. */
 "CONFIRM_ACCOUNT_DESTRUCTION_TEXT" = "此操作将会重置程序，删除您的所有信息并将您从服务器注销。在删除所有数据后，此程序将会自动关闭。";
@@ -651,9 +651,9 @@
 "DEREGISTRATION_REREGISTER_WITH_SAME_PHONE_NUMBER" = "Re-register this phone number";
 
 /* Label warning the user that they have been de-registered. */
-"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Signal on a different device. Tap to re-register.";
+"DEREGISTRATION_WARNING" = "Device no longer registered. Your phone number may be registered with Dedi on a different device. Tap to re-register.";
 
-/* {{Short Date}} when device last communicated with Signal Server. */
+/* {{Short Date}} when device last communicated with Dedi Server. */
 "DEVICE_LAST_ACTIVE_AT_LABEL" = "最新活动设备: %@";
 
 /* {{Short Date}} when device was linked. */
@@ -683,11 +683,11 @@
 /* Section title for the 'domain fronting country' view. */
 "DOMAIN_FRONTING_COUNTRY_VIEW_SECTION_HEADER" = "执行审查规避的地点";
 
-/* Alert body for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
+/* Alert body for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
 "EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_BODY" = "您可以在系统设置中授予访问权限。";
 
-/* Alert title for when the user has just tried to edit a contacts after declining to give Signal contacts permissions */
-"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Signal 需要联系人访问权限来修改联系人信息";
+/* Alert title for when the user has just tried to edit a contacts after declining to give Dedi contacts permissions */
+"EDIT_CONTACT_WITHOUT_CONTACTS_PERMISSION_ALERT_TITLE" = "Dedi 需要联系人访问权限来修改联系人信息";
 
 /* table cell label in conversation settings */
 "EDIT_GROUP_ACTION" = "编辑群聊";
@@ -731,17 +731,17 @@
 /* No comment provided by engineer. */
 "EDIT_TXT" = "编辑";
 
-/* body of email sent to contacts when inviting to install Signal. Embeds {{link to install Signal}} and {{link to the Signal home page}} */
-"EMAIL_INVITE_BODY" = "你好,\n\n最近我在使用 Signal 以保持 iPhone 上的对话私密. 我希望你也能装上, 这样我们可以有信心只有我和你可以看到我们发的消息或者听到我们打的电话.\n\nSignal可以在iPhone和Android上使用. 可以在以下的链接下载: %@\n\nSignal像你用过的聊天软件一样工作. 我们可以发照片或者视频, 打电话, 也可以群聊. 最好的地方在于, 没任何其它人可以看到这些内容, 即使是做出Signal软件的人!\n\n你可以在以下的链接了解更多关于制作 Signal 的 Open Whisper Systems:  %@";
+/* body of email sent to contacts when inviting to install Dedi. Embeds {{link to install Dedi}} and {{link to the Dedi home page}} */
+"EMAIL_INVITE_BODY" = "你好,\n\n最近我在使用 Dedi 以保持 iPhone 上的对话私密. 我希望你也能装上, 这样我们可以有信心只有我和你可以看到我们发的消息或者听到我们打的电话.\n\nDedi可以在iPhone和Android上使用. 可以在以下的链接下载: %@\n\nDedi像你用过的聊天软件一样工作. 我们可以发照片或者视频, 打电话, 也可以群聊. 最好的地方在于, 没任何其它人可以看到这些内容, 即使是做出Dedi软件的人!\n\n你可以在以下的链接了解更多关于制作 Dedi 的 :  %@";
 
-/* subject of email sent to contacts when inviting to install Signal */
-"EMAIL_INVITE_SUBJECT" = "切换到 Signal";
+/* subject of email sent to contacts when inviting to install Dedi */
+"EMAIL_INVITE_SUBJECT" = "切换到 Dedi";
 
 /* Second part of the label that shows up when there are neither active nor archived conversations */
 "EMPTY_ARCHIVE_FIRST_TEXT" = "点击编辑按钮。";
 
 /* First (bolded) part of the label that shows up when there are neither active nor archived conversations */
-"EMPTY_ARCHIVE_FIRST_TITLE" = "开始您的首个Signal对话！";
+"EMPTY_ARCHIVE_FIRST_TITLE" = "开始您的首个Dedi对话！";
 
 /* No comment provided by engineer. */
 "EMPTY_ARCHIVE_TEXT" = "您可以将收件箱中不活跃的会话移至存档。";
@@ -750,7 +750,7 @@
 "EMPTY_ARCHIVE_TITLE" = "请整理您的收件箱。";
 
 /* Full width label displayed when attempting to compose message */
-"EMPTY_CONTACTS_LABEL_LINE1" = "暂时没有联系人使用 Signal.";
+"EMPTY_CONTACTS_LABEL_LINE1" = "暂时没有联系人使用 Dedi.";
 
 /* Full width label displayed when attempting to compose message */
 "EMPTY_CONTACTS_LABEL_LINE2" = "为什么不邀请你的朋友?";
@@ -789,13 +789,13 @@
 "ENABLE_2FA_VIEW_PIN_DOES_NOT_MATCH" = "PIN 码不正确。";
 
 /* Indicates that user should select a 'two factor auth pin'. */
-"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "请输入注册锁的 PIN 码。以后您使用此号码注册 Signal 时，将需要输入这个 PIN 码。";
+"ENABLE_2FA_VIEW_SELECT_PIN_INSTRUCTIONS" = "请输入注册锁的 PIN 码。以后您使用此号码注册 Dedi 时，将需要输入这个 PIN 码。";
 
 /* Indicates that user has 'two factor auth pin' disabled. */
-"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "为了加强账户安全，请启用 PIN 码注册锁。打开后，再次使用此号码注册 Signal 时，您将需要输入这个 PIN 码。";
+"ENABLE_2FA_VIEW_STATUS_DISABLED_INSTRUCTIONS" = "为了加强账户安全，请启用 PIN 码注册锁。打开后，再次使用此号码注册 Dedi 时，您将需要输入这个 PIN 码。";
 
 /* Indicates that user has 'two factor auth pin' enabled. */
-"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "注册锁已启用。您只有输入正确的 PIN 码后，才能重新使用这个号码注册 Signal。";
+"ENABLE_2FA_VIEW_STATUS_ENABLED_INSTRUCTIONS" = "注册锁已启用。您只有输入正确的 PIN 码后，才能重新使用这个号码注册 Dedi。";
 
 /* Title for the 'enable two factor auth PIN' views. */
 "ENABLE_2FA_VIEW_TITLE" = "注册锁";
@@ -821,8 +821,8 @@
 /* Error message indicating that message send failed due to failed attachment write */
 "ERROR_DESCRIPTION_MESSAGE_SEND_FAILED_DUE_TO_FAILED_ATTACHMENT_WRITE" = "因无法写附件而失败。";
 
-/* Generic error used whenever Signal can't contact the server */
-"ERROR_DESCRIPTION_NO_INTERNET" = "Signal 无法联网. 请尝试使用其它网络或者使用移动数据.";
+/* Generic error used whenever Dedi can't contact the server */
+"ERROR_DESCRIPTION_NO_INTERNET" = "Dedi 无法联网. 请尝试使用其它网络或者使用移动数据.";
 
 /* Error indicating that an outgoing message had no valid recipients. */
 "ERROR_DESCRIPTION_NO_VALID_RECIPIENTS" = "缺少有效接收人，消息发送失败。";
@@ -837,7 +837,7 @@
 "ERROR_DESCRIPTION_RESPONSE_FAILED" = "服务返回无效响应。";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "你的设备已经不再注册你的电话. 你必须卸载并重装Signal.";
+"ERROR_DESCRIPTION_SENDING_UNAUTHORIZED" = "你的设备已经不再注册你的电话. 你必须卸载并重装Dedi.";
 
 /* Generic server error */
 "ERROR_DESCRIPTION_SERVER_FAILURE" = "服务器出错。请稍候再试。";
@@ -846,10 +846,10 @@
 "ERROR_DESCRIPTION_UNKNOWN_ERROR" = "发生了未知错误。";
 
 /* Error message when attempting to send message */
-"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "联系人不是 Signal 用户。";
+"ERROR_DESCRIPTION_UNREGISTERED_RECIPIENT" = "联系人不是 Dedi 用户。";
 
 /* Error message when unable to receive an attachment because the sending client is too old. */
-"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "失败：请告知发送人升级 Signal 后重新发送。";
+"ERROR_MESSAGE_ATTACHMENT_FROM_OLD_CLIENT" = "失败：请告知发送人升级 Dedi 后重新发送。";
 
 /* No comment provided by engineer. */
 "ERROR_MESSAGE_DUPLICATE_MESSAGE" = "收到了一个重复的消息。";
@@ -1008,7 +1008,7 @@
 "HOME_VIEW_TITLE_ARCHIVE" = "归档";
 
 /* Title for the home view's default mode. */
-"HOME_VIEW_TITLE_INBOX" = "Signal";
+"HOME_VIEW_TITLE_INBOX" = "Dedi";
 
 /* Call setup status label */
 "IN_CALL_CONNECTING" = "链接中...";
@@ -1050,13 +1050,13 @@
 "INVALID_AUDIO_FILE_ALERT_ERROR_MESSAGE" = "语音文件无效";
 
 /* Alert body when contacts disabled while trying to invite contacts to signal */
-"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "要邀请您的联系人，您需要在系统设置中允许Signal访问您的联系人列表。";
+"INVITE_FLOW_REQUIRES_CONTACT_ACCESS_BODY" = "要邀请您的联系人，您需要在系统设置中允许Dedi访问您的联系人列表。";
 
 /* Alert title when contacts disabled while trying to invite contacts to signal */
 "INVITE_FLOW_REQUIRES_CONTACT_ACCESS_TITLE" = "允许访问联系人";
 
 /* Label for the cell that presents the 'invite contacts' workflow. */
-"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "邀请朋友使用 Signal";
+"INVITE_FRIENDS_CONTACT_TABLE_BUTTON" = "邀请朋友使用 Dedi";
 
 /* Search */
 "INVITE_FRIENDS_PICKER_SEARCHBAR_PLACEHOLDER" = "搜索";
@@ -1214,7 +1214,7 @@
 /* message footer for read messages */
 "MESSAGE_STATUS_READ" = "已读";
 
-/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Signal account. */
+/* message status if message delivery to a recipient is skipped. We skip delivering group messages to users who have left the group or unregistered their Dedi account. */
 "MESSAGE_STATUS_RECIPIENT_SKIPPED" = "已跳过";
 
 /* message status while message is sending. */
@@ -1276,17 +1276,17 @@
 
 /* Alert body
    Alert body when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_MESSAGE" = "Signal 视频通话需要访问您的相机。请您到 设置 >> 隐私 >> 相机 >> Signal 授予访问权限。";
+"MISSING_CAMERA_PERMISSION_MESSAGE" = "Dedi 视频通话需要访问您的相机。请您到 设置 >> 隐私 >> 相机 >> Dedi 授予访问权限。";
 
 /* Alert title
    Alert title when camera is not authorized */
-"MISSING_CAMERA_PERMISSION_TITLE" = "Signal需要访问您的摄像头";
+"MISSING_CAMERA_PERMISSION_TITLE" = "Dedi需要访问您的摄像头";
 
 /* Alert body when user has previously denied media library access */
 "MISSING_MEDIA_LIBRARY_PERMISSION_MESSAGE" = "您可以在 Settings 应用中授予该权限。";
 
 /* Alert title when user has previously denied media library access */
-"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Signal 需要媒体库访问权限来完成此操作。";
+"MISSING_MEDIA_LIBRARY_PERMISSION_TITLE" = "Dedi 需要媒体库访问权限来完成此操作。";
 
 /* notification title. Embeds {{caller's name or phone number}} */
 "MSGVIEW_MISSED_CALL_WITH_NAME" = "来自 %@ 的未接来电。";
@@ -1378,7 +1378,7 @@
 /* No comment provided by engineer. */
 "NOTIFICATIONS_NONE" = "没有名字或者内容";
 
-/* Table cell switch label. When disabled, Signal will not play notification sounds while the app is in the foreground. */
+/* Table cell switch label. When disabled, Dedi will not play notification sounds while the app is in the foreground. */
 "NOTIFICATIONS_SECTION_INAPP" = "应用内播放提示音";
 
 /* Label for settings UI that allows user to change the notification sound. */
@@ -1405,8 +1405,8 @@
 /* Info Message when {{other user}} updates message expiration to {{time amount}}, see the *_TIME_AMOUNT strings for context. */
 "OTHER_UPDATED_DISAPPEARING_MESSAGES_CONFIGURATION" = "%@ 设置了消息 %@ 后消失。";
 
-/* Label warning the user that the Signal service may be down. */
-"OUTAGE_WARNING" = "Signal is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
+/* Label warning the user that the Dedi service may be down. */
+"OUTAGE_WARNING" = "Dedi is experiencing technical difficulties. We are working hard to restore service as quickly as possible.";
 
 /* No comment provided by engineer. */
 "OUTGOING_CALL" = "去电";
@@ -1484,10 +1484,10 @@
 "PRIVACY_VERIFICATION_FAILED_MISMATCHED_SAFETY_NUMBERS_IN_CLIPBOARD" = "剪贴板中的数字不是当前会话的正确的安全码.";
 
 /* Alert body for user error */
-"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Signal 无法在剪贴板中找到安全码. 你正确的复制了吗?";
+"PRIVACY_VERIFICATION_FAILED_NO_SAFETY_NUMBERS_IN_CLIPBOARD" = "Dedi 无法在剪贴板中找到安全码. 你正确的复制了吗?";
 
 /* Alert body when verifying with {{contact name}} */
-"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "每一组Signal用户共享一个不同的安全码. 重复检查 %@ 显示你的安全码.";
+"PRIVACY_VERIFICATION_FAILED_THEY_HAVE_WRONG_KEY_FOR_ME" = "每一组Dedi用户共享一个不同的安全码. 重复检查 %@ 显示你的安全码.";
 
 /* alert body */
 "PRIVACY_VERIFICATION_FAILED_WITH_OLD_LOCAL_VERSION" = "您的版本过低。升级后才可以继续校验。";
@@ -1496,7 +1496,7 @@
 "PRIVACY_VERIFICATION_FAILED_WITH_OLD_REMOTE_VERSION" = "您的好友版本过低。请对方升级后继续验证。";
 
 /* alert body */
-"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "您扫描的看起来不是安全码。请确保双方使用的是最新版的 Signal 。";
+"PRIVACY_VERIFICATION_FAILURE_INVALID_QRCODE" = "您扫描的看起来不是安全码。请确保双方使用的是最新版的 Dedi 。";
 
 /* Paragraph(s) shown alongside the safety number when verifying privacy with {{contact name}} */
 "PRIVACY_VERIFICATION_INSTRUCTIONS" = "如需确认你和 %@ 的端对端加密安全性，请在双方设备上面比较上述数字。\n\n或者可以通过扫描上述二维码进行验证。";
@@ -1535,7 +1535,7 @@
 "PROFILE_VIEW_PROFILE_AVATAR_FIELD" = "头像";
 
 /* Description of the user profile. */
-"PROFILE_VIEW_PROFILE_DESCRIPTION" = "您的 Signal 资料将对您的联系人可见，包括：建立新对话，或您与其它用户群组共享资料时。";
+"PROFILE_VIEW_PROFILE_DESCRIPTION" = "您的 Dedi 资料将对您的联系人可见，包括：建立新对话，或您与其它用户群组共享资料时。";
 
 /* Link to more information about the user profile. */
 "PROFILE_VIEW_PROFILE_DESCRIPTION_LINK" = "点击了解更多资讯。";
@@ -1592,19 +1592,19 @@
 "QUOTED_REPLY_TYPE_VIDEO" = "视频";
 
 /* No comment provided by engineer. */
-"RATING_MSG" = "如果您喜欢用 Signal 进行私人会话，你可以通过评分的方式来支持我们。这将不会花费您很长时间，而且也将对保护其他人的隐私有所帮助。";
+"RATING_MSG" = "如果您喜欢用 Dedi 进行私人会话，你可以通过评分的方式来支持我们。这将不会花费您很长时间，而且也将对保护其他人的隐私有所帮助。";
 
 /* No comment provided by engineer. */
-"RATING_RATE" = "给 Signal 评分";
+"RATING_RATE" = "给 Dedi 评分";
 
 /* No comment provided by engineer. */
-"RATING_TITLE" = "支持 Signal";
+"RATING_TITLE" = "支持 Dedi";
 
 /* Label for 'I forgot my PIN' link in the 2FA registration view. */
 "REGISTER_2FA_FORGOT_PIN" = "我忘记了我的PIN码。";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin'. */
-"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "从上一次此号码成功激活 Signal 开始，7日之后，您无需输入注册锁 PIN 码就能用这个手机号码重新注册 Signal。";
+"REGISTER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "从上一次此号码成功激活 Dedi 开始，7日之后，您无需输入注册锁 PIN 码就能用这个手机号码重新注册 Dedi。";
 
 /* Instructions to enter the 'two-factor auth pin' in the 2FA registration view. */
 "REGISTER_2FA_INSTRUCTIONS" = "这个电话号码已启用注册锁。请输入注册锁 PIN 码。\n\n注意，您的注册锁 PIN 码，与最后一步时发送给您的自动验证码是不同的。";
@@ -1643,19 +1643,19 @@
 "REGISTRATION_ERROR_BLANK_VERIFICATION_CODE" = "在验证发给你的验证码之前，我们无法激活你的帐户.";
 
 /* alert body when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Signal on any other device currently registered with this phone number.";
+"REGISTRATION_IPAD_CONFIRM_BODY" = "Registering now will disable Dedi on any other device currently registered with this phone number.";
 
 /* button text to proceed with registration when on an iPad */
 "REGISTRATION_IPAD_CONFIRM_BUTTON" = "Register this iPad";
 
 /* alert title when registering an iPad */
-"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Signal account?";
+"REGISTRATION_IPAD_CONFIRM_TITLE" = "Already have a Dedi account?";
 
 /* one line label below submit button on registration screen, which links to an external webpage. */
 "REGISTRATION_LEGAL_TERMS_LINK" = "条款和隐私政策";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "注册本设备即表示您同意 Signal 的 %@";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "注册本设备即表示您同意 Dedi 的 %@";
 
 /* embedded in legal topmatter, styled as a link */
 "REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "条款";
@@ -1703,13 +1703,13 @@
 "RELAY_REGISTERED_ERROR_RECOVERY" = "您要注册的电话号码已经在别的服务器被注册，请注销该号码后再次尝试。";
 
 /* Body text for when user is periodically prompted to enter their registration lock PIN */
-"REMINDER_2FA_BODY" = "已为您的号码启用了注册锁。为了帮助您记住注册锁 PIN 码，Signal 会定期向您确认 PIN 码。";
+"REMINDER_2FA_BODY" = "已为您的号码启用了注册锁。为了帮助您记住注册锁 PIN 码，Dedi 会定期向您确认 PIN 码。";
 
 /* Body header for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_BODY_HEADER" = "提醒：";
 
 /* Alert message explaining what happens if you forget your 'two-factor auth pin' */
-"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "注册锁能防范他人在没有您许可的情况下，使用您的号码进行注册。您随时可在 Signal 隐私设置里关闭该功能。";
+"REMINDER_2FA_FORGOT_PIN_ALERT_MESSAGE" = "注册锁能防范他人在没有您许可的情况下，使用您的号码进行注册。您随时可在 Dedi 隐私设置里关闭该功能。";
 
 /* Navbar title for when user is periodically prompted to enter their registration lock PIN */
 "REMINDER_2FA_NAV_TITLE" = "请输入您的注册锁 PIN 码";
@@ -1739,7 +1739,7 @@
 "SAFETY_NUMBER_CHANGED_CONFIRM_SEND_ACTION" = "依然发送";
 
 /* Snippet to share {{safety number}} with a friend. sent e.g. via SMS */
-"SAFETY_NUMBER_SHARE_FORMAT" = "我们的 Signal 安全码:\n%@";
+"SAFETY_NUMBER_SHARE_FORMAT" = "我们的 Dedi 安全码:\n%@";
 
 /* Action sheet heading */
 "SAFETY_NUMBERS_ACTIONSHEET_TITLE" = "你的安全码 %@ 被改变了. 你可以想要验证它.";
@@ -1771,14 +1771,14 @@
 /* Indicates that Touch ID/Face ID/Phone Passcode passcode is not set. */
 "SCREEN_LOCK_ERROR_LOCAL_AUTHENTICATION_PASSCODE_NOT_SET" = "您需要先设置您的密码来开启屏幕锁功能。";
 
-/* Description of how and why Signal iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
-"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "认证来打开 Signal。";
+/* Description of how and why Dedi iOS uses Touch ID/Face ID/Phone Passcode to unlock 'screen lock'. */
+"SCREEN_LOCK_REASON_UNLOCK_SCREEN_LOCK" = "认证来打开 Dedi。";
 
 /* Title for alert indicating that screen lock could not be unlocked. */
 "SCREEN_LOCK_UNLOCK_FAILED" = "认证失败";
 
-/* Label for button on lock screen that lets users unlock Signal. */
-"SCREEN_LOCK_UNLOCK_SIGNAL" = "解锁 Signal";
+/* Label for button on lock screen that lets users unlock Dedi. */
+"SCREEN_LOCK_UNLOCK_SIGNAL" = "解锁 Dedi";
 
 /* No comment provided by engineer. */
 "SEARCH_BYNAMEORNUMBER_PLACEHOLDER_TEXT" = "搜索姓名或号码";
@@ -1814,16 +1814,16 @@
 "SEND_INVITE_FAILURE" = "发送邀请失败, 请稍候再试.";
 
 /* Alert body after invite succeeded */
-"SEND_INVITE_SUCCESS" = "你已经邀请了你的朋友使用 Signal ！";
+"SEND_INVITE_SUCCESS" = "你已经邀请了你的朋友使用 Dedi ！";
 
-/* Text for button to send a Signal invite via SMS. %@ is placeholder for the recipient's phone number. */
+/* Text for button to send a Dedi invite via SMS. %@ is placeholder for the recipient's phone number. */
 "SEND_INVITE_VIA_SMS_BUTTON_FORMAT" = "通过短信邀请：%@";
 
 /* No comment provided by engineer. */
 "SEND_SMS_CONFIRM_TITLE" = "通过非加密的短信邀请好友？";
 
 /* No comment provided by engineer. */
-"SEND_SMS_INVITE_TITLE" = "您是否希望邀请以下号码加入Signal：";
+"SEND_SMS_INVITE_TITLE" = "您是否希望邀请以下号码加入Dedi：";
 
 /* Navbar title */
 "SETTINGS_ABOUT" = "关于";
@@ -1844,7 +1844,7 @@
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_COUNTRY_FORMAT" = "位置：%@";
 
 /* Table footer for the 'censorship circumvention' section when censorship circumvention can be manually enabled. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "若启用，Signal 会尝试规避审查。除非 Signal 在您所在地受到审查，否则不要打开该功能。";
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER" = "若启用，Dedi 会尝试规避审查。除非 Dedi 在您所在地受到审查，否则不要打开该功能。";
 
 /* Table footer for the 'censorship circumvention' section shown when censorship circumvention has been auto-enabled based on local phone number. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_AUTO_ENABLED" = "已根据您的电话号码启动审查规避。";
@@ -1852,8 +1852,8 @@
 /* Table footer for the 'censorship circumvention' section shown when the app is not connected to the internet. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_NO_CONNECTION" = "审查规避只能在联网时启动。";
 
-/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Signal service. */
-"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "不需要规避审查；您已连接上了 Signal 服务。";
+/* Table footer for the 'censorship circumvention' section shown when the app is connected to the Dedi service. */
+"SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_FOOTER_WEBSOCKET_CONNECTED" = "不需要规避审查；您已连接上了 Dedi 服务。";
 
 /* Table header for the 'censorship circumvention' section. */
 "SETTINGS_ADVANCED_CENSORSHIP_CIRCUMVENTION_HEADER" = "审查规避";
@@ -1906,8 +1906,8 @@
 /* A label for the 'add phone number' button in the block list table. */
 "SETTINGS_BLOCK_LIST_ADD_BUTTON" = "添加...";
 
-/* A label that indicates the user has no Signal contacts. */
-"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "您没有任何 Signal 联系人。";
+/* A label that indicates the user has no Dedi contacts. */
+"SETTINGS_BLOCK_LIST_NO_CONTACTS" = "您没有任何 Dedi 联系人。";
 
 /* A label that indicates the user's search has no matching results. */
 "SETTINGS_BLOCK_LIST_NO_SEARCH_RESULTS" = "无搜索结果";
@@ -1922,13 +1922,13 @@
 "SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE" = "始终使用中继进行通话";
 
 /* User settings section footer, a detailed explanation */
-"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "使用 Signal 服务器对所有通话进行中继，以防止联系人获取您的IP地址。开启后会降低通话质量。";
+"SETTINGS_CALLING_HIDES_IP_ADDRESS_PREFERENCE_TITLE_DETAIL" = "使用 Dedi 服务器对所有通话进行中继，以防止联系人获取您的IP地址。开启后会降低通话质量。";
 
 /* No comment provided by engineer. */
 "SETTINGS_CLEAR_HISTORY" = "清除聊天记录";
 
 /* No comment provided by engineer. */
-"SETTINGS_COPYRIGHT" = "版权所有 Open Whisper Systems\n根据 GPLv3 授权";
+"SETTINGS_COPYRIGHT" = "版权所有 \n根据 GPLv3 授权";
 
 /* No comment provided by engineer. */
 "SETTINGS_DELETE_ACCOUNT_BUTTON" = "删除账号";
@@ -1955,7 +1955,7 @@
 "SETTINGS_INVITE_TITLE" = "邀请您的朋友";
 
 /* content of tweet when inviting via twitter */
-"SETTINGS_INVITE_TWITTER_TEXT" = "你可以通过 @signalapp 来联系我。现在可以在 https://signal.org/download/ 下载。";
+"SETTINGS_INVITE_TWITTER_TEXT" = "你可以通过 Dedi 来联系我。现在可以在 http://dedi.link 下载。";
 
 /* Label for settings view that allows user to change the notification sound. */
 "SETTINGS_ITEM_NOTIFICATION_SOUND" = "消息提示音";
@@ -1979,7 +1979,7 @@
 "SETTINGS_PRIVACY_CALLKIT_PRIVACY_TITLE" = "显示呼叫者的名称与号码";
 
 /* Settings table section footer. */
-"SETTINGS_PRIVACY_CALLKIT_SYSTEM_CALL_LOG_PREFERENCE_DESCRIPTION" = "将Signal通话记录整合在iOS通话记录中。";
+"SETTINGS_PRIVACY_CALLKIT_SYSTEM_CALL_LOG_PREFERENCE_DESCRIPTION" = "将Dedi通话记录整合在iOS通话记录中。";
 
 /* Short table cell label */
 "SETTINGS_PRIVACY_CALLKIT_SYSTEM_CALL_LOG_PREFERENCE_TITLE" = "显示最近通话";
@@ -2003,7 +2003,7 @@
 "SETTINGS_SCREEN_LOCK_ACTIVITY_TIMEOUT" = "屏幕锁超时";
 
 /* Footer for the 'screen lock' section of the privacy settings. */
-"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "请使用 触控ID、面容ID 或 iOS 密码来解锁 Signal 。 在屏幕锁定的状态下，您仍可以接听电话和收到信息提示。您可以在 Signal 的提醒设定中自定义您希望在锁屏状态下显示的信息。";
+"SETTINGS_SCREEN_LOCK_SECTION_FOOTER" = "请使用 触控ID、面容ID 或 iOS 密码来解锁 Dedi 。 在屏幕锁定的状态下，您仍可以接听电话和收到信息提示。您可以在 Dedi 的提醒设定中自定义您希望在锁屏状态下显示的信息。";
 
 /* Title for the 'screen lock' section of the privacy settings. */
 "SETTINGS_SCREEN_LOCK_SECTION_TITLE" = "屏幕锁🔒";
@@ -2015,10 +2015,10 @@
 "SETTINGS_SCREEN_SECURITY" = "开启屏幕锁定功能";
 
 /* No comment provided by engineer. */
-"SETTINGS_SCREEN_SECURITY_DETAIL" = "阻止 Signal 预览页面显示在应用切换窗口。";
+"SETTINGS_SCREEN_SECURITY_DETAIL" = "阻止 Dedi 预览页面显示在应用切换窗口。";
 
 /* Settings table section footer. */
-"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS 通话整合会在您的锁屏界面和系统通话记录中显示您的Signal通话记录。您可以选择显示您的联系人的名称与号码。如果您已开启iCloud，系统会与苹果公司共享通话记录。";
+"SETTINGS_SECTION_CALL_KIT_DESCRIPTION" = "iOS 通话整合会在您的锁屏界面和系统通话记录中显示您的Dedi通话记录。您可以选择显示您的联系人的名称与号码。如果您已开启iCloud，系统会与苹果公司共享通话记录。";
 
 /* Label for the notifications section of conversation settings view. */
 "SETTINGS_SECTION_NOTIFICATIONS" = "通知";
@@ -2066,13 +2066,13 @@
 "SHARE_EXTENSION_LOADING" = "读取中";
 
 /* Message indicating that the share extension cannot be used until the user has registered in the main app. */
-"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "启动 Signal 来注册。";
+"SHARE_EXTENSION_NOT_REGISTERED_MESSAGE" = "启动 Dedi 来注册。";
 
 /* Title indicating that the share extension cannot be used until the user has registered in the main app. */
 "SHARE_EXTENSION_NOT_REGISTERED_TITLE" = "未注册";
 
 /* Message indicating that the share extension cannot be used until the main app has been launched at least once. */
-"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "启动 Signal 来更新或注册。";
+"SHARE_EXTENSION_NOT_YET_MIGRATED_MESSAGE" = "启动 Dedi 来更新或注册。";
 
 /* Title indicating that the share extension cannot be used until the main app has been launched at least once. */
 "SHARE_EXTENSION_NOT_YET_MIGRATED_TITLE" = "还未准备好";
@@ -2083,11 +2083,11 @@
 /* Alert title */
 "SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE" = "上传中...";
 
-/* Shown when trying to share content to a Signal user for the share extension. Followed by failure details. */
+/* Shown when trying to share content to a Dedi user for the share extension. Followed by failure details. */
 "SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE" = "无法准备附件";
 
 /* Title for the 'share extension' view. */
-"SHARE_EXTENSION_VIEW_TITLE" = "分享到 Signal";
+"SHARE_EXTENSION_VIEW_TITLE" = "分享到 Dedi";
 
 /* Action sheet item */
 "SHOW_SAFETY_NUMBER_ACTION" = "显示新的安全码";
@@ -2095,8 +2095,8 @@
 /* notification action */
 "SHOW_THREAD_BUTTON_TITLE" = "显示对话";
 
-/* body sent to contacts when inviting to Install Signal */
-"SMS_INVITE_BODY" = "请你下载Signal加密通讯软件！链接：";
+/* body sent to contacts when inviting to Install Dedi */
+"SMS_INVITE_BODY" = "请你下载Dedi加密通讯软件！链接：";
 
 /* Label for the 'no sound' option that allows users to disable sounds for notifications, etc. */
 "SOUNDS_NONE" = "无";
@@ -2186,7 +2186,7 @@
 "UNNAMED_DEVICE" = "未命名设备";
 
 /* No comment provided by engineer. */
-"UNREGISTER_SIGNAL_FAIL" = "无法从 Signal 注销。";
+"UNREGISTER_SIGNAL_FAIL" = "无法从 Dedi 注销。";
 
 /* No comment provided by engineer. */
 "UNSUPPORTED_ATTACHMENT" = "收到了不支持的附件类型。";
@@ -2222,7 +2222,7 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_BUTTON" = "设置您的资料";
 
 /* Description of new profile feature for upgrading (existing) users */
-"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "您现在可以与您的 Signal 好友分享分享资料照片和名称。";
+"UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_DESCRIPTION" = "您现在可以与您的 Dedi 好友分享分享资料照片和名称。";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_INTRODUCING_PROFILES_TITLE" = "准备好来张特写了吗？";
@@ -2237,19 +2237,19 @@
 "UPGRADE_EXPERIENCE_INTRODUCING_READ_RECEIPTS_TITLE" = "加入已读回执功能";
 
 /* Description of video calling to upgrading (existing) users */
-"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Signal 已开始支持安全的视频通话。正常的开始Signal通话，点击相机按钮，对方即可看到您。";
+"UPGRADE_EXPERIENCE_VIDEO_DESCRIPTION" = "Dedi 已开始支持安全的视频通话。正常的开始Dedi通话，点击相机按钮，对方即可看到您。";
 
 /* Header for upgrade experience */
 "UPGRADE_EXPERIENCE_VIDEO_TITLE" = "现推出安全的视频通话！";
 
 /* Message for the alert indicating that user should upgrade iOS. */
-"UPGRADE_IOS_ALERT_MESSAGE" = "Signal 仅支持 iOS 9 或更新的系统版本。请到 设置 >> 通用 >> 软件更新 升级 iOS。";
+"UPGRADE_IOS_ALERT_MESSAGE" = "Dedi 仅支持 iOS 9 或更新的系统版本。请到 设置 >> 通用 >> 软件更新 升级 iOS。";
 
 /* Title for the alert indicating that user should upgrade iOS. */
 "UPGRADE_IOS_ALERT_TITLE" = "升级 iOS";
 
 /* No comment provided by engineer. */
-"Upgrading Signal ..." = "正在升级 Signal…";
+"Upgrading Dedi ..." = "正在升级 Dedi…";
 
 /* button text for back button on verification view */
 "VERIFICATION_BACK_BUTTON" = "退后";
@@ -2303,7 +2303,7 @@
 "VOICE_MESSAGE_TOO_SHORT_ALERT_TITLE" = "语音消息";
 
 /* Activity indicator title, shown upon returning to the device manager, until you complete the provisioning process on desktop */
-"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "请完成 Signal 桌面版设置。";
+"WAITING_TO_COMPLETE_DEVICE_LINK_TEXT" = "请完成 Dedi 桌面版设置。";
 
 /* Info Message when you disable disappearing messages */
 "YOU_DISABLED_DISAPPEARING_MESSAGES_CONFIGURATION" = "您取消了阅后即焚。";

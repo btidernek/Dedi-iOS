@@ -250,7 +250,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     NSString *filename = filePath.lastPathComponent.stringByDeletingPathExtension;
     NSString *containingDir = filePath.stringByDeletingLastPathComponent;
-    NSString *newFilename = [filename stringByAppendingString:@"-signal-ios-thumbnail"];
+    NSString *newFilename = [filename stringByAppendingString:@"-dedi-ios-thumbnail"];
 
     return [[containingDir stringByAppendingPathComponent:newFilename] stringByAppendingPathExtension:@"jpg"];
 }
