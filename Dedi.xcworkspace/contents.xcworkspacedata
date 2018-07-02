@@ -2,12 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/btkmac/btkCodeBS/btider-Dedi/Dedi-iOS/Dedi.xcodeproj">
+      location = "group:Dedi.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Dedi.xcodeproj">
    </FileRef>
 </Workspace>
