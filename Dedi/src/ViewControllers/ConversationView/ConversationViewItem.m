@@ -92,8 +92,6 @@ NSString *NSStringForOWSMessageCellType(OWSMessageCellType cellType)
     _interaction = interaction;
     _isGroupThread = isGroupThread;
     _conversationStyle = conversationStyle;
-    self.row = NSNotFound;
-    self.previousRow = NSNotFound;
 
     [self ensureViewState:transaction];
 
@@ -151,24 +149,35 @@ NSString *NSStringForOWSMessageCellType(OWSMessageCellType cellType)
     [self clearCachedLayoutState];
 }
 
-- (void)setShouldHideRecipientStatus:(BOOL)shouldHideRecipientStatus
+- (void)setShouldShowSenderAvatar:(BOOL)shouldShowSenderAvatar
 {
-    if (_shouldHideRecipientStatus == shouldHideRecipientStatus) {
+    if (_shouldShowSenderAvatar == shouldShowSenderAvatar) {
         return;
     }
 
-    _shouldHideRecipientStatus = shouldHideRecipientStatus;
+    _shouldShowSenderAvatar = shouldShowSenderAvatar;
 
     [self clearCachedLayoutState];
 }
 
-- (void)setShouldHideAvatar:(BOOL)shouldHideAvatar
+- (void)setSenderName:(nullable NSString *)senderName
 {
-    if (_shouldHideAvatar == shouldHideAvatar) {
+    if ([NSObject isNullableObject:senderName equalTo:_senderName]) {
         return;
     }
 
-    _shouldHideAvatar = shouldHideAvatar;
+    _senderName = senderName;
+
+    [self clearCachedLayoutState];
+}
+
+- (void)setShouldHideFooter:(BOOL)shouldHideFooter
+{
+    if (_shouldHideFooter == shouldHideFooter) {
+        return;
+    }
+
+    _shouldHideFooter = shouldHideFooter;
 
     [self clearCachedLayoutState];
 }
@@ -266,13 +275,26 @@ NSString *NSStringForOWSMessageCellType(OWSMessageCellType cellType)
     OWSAssert(previousLayoutItem);
 
     if (self.interaction.interactionType == OWSInteractionType_UnreadIndicator
-        || previousLayoutItem.interaction.interactionType == OWSInteractionType_UnreadIndicator) {
-        // The unread indicator has its own v-margins.
-        return 0.f;
+        || previousLayoutItem.interaction.interactionType == OWSInteractionType_UnreadIndicator
+        || self.shouldShowDate) {
+        return 20.f;
+    }
+
+    // "Bubble Collapse".  Adjacent messages with the same author should be close together.
+    if (self.interaction.interactionType == OWSInteractionType_IncomingMessage
+        && previousLayoutItem.interaction.interactionType == OWSInteractionType_IncomingMessage) {
+        TSIncomingMessage *incomingMessage = (TSIncomingMessage *)self.interaction;
+        TSIncomingMessage *previousIncomingMessage = (TSIncomingMessage *)previousLayoutItem.interaction;
+        if ([incomingMessage.authorId isEqualToString:previousIncomingMessage.authorId]) {
+            return 2.f;
+        }
+    } else if (self.interaction.interactionType == OWSInteractionType_OutgoingMessage
+        && previousLayoutItem.interaction.interactionType == OWSInteractionType_OutgoingMessage) {
+        return 2.f;
     }
 
     // TODO:
-    return 4.f;
+    return 10.f;
 }
 
 - (ConversationViewCell *)dequeueCellForCollectionView:(UICollectionView *)collectionView

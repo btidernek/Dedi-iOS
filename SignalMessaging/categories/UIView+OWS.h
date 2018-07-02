@@ -106,6 +106,8 @@ CGFloat ScaleFromIPhone5(CGFloat iPhone5Value);
 // When using a UIView as a "div" to structure layout, we don't want it to have margins.
 - (void)setHLayoutMargins:(CGFloat)value;
 
+- (NSArray<NSLayoutConstraint *> *)autoPinToEdgesOfView:(UIView *)view;
+
 #pragma mark - Containers
 
 + (UIView *)containerView;
@@ -162,5 +164,12 @@ CG_INLINE CGSize CGSizeRound(CGSize size)
 {
     return CGSizeMake((CGFloat)round(size.width), (CGFloat)round(size.height));
 }
+
+CG_INLINE CGSize CGSizeMax(CGSize size1, CGSize size2)
+{
+    return CGSizeMake(MAX(size1.width, size2.width), MAX(size1.height, size2.height));
+}
+
+CGFloat CGHairlineWidth();
 
 NS_ASSUME_NONNULL_END

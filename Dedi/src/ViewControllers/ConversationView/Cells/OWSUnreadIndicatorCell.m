@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) TSUnreadIndicatorInteraction *interaction;
 
 @property (nonatomic) UILabel *titleLabel;
+@property (nonatomic) UILabel *subtitleLabel;
 @property (nonatomic) UIView *strokeView;
 @property (nonatomic) NSArray<NSLayoutConstraint *> *layoutConstraints;
+@property (nonatomic) UIStackView *stackView;
 
 @end
 
@@ -44,15 +46,28 @@ NS_ASSUME_NONNULL_BEGIN
     self.contentView.layoutMargins = UIEdgeInsetsZero;
 
     self.strokeView = [UIView new];
-    // TODO: color.
-    self.strokeView.backgroundColor = [UIColor colorWithRGBHex:0xf6eee3];
-    [self.contentView addSubview:self.strokeView];
+    self.strokeView.backgroundColor = [UIColor ows_light60Color];
+    [self.strokeView autoSetDimension:ALDimensionHeight toSize:self.strokeThickness];
+    [self.strokeView setContentHuggingHigh];
 
     self.titleLabel = [UILabel new];
-    // TODO: color.
-    self.titleLabel.textColor = [UIColor colorWithRGBHex:0x403e3b];
+    self.titleLabel.textColor = [UIColor ows_light90Color];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
-    [self.contentView addSubview:self.titleLabel];
+
+    self.subtitleLabel = [UILabel new];
+    self.subtitleLabel.textColor = [UIColor ows_light90Color];
+    // The subtitle may wrap to a second line.
+    self.subtitleLabel.numberOfLines = 0;
+    self.subtitleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.subtitleLabel.textAlignment = NSTextAlignmentCenter;
+
+    self.stackView = [[UIStackView alloc] initWithArrangedSubviews:@[
+        self.strokeView,
+        self.titleLabel,
+        self.subtitleLabel,
+    ]];
+    self.stackView.axis = NSTextLayoutOrientationVertical;
+    [self.contentView addSubview:self.stackView];
 
     [self configureFonts];
 }
@@ -60,9 +75,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)configureFonts
 {
     // Update cell to reflect changes in dynamic text.
-    //
-    // TODO: Font size.
-    self.titleLabel.font = UIFont.ows_dynamicTypeSubheadlineFont;
+    self.titleLabel.font = UIFont.ows_dynamicTypeCaption1Font.ows_mediumWeight;
+    self.subtitleLabel.font = UIFont.ows_dynamicTypeCaption1Font;
 }
 
 + (NSString *)cellReuseIdentifier
@@ -81,20 +95,18 @@ NS_ASSUME_NONNULL_BEGIN
     TSUnreadIndicatorInteraction *interaction = (TSUnreadIndicatorInteraction *)self.viewItem.interaction;
 
     self.titleLabel.text = [self titleForInteraction:interaction];
+    self.subtitleLabel.text = [self subtitleForInteraction:interaction];
 
-    self.backgroundColor = [UIColor whiteColor];
+    self.subtitleLabel.hidden = self.subtitleLabel.text.length < 1;
 
     [NSLayoutConstraint deactivateConstraints:self.layoutConstraints];
     self.layoutConstraints = @[
-        [self.titleLabel autoVCenterInSuperview],
-        [self.titleLabel autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.fullWidthGutterLeading],
-        [self.titleLabel autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.fullWidthGutterTrailing],
-
-        // TODO: offset.
-        [self.strokeView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.titleLabel withOffset:0.f],
-        [self.strokeView autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.fullWidthGutterLeading],
-        [self.strokeView autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.fullWidthGutterTrailing],
-        [self.strokeView autoSetDimension:ALDimensionHeight toSize:1.f],
+        [self.stackView autoPinEdgeToSuperviewEdge:ALEdgeTop],
+        [self.stackView autoPinEdgeToSuperviewEdge:ALEdgeBottom],
+        [self.stackView autoPinEdgeToSuperviewEdge:ALEdgeLeading
+                                         withInset:self.conversationStyle.fullWidthGutterLeading],
+        [self.stackView autoPinEdgeToSuperviewEdge:ALEdgeTrailing
+                                         withInset:self.conversationStyle.fullWidthGutterTrailing],
     ];
 }
 
@@ -102,6 +114,23 @@ NS_ASSUME_NONNULL_BEGIN
 {
     return NSLocalizedString(@"MESSAGES_VIEW_UNREAD_INDICATOR", @"Indicator that separates read from unread messages.")
         .uppercaseString;
+}
+
+- (NSString *)subtitleForInteraction:(TSUnreadIndicatorInteraction *)interaction
+{
+    if (!interaction.hasMoreUnseenMessages) {
+        return nil;
+    }
+    return (interaction.missingUnseenSafetyNumberChangeCount > 0
+            ? NSLocalizedString(@"MESSAGES_VIEW_UNREAD_INDICATOR_HAS_MORE_UNSEEN_MESSAGES",
+                  @"Messages that indicates that there are more unseen messages.")
+            : NSLocalizedString(@"MESSAGES_VIEW_UNREAD_INDICATOR_HAS_MORE_UNSEEN_MESSAGES_AND_SAFETY_NUMBER_CHANGES",
+                  @"Messages that indicates that there are more unseen messages including safety number changes."));
+}
+
+- (CGFloat)strokeThickness
+{
+    return CGHairlineWidth();
 }
 
 - (CGSize)cellSizeWithTransaction:(YapDatabaseReadTransaction *)transaction
@@ -112,10 +141,16 @@ NS_ASSUME_NONNULL_BEGIN
 
     [self configureFonts];
 
-    // TODO: offset.
-    CGFloat vOffset = 24.f;
-    CGSize result
-        = CGSizeMake(self.conversationStyle.fullWidthContentWidth, self.titleLabel.font.lineHeight + vOffset * 2);
+    CGSize result = CGSizeMake(
+        self.conversationStyle.fullWidthContentWidth, self.strokeThickness + self.titleLabel.font.lineHeight);
+
+    TSUnreadIndicatorInteraction *interaction = (TSUnreadIndicatorInteraction *)self.viewItem.interaction;
+    self.subtitleLabel.text = [self subtitleForInteraction:interaction];
+    if (self.subtitleLabel.text.length > 0) {
+        result.height += ceil(
+            [self.subtitleLabel sizeThatFits:CGSizeMake(self.conversationStyle.fullWidthContentWidth, CGFLOAT_MAX)]
+                .height);
+    }
 
     return CGSizeCeil(result);
 }

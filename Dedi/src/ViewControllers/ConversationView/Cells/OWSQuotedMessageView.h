@@ -4,8 +4,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class ConversationStyle;
 @class DisplayableText;
-@class OWSBubbleStrokeView;
+@class OWSBubbleShapeView;
 @class OWSQuotedReplyModel;
 @class TSAttachmentPointer;
 @class TSQuotedMessage;
@@ -19,7 +20,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OWSQuotedMessageView : UIView
 
-@property (nonatomic, nullable, readonly) OWSBubbleStrokeView *boundsStrokeView;
 @property (nonatomic, nullable, weak) id<OWSQuotedMessageViewDelegate> delegate;
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -33,10 +33,12 @@ NS_ASSUME_NONNULL_BEGIN
 // Factory method for "message bubble" views.
 + (OWSQuotedMessageView *)quotedMessageViewForConversation:(OWSQuotedReplyModel *)quotedMessage
                                      displayableQuotedText:(nullable DisplayableText *)displayableQuotedText
+                                         conversationStyle:(ConversationStyle *)conversationStyle
                                                 isOutgoing:(BOOL)isOutgoing;
 
 // Factory method for "message compose" views.
-+ (OWSQuotedMessageView *)quotedMessageViewForPreview:(OWSQuotedReplyModel *)quotedMessage;
++ (OWSQuotedMessageView *)quotedMessageViewForPreview:(OWSQuotedReplyModel *)quotedMessage
+                                    conversationStyle:(ConversationStyle *)conversationStyle;
 
 @end
 

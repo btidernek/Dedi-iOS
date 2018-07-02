@@ -15,13 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 // The non-nullable properties are so frequently used that it's easier
 // to always keep one around.
 
-// The cell's contentView contains:
-//
-// * MessageView (message)
-// * dateHeaderLabel (above message)
-// * footerView (below message)
-
 @property (nonatomic) OWSMessageBubbleView *messageBubbleView;
+@property (nonatomic) UIStackView *dateHeaderView;
+@property (nonatomic) UIView *dateStrokeView;
 @property (nonatomic) UILabel *dateHeaderLabel;
 @property (nonatomic) AvatarImageView *avatarView;
 
@@ -55,22 +51,26 @@ NS_ASSUME_NONNULL_BEGIN
     self.messageBubbleView = [OWSMessageBubbleView new];
     [self.contentView addSubview:self.messageBubbleView];
 
+    self.dateStrokeView = [UIView new];
+    self.dateStrokeView.backgroundColor = [UIColor ows_light45Color];
+    [self.dateStrokeView autoSetDimension:ALDimensionHeight toSize:self.dateHeaderStrokeThickness];
+    [self.dateStrokeView setContentHuggingHigh];
+
     self.dateHeaderLabel = [UILabel new];
-    self.dateHeaderLabel.font = self.dateHeaderDateFont;
+    self.dateHeaderLabel.font = self.dateHeaderFont;
     self.dateHeaderLabel.textAlignment = NSTextAlignmentCenter;
-    self.dateHeaderLabel.textColor = [UIColor lightGrayColor];
-    [self.contentView addSubview:self.dateHeaderLabel];
+    self.dateHeaderLabel.textColor = [UIColor ows_light60Color];
+
+    self.dateHeaderView = [[UIStackView alloc] initWithArrangedSubviews:@[
+        self.dateStrokeView,
+        self.dateHeaderLabel,
+    ]];
+    self.dateHeaderView.axis = NSTextLayoutOrientationVertical;
 
     self.avatarView = [[AvatarImageView alloc] init];
-    [self.contentView addSubview:self.avatarView];
     [self.avatarView autoSetDimension:ALDimensionWidth toSize:self.avatarSize];
     [self.avatarView autoSetDimension:ALDimensionHeight toSize:self.avatarSize];
 
-    // Hide these views by default.
-    self.dateHeaderLabel.hidden = YES;
-    self.avatarView.hidden = YES;
-
-    [self.messageBubbleView autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.dateHeaderLabel];
     [self.messageBubbleView autoPinBottomToSuperviewMarginWithInset:0];
 
     self.contentView.userInteractionEnabled = YES;
@@ -146,7 +146,7 @@ NS_ASSUME_NONNULL_BEGIN
     [self.messageBubbleView loadContent];
 
     // Update label fonts to honor dynamic type size.
-    self.dateHeaderLabel.font = self.dateHeaderDateFont;
+    self.dateHeaderLabel.font = self.dateHeaderFont;
 
     if (self.isIncoming) {
         [self.viewConstraints addObjectsFromArray:@[
@@ -180,8 +180,6 @@ NS_ASSUME_NONNULL_BEGIN
                                          ofView:self.avatarView
                                      withOffset:avatarBottomMargin],
         ]];
-        [self.messageBubbleView logFrameLaterWithLabel:@"messageBubbleView"];
-        [self.avatarView logFrameLaterWithLabel:@"avatarView"];
     }
 }
 
@@ -225,49 +223,50 @@ NS_ASSUME_NONNULL_BEGIN
         NSString *timeString = [dateHeaderTimeFormatter stringFromDate:date];
 
         NSAttributedString *attributedText = [NSAttributedString new];
-        attributedText = [attributedText rtlSafeAppend:dateString
+        attributedText = [attributedText rtlSafeAppend:dateString.uppercaseString
                                             attributes:@{
-                                                NSFontAttributeName : self.dateHeaderDateFont,
+                                                NSFontAttributeName : self.dateHeaderFont,
                                                 NSForegroundColorAttributeName : [UIColor lightGrayColor],
                                             }
                                          referenceView:self];
         attributedText = [attributedText rtlSafeAppend:@" "
                                             attributes:@{
-                                                NSFontAttributeName : self.dateHeaderDateFont,
+                                                NSFontAttributeName : self.dateHeaderFont,
                                             }
                                          referenceView:self];
         attributedText = [attributedText rtlSafeAppend:timeString
                                             attributes:@{
-                                                NSFontAttributeName : self.dateHeaderTimeFont,
+                                                NSFontAttributeName : self.dateHeaderFont,
                                                 NSForegroundColorAttributeName : [UIColor lightGrayColor],
                                             }
                                          referenceView:self];
 
         self.dateHeaderLabel.attributedText = attributedText;
-        self.dateHeaderLabel.hidden = NO;
 
+        [self.contentView addSubview:self.dateHeaderView];
         [self.viewConstraints addObjectsFromArray:@[
-            // TODO: Are data headers symmetric or are they asymmetric? gutters are asymmetric?
-            [self.dateHeaderLabel autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.gutterLeading],
-            [self.dateHeaderLabel autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.gutterTrailing],
-            [self.dateHeaderLabel autoPinEdgeToSuperviewEdge:ALEdgeTop],
-            [self.dateHeaderLabel autoSetDimension:ALDimensionHeight toSize:self.dateHeaderHeight],
+            [self.dateHeaderView autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.gutterLeading],
+            [self.dateHeaderView autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.gutterTrailing],
+            [self.dateHeaderView autoPinEdgeToSuperviewEdge:ALEdgeTop],
+
+            // DO NOT pin to the bottom of dateHeaderView.
+            //
+            // Being a UIStackView, it doesn't reflect the spacing below the date
+            // header contents.  Instead pin using dateHeaderHeight which includes
+            // the spacing.
+            [self.messageBubbleView autoPinEdge:ALEdgeTop
+                                         toEdge:ALEdgeTop
+                                         ofView:self.dateHeaderView
+                                     withOffset:self.dateHeaderHeight],
         ]];
     } else {
-        self.dateHeaderLabel.hidden = YES;
         [self.viewConstraints addObjectsFromArray:@[
-            [self.dateHeaderLabel autoSetDimension:ALDimensionHeight toSize:0],
-            [self.dateHeaderLabel autoPinEdgeToSuperviewEdge:ALEdgeTop],
+            [self.messageBubbleView autoPinEdgeToSuperviewEdge:ALEdgeTop],
         ]];
     }
 }
 
-- (UIFont *)dateHeaderDateFont
-{
-    return UIFont.ows_dynamicTypeCaption1Font.ows_mediumWeight;
-}
-
-- (UIFont *)dateHeaderTimeFont
+- (UIFont *)dateHeaderFont
 {
     return UIFont.ows_dynamicTypeCaption1Font;
 }
@@ -277,13 +276,15 @@ NS_ASSUME_NONNULL_BEGIN
 // Returns YES IFF the avatar view is appropriate and configured.
 - (BOOL)updateAvatarView
 {
+    if (!self.viewItem.shouldShowSenderAvatar) {
+        return NO;
+    }
     if (!self.viewItem.isGroupThread) {
+        OWSFail(@"%@ not a group thread.", self.logTag);
         return NO;
     }
     if (self.viewItem.interaction.interactionType != OWSInteractionType_IncomingMessage) {
-        return NO;
-    }
-    if (self.viewItem.shouldHideAvatar) {
+        OWSFail(@"%@ not an incoming message.", self.logTag);
         return NO;
     }
 
@@ -295,10 +296,11 @@ NS_ASSUME_NONNULL_BEGIN
 
     TSIncomingMessage *incomingMessage = (TSIncomingMessage *)self.viewItem.interaction;
     OWSAvatarBuilder *avatarBuilder = [[OWSContactAvatarBuilder alloc] initWithSignalId:incomingMessage.authorId
+                                                                                  color:self.conversationStyle.primaryColor
                                                                                diameter:self.avatarSize
                                                                         contactsManager:contactsManager];
     self.avatarView.image = [avatarBuilder build];
-    self.avatarView.hidden = NO;
+    [self.contentView addSubview:self.avatarView];
 
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(otherUsersProfileDidChange:)
@@ -317,13 +319,15 @@ NS_ASSUME_NONNULL_BEGIN
 {
     OWSAssertIsOnMainThread();
 
+    if (!self.viewItem.shouldShowSenderAvatar) {
+        return;
+    }
     if (!self.viewItem.isGroupThread) {
+        OWSFail(@"%@ not a group thread.", self.logTag);
         return;
     }
     if (self.viewItem.interaction.interactionType != OWSInteractionType_IncomingMessage) {
-        return;
-    }
-    if (self.viewItem.shouldHideAvatar) {
+        OWSFail(@"%@ not an incoming message.", self.logTag);
         return;
     }
 
@@ -365,11 +369,21 @@ NS_ASSUME_NONNULL_BEGIN
     return cellSize;
 }
 
+- (CGFloat)dateHeaderStrokeThickness
+{
+    return CGHairlineWidth();
+}
+
+- (CGFloat)dateHeaderBottomMargin
+{
+    return 20.f;
+}
+
 - (CGFloat)dateHeaderHeight
 {
     if (self.viewItem.shouldShowDate) {
-        // Add 5pt spacing above and below the date header.
-        return (CGFloat)ceil(MAX(self.dateHeaderDateFont.lineHeight, self.dateHeaderTimeFont.lineHeight) + 10.f);
+        CGFloat textHeight = self.dateHeaderFont.capHeight;
+        return (CGFloat)ceil(self.dateHeaderStrokeThickness + textHeight + self.dateHeaderBottomMargin);
     } else {
         return 0.f;
     }
@@ -387,10 +401,10 @@ NS_ASSUME_NONNULL_BEGIN
     [self.messageBubbleView prepareForReuse];
     [self.messageBubbleView unloadContent];
 
-    self.dateHeaderLabel.text = nil;
-    self.dateHeaderLabel.hidden = YES;
+    [self.dateHeaderView removeFromSuperview];
+
     self.avatarView.image = nil;
-    self.avatarView.hidden = YES;
+    [self.avatarView removeFromSuperview];
 
     [self hideMenuControllerIfNecessary];
 

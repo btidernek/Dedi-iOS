@@ -6,7 +6,7 @@
 #import "AttachmentUploadView.h"
 #import "ConversationViewItem.h"
 #import "OWSAudioMessageView.h"
-#import "OWSBubbleStrokeView.h"
+#import "OWSBubbleShapeView.h"
 #import "OWSBubbleView.h"
 #import "OWSContactShareView.h"
 #import "OWSGenericAttachmentView.h"
@@ -23,7 +23,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) OWSBubbleView *bubbleView;
 
+// TODO: We may only end up using a single shadow.
+@property (nonatomic) OWSBubbleShapeView *mediaShadowView1;
+
+@property (nonatomic) OWSBubbleShapeView *mediaShadowView2;
+
+@property (nonatomic) OWSBubbleShapeView *mediaClipView;
+
+@property (nonatomic) OWSBubbleShapeView *bubbleStrokeView;
+
 @property (nonatomic) UIStackView *stackView;
+
+@property (nonatomic) UILabel *senderNameLabel;
 
 @property (nonatomic) OWSMessageTextView *bodyTextView;
 
@@ -73,11 +84,15 @@ NS_ASSUME_NONNULL_BEGIN
     [self addSubview:self.bubbleView];
     [self.bubbleView autoPinEdgesToSuperviewEdges];
 
+    self.mediaShadowView1 = [OWSBubbleShapeView bubbleShadowView];
+    self.mediaShadowView2 = [OWSBubbleShapeView bubbleShadowView];
+    self.mediaClipView = [OWSBubbleShapeView bubbleClipView];
+    self.bubbleStrokeView = [OWSBubbleShapeView bubbleDrawView];
+
     self.stackView = [UIStackView new];
     self.stackView.axis = UILayoutConstraintAxisVertical;
-    self.stackView.alignment = UIStackViewAlignmentFill;
-    [self addSubview:self.stackView];
-    [self.stackView autoPinEdgesToSuperviewEdges];
+
+    self.senderNameLabel = [UILabel new];
 
     self.bodyTextView = [self newTextView];
     // Setting dataDetectorTypes is expensive.  Do it just once.
@@ -208,24 +223,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark -
 
-- (BOOL)hasBubbleBackground
-{
-    switch (self.cellType) {
-        case OWSMessageCellType_Unknown:
-        case OWSMessageCellType_TextMessage:
-        case OWSMessageCellType_OversizeTextMessage:
-        case OWSMessageCellType_GenericAttachment:
-        case OWSMessageCellType_DownloadingAttachment:
-        case OWSMessageCellType_ContactShare:
-            return YES;
-        case OWSMessageCellType_StillImage:
-        case OWSMessageCellType_AnimatedImage:
-        case OWSMessageCellType_Audio:
-        case OWSMessageCellType_Video:
-            return self.hasBodyText;
-    }
-}
-
 - (BOOL)hasBodyTextContent
 {
     switch (self.cellType) {
@@ -255,21 +252,31 @@ NS_ASSUME_NONNULL_BEGIN
     OWSAssert(self.viewItem.interaction);
     OWSAssert([self.viewItem.interaction isKindOfClass:[TSMessage class]]);
 
-    CGSize quotedMessageContentSize = [self quotedMessageSize];
-    // TODO:
-    CGSize bodyMediaContentSize = [self bodyMediaSize];
-    CGSize bodyTextContentSize = [self bodyTextSizeWithIncludeMargins:NO];
+    NSValue *_Nullable quotedMessageSize = [self quotedMessageSize];
+    NSValue *_Nullable bodyMediaSize = [self bodyMediaSize];
+    NSValue *_Nullable bodyTextSize = [self bodyTextSize];
 
-    if ([self.viewItem.interaction isKindOfClass:[TSMessage class]] && self.hasBubbleBackground) {
-        TSMessage *message = (TSMessage *)self.viewItem.interaction;
-        self.bubbleView.bubbleColor = [self.bubbleFactory bubbleColorWithMessage:message];
-    } else {
-        // Media-only messages should have no background color; they will fill the bubble's bounds
-        // and we don't want artifacts at the edges.
-        self.bubbleView.bubbleColor = nil;
+    [self.bubbleView addSubview:self.stackView];
+    [self.viewConstraints addObjectsFromArray:[self.stackView autoPinEdgesToSuperviewEdges]];
+    NSMutableArray<UIView *> *textViews = [NSMutableArray new];
+
+    if (self.shouldShowSenderName) {
+        [self configureSenderNameLabel];
+        [textViews addObject:self.senderNameLabel];
     }
 
     if (self.isQuotedReply) {
+        // Flush any pending "text" subviews.
+        BOOL isFirstSubview = ![self insertAnyTextViewsIntoStackView:textViews];
+        [textViews removeAllObjects];
+
+        if (isFirstSubview) {
+            UIView *spacerView = [UIView containerView];
+            [spacerView autoSetDimension:ALDimensionHeight toSize:self.quotedReplyTopMargin];
+            [spacerView setCompressionResistanceHigh];
+            [self.stackView addArrangedSubview:spacerView];
+        }
+
         BOOL isOutgoing = [self.viewItem.interaction isKindOfClass:TSOutgoingMessage.class];
         DisplayableText *_Nullable displayableQuotedText
             = (self.viewItem.hasQuotedText ? self.viewItem.displayableQuotedText : nil);
@@ -277,20 +284,19 @@ NS_ASSUME_NONNULL_BEGIN
         OWSQuotedMessageView *quotedMessageView =
             [OWSQuotedMessageView quotedMessageViewForConversation:self.viewItem.quotedReply
                                              displayableQuotedText:displayableQuotedText
+                                                 conversationStyle:self.conversationStyle
                                                         isOutgoing:isOutgoing];
         quotedMessageView.delegate = self;
 
         self.quotedMessageView = quotedMessageView;
         [quotedMessageView createContents];
         [self.stackView addArrangedSubview:quotedMessageView];
-        [self.viewConstraints
-            addObject:[quotedMessageView autoSetDimension:ALDimensionHeight toSize:quotedMessageContentSize.height]];
-
-        [self.bubbleView addPartnerView:quotedMessageView.boundsStrokeView];
+        OWSAssert(quotedMessageSize);
+        [self.viewConstraints addObject:[quotedMessageView autoSetDimension:ALDimensionHeight
+                                                                     toSize:quotedMessageSize.CGSizeValue.height]];
     }
 
     UIView *_Nullable bodyMediaView = nil;
-    BOOL bodyMediaViewHasGreedyWidth = NO;
     switch (self.cellType) {
         case OWSMessageCellType_Unknown:
         case OWSMessageCellType_TextMessage:
@@ -311,19 +317,15 @@ NS_ASSUME_NONNULL_BEGIN
         case OWSMessageCellType_Audio:
             OWSAssert(self.viewItem.attachmentStream);
             bodyMediaView = [self loadViewForAudio];
-            bodyMediaViewHasGreedyWidth = YES;
             break;
         case OWSMessageCellType_GenericAttachment:
             bodyMediaView = [self loadViewForGenericAttachment];
-            bodyMediaViewHasGreedyWidth = YES;
             break;
         case OWSMessageCellType_DownloadingAttachment:
             bodyMediaView = [self loadViewForDownloadingAttachment];
-            bodyMediaViewHasGreedyWidth = YES;
             break;
         case OWSMessageCellType_ContactShare:
             bodyMediaView = [self loadViewForContactShare];
-            bodyMediaViewHasGreedyWidth = YES;
             break;
     }
 
@@ -336,92 +338,230 @@ NS_ASSUME_NONNULL_BEGIN
         self.bodyMediaView = bodyMediaView;
         bodyMediaView.userInteractionEnabled = NO;
         if (self.isMediaBeingSent) {
+            // TODO:
             bodyMediaView.layer.opacity = 0.75f;
         }
 
-        [self.stackView addArrangedSubview:bodyMediaView];
+        if (self.hasFullWidthMediaView) {
+            // Flush any pending "text" subviews.
+            [self insertAnyTextViewsIntoStackView:textViews];
+            [textViews removeAllObjects];
 
-        BOOL shouldStrokeMediaView = ([bodyMediaView isKindOfClass:[UIImageView class]] ||
-            [bodyMediaView isKindOfClass:[OWSContactShareView class]]);
-        if (shouldStrokeMediaView) {
-            OWSBubbleStrokeView *bubbleStrokeView = [OWSBubbleStrokeView new];
-            bubbleStrokeView.strokeThickness = 1.f;
-            bubbleStrokeView.strokeColor = [UIColor colorWithWhite:0.f alpha:0.1f];
+            if (self.isQuotedReply) {
+                UIView *spacerView = [UIView containerView];
+                [spacerView autoSetDimension:ALDimensionHeight toSize:self.bodyMediaQuotedReplyVSpacing];
+                [spacerView setCompressionResistanceHigh];
+                [self.stackView addArrangedSubview:spacerView];
+            }
 
-            [self.bubbleView addSubview:bubbleStrokeView];
-            [bubbleStrokeView autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:bodyMediaView];
-            [bubbleStrokeView autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:bodyMediaView];
-            [bubbleStrokeView autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:bodyMediaView];
-            [bubbleStrokeView autoPinEdge:ALEdgeRight toEdge:ALEdgeRight ofView:bodyMediaView];
+            if (self.hasBodyMediaWithThumbnail) {
 
-            [self.bubbleView addPartnerView:bubbleStrokeView];
+                // The "body media" view casts a shadow "downward" onto adjacent views,
+                // so we use a "proxy" view to take its place within the v-stack
+                // view and then insert the body media view above its proxy so that
+                // it floats above the other content of the bubble view.
+
+                UIView *bodyProxyView = [UIView new];
+                [self.stackView addArrangedSubview:bodyProxyView];
+
+                [self addSubview:self.mediaShadowView1];
+                [self addSubview:self.mediaShadowView2];
+                [self addSubview:self.mediaClipView];
+
+                [self.viewConstraints addObjectsFromArray:[self.mediaShadowView1 autoPinToEdgesOfView:bodyProxyView]];
+                [self.viewConstraints addObjectsFromArray:[self.mediaShadowView2 autoPinToEdgesOfView:bodyProxyView]];
+                [self.viewConstraints addObjectsFromArray:[self.mediaClipView autoPinToEdgesOfView:bodyProxyView]];
+
+                [self.mediaClipView addSubview:bodyMediaView];
+                [self.viewConstraints addObjectsFromArray:[bodyMediaView autoPinToSuperviewEdges]];
+
+                [self.bubbleView addPartnerView:self.mediaShadowView1];
+                [self.bubbleView addPartnerView:self.mediaShadowView2];
+                [self.bubbleView addPartnerView:self.mediaClipView];
+
+                // TODO: Consider only using a single shadow for perf.
+                self.mediaShadowView1.fillColor = self.bubbleColor;
+                self.mediaShadowView1.layer.shadowColor = [UIColor blackColor].CGColor;
+                self.mediaShadowView1.layer.shadowOpacity = 0.2f;
+                self.mediaShadowView1.layer.shadowOffset = CGSizeMake(0.f, 4.f);
+                self.mediaShadowView1.layer.shadowRadius = 20.f;
+
+                self.mediaShadowView2.fillColor = self.bubbleColor;
+                self.mediaShadowView2.layer.shadowColor = [UIColor blackColor].CGColor;
+                self.mediaShadowView2.layer.shadowOpacity = 0.08f;
+                self.mediaShadowView2.layer.shadowOffset = CGSizeZero;
+                self.mediaShadowView2.layer.shadowRadius = 4.f;
+            } else {
+                OWSAssert(self.cellType == OWSMessageCellType_ContactShare);
+
+                [self.stackView addArrangedSubview:bodyMediaView];
+
+                // TODO: Constants.
+                self.bubbleStrokeView.strokeColor = [UIColor lightGrayColor];
+                self.bubbleStrokeView.strokeThickness = 1.f;
+                [self.bubbleView addSubview:self.bubbleStrokeView];
+                [self.viewConstraints addObjectsFromArray:[self.bubbleStrokeView autoPinToSuperviewEdges]];
+                [self.bubbleView addPartnerView:self.bubbleStrokeView];
+            }
+        } else {
+            [textViews addObject:bodyMediaView];
         }
     }
-
-    UIStackView *_Nullable textStackView = nil;
 
     // We render malformed messages as "empty text" messages,
     // so create a text view if there is no body media view.
     if (self.hasBodyText || !bodyMediaView) {
-        OWSMessageTextView *_Nullable bodyTextView = nil;
-        bodyTextView = [self configureBodyTextView];
+        [self configureBodyTextView];
+        [textViews addObject:self.bodyTextView];
 
-        textStackView = [UIStackView new];
-        textStackView.axis = UILayoutConstraintAxisVertical;
-        textStackView.alignment = UIStackViewAlignmentFill;
-        // TODO: Review
-        textStackView.spacing = self.textViewVSpacing;
-        textStackView.layoutMarginsRelativeArrangement = YES;
-        textStackView.layoutMargins = UIEdgeInsetsMake(self.conversationStyle.textInsetTop,
-            self.conversationStyle.textInsetHorizontal,
-            self.conversationStyle.textInsetBottom,
-            self.conversationStyle.textInsetHorizontal);
-        [self.stackView addArrangedSubview:textStackView];
-        [textStackView addArrangedSubview:bodyTextView];
-
+        // TODO: Media?
+        OWSAssert(bodyTextSize);
         [self.viewConstraints addObjectsFromArray:@[
-            [bodyTextView autoSetDimension:ALDimensionHeight toSize:bodyTextContentSize.height],
+            [self.bodyTextView autoSetDimension:ALDimensionHeight toSize:bodyTextSize.CGSizeValue.height],
         ]];
 
         UIView *_Nullable tapForMoreLabel = [self createTapForMoreLabelIfNecessary];
         if (tapForMoreLabel) {
-            [textStackView addArrangedSubview:tapForMoreLabel];
+            [textViews addObject:tapForMoreLabel];
             [self.viewConstraints addObjectsFromArray:@[
                 [tapForMoreLabel autoSetDimension:ALDimensionHeight toSize:self.tapForMoreHeight],
             ]];
         }
     }
 
-    OWSMessageFooterView *footerView = self.footerView;
-    [footerView configureWithConversationViewItem:self.viewItem];
-    if (textStackView) {
-        // Display footer below text.
-        [textStackView addArrangedSubview:self.footerView];
-        [self.footerView setHasShadows:NO viewItem:self.viewItem];
-    } else if (bodyMediaView) {
-        // Display footer over media.
-        [bodyMediaView addSubview:footerView];
+    BOOL shouldFooterOverlayMedia = (self.canFooterOverlayMedia && bodyMediaView && !self.hasBodyText);
+    if (self.viewItem.shouldHideFooter) {
+        // Do nothing.
+    } else if (shouldFooterOverlayMedia) {
+        OWSAssert(bodyMediaView);
+
+        CGFloat maxGradientHeight = 48.f;
+        CAGradientLayer *gradientLayer = [CAGradientLayer new];
+        gradientLayer.colors = @[
+            (id)[UIColor colorWithWhite:0.f alpha:0.f].CGColor,
+            (id)[UIColor colorWithWhite:0.f alpha:0.4f].CGColor,
+        ];
+        OWSLayerView *gradientView =
+            [[OWSLayerView alloc] initWithFrame:CGRectZero
+                                 layoutCallback:^(UIView *layerView) {
+                                     CGRect layerFrame = layerView.bounds;
+                                     layerFrame.size.height = MIN(maxGradientHeight, layerView.height);
+                                     layerFrame.origin.y = layerView.height - layerFrame.size.height;
+                                     gradientLayer.frame = layerFrame;
+                                 }];
+        [gradientView.layer addSublayer:gradientLayer];
+        [bodyMediaView addSubview:gradientView];
+        [self.viewConstraints addObjectsFromArray:[gradientView autoPinToSuperviewEdges]];
+
+        [self.footerView configureWithConversationViewItem:self.viewItem isOverlayingMedia:YES];
+        [bodyMediaView addSubview:self.footerView];
 
         bodyMediaView.layoutMargins = UIEdgeInsetsZero;
         [self.viewConstraints addObjectsFromArray:@[
-            [footerView autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.textInsetHorizontal],
-            [footerView autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.textInsetHorizontal],
-            [footerView autoPinBottomToSuperviewMarginWithInset:self.conversationStyle.textInsetBottom],
+            [self.footerView autoPinLeadingToSuperviewMarginWithInset:self.conversationStyle.textInsetHorizontal],
+            [self.footerView autoPinTrailingToSuperviewMarginWithInset:self.conversationStyle.textInsetHorizontal],
+            [self.footerView autoPinEdgeToSuperviewMargin:ALEdgeTop relation:NSLayoutRelationGreaterThanOrEqual],
+            [self.footerView autoPinBottomToSuperviewMarginWithInset:self.conversationStyle.textInsetBottom],
         ]];
-        [self.footerView setHasShadows:YES viewItem:self.viewItem];
     } else {
-        OWSFail(@"%@ could not display footer.", self.logTag);
+        [self.footerView configureWithConversationViewItem:self.viewItem isOverlayingMedia:NO];
+        [textViews addObject:self.footerView];
     }
 
-    if (textStackView) {
-        CGSize bubbleSize = [self measureSize];
-        [NSLayoutConstraint autoSetPriority:UILayoutPriorityRequired
-                             forConstraints:^{
-                                 [self.viewConstraints addObjectsFromArray:@[
-                                     [self autoSetDimension:ALDimensionWidth toSize:bubbleSize.width],
-                                 ]];
-                             }];
+    [self insertAnyTextViewsIntoStackView:textViews];
+
+    CGSize bubbleSize = [self measureSize];
+    [NSLayoutConstraint autoSetPriority:UILayoutPriorityRequired
+                         forConstraints:^{
+                             [self.viewConstraints addObjectsFromArray:@[
+                                 [self autoSetDimension:ALDimensionWidth toSize:bubbleSize.width],
+                             ]];
+                         }];
+    if (bodyMediaView) {
+        OWSAssert(bodyMediaSize);
+        [self.viewConstraints
+            addObject:[bodyMediaView autoSetDimension:ALDimensionHeight toSize:bodyMediaSize.CGSizeValue.height]];
     }
+
+    [self updateBubbleColor];
+
+    // If we're stroking the bubble edge, ensure the stroke
+    // view is in front of its peers to prevent it from being occluded.
+    [self.bubbleStrokeView.superview bringSubviewToFront:self.bubbleStrokeView];
+}
+
+- (void)updateBubbleColor
+{
+    BOOL hasOnlyBodyMediaView = (self.hasBodyMediaWithThumbnail && self.stackView.subviews.count == 1);
+    if (!hasOnlyBodyMediaView) {
+        self.bubbleView.bubbleColor = self.bubbleColor;
+    } else {
+        // Media-only messages should have no background color; they will fill the bubble's bounds
+        // and we don't want artifacts at the edges.
+        self.bubbleView.bubbleColor = nil;
+    }
+}
+
+- (UIColor *)bubbleColor
+{
+    OWSAssert([self.viewItem.interaction isKindOfClass:[TSMessage class]]);
+
+    TSMessage *message = (TSMessage *)self.viewItem.interaction;
+    return [self.conversationStyle bubbleColorWithMessage:message];
+}
+
+- (BOOL)hasBodyMediaWithThumbnail
+{
+    switch (self.cellType) {
+        case OWSMessageCellType_Unknown:
+        case OWSMessageCellType_TextMessage:
+        case OWSMessageCellType_OversizeTextMessage:
+            return NO;
+        case OWSMessageCellType_StillImage:
+        case OWSMessageCellType_AnimatedImage:
+        case OWSMessageCellType_Video:
+            return YES;
+        case OWSMessageCellType_Audio:
+        case OWSMessageCellType_GenericAttachment:
+        case OWSMessageCellType_DownloadingAttachment:
+        case OWSMessageCellType_ContactShare:
+            return NO;
+    }
+}
+
+- (BOOL)hasFullWidthMediaView
+{
+    return (self.hasBodyMediaWithThumbnail || self.cellType == OWSMessageCellType_ContactShare);
+}
+
+- (BOOL)canFooterOverlayMedia
+{
+    return self.hasBodyMediaWithThumbnail;
+}
+
+- (BOOL)hasBottomFooter
+{
+    BOOL shouldFooterOverlayMedia = (self.canFooterOverlayMedia && !self.hasBodyText);
+    return !self.viewItem.shouldHideFooter && !shouldFooterOverlayMedia;
+}
+
+- (BOOL)insertAnyTextViewsIntoStackView:(NSArray<UIView *> *)textViews
+{
+    if (textViews.count < 1) {
+        return NO;
+    }
+
+    UIStackView *textStackView = [[UIStackView alloc] initWithArrangedSubviews:textViews];
+    textStackView.axis = UILayoutConstraintAxisVertical;
+    // TODO: Review
+    textStackView.spacing = self.textViewVSpacing;
+    textStackView.layoutMarginsRelativeArrangement = YES;
+    textStackView.layoutMargins = UIEdgeInsetsMake(self.conversationStyle.textInsetTop,
+        self.conversationStyle.textInsetHorizontal,
+        self.conversationStyle.textInsetBottom,
+        self.conversationStyle.textInsetHorizontal);
+    [self.stackView addArrangedSubview:textStackView];
+    return YES;
 }
 
 // We now eagerly create our view hierarchy (to do this exactly once per cell usage)
@@ -463,7 +603,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGFloat)textViewVSpacing
 {
-    return 5.f;
+    return 2.f;
+}
+
+- (CGFloat)bodyMediaQuotedReplyVSpacing
+{
+    return 8.f;
+}
+
+- (CGFloat)quotedReplyTopMargin
+{
+    return 7.f;
 }
 
 #pragma mark - Load / Unload
@@ -484,7 +634,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Subviews
 
-- (OWSMessageTextView *)configureBodyTextView
+- (void)configureBodyTextView
 {
     OWSAssert(self.hasBodyText);
 
@@ -500,7 +650,6 @@ NS_ASSUME_NONNULL_BEGIN
                          textColor:self.bodyTextColor
                               font:self.textMessageFont
                 shouldIgnoreEvents:shouldIgnoreEvents];
-    return self.bodyTextView;
 }
 
 + (void)loadForTextDisplay:(OWSMessageTextView *)textView
@@ -522,6 +671,22 @@ NS_ASSUME_NONNULL_BEGIN
 
     // For perf, set text last. Otherwise changing font/color is more expensive.
     textView.text = text;
+}
+
+- (BOOL)shouldShowSenderName
+{
+    return self.viewItem.senderName.length > 0;
+}
+
+- (void)configureSenderNameLabel
+{
+    OWSAssert(self.senderNameLabel);
+    OWSAssert(self.shouldShowSenderName);
+
+    self.senderNameLabel.text = self.viewItem.senderName.uppercaseString;
+    self.senderNameLabel.textColor = self.bodyTextColor;
+    self.senderNameLabel.font = UIFont.ows_dynamicTypeCaption2Font;
+    self.senderNameLabel.lineBreakMode = NSLineBreakByTruncatingTail;
 }
 
 - (BOOL)hasTapForMore
@@ -749,26 +914,15 @@ NS_ASSUME_NONNULL_BEGIN
 {
     OWSAssert(self.attachmentPointer);
 
-    UIView *customView = [UIView new];
-    switch (self.attachmentPointer.state) {
-        case TSAttachmentPointerStateEnqueued:
-            customView.backgroundColor
-                = (self.isIncoming ? [UIColor ows_messageBubbleLightGrayColor] : [UIColor ows_fadedBlueColor]);
-            break;
-        case TSAttachmentPointerStateDownloading:
-            customView.backgroundColor
-                = (self.isIncoming ? [UIColor ows_messageBubbleLightGrayColor] : [UIColor ows_fadedBlueColor]);
-            break;
-        case TSAttachmentPointerStateFailed:
-            customView.backgroundColor = [UIColor grayColor];
-            break;
-    }
-
-    AttachmentPointerView *attachmentPointerView =
+    AttachmentPointerView *downloadView =
         [[AttachmentPointerView alloc] initWithAttachmentPointer:self.attachmentPointer isIncoming:self.isIncoming];
-    [customView addSubview:attachmentPointerView];
-    [attachmentPointerView autoPinWidthToSuperviewWithMargin:20.f];
-    [attachmentPointerView autoVCenterInSuperview];
+
+    UIView *wrapper = [UIView new];
+    [wrapper addSubview:downloadView];
+    [downloadView autoPinWidthToSuperview];
+    [downloadView autoVCenterInSuperview];
+    [downloadView autoPinEdgeToSuperviewMargin:ALEdgeTop relation:NSLayoutRelationGreaterThanOrEqual];
+    [downloadView autoPinEdgeToSuperviewMargin:ALEdgeBottom relation:NSLayoutRelationGreaterThanOrEqual];
 
     self.loadCellContentBlock = ^{
         // Do nothing.
@@ -777,7 +931,7 @@ NS_ASSUME_NONNULL_BEGIN
         // Do nothing.
     };
 
-    return customView;
+    return wrapper;
 }
 
 - (UIView *)loadViewForContactShare
@@ -840,33 +994,27 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - Measurement
 
 // Size of "message body" text, not quoted reply text.
-- (CGSize)bodyTextSizeWithIncludeMargins:(BOOL)includeMargins
+- (nullable NSValue *)bodyTextSize
 {
     OWSAssert(self.conversationStyle);
     OWSAssert(self.conversationStyle.maxMessageWidth > 0);
 
     if (!self.hasBodyText) {
-        return CGSizeZero;
+        return nil;
     }
 
     CGFloat hMargins = self.conversationStyle.textInsetHorizontal * 2;
 
     const int maxTextWidth = (int)floor(self.conversationStyle.maxMessageWidth - hMargins);
 
-    OWSMessageTextView *bodyTextView = [self configureBodyTextView];
-    CGSize textSize = CGSizeCeil([bodyTextView sizeThatFits:CGSizeMake(maxTextWidth, CGFLOAT_MAX)]);
-    textSize.width = MIN(textSize.width, maxTextWidth);
-    CGSize result = textSize;
+    [self configureBodyTextView];
 
-    if (includeMargins) {
-        result.width += hMargins;
-        result.height += (self.conversationStyle.textInsetTop + self.conversationStyle.textInsetBottom);
-    }
+    CGSize result = CGSizeCeil([self.bodyTextView sizeThatFits:CGSizeMake(maxTextWidth, CGFLOAT_MAX)]);
 
-    return CGSizeCeil(result);
+    return [NSValue valueWithCGSize:CGSizeCeil(result)];
 }
 
-- (CGSize)bodyMediaSize
+- (nullable NSValue *)bodyMediaSize
 {
     OWSAssert(self.conversationStyle);
     OWSAssert(self.conversationStyle.maxMessageWidth > 0);
@@ -878,8 +1026,7 @@ NS_ASSUME_NONNULL_BEGIN
         case OWSMessageCellType_Unknown:
         case OWSMessageCellType_TextMessage:
         case OWSMessageCellType_OversizeTextMessage: {
-            result = CGSizeZero;
-            break;
+            return nil;
         }
         case OWSMessageCellType_StillImage:
         case OWSMessageCellType_AnimatedImage:
@@ -921,11 +1068,16 @@ NS_ASSUME_NONNULL_BEGIN
         case OWSMessageCellType_Audio:
             result = CGSizeMake(maxMessageWidth, OWSAudioMessageView.bubbleHeight);
             break;
-        case OWSMessageCellType_GenericAttachment:
-            result = CGSizeMake(maxMessageWidth, [OWSGenericAttachmentView bubbleHeight]);
+        case OWSMessageCellType_GenericAttachment: {
+            OWSAssert(self.viewItem.attachmentStream);
+            OWSGenericAttachmentView *attachmentView =
+                [[OWSGenericAttachmentView alloc] initWithAttachment:self.attachmentStream isIncoming:self.isIncoming];
+            [attachmentView createContents];
+            result = [attachmentView measureSizeWithMaxMessageWidth:maxMessageWidth];
             break;
+        }
         case OWSMessageCellType_DownloadingAttachment:
-            result = CGSizeMake(200, 90);
+            result = CGSizeMake(200, [AttachmentPointerView measureHeight]);
             break;
         case OWSMessageCellType_ContactShare:
             OWSAssert(self.viewItem.contactShare);
@@ -935,10 +1087,10 @@ NS_ASSUME_NONNULL_BEGIN
             break;
     }
 
-    return CGSizeCeil(result);
+    return [NSValue valueWithCGSize:CGSizeCeil(result)];
 }
 
-- (CGSize)quotedMessageSize
+- (nullable NSValue *)quotedMessageSize
 {
     OWSAssert(self.conversationStyle);
     OWSAssert(self.conversationStyle.maxMessageWidth > 0);
@@ -946,7 +1098,7 @@ NS_ASSUME_NONNULL_BEGIN
     OWSAssert([self.viewItem.interaction isKindOfClass:[TSMessage class]]);
 
     if (!self.isQuotedReply) {
-        return CGSizeZero;
+        return nil;
     }
 
     BOOL isOutgoing = [self.viewItem.interaction isKindOfClass:TSOutgoingMessage.class];
@@ -956,9 +1108,27 @@ NS_ASSUME_NONNULL_BEGIN
     OWSQuotedMessageView *quotedMessageView =
         [OWSQuotedMessageView quotedMessageViewForConversation:self.viewItem.quotedReply
                                          displayableQuotedText:displayableQuotedText
+                                             conversationStyle:self.conversationStyle
                                                     isOutgoing:isOutgoing];
     CGSize result = [quotedMessageView sizeForMaxWidth:self.conversationStyle.maxMessageWidth];
-    return CGSizeCeil(result);
+    return [NSValue valueWithCGSize:CGSizeCeil(result)];
+}
+
+- (nullable NSValue *)senderNameSize
+{
+    OWSAssert(self.conversationStyle);
+    OWSAssert(self.conversationStyle.maxMessageWidth > 0);
+
+    if (!self.shouldShowSenderName) {
+        return nil;
+    }
+
+    CGFloat hMargins = self.conversationStyle.textInsetHorizontal * 2;
+    const int maxTextWidth = (int)floor(self.conversationStyle.maxMessageWidth - hMargins);
+    [self configureSenderNameLabel];
+    CGSize result = CGSizeCeil([self.senderNameLabel sizeThatFits:CGSizeMake(maxTextWidth, CGFLOAT_MAX)]);
+
+    return [NSValue valueWithCGSize:result];
 }
 
 - (CGSize)measureSize
@@ -970,17 +1140,61 @@ NS_ASSUME_NONNULL_BEGIN
 
     CGSize cellSize = CGSizeZero;
 
-    CGSize quotedMessageSize = [self quotedMessageSize];
-    cellSize.width = MAX(cellSize.width, quotedMessageSize.width);
-    cellSize.height += quotedMessageSize.height;
+    NSMutableArray<NSValue *> *textViewSizes = [NSMutableArray new];
 
-    CGSize mediaContentSize = [self bodyMediaSize];
-    cellSize.width = MAX(cellSize.width, mediaContentSize.width);
-    cellSize.height += mediaContentSize.height;
+    NSValue *_Nullable senderNameSize = [self senderNameSize];
+    if (senderNameSize) {
+        [textViewSizes addObject:senderNameSize];
+    }
 
-    CGSize textContentSize = [self bodyTextSizeWithIncludeMargins:YES];
-    cellSize.width = MAX(cellSize.width, textContentSize.width);
-    cellSize.height += textContentSize.height;
+    NSValue *_Nullable quotedMessageSize = [self quotedMessageSize];
+    if (quotedMessageSize) {
+        if (!senderNameSize) {
+            cellSize.height += self.quotedReplyTopMargin;
+        }
+        cellSize.width = MAX(cellSize.width, quotedMessageSize.CGSizeValue.width);
+        cellSize.height += quotedMessageSize.CGSizeValue.height;
+    }
+
+    NSValue *_Nullable bodyMediaSize = [self bodyMediaSize];
+    if (bodyMediaSize) {
+        if (self.hasFullWidthMediaView) {
+            cellSize.width = MAX(cellSize.width, bodyMediaSize.CGSizeValue.width);
+            cellSize.height += bodyMediaSize.CGSizeValue.height;
+        } else {
+            [textViewSizes addObject:bodyMediaSize];
+            bodyMediaSize = nil;
+        }
+    }
+
+    if (bodyMediaSize || quotedMessageSize) {
+        if (textViewSizes.count > 0) {
+            CGSize groupSize = [self sizeForTextViewGroup:textViewSizes];
+            cellSize.width = MAX(cellSize.width, groupSize.width);
+            cellSize.height += groupSize.height;
+            [textViewSizes removeAllObjects];
+        }
+
+        if (bodyMediaSize && quotedMessageSize && self.hasFullWidthMediaView) {
+            cellSize.height += self.bodyMediaQuotedReplyVSpacing;
+        }
+    }
+
+    NSValue *_Nullable bodyTextSize = [self bodyTextSize];
+    if (bodyTextSize) {
+        [textViewSizes addObject:bodyTextSize];
+    }
+
+    if (self.hasBottomFooter) {
+        CGSize footerSize = [self.footerView measureWithConversationViewItem:self.viewItem];
+        [textViewSizes addObject:[NSValue valueWithCGSize:footerSize]];
+    }
+
+    if (textViewSizes.count > 0) {
+        CGSize groupSize = [self sizeForTextViewGroup:textViewSizes];
+        cellSize.width = MAX(cellSize.width, groupSize.width);
+        cellSize.height += groupSize.height;
+    }
 
     // Make sure the bubble is always wide enough to complete it's bubble shape.
     cellSize.width = MAX(cellSize.width, OWSBubbleView.minWidth);
@@ -991,23 +1205,28 @@ NS_ASSUME_NONNULL_BEGIN
         cellSize.height += self.tapForMoreHeight + self.textViewVSpacing;
     }
 
-    // TODO: Update this to reflect generic attachment, downloading attachments and
-    //       contact shares.
-    if (self.hasFooter && self.hasBodyText) {
-        CGSize footerSize = [self.footerView measureWithConversationViewItem:self.viewItem];
-        cellSize.width = MAX(cellSize.width, footerSize.width + self.conversationStyle.textInsetHorizontal * 2);
-        cellSize.height += self.textViewVSpacing + footerSize.height;
-    }
-
     cellSize = CGSizeCeil(cellSize);
 
     return cellSize;
 }
 
-- (BOOL)hasFooter
+- (CGSize)sizeForTextViewGroup:(NSArray<NSValue *> *)textViewSizes
 {
-    // TODO:
-    return YES;
+    OWSAssert(textViewSizes);
+    OWSAssert(textViewSizes.count > 0);
+    OWSAssert(self.conversationStyle);
+    OWSAssert(self.conversationStyle.maxMessageWidth > 0);
+
+    CGSize result = CGSizeZero;
+    for (NSValue *size in textViewSizes) {
+        result.width = MAX(result.width, size.CGSizeValue.width);
+        result.height += size.CGSizeValue.height;
+    }
+    result.height += self.textViewVSpacing * (textViewSizes.count - 1);
+    result.height += (self.conversationStyle.textInsetTop + self.conversationStyle.textInsetBottom);
+    result.width += self.conversationStyle.textInsetHorizontal * 2;
+
+    return result;
 }
 
 - (UIFont *)tapForMoreFont
@@ -1024,7 +1243,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIColor *)bodyTextColor
 {
-    return self.isIncoming ? [UIColor blackColor] : [UIColor whiteColor];
+    OWSAssert([self.viewItem.interaction isKindOfClass:[TSMessage class]]);
+
+    TSMessage *message = (TSMessage *)self.viewItem.interaction;
+    return [self.conversationStyle bubbleTextColorWithMessage:message];
 }
 
 - (BOOL)isMediaBeingSent
@@ -1044,11 +1266,6 @@ NS_ASSUME_NONNULL_BEGIN
     }
     TSOutgoingMessage *outgoingMessage = (TSOutgoingMessage *)self.viewItem.interaction;
     return outgoingMessage.messageState == TSOutgoingMessageStateSending;
-}
-
-- (OWSMessagesBubbleImageFactory *)bubbleFactory
-{
-    return [OWSMessagesBubbleImageFactory shared];
 }
 
 - (void)prepareForReuse
@@ -1075,13 +1292,22 @@ NS_ASSUME_NONNULL_BEGIN
     self.loadCellContentBlock = nil;
     self.unloadCellContentBlock = nil;
 
+    for (UIView *subview in self.bodyMediaView.subviews) {
+        [subview removeFromSuperview];
+    }
     [self.bodyMediaView removeFromSuperview];
     self.bodyMediaView = nil;
 
     [self.quotedMessageView removeFromSuperview];
     self.quotedMessageView = nil;
 
+    [self.mediaShadowView1 removeFromSuperview];
+    [self.mediaShadowView2 removeFromSuperview];
+    [self.mediaClipView removeFromSuperview];
+    [self.bubbleStrokeView removeFromSuperview];
+
     [self.footerView removeFromSuperview];
+    [self.footerView prepareForReuse];
 
     for (UIView *subview in self.stackView.subviews) {
         [subview removeFromSuperview];

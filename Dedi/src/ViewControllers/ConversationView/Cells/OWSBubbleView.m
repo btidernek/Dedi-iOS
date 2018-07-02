@@ -7,7 +7,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-const CGFloat kOWSMessageCellCornerRadius = 18;
+const CGFloat kOWSMessageCellCornerRadius = 16;
 
 @interface OWSBubbleView ()
 
@@ -28,6 +28,8 @@ const CGFloat kOWSMessageCellCornerRadius = 18;
     if (!self) {
         return self;
     }
+
+    self.layoutMargins = UIEdgeInsetsZero;
 
     self.shapeLayer = [CAShapeLayer new];
     [self.layer addSublayer:self.shapeLayer];

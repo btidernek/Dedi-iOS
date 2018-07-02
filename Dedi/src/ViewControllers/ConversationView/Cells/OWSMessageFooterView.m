@@ -5,15 +5,14 @@
 #import "OWSMessageFooterView.h"
 #import "DateUtil.h"
 #import "Dedi-Swift.h"
+#import <QuartzCore/QuartzCore.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OWSMessageFooterView ()
 
 @property (nonatomic) UILabel *timestampLabel;
-@property (nonatomic) UIView *spacerView;
-@property (nonatomic) UILabel *statusLabel;
-@property (nonatomic) UIView *statusIndicatorView;
+@property (nonatomic) UIImageView *statusIndicatorImageView;
 
 @end
 
@@ -41,36 +40,16 @@ NS_ASSUME_NONNULL_BEGIN
     self.alignment = UIStackViewAlignmentCenter;
 
     self.timestampLabel = [UILabel new];
-    // TODO: Color
-    self.timestampLabel.textColor = [UIColor lightGrayColor];
     [self addArrangedSubview:self.timestampLabel];
 
-    self.spacerView = [UIView new];
-    [self.spacerView setContentHuggingLow];
-    [self addArrangedSubview:self.spacerView];
-
-    self.statusLabel = [UILabel new];
-    // TODO: Color
-    self.statusLabel.textColor = [UIColor lightGrayColor];
-    [self addArrangedSubview:self.statusLabel];
-
-    self.statusIndicatorView = [UIView new];
-    [self.statusIndicatorView autoSetDimension:ALDimensionWidth toSize:self.statusIndicatorSize];
-    [self.statusIndicatorView autoSetDimension:ALDimensionHeight toSize:self.statusIndicatorSize];
-    self.statusIndicatorView.layer.cornerRadius = self.statusIndicatorSize * 0.5f;
-    [self addArrangedSubview:self.statusIndicatorView];
+    self.statusIndicatorImageView = [UIImageView new];
+    [self.statusIndicatorImageView setContentHuggingHigh];
+    [self addArrangedSubview:self.statusIndicatorImageView];
 }
 
 - (void)configureFonts
 {
-    self.timestampLabel.font = UIFont.ows_dynamicTypeCaption2Font;
-    self.statusLabel.font = UIFont.ows_dynamicTypeCaption2Font;
-}
-
-- (CGFloat)statusIndicatorSize
-{
-    // TODO: Review constant.
-    return 12.f;
+    self.timestampLabel.font = UIFont.ows_dynamicTypeCaption1Font;
 }
 
 - (CGFloat)hSpacing
@@ -79,25 +58,88 @@ NS_ASSUME_NONNULL_BEGIN
     return 8.f;
 }
 
+- (CGFloat)maxImageWidth
+{
+    return 18.f;
+}
+
+- (CGFloat)imageHeight
+{
+    return 12.f;
+}
+
 #pragma mark - Load
 
-- (void)configureWithConversationViewItem:(ConversationViewItem *)viewItem
+- (void)configureWithConversationViewItem:(ConversationViewItem *)viewItem isOverlayingMedia:(BOOL)isOverlayingMedia
 {
     OWSAssert(viewItem);
 
     [self configureLabelsWithConversationViewItem:viewItem];
 
-    // TODO:
-    self.statusIndicatorView.backgroundColor = [UIColor orangeColor];
-
-    BOOL isOutgoing = (viewItem.interaction.interactionType == OWSInteractionType_OutgoingMessage);
-    for (UIView *subview in @[
-             self.spacerView,
-             self.statusLabel,
-             self.statusIndicatorView,
-         ]) {
-        subview.hidden = !isOutgoing;
+    UIColor *textColor;
+    if (isOverlayingMedia) {
+        textColor = [UIColor whiteColor];
+    } else if (viewItem.interaction.interactionType == OWSInteractionType_IncomingMessage) {
+        textColor = [UIColor colorWithWhite:1.f alpha:0.7f];
+    } else {
+        textColor = [UIColor ows_light60Color];
     }
+    self.timestampLabel.textColor = textColor;
+
+    if (viewItem.interaction.interactionType == OWSInteractionType_OutgoingMessage) {
+        TSOutgoingMessage *outgoingMessage = (TSOutgoingMessage *)viewItem.interaction;
+
+        UIImage *_Nullable statusIndicatorImage = nil;
+        MessageReceiptStatus messageStatus =
+            [MessageRecipientStatusUtils recipientStatusWithOutgoingMessage:outgoingMessage referenceView:self];
+        switch (messageStatus) {
+            case MessageReceiptStatusUploading:
+            case MessageReceiptStatusSending:
+                statusIndicatorImage = [UIImage imageNamed:@"message_status_sending"];
+                [self animateSpinningIcon];
+                break;
+            case MessageReceiptStatusSent:
+            case MessageReceiptStatusSkipped:
+                statusIndicatorImage = [UIImage imageNamed:@"message_status_sent"];
+                break;
+            case MessageReceiptStatusDelivered:
+            case MessageReceiptStatusRead:
+                statusIndicatorImage = [UIImage imageNamed:@"message_status_delivered"];
+                break;
+            case MessageReceiptStatusFailed:
+                // TODO:
+                statusIndicatorImage = [UIImage imageNamed:@"message_status_sending"];
+                break;
+        }
+
+        OWSAssert(statusIndicatorImage);
+        OWSAssert(statusIndicatorImage.size.width <= self.maxImageWidth);
+        self.statusIndicatorImageView.image =
+            [statusIndicatorImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        if (messageStatus == MessageReceiptStatusRead) {
+            // TODO: Tint the icon with the conversation color.
+            self.statusIndicatorImageView.tintColor = textColor;
+        } else {
+            self.statusIndicatorImageView.tintColor = textColor;
+        }
+        self.statusIndicatorImageView.hidden = NO;
+    } else {
+        self.statusIndicatorImageView.image = nil;
+        self.statusIndicatorImageView.hidden = YES;
+    }
+}
+
+- (void)animateSpinningIcon
+{
+    CABasicAnimation *animation;
+    animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    animation.toValue = @(M_PI * 2.0);
+    const CGFloat kPeriodSeconds = 1.f;
+    animation.duration = kPeriodSeconds;
+    animation.cumulative = YES;
+    animation.repeatCount = HUGE_VALF;
+
+    [self.statusIndicatorImageView.layer addAnimation:animation forKey:@"animation"];
 }
 
 - (void)configureLabelsWithConversationViewItem:(ConversationViewItem *)viewItem
@@ -107,7 +149,6 @@ NS_ASSUME_NONNULL_BEGIN
     [self configureFonts];
 
     self.timestampLabel.text = [DateUtil formatTimestampShort:viewItem.interaction.timestamp];
-    self.statusLabel.text = [self messageStatusTextForConversationViewItem:viewItem];
 }
 
 - (CGSize)measureWithConversationViewItem:(ConversationViewItem *)viewItem
@@ -117,11 +158,9 @@ NS_ASSUME_NONNULL_BEGIN
     [self configureLabelsWithConversationViewItem:viewItem];
 
     CGSize result = CGSizeZero;
-    result.height
-        = MAX(self.timestampLabel.font.lineHeight, MAX(self.statusLabel.font.lineHeight, self.statusIndicatorSize));
+    result.height = MAX(self.timestampLabel.font.lineHeight, self.imageHeight);
     if (viewItem.interaction.interactionType == OWSInteractionType_OutgoingMessage) {
-        result.width = ([self.timestampLabel sizeThatFits:CGSizeZero].width +
-            [self.statusLabel sizeThatFits:CGSizeZero].width + self.statusIndicatorSize + self.hSpacing * 3.f);
+        result.width = ([self.timestampLabel sizeThatFits:CGSizeZero].width + self.maxImageWidth + self.hSpacing);
     } else {
         result.width = [self.timestampLabel sizeThatFits:CGSizeZero].width;
     }
@@ -141,40 +180,9 @@ NS_ASSUME_NONNULL_BEGIN
     return statusMessage;
 }
 
-#pragma mark - Shadows
-
-- (void)setHasShadows:(BOOL)hasShadows viewItem:(ConversationViewItem *)viewItem
+- (void)prepareForReuse
 {
-    // TODO: Constants
-    for (UIView *subview in @[
-             self.timestampLabel,
-             self.statusLabel,
-             self.statusIndicatorView,
-         ]) {
-        if (hasShadows) {
-            subview.layer.shadowColor = [UIColor blackColor].CGColor;
-            subview.layer.shadowOpacity = 0.35f;
-            subview.layer.shadowOffset = CGSizeZero;
-            subview.layer.shadowRadius = 0.5f;
-        } else {
-            subview.layer.shadowColor = nil;
-            subview.layer.shadowOpacity = 0.f;
-            subview.layer.shadowOffset = CGSizeZero;
-            subview.layer.shadowRadius = 0.f;
-        }
-    }
-
-    UIColor *textColor;
-    if (hasShadows) {
-        textColor = [UIColor whiteColor];
-    } else if (viewItem.interaction.interactionType == OWSInteractionType_IncomingMessage) {
-        // TODO:
-        textColor = [UIColor lightGrayColor];
-    } else {
-        textColor = [UIColor whiteColor];
-    }
-    self.timestampLabel.textColor = textColor;
-    self.statusLabel.textColor = textColor;
+    [self.statusIndicatorImageView.layer removeAllAnimations];
 }
 
 @end

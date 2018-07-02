@@ -122,6 +122,8 @@ NS_ASSUME_NONNULL_BEGIN
     [self.unreadLabel autoCenterInSuperview];
     [self.unreadLabel setContentHuggingHigh];
     [self.unreadLabel setCompressionResistanceHigh];
+
+    self.payloadView.userInteractionEnabled = NO;
 }
 
 - (void)dealloc
@@ -233,7 +235,6 @@ NS_ASSUME_NONNULL_BEGIN
                                                                relation:NSLayoutRelationGreaterThanOrEqual],
                                      [self.unreadBadge autoSetDimension:ALDimensionHeight toSize:unreadBadgeHeight],
                                  ]];
-
                              }];
 
         const CGFloat kMinVMargin = 5;
