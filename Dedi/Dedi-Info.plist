@@ -30,7 +30,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>org.whispersystems.signal</string>
+			<string>org.btider.dedi</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>dedidedi</string>
@@ -69,20 +69,20 @@
 			</dict>
 		</dict>
 	</dict>
-    <key>NSAppleMusicUsageDescription</key>
-    <string>Dedi medya eklerini oynamak için Apple Müzik kullanmanız gerekir.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Dedi fotoğraf çekmek ve video görüşmeleri yapmak için kameranızı kullanır.</string>
-    <key>NSContactsUsageDescription</key>
-    <string>Dedi, tanıdığınız kullanıcıları bulmak için kişilerinizi kullanır. Kişilerinizi sunucuda saklamıyoruz.</string>
-    <key>NSFaceIDUsageDescription</key>
-    <string>Dedi Ekran Kilidi Yüz Kimliği kullanır.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Telefon görüşmeleri yapmak ve almak ve sesli mesaj kaydetmek için Dedi&apos;nin mikrofonunuza erişmesi gerekir.</string>
-    <key>NSPhotoLibraryAddUsageDescription</key>
-    <string>Dedi, fotoğrafları kütüphanenize kaydedecektir.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Dedi kütüphanenizden hangi fotoğrafların gönderileceğini seçmenize izin verecektir.</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Dedi medya eklerini oynamak için Apple Müzik kullanmanız gerekir.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Dedi fotoğraf çekmek ve video görüşmeleri yapmak için kameranızı kullanır.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Dedi, tanıdığınız kullanıcıları bulmak için kişilerinizi kullanır. Kişilerinizi sunucuda saklamıyoruz.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Dedi Ekran Kilidi Yüz Kimliği kullanır.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Telefon görüşmeleri yapmak ve almak ve sesli mesaj kaydetmek için Dedi&apos;nin mikrofonunuza erişmesi gerekir.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Dedi, fotoğrafları kütüphanenize kaydedecektir.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Dedi kütüphanenizden hangi fotoğrafların gönderileceğini seçmenize izin verecektir.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>dripicons-v2.ttf</string>
