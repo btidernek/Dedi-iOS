@@ -30,7 +30,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>org.btider.dedi</string>
+			<string>org.btider.dediapp</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>dedidedi</string>
@@ -44,7 +44,7 @@
 	<key>LOGS_EMAIL</key>
 	<string>dedidestek@btk.gov.tr</string>
 	<key>LOGS_URL</key>
-	<string>http://etkinlik.btk.gov.tr/Dedi</string>
+	<string>http://dedi.link</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.social-networking</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -97,7 +97,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Yeni Mesaj</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>org.btider.dedi.quickCompose</string>
+			<string>org.btider.dediapp.quickCompose</string>
 		</dict>
 	</array>
 	<key>UIBackgroundModes</key>
