@@ -294,6 +294,7 @@ message GroupContext {
   optional string            name    = 3;
   repeated string            members = 4;
   optional AttachmentPointer avatar  = 5;
+  repeated string            admins  = 6;
 }
 
 message ContactDetails {
@@ -324,4 +325,5 @@ message GroupDetails {
   optional Avatar avatar      = 4;
   optional bool   active      = 5 [default = true];
   optional uint32 expireTimer = 6;
+  repeated string admins      = 8;
 }

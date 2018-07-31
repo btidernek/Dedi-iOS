@@ -34,6 +34,23 @@ NS_ASSUME_NONNULL_BEGIN
     return self;
 }
 
+- (instancetype)initWithTitle:(nullable NSString *)title
+                    memberIds:(NSArray<NSString *> *)memberIds
+                     adminIds:(NSArray<NSString *> *)adminIds
+                        image:(nullable UIImage *)image
+                      groupId:(NSData *)groupId
+{
+    OWSAssert(memberIds);
+    
+    _groupName              = title;
+    _groupMemberIds         = [memberIds copy];
+    _groupAdminIds          = [adminIds copy];
+    _groupImage = image; // image is stored in DB
+    _groupId                = groupId;
+    
+    return self;
+}
+
 - (nullable instancetype)initWithCoder:(NSCoder *)coder
 {
     self = [super initWithCoder:coder];
@@ -45,6 +62,9 @@ NS_ASSUME_NONNULL_BEGIN
     // which causes crashes.
     if (_groupMemberIds == nil) {
         _groupMemberIds = [NSArray new];
+    }
+    if (_groupAdminIds == nil) {
+        _groupAdminIds = [NSArray new];
     }
 
     return self;
@@ -76,6 +96,11 @@ NS_ASSUME_NONNULL_BEGIN
     NSMutableArray *compareMyGroupMemberIds = [NSMutableArray arrayWithArray:_groupMemberIds];
     [compareMyGroupMemberIds removeObjectsInArray:other.groupMemberIds];
     if ([compareMyGroupMemberIds count] > 0) {
+        return NO;
+    }
+    NSMutableArray *compareMyGroupAdminIds = [NSMutableArray arrayWithArray:_groupAdminIds];
+    [compareMyGroupAdminIds removeObjectsInArray:other.groupAdminIds];
+    if ([compareMyGroupAdminIds count] > 0) {
         return NO;
     }
     return YES;
