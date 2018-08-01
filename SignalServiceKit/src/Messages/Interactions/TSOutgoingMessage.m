@@ -809,6 +809,8 @@ NSString *NSStringForOutgoingMessageRecipientState(OWSOutgoingMessageRecipientSt
                 }
 
                 [groupBuilder setMembersArray:gThread.groupModel.groupMemberIds];
+                //-BTIDER UPDATE- GroupAdmins Added
+                [groupBuilder setAdminsArray:gThread.groupModel.groupAdminIds];
                 [groupBuilder setName:gThread.groupModel.groupName];
                 [groupBuilder setType:OWSSignalServiceProtosGroupContextTypeUpdate];
                 break;

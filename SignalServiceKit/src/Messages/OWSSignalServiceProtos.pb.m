@@ -11109,6 +11109,7 @@ NSString *NSStringFromOWSSignalServiceProtosAttachmentPointerFlags(OWSSignalServ
 @property (strong) NSString* name;
 @property (strong) NSMutableArray * membersArray;
 @property (strong) OWSSignalServiceProtosAttachmentPointer* avatar;
+@property (strong) NSMutableArray * adminsArray;
 @end
 
 @implementation OWSSignalServiceProtosGroupContext
@@ -11143,6 +11144,8 @@ NSString *NSStringFromOWSSignalServiceProtosAttachmentPointerFlags(OWSSignalServ
   hasAvatar_ = !!_value_;
 }
 @synthesize avatar;
+@synthesize adminsArray;
+@dynamic admins;
 - (instancetype) init {
   if ((self = [super init])) {
     self.id = [NSData data];
@@ -11170,6 +11173,12 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
 - (NSString*)membersAtIndex:(NSUInteger)index {
   return [membersArray objectAtIndex:index];
 }
+- (NSArray *)admins {
+  return adminsArray;
+}
+- (NSString*)adminsAtIndex:(NSUInteger)index {
+  return [adminsArray objectAtIndex:index];
+}
 - (BOOL) isInitialized {
   return YES;
 }
@@ -11189,6 +11198,9 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
   if (self.hasAvatar) {
     [output writeMessage:5 value:self.avatar];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:6 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -11218,6 +11230,15 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
   }
   if (self.hasAvatar) {
     size_ += computeMessageSize(5, self.avatar);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.adminsArray.count;
+    [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -11272,6 +11293,9 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
                          withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"admins", obj];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (void) storeInDictionary:(NSMutableDictionary *)dictionary {
@@ -11290,6 +11314,7 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
    [self.avatar storeInDictionary:messageDictionary];
    [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@"avatar"];
   }
+  [dictionary setObject:self.admins forKey: @"admins"];
   [self.unknownFields storeInDictionary:dictionary];
 }
 - (BOOL) isEqual:(id)other {
@@ -11310,6 +11335,7 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
       [self.membersArray isEqualToArray:otherMessage.membersArray] &&
       self.hasAvatar == otherMessage.hasAvatar &&
       (!self.hasAvatar || [self.avatar isEqual:otherMessage.avatar]) &&
+      [self.adminsArray isEqualToArray:otherMessage.adminsArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -11329,6 +11355,9 @@ static OWSSignalServiceProtosGroupContext* defaultOWSSignalServiceProtosGroupCon
   if (self.hasAvatar) {
     hashCode = hashCode * 31 + [self.avatar hash];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    hashCode = hashCode * 31 + [element hash];
+  }];
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -11420,6 +11449,13 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
   if (other.hasAvatar) {
     [self mergeAvatar:other.avatar];
   }
+  if (other.adminsArray.count > 0) {
+    if (resultGroupContext.adminsArray == nil) {
+      resultGroupContext.adminsArray = [[NSMutableArray alloc] initWithArray:other.adminsArray];
+    } else {
+      [resultGroupContext.adminsArray addObjectsFromArray:other.adminsArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -11469,6 +11505,10 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
         }
         [input readMessage:subBuilder extensionRegistry:extensionRegistry];
         [self setAvatar:[subBuilder buildPartial]];
+        break;
+      }
+      case 50: {
+        [self addAdmins:[input readString]];
         break;
       }
     }
@@ -11571,6 +11611,27 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 - (OWSSignalServiceProtosGroupContextBuilder*) clearAvatar {
   resultGroupContext.hasAvatar = NO;
   resultGroupContext.avatar = [OWSSignalServiceProtosAttachmentPointer defaultInstance];
+  return self;
+}
+- (NSMutableArray *)admins {
+  return resultGroupContext.adminsArray;
+}
+- (NSString*)adminsAtIndex:(NSUInteger)index {
+  return [resultGroupContext adminsAtIndex:index];
+}
+- (OWSSignalServiceProtosGroupContextBuilder *)addAdmins:(NSString*)value {
+  if (resultGroupContext.adminsArray == nil) {
+    resultGroupContext.adminsArray = [[NSMutableArray alloc]init];
+  }
+  [resultGroupContext.adminsArray addObject:value];
+  return self;
+}
+- (OWSSignalServiceProtosGroupContextBuilder *)setAdminsArray:(NSArray *)array {
+  resultGroupContext.adminsArray = [[NSMutableArray alloc] initWithArray:array];
+  return self;
+}
+- (OWSSignalServiceProtosGroupContextBuilder *)clearAdmins {
+  resultGroupContext.adminsArray = nil;
   return self;
 }
 @end
@@ -12439,6 +12500,7 @@ static OWSSignalServiceProtosContactDetailsAvatar* defaultOWSSignalServiceProtos
 @property (strong) OWSSignalServiceProtosGroupDetailsAvatar* avatar;
 @property BOOL active;
 @property UInt32 expireTimer;
+@property (strong) NSMutableArray * adminsArray;
 @end
 
 @implementation OWSSignalServiceProtosGroupDetails
@@ -12485,6 +12547,8 @@ static OWSSignalServiceProtosContactDetailsAvatar* defaultOWSSignalServiceProtos
   hasExpireTimer_ = !!_value_;
 }
 @synthesize expireTimer;
+@synthesize adminsArray;
+@dynamic admins;
 - (instancetype) init {
   if ((self = [super init])) {
     self.id = [NSData data];
@@ -12513,6 +12577,12 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
 - (NSString*)membersAtIndex:(NSUInteger)index {
   return [membersArray objectAtIndex:index];
 }
+- (NSArray *)admins {
+  return adminsArray;
+}
+- (NSString*)adminsAtIndex:(NSUInteger)index {
+  return [adminsArray objectAtIndex:index];
+}
 - (BOOL) isInitialized {
   return YES;
 }
@@ -12535,6 +12605,9 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
   if (self.hasExpireTimer) {
     [output writeUInt32:6 value:self.expireTimer];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    [output writeString:8 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -12567,6 +12640,15 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
   }
   if (self.hasExpireTimer) {
     size_ += computeUInt32Size(6, self.expireTimer);
+  }
+  {
+    __block SInt32 dataSize = 0;
+    const NSUInteger count = self.adminsArray.count;
+    [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+      dataSize += computeStringSizeNoTag(element);
+    }];
+    size_ += dataSize;
+    size_ += (SInt32)(1 * count);
   }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
@@ -12624,6 +12706,9 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
   if (self.hasExpireTimer) {
     [output appendFormat:@"%@%@: %@\n", indent, @"expireTimer", [NSNumber numberWithInteger:self.expireTimer]];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"admins", obj];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (void) storeInDictionary:(NSMutableDictionary *)dictionary {
@@ -12645,6 +12730,7 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
   if (self.hasExpireTimer) {
     [dictionary setObject: [NSNumber numberWithInteger:self.expireTimer] forKey: @"expireTimer"];
   }
+  [dictionary setObject:self.admins forKey: @"admins"];
   [self.unknownFields storeInDictionary:dictionary];
 }
 - (BOOL) isEqual:(id)other {
@@ -12667,6 +12753,7 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
       (!self.hasActive || self.active == otherMessage.active) &&
       self.hasExpireTimer == otherMessage.hasExpireTimer &&
       (!self.hasExpireTimer || self.expireTimer == otherMessage.expireTimer) &&
+      [self.adminsArray isEqualToArray:otherMessage.adminsArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -12689,6 +12776,9 @@ static OWSSignalServiceProtosGroupDetails* defaultOWSSignalServiceProtosGroupDet
   if (self.hasExpireTimer) {
     hashCode = hashCode * 31 + [[NSNumber numberWithInteger:self.expireTimer] hash];
   }
+  [self.adminsArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+    hashCode = hashCode * 31 + [element hash];
+  }];
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -13009,6 +13099,13 @@ static OWSSignalServiceProtosGroupDetailsAvatar* defaultOWSSignalServiceProtosGr
   if (other.hasExpireTimer) {
     [self setExpireTimer:other.expireTimer];
   }
+  if (other.adminsArray.count > 0) {
+    if (resultGroupDetails.adminsArray == nil) {
+      resultGroupDetails.adminsArray = [[NSMutableArray alloc] initWithArray:other.adminsArray];
+    } else {
+      [resultGroupDetails.adminsArray addObjectsFromArray:other.adminsArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -13057,6 +13154,10 @@ static OWSSignalServiceProtosGroupDetailsAvatar* defaultOWSSignalServiceProtosGr
       }
       case 48: {
         [self setExpireTimer:[input readUInt32]];
+        break;
+      }
+      case 66: {
+        [self addAdmins:[input readString]];
         break;
       }
     }
@@ -13175,6 +13276,27 @@ static OWSSignalServiceProtosGroupDetailsAvatar* defaultOWSSignalServiceProtosGr
 - (OWSSignalServiceProtosGroupDetailsBuilder*) clearExpireTimer {
   resultGroupDetails.hasExpireTimer = NO;
   resultGroupDetails.expireTimer = 0;
+  return self;
+}
+- (NSMutableArray *)admins {
+  return resultGroupDetails.adminsArray;
+}
+- (NSString*)adminsAtIndex:(NSUInteger)index {
+  return [resultGroupDetails adminsAtIndex:index];
+}
+- (OWSSignalServiceProtosGroupDetailsBuilder *)addAdmins:(NSString*)value {
+  if (resultGroupDetails.adminsArray == nil) {
+    resultGroupDetails.adminsArray = [[NSMutableArray alloc]init];
+  }
+  [resultGroupDetails.adminsArray addObject:value];
+  return self;
+}
+- (OWSSignalServiceProtosGroupDetailsBuilder *)setAdminsArray:(NSArray *)array {
+  resultGroupDetails.adminsArray = [[NSMutableArray alloc] initWithArray:array];
+  return self;
+}
+- (OWSSignalServiceProtosGroupDetailsBuilder *)clearAdmins {
+  resultGroupDetails.adminsArray = nil;
   return self;
 }
 @end

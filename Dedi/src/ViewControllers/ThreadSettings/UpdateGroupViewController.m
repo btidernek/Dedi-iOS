@@ -49,6 +49,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, nullable) UIImage *groupAvatar;
 @property (nonatomic, nullable) NSSet<NSString *> *previousMemberRecipientIds;
 @property (nonatomic) NSMutableSet<NSString *> *memberRecipientIds;
+@property (nonatomic) NSMutableSet<NSString *> *memberAdminIds;
 
 @property (nonatomic) BOOL hasUnsavedChanges;
 
@@ -90,6 +91,7 @@ NS_ASSUME_NONNULL_BEGIN
     _avatarViewHelper.delegate = self;
 
     self.memberRecipientIds = [NSMutableSet new];
+    self.memberAdminIds = [NSMutableSet new];
 }
 
 #pragma mark - View Lifecycle
@@ -103,6 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
     OWSAssert(self.thread.groupModel.groupMemberIds);
 
     [self.memberRecipientIds addObjectsFromArray:self.thread.groupModel.groupMemberIds];
+    [self.memberAdminIds addObjectsFromArray:self.thread.groupModel.groupAdminIds];
     self.previousMemberRecipientIds = [NSSet setWithArray:self.thread.groupModel.groupMemberIds];
 
     self.title = NSLocalizedString(@"EDIT_GROUP_DEFAULT_TITLE", @"The navbar title for the 'update group' view.");
@@ -291,6 +294,16 @@ NS_ASSUME_NONNULL_BEGIN
                                 [cell configureWithRecipientId:recipientId
                                                contactsManager:contactsViewHelper.contactsManager];
                             }
+                            
+                            //-BTIDER UPDATE- GroupAdmins Added
+                            if (self.memberAdminIds.count > 0){
+                                NSString* adminId = [self.memberAdminIds.allObjects objectAtIndex:0];
+                                if ([recipientId isEqualToString:adminId]){
+                                    [cell setAttributedSubtitle:cell.adminSubtitle];
+                                }else {
+                                    [cell setAttributedSubtitle:nil];
+                                }
+                            }
 
                             return cell;
                         }
@@ -373,8 +386,10 @@ NS_ASSUME_NONNULL_BEGIN
     OWSAssert(self.conversationSettingsViewDelegate);
 
     NSString *groupName = [self.groupNameTextField.text ows_stripped];
+    //-BTIDER UPDATE- GroupAdmins Added
     TSGroupModel *groupModel = [[TSGroupModel alloc] initWithTitle:groupName
                                                          memberIds:self.memberRecipientIds.allObjects
+                                                          adminIds:self.memberAdminIds.allObjects
                                                              image:self.groupAvatar
                                                            groupId:self.thread.groupModel.groupId];
     [self.conversationSettingsViewDelegate groupWasUpdated:groupModel];

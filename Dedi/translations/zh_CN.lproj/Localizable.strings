@@ -950,6 +950,9 @@
 /* Conversation settings table section title */
 "GROUP_MANAGEMENT_SECTION" = "管理群聊";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ 加入了群组。";
 

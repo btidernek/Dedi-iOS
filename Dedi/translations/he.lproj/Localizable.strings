@@ -950,6 +950,9 @@
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ הצטרף אל הקבוצה.";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_LEFT" = "%@ עזב את הקבוצה.";
 

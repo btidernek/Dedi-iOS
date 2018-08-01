@@ -37,8 +37,10 @@ target 'Dedi' do
   shared_pods
   pod 'ATAppUpdater', :inhibit_warnings => true
   pod 'SSZipArchive', :inhibit_warnings => true
+  pod 'ProtocolBuffers'
 
   target 'DediTests' do
+  pod 'ProtocolBuffers'
     inherit! :search_paths
   end
 end

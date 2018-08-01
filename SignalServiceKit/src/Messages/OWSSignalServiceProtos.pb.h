@@ -2563,6 +2563,7 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 #define GroupContext_name @"name"
 #define GroupContext_members @"members"
 #define GroupContext_avatar @"avatar"
+#define GroupContext_admins @"admins"
 @interface OWSSignalServiceProtosGroupContext : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasName_:1;
@@ -2574,6 +2575,7 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
   NSData* id;
   OWSSignalServiceProtosGroupContextType type;
   NSMutableArray * membersArray;
+  NSMutableArray * adminsArray;
 }
 - (BOOL) hasId;
 - (BOOL) hasType;
@@ -2584,7 +2586,9 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 @property (readonly, strong) NSString* name;
 @property (readonly, strong) NSArray * members;
 @property (readonly, strong) OWSSignalServiceProtosAttachmentPointer* avatar;
+@property (readonly, strong) NSArray * admins;
 - (NSString*)membersAtIndex:(NSUInteger)index;
+- (NSString*)adminsAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
 - (instancetype) defaultInstance;
@@ -2648,6 +2652,12 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 - (OWSSignalServiceProtosGroupContextBuilder*) setAvatarBuilder:(OWSSignalServiceProtosAttachmentPointerBuilder*) builderForValue;
 - (OWSSignalServiceProtosGroupContextBuilder*) mergeAvatar:(OWSSignalServiceProtosAttachmentPointer*) value;
 - (OWSSignalServiceProtosGroupContextBuilder*) clearAvatar;
+
+- (NSMutableArray *)admins;
+- (NSString*)adminsAtIndex:(NSUInteger)index;
+- (OWSSignalServiceProtosGroupContextBuilder *)addAdmins:(NSString*)value;
+- (OWSSignalServiceProtosGroupContextBuilder *)setAdminsArray:(NSArray *)array;
+- (OWSSignalServiceProtosGroupContextBuilder *)clearAdmins;
 @end
 
 #define ContactDetails_number @"number"
@@ -2840,6 +2850,7 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 #define GroupDetails_avatar @"avatar"
 #define GroupDetails_active @"active"
 #define GroupDetails_expireTimer @"expireTimer"
+#define GroupDetails_admins @"admins"
 @interface OWSSignalServiceProtosGroupDetails : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasActive_:1;
@@ -2853,6 +2864,7 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
   NSData* id;
   UInt32 expireTimer;
   NSMutableArray * membersArray;
+  NSMutableArray * adminsArray;
 }
 - (BOOL) hasId;
 - (BOOL) hasName;
@@ -2865,7 +2877,9 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 @property (readonly, strong) OWSSignalServiceProtosGroupDetailsAvatar* avatar;
 - (BOOL) active;
 @property (readonly) UInt32 expireTimer;
+@property (readonly, strong) NSArray * admins;
 - (NSString*)membersAtIndex:(NSUInteger)index;
+- (NSString*)adminsAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
 - (instancetype) defaultInstance;
@@ -2994,6 +3008,12 @@ NSString *NSStringFromOWSSignalServiceProtosGroupContextType(OWSSignalServicePro
 - (UInt32) expireTimer;
 - (OWSSignalServiceProtosGroupDetailsBuilder*) setExpireTimer:(UInt32) value;
 - (OWSSignalServiceProtosGroupDetailsBuilder*) clearExpireTimer;
+
+- (NSMutableArray *)admins;
+- (NSString*)adminsAtIndex:(NSUInteger)index;
+- (OWSSignalServiceProtosGroupDetailsBuilder *)addAdmins:(NSString*)value;
+- (OWSSignalServiceProtosGroupDetailsBuilder *)setAdminsArray:(NSArray *)array;
+- (OWSSignalServiceProtosGroupDetailsBuilder *)clearAdmins;
 @end
 
 

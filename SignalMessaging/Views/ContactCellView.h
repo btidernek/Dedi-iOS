@@ -25,6 +25,9 @@ extern const CGFloat kContactCellAvatarTextMargin;
 
 - (NSAttributedString *)verifiedSubtitle;
 
+//-BTIDER UPDATE- GroupAdmins Added
+- (NSAttributedString *)adminSubtitle;
+
 - (void)setAttributedSubtitle:(nullable NSAttributedString *)attributedSubtitle;
 
 - (BOOL)hasAccessoryText;

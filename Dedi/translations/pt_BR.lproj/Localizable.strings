@@ -950,6 +950,9 @@
 /* Conversation settings table section title */
 "GROUP_MANAGEMENT_SECTION" = "Gerenciamento do Grupo";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ entrou no grupo.";
 

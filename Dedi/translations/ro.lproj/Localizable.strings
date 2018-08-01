@@ -950,6 +950,9 @@
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = " %@ s-a alăturat grupului. ";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_LEFT" = " %@ a părăsit grupul.";
 

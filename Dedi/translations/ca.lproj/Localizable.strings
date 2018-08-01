@@ -950,6 +950,9 @@
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ s'ha unit al grup.";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_LEFT" = "%@ ha abandonat el grup.";
 

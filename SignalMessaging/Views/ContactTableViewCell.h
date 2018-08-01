@@ -28,6 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSAttributedString *)verifiedSubtitle;
 
+//-BTIDER UPDATE- GroupAdmins Added
+- (NSAttributedString *)adminSubtitle;
+
 - (BOOL)hasAccessoryText;
 
 - (void)ows_setAccessoryView:(UIView *)accessoryView;

@@ -950,6 +950,9 @@
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ anslöt sig till gruppen.";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_LEFT" = "%@ har lämnat gruppen.";
 

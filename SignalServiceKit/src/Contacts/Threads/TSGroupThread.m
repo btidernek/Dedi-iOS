@@ -24,7 +24,11 @@ NSString *const TSGroupThread_NotificationKey_UniqueId = @"TSGroupThread_Notific
     OWSAssert(groupModel);
     OWSAssert(groupModel.groupId.length > 0);
     OWSAssert(groupModel.groupMemberIds.count > 0);
+    //OWSAssert(groupModel.groupAdminIds.count > 0);
     for (NSString *recipientId in groupModel.groupMemberIds) {
+        OWSAssert(recipientId.length > 0);
+    }
+    for (NSString *recipientId in groupModel.groupAdminIds) {
         OWSAssert(recipientId.length > 0);
     }
 
@@ -45,9 +49,10 @@ NSString *const TSGroupThread_NotificationKey_UniqueId = @"TSGroupThread_Notific
 
     NSString *localNumber = [TSAccountManager localNumber];
     OWSAssert(localNumber.length > 0);
-
+    //-BTIDER UPDATE- GroupAdmins Added
     TSGroupModel *groupModel = [[TSGroupModel alloc] initWithTitle:nil
                                                          memberIds:@[ localNumber ]
+                                                          adminIds:@[ localNumber ]
                                                              image:nil
                                                            groupId:groupId];
 
@@ -143,6 +148,16 @@ NSString *const TSGroupThread_NotificationKey_UniqueId = @"TSGroupThread_Notific
     [groupMemberIds removeObject:[TSAccountManager localNumber]];
 
     return [groupMemberIds copy];
+}
+
+- (NSArray<NSString *> *)adminIdentifiers
+{
+    NSMutableArray<NSString *> *groupAdminIds = [self.groupModel.groupAdminIds mutableCopy];
+    if (groupAdminIds == nil) {
+        return @[];
+    }
+    
+    return [groupAdminIds copy];
 }
 
 // @returns all threads to which the recipient is a member.

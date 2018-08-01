@@ -517,7 +517,9 @@ const NSUInteger kNewGroupViewControllerAvatarWidth = 68;
     NSMutableArray<NSString *> *recipientIds = [self.memberRecipientIds.allObjects mutableCopy];
     [recipientIds addObject:[self.contactsViewHelper localNumber]];
     NSData *groupId = [SecurityUtils generateRandomBytes:16];
-    return [[TSGroupModel alloc] initWithTitle:groupName memberIds:recipientIds image:self.groupAvatar groupId:groupId];
+    //-BTIDER UPDATE- GroupAdmins Added
+    NSMutableArray<NSString *> *adminIds = [@[[self.contactsViewHelper localNumber]] mutableCopy];
+    return [[TSGroupModel alloc] initWithTitle:groupName memberIds:recipientIds adminIds:adminIds image:self.groupAvatar groupId:groupId];
 }
 
 #pragma mark - Group Avatar

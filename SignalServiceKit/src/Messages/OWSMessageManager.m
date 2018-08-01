@@ -924,11 +924,21 @@ NS_ASSUME_NONNULL_BEGIN
 
     if (groupId.length > 0) {
         NSMutableSet *newMemberIds = [NSMutableSet setWithArray:dataMessage.group.members];
+        NSMutableSet *newAdminIds = [NSMutableSet setWithArray:dataMessage.group.admins];
         for (NSString *recipientId in newMemberIds) {
             if (!recipientId.isValidE164) {
                 DDLogVerbose(@"%@ incoming group update has invalid group member: %@",
                     self.logTag,
                     [self descriptionForEnvelope:envelope]);
+                OWSFail(@"%@ incoming group update has invalid group member", self.logTag);
+                return nil;
+            }
+        }
+        for (NSString *recipientId in newAdminIds) {
+            if (!recipientId.isValidE164) {
+                DDLogVerbose(@"%@ incoming group update has invalid group member: %@",
+                             self.logTag,
+                             [self descriptionForEnvelope:envelope]);
                 OWSFail(@"%@ incoming group update has invalid group member", self.logTag);
                 return nil;
             }
@@ -953,10 +963,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 
                 uint64_t now = [NSDate ows_millisecondTimeStamp];
+                
+                //-BTIDER UPDATE- GroupAdmins Added
                 TSGroupModel *newGroupModel = [[TSGroupModel alloc] initWithTitle:dataMessage.group.name
                                                                         memberIds:newMemberIds.allObjects
+                                                                         adminIds:newAdminIds.allObjects
                                                                             image:oldGroupThread.groupModel.groupImage
                                                                           groupId:dataMessage.group.id];
+                
                 NSString *updateGroupInfo = [newGroupThread.groupModel getInfoStringAboutUpdateTo:newGroupModel
                                                                                   contactsManager:self.contactsManager];
                 newGroupThread.groupModel = newGroupModel;

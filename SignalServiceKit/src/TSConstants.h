@@ -24,6 +24,11 @@ typedef NS_ENUM(NSInteger, TSWhisperMessageType) {
 
 // Production
 //https://test.dedi.com.tr/
+//#define textSecureWebSocketAPI @"wss://dedi.btk.gov.tr:443/v1/websocket/"
+//#define textSecureServerURL @"https://dedi.btk.gov.tr:443/"
+//#define textSecureCDNServerURL @"https://dedi.btk.gov.tr:80/dedi"
+//#define textSecureServiceReflectorHost @"https://dedi.btk.gov.tr:443/"
+//#define textSecureCDNReflectorHost @"https://dedi.btk.gov.tr:80/dedi"
 #define textSecureWebSocketAPI @"wss://test.dedi.com.tr:443/v1/websocket/"
 #define textSecureServerURL @"https://test.dedi.com.tr:443/"
 #define textSecureCDNServerURL @"https://test.dedi.com.tr:443/dedi"

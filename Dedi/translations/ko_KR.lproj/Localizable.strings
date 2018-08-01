@@ -950,6 +950,9 @@
 /* Conversation settings table section title */
 "GROUP_MANAGEMENT_SECTION" = "그룹 관리";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Group Admin";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@님이 그룹에 조인함.";
 

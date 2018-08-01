@@ -474,12 +474,14 @@ NS_ASSUME_NONNULL_BEGIN
 // other members. This can be used to test "group info requests", etc.
 + (void)hallucinateTwinGroup:(TSGroupThread *)groupThread
 {
+    //-BTIDER UPDATE- GroupAdmins Added
     __block TSGroupThread *thread;
     [OWSPrimaryStorage.dbReadWriteConnection
         readWriteWithBlock:^(YapDatabaseReadWriteTransaction *_Nonnull transaction) {
             TSGroupModel *groupModel =
                 [[TSGroupModel alloc] initWithTitle:[groupThread.groupModel.groupName stringByAppendingString:@" Copy"]
                                           memberIds:groupThread.groupModel.groupMemberIds
+                                           adminIds:groupThread.groupModel.groupAdminIds
                                               image:groupThread.groupModel.groupImage
                                             groupId:[SecurityUtils generateRandomBytes:16]];
             thread = [TSGroupThread getOrCreateThreadWithGroupModel:groupModel transaction:transaction];

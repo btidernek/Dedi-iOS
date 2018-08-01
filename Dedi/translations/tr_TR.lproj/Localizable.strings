@@ -950,6 +950,9 @@
 /* Conversation settings table section title */
 "GROUP_MANAGEMENT_SECTION" = "Grup Yönetimi";
 
+/* Conversation settings table section title */
+"GROUP_MANAGEMENT_ADMIN" = "Grup Yöneticisi";
+
 /* No comment provided by engineer. */
 "GROUP_MEMBER_JOINED" = "%@ gruba katıldı.";
 
