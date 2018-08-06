@@ -397,6 +397,15 @@
 /* Alert title */
 "CONFIRM_LEAVE_GROUP_TITLE" = "Do you really want to leave?";
 
+/* Alert body */
+"CONFIRM_REMOVE_FROM_GROUP_DESCRIPTION" = "The user will no longer be able to send or receive messages in this group.";
+
+/* Remove text */
+"REMOVE_BUTTON_TITLE" = "Remove";
+
+/* Alert title */
+"CONFIRM_REMOVE_FROM_GROUP_TITLE" = "Do you really want to remove this user from group?";
+
 /* Button text */
 "CONFIRM_LINK_NEW_DEVICE_ACTION" = "Link New Device";
 
@@ -957,7 +966,7 @@
 "GROUP_MEMBER_JOINED" = " %@ joined the group. ";
 
 /* No comment provided by engineer. */
-"GROUP_MEMBER_LEFT" = " %@ left the group. ";
+"GROUP_MEMBER_LEFT" = " %@ is no longer in group. ";
 
 /* Button label to add information to an unknown contact */
 "GROUP_MEMBERS_ADD_CONTACT_INFO" = "Add Contact";
@@ -996,7 +1005,7 @@
 "GROUP_UPDATED" = "Group updated.";
 
 /* No comment provided by engineer. */
-"GROUP_YOU_LEFT" = "You have left the group.";
+"GROUP_YOU_LEFT" = "You are no longer in this group.";
 
 /* Label for 'archived conversations' button. */
 "HOME_VIEW_ARCHIVED_CONVERSATIONS" = "Archived Conversations";

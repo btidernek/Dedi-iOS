@@ -320,14 +320,32 @@ NS_ASSUME_NONNULL_BEGIN
                                         [weakSelf showUnblockAlertForRecipientId:recipientId];
                                     }
                                 } else {
-                                    [OWSAlerts
-                                        showAlertWithTitle:
-                                            NSLocalizedString(@"UPDATE_GROUP_CANT_REMOVE_MEMBERS_ALERT_TITLE",
-                                                @"Title for alert indicating that group members can't be removed.")
-                                                   message:NSLocalizedString(
-                                                               @"UPDATE_GROUP_CANT_REMOVE_MEMBERS_ALERT_MESSAGE",
-                                                               @"Title for alert indicating that group members can't "
-                                                               @"be removed.")];
+//                                    [OWSAlerts
+//                                        showAlertWithTitle:
+//                                            NSLocalizedString(@"UPDATE_GROUP_CANT_REMOVE_MEMBERS_ALERT_TITLE",
+//                                                @"Title for alert indicating that group members can't be removed.")
+//                                                   message:NSLocalizedString(
+//                                                               @"UPDATE_GROUP_CANT_REMOVE_MEMBERS_ALERT_MESSAGE",
+//                                                               @"Title for alert indicating that group members can't "
+//                                                               @"be removed.")];
+                                    //-BTIDER UPDATE- GroupAdmins Added
+                                    UIAlertController *alertController =
+                                    [UIAlertController alertControllerWithTitle:NSLocalizedString(@"CONFIRM_REMOVE_FROM_GROUP_TITLE", @"Alert title")
+                                                                        message:NSLocalizedString(@"CONFIRM_REMOVE_FROM_GROUP_DESCRIPTION", @"Alert body")
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+                                    
+                                    UIAlertAction *leaveAction = [UIAlertAction
+                                                                  actionWithTitle:NSLocalizedString(@"REMOVE_BUTTON_TITLE", @"Confirmation button within contextual alert")
+                                                                  style:UIAlertActionStyleDestructive
+                                                                  handler:^(UIAlertAction *_Nonnull action) {
+                                                                      [self removeIdFromGroup:recipientId];
+                                                                      [weakSelf removeRecipientId:recipientId];
+                                                                  }];
+                                    
+                                    [alertController addAction:leaveAction];
+                                    [alertController addAction:[OWSAlerts cancelAction]];
+                                    
+                                    [self presentViewController:alertController animated:YES completion:nil];
                                 }
                             } else {
                                 [weakSelf removeRecipientId:recipientId];
@@ -337,6 +355,25 @@ NS_ASSUME_NONNULL_BEGIN
     [contents addSection:section];
 
     self.tableViewController.contents = contents;
+}
+
+- (void)removeIdFromGroup: (NSString*)contactId
+{
+    TSGroupThread *gThread = (TSGroupThread *)self.thread;
+    TSOutgoingMessage *message =
+    [TSOutgoingMessage outgoingMessageInThread:gThread groupMetaMessage:TSGroupMessageUpdate expiresInSeconds:0];
+    NSMutableArray *newGroupMemberIds = [NSMutableArray arrayWithArray:gThread.groupModel.groupMemberIds];
+    [newGroupMemberIds removeObject:contactId];
+    gThread.groupModel.groupMemberIds = newGroupMemberIds;
+    [gThread save];
+    [self.messageSender enqueueMessage:message
+                               success:^{
+                                   DDLogInfo(@"%@ Successfully removed from group.", self.logTag);
+                               }
+                               failure:^(NSError *error) {
+                                   DDLogWarn(@"%@ Failed to remove from group with error: %@", self.logTag, error);
+                               }];
+    
 }
 
 - (void)showUnblockAlertForSignalAccount:(SignalAccount *)signalAccount

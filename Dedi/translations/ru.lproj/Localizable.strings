@@ -397,7 +397,15 @@
 /* Alert title */
 "CONFIRM_LEAVE_GROUP_TITLE" = "Вы хотите покинуть группу?";
 
-/* Button text */
+/* Alert body */
+"CONFIRM_REMOVE_FROM_GROUP_DESCRIPTION" = "The user will no longer be able to send or receive messages in this group.";
+
+/* Remove text */
+"REMOVE_BUTTON_TITLE" = "Remove";
+
+/* Alert title */
+"CONFIRM_REMOVE_FROM_GROUP_TITLE" = "Do you really want to remove this user from group?";
+
 "CONFIRM_LINK_NEW_DEVICE_ACTION" = "Привязать устройство";
 
 /* Action sheet body presented when a user's SN has recently changed. Embeds {{contact's name or phone number}} */

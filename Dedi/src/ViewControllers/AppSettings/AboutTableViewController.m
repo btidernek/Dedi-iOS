@@ -65,7 +65,7 @@
     [helpSection addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SETTINGS_SUPPORT", @"")
                                                   actionBlock:^{
                                                       [[UIApplication sharedApplication]
-                                                          openURL:[NSURL URLWithString:@"http://etkinlik.btk.gov.tr/Dedi/destek"]];
+                                                          openURL:[NSURL URLWithString:@"http://dedi.link"]];
                                                   }]];
     [contents addSection:helpSection];
 

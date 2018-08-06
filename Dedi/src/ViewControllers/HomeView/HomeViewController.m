@@ -880,7 +880,7 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
         [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
                                            title:NSLocalizedString(@"TXT_DELETE_TITLE", nil)
                                          handler:^(UITableViewRowAction *action, NSIndexPath *swipedIndexPath) {
-                                             [self tableViewCellTappedDelete:swipedIndexPath];
+                                             [self didTapLeaveGroupForIndexPath:swipedIndexPath];
                                          }];
 
     UITableViewRowAction *archiveAction;
@@ -906,6 +906,25 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
 
 
     return @[ deleteAction, archiveAction ];
+}
+
+- (void)didTapLeaveGroupForIndexPath:(NSIndexPath *)indexPath
+{
+    UIAlertController *alertController =
+    [UIAlertController alertControllerWithTitle:NSLocalizedString(@"CONFIRM_LEAVE_GROUP_TITLE", @"Alert title")
+                                        message:NSLocalizedString(@"CONFIRM_LEAVE_GROUP_DESCRIPTION", @"Alert body")
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *leaveAction = [UIAlertAction
+                                  actionWithTitle:NSLocalizedString(@"LEAVE_BUTTON_TITLE", @"Confirmation button within contextual alert")
+                                  style:UIAlertActionStyleDestructive
+                                  handler:^(UIAlertAction *_Nonnull action) {
+                                      [self tableViewCellTappedDelete:indexPath];
+                                  }];
+    [alertController addAction:leaveAction];
+    [alertController addAction:[OWSAlerts cancelAction]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

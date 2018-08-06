@@ -397,6 +397,15 @@
 /* Alert title */
 "CONFIRM_LEAVE_GROUP_TITLE" = "Realmente queres abandonar o grupo?";
 
+/* Alert body */
+"CONFIRM_REMOVE_FROM_GROUP_DESCRIPTION" = "The user will no longer be able to send or receive messages in this group.";
+
+/* Remove text */
+"REMOVE_BUTTON_TITLE" = "Remove";
+
+/* Alert title */
+"CONFIRM_REMOVE_FROM_GROUP_TITLE" = "Do you really want to remove this user from group?";
+
 /* Button text */
 "CONFIRM_LINK_NEW_DEVICE_ACTION" = "Vincular un novo dispositivo";
 

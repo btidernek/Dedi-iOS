@@ -3,6 +3,7 @@
 //
 
 #import "TSGroupModel.h"
+#import "TSAccountManager.h"
 #import "FunctionalUtil.h"
 #import "NSString+SSK.h"
 
@@ -142,6 +143,11 @@ NS_ASSUME_NONNULL_BEGIN
                                   stringByAppendingString:[NSString
                                                            stringWithFormat:NSLocalizedString(@"GROUP_MEMBER_LEFT", @""),
                                                            [oldMembersNames componentsJoinedByString:@", "]]];
+        //-BTIDER UPDATE- GroupAdmins Added
+        BOOL isMyNumberInMembersWhoLeft = [[membersWhoLeft allObjects] containsObject:[TSAccountManager localNumber]];
+        if (isMyNumberInMembersWhoLeft){
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"IHaveBeenRemovedFromGroupNotification" object:nil];
+        }
     }
     
     if ([membersWhoJoined count] > 0) {

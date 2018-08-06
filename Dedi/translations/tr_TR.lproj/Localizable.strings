@@ -397,6 +397,15 @@
 /* Alert title */
 "CONFIRM_LEAVE_GROUP_TITLE" = "Gerçekten ayrılmak istiyor musun?";
 
+/* Alert body */
+"CONFIRM_REMOVE_FROM_GROUP_DESCRIPTION" = "Bu kullanıcı grupta artık mesaj gönderip alamayacak.";
+
+/* Remove text */
+"REMOVE_BUTTON_TITLE" = "Çıkar";
+
+/* Alert title */
+"CONFIRM_REMOVE_FROM_GROUP_TITLE" = "Bu kullanıcıyı gruptan çıkarmak istediğinize emin misiniz?";
+
 /* Button text */
 "CONFIRM_LINK_NEW_DEVICE_ACTION" = "Yeni Cihaz Bağla";
 
@@ -957,7 +966,7 @@
 "GROUP_MEMBER_JOINED" = "%@ gruba katıldı.";
 
 /* No comment provided by engineer. */
-"GROUP_MEMBER_LEFT" = "%@ grubu terk etti.";
+"GROUP_MEMBER_LEFT" = "%@ artık grupta değil.";
 
 /* Button label to add information to an unknown contact */
 "GROUP_MEMBERS_ADD_CONTACT_INFO" = "Kişi ekle";
@@ -996,7 +1005,7 @@
 "GROUP_UPDATED" = "Grup güncellendi.";
 
 /* No comment provided by engineer. */
-"GROUP_YOU_LEFT" = "Grubu terk ettin.";
+"GROUP_YOU_LEFT" = "Artık bu grupta değilsiniz.";
 
 /* Label for 'archived conversations' button. */
 "HOME_VIEW_ARCHIVED_CONVERSATIONS" = "Arşivlenmiş Görüşmeler";
@@ -1083,7 +1092,7 @@
 "LEAVE_BUTTON_TITLE" = "Ayrıl";
 
 /* table cell label in conversation settings */
-"LEAVE_GROUP_ACTION" = "Grupdan ayrıl";
+"LEAVE_GROUP_ACTION" = "Gruptan ayrıl";
 
 /* report an invalid linking code */
 "LINK_DEVICE_INVALID_CODE_BODY" = "Bu QR kodu geçerli değil, bağlamak istediğiniz cihazda görüntülenen QR kodunu taradığınızdan emin olun.";

@@ -354,6 +354,10 @@ typedef enum : NSUInteger {
                                              selector:@selector(keyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(iHaveBeenRemovedFromGroup)
+                                                 name:@"IHaveBeenRemovedFromGroupNotification"
+                                               object:nil];
 }
 
 - (BOOL)isGroupConversation
@@ -4442,6 +4446,16 @@ typedef enum : NSUInteger {
     if (didAddToProfileWhitelist) {
         [self ensureDynamicInteractions];
     }
+}
+
+//-BTIDER UPDATE- GroupAdmins Added
+- (void)iHaveBeenRemovedFromGroup{
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
+        dispatch_async(dispatch_get_main_queue(), ^(void){
+            [self.inputToolbar clearTextMessage];
+            [self.navigationController popToRootViewControllerAnimated:true];
+        });
+    });
 }
 
 - (void)voiceMemoGestureDidStart

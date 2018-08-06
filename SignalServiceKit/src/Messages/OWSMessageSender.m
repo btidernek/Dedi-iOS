@@ -527,7 +527,8 @@ NSString *const OWSMessageSenderRateLimitedException = @"RateLimitedException";
             // * The recipient is in the "sending" state.
 
             NSMutableSet<NSString *> *sendingRecipientIds = [NSMutableSet setWithArray:message.sendingRecipientIds];
-            [sendingRecipientIds intersectSet:[NSSet setWithArray:gThread.groupModel.groupMemberIds]];
+            //-BTIDER UPDATE- GroupAdmins Added
+            //[sendingRecipientIds intersectSet:[NSSet setWithArray:gThread.groupModel.groupMemberIds]];
             [sendingRecipientIds minusSet:[NSSet setWithArray:self.blockingManager.blockedPhoneNumbers]];
 
             // Mark skipped recipients as such.  We skip because:

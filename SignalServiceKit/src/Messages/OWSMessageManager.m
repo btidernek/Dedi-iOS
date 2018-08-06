@@ -948,12 +948,12 @@ NS_ASSUME_NONNULL_BEGIN
         //
         // We distinguish between the old group state (if any) and the new group state.
         TSGroupThread *_Nullable oldGroupThread = [TSGroupThread threadWithGroupId:groupId transaction:transaction];
-        if (oldGroupThread) {
-            // Don't trust other clients; ensure all known group members remain in the
-            // group unless it is a "quit" message in which case we should only remove
-            // the quiting member below.
-            [newMemberIds addObjectsFromArray:oldGroupThread.groupModel.groupMemberIds];
-        }
+//        if (oldGroupThread) {
+//            // Don't trust other clients; ensure all known group members remain in the
+//            // group unless it is a "quit" message in which case we should only remove
+//            // the quiting member below.
+//            [newMemberIds addObjectsFromArray:oldGroupThread.groupModel.groupMemberIds];
+//        }
 
         switch (dataMessage.group.type) {
             case OWSSignalServiceProtosGroupContextTypeUpdate: {
@@ -998,6 +998,9 @@ NS_ASSUME_NONNULL_BEGIN
                     DDLogInfo(@"%@ ignoring quit group message from unknown group.", self.logTag);
                     return nil;
                 }
+                //-BTIDER UPDATE- GroupAdmins Added
+                [newMemberIds addObjectsFromArray:oldGroupThread.groupModel.groupMemberIds];
+                ///// Quitte mevcut memberlar korunup sadece çıkmak isteyeni gruptan çıkar
                 [newMemberIds removeObject:envelope.source];
                 oldGroupThread.groupModel.groupMemberIds = [newMemberIds.allObjects mutableCopy];
                 [oldGroupThread saveWithTransaction:transaction];
