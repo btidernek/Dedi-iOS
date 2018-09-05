@@ -908,15 +908,25 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
     return @[ deleteAction, archiveAction ];
 }
 
+// -BTIDER UPDATE- Leave Group Alert Added
 - (void)didTapLeaveGroupForIndexPath:(NSIndexPath *)indexPath
 {
+    [self showAlertForDeletingConversation:indexPath isGroup:[[self threadForIndexPath:indexPath] isKindOfClass:[TSGroupThread class]]];
+}
+
+// -BTIDER UPDATE- Leave Group Alert Added
+-(void) showAlertForDeletingConversation: (NSIndexPath *)indexPath isGroup:(BOOL)isGroup{
+    NSString* title = isGroup ? @"CONFIRM_LEAVE_GROUP_TITLE" : @"CONFIRM_DELETE_CONVERSATION_TITLE";
+    NSString* description = isGroup ? @"CONFIRM_LEAVE_GROUP_DESCRIPTION" : @"CONFIRM_DELETE_CONVERSATION_DESCRIPTION";
+    NSString* buttonTitle = isGroup ? @"LEAVE_BUTTON_TITLE" : @"BUTTON_DONE";
+    
     UIAlertController *alertController =
-    [UIAlertController alertControllerWithTitle:NSLocalizedString(@"CONFIRM_LEAVE_GROUP_TITLE", @"Alert title")
-                                        message:NSLocalizedString(@"CONFIRM_LEAVE_GROUP_DESCRIPTION", @"Alert body")
+    [UIAlertController alertControllerWithTitle:NSLocalizedString(title, @"Alert title")
+                                        message:NSLocalizedString(description, @"Alert body")
                                  preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *leaveAction = [UIAlertAction
-                                  actionWithTitle:NSLocalizedString(@"LEAVE_BUTTON_TITLE", @"Confirmation button within contextual alert")
+                                  actionWithTitle:NSLocalizedString(buttonTitle, @"Confirmation button within contextual alert")
                                   style:UIAlertActionStyleDestructive
                                   handler:^(UIAlertAction *_Nonnull action) {
                                       [self tableViewCellTappedDelete:indexPath];

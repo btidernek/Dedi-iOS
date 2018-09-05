@@ -2339,3 +2339,36 @@
 "accessory_button_accessibility_label" = "Share media";
 
 "new_message_received_accessibility_announcement" = "New message received";
+
+/* Alert title when getting the location failed */
+"FAILED_GET_LOCATION_TITLE" = "Location unavailable";
+
+/* Alert body when getting the location failed */
+"FAILED_GET_LOCATION_BODY" = "Dedi could not determine your location.";
+
+/* Alert title when getting the location failed */
+"FAILED_GET_STATIC_MAP_TITLE" = "Location unavailable";
+
+/* Alert body when getting the location failed */
+"FAILED_GET_STATIC_MAP_BODY" = "Dedi needs an internet connection to send your current location";
+
+/* Alert body when location services are not authorized */
+"MISSING_LOCATION_PERMISSION_BODY" = "Dedi needs to access location services to send your current position. You can grant this permission in the Settings app >> Privacy >> Location Services >> Dedi";
+
+/* Alert title when location services are not authorized */
+"MISSING_LOCATION_PERMISSION_TITLE" = "Dedi needs to access your location";
+
+/* No comment */
+"CONFIRM_DELETE_CONVERSATION_TITLE" = "Are you sure to delete this conversation?";
+
+/* No comment */
+"CONFIRM_DELETE_CONVERSATION_DESCRIPTION" = "All of the messages will be deleted";
+
+/* No comment */
+"MEDIA_CURRENT_LOCATION_BUTTON" = "Location";
+
+/* No comment */
+"LOCATION_SEND_FREQUENCY_WARNING_TITLE" = "Warning";
+
+/* No comment */
+"LOCATION_SEND_FREQUENCY_WARNING_DESCRIPTION" = "You cannot send location frequently";

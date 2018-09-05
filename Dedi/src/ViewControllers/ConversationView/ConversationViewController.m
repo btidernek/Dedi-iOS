@@ -208,6 +208,7 @@ typedef enum : NSUInteger {
 @property (nonatomic, readonly) OutboundCallInitiator *outboundCallInitiator;
 @property (nonatomic, readonly) OWSBlockingManager *blockingManager;
 @property (nonatomic, readonly) ContactsViewHelper *contactsViewHelper;
+@property (nonatomic, readonly) ShareLocationManager *locationManager;
 
 @property (nonatomic) BOOL userHasScrolled;
 @property (nonatomic, nullable) NSDate *lastMessageSentDate;
@@ -283,6 +284,7 @@ typedef enum : NSUInteger {
     _contactsViewHelper = [[ContactsViewHelper alloc] initWithDelegate:self];
     _contactShareViewHelper = [[ContactShareViewHelper alloc] initWithContactsManager:self.contactsManager];
     _contactShareViewHelper.delegate = self;
+    _locationManager = [[ShareLocationManager alloc] init];
 
     NSString *audioActivityDescription = [NSString stringWithFormat:@"%@ voice note", self.logTag];
     _voiceNoteAudioActivity = [[AudioActivity alloc] initWithAudioDescription:audioActivityDescription];
@@ -3811,6 +3813,16 @@ typedef enum : NSUInteger {
         [chooseContactAction setValue:chooseContactImage forKey:@"image"];
         [actionSheetController addAction:chooseContactAction];
     }
+    
+    UIAlertAction *sendLocationAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"MEDIA_CURRENT_LOCATION_BUTTON", @"share location option to send current location")
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction * _Nonnull action) {
+                                                                   [self checkForLatestLocationSentDate];
+                                                               }];
+    UIImage *locationImage = [UIImage imageNamed:@"actionsheet_location"];
+    OWSAssert(locationImage);
+    [sendLocationAction setValue:locationImage forKey:@"image"];
+    [actionSheetController addAction:sendLocationAction];
 
     [self dismissKeyBoard];
     [self presentViewController:actionSheetController animated:true completion:nil];
@@ -4445,6 +4457,69 @@ typedef enum : NSUInteger {
     [self clearDraft];
     if (didAddToProfileWhitelist) {
         [self ensureDynamicInteractions];
+    }
+}
+//-BTIDER UPDATE- Send Location Added
+- (void)sendLocation {
+    __weak typeof(self) weakSelf = self;
+    
+    self.locationManager.completionHandler = ^{
+        [weakSelf callbackLocationFinished];
+    };
+    
+    [self.locationManager requestCurrentLocation];
+}
+
+//-BTIDER UPDATE- Send Location Added
+- (void)checkForLatestLocationSentDate{
+    NSDate* latestLocationSent = [[NSUserDefaults standardUserDefaults] objectForKey:@"LATEST_LOCATION_SENT_DATE"];
+    if (latestLocationSent){
+        NSDate* now = [[NSDate alloc] init];
+        if (fabs([now timeIntervalSinceDate:latestLocationSent]) > 3){
+            [[NSUserDefaults standardUserDefaults] setObject:now forKey:@"LATEST_LOCATION_SENT_DATE"];
+            [self sendLocation];
+        }else{
+            UIAlertController* controller = [UIAlertController
+                                             alertControllerWithTitle: NSLocalizedString(@"LOCATION_SEND_FREQUENCY_WARNING_TITLE", @"Warning title for location sending interval (3 seconds)")
+                                             message: NSLocalizedString(@"LOCATION_SEND_FREQUENCY_WARNING_DESCRIPTION", @"Warning description for location sending interval")
+                                             preferredStyle:UIAlertControllerStyleAlert];
+            
+            [controller addAction: [UIAlertAction actionWithTitle:@"Tamam" style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:controller animated:YES completion:nil];
+        }
+    }else{
+        [[NSUserDefaults standardUserDefaults] setObject:[[NSDate alloc] init] forKey:@"LATEST_LOCATION_SENT_DATE"];
+        [self sendLocation];
+    }
+}
+
+/**
+ Callback for successful location message
+ */
+- (void) callbackLocationFinished {
+    
+    UIImage *locationImage = self.locationManager.image;
+    NSString *messageBody = self.locationManager.message;
+    
+    if (!messageBody) {
+        DDLogWarn(@"%@ %s Sending location failed.", self.logTag, __PRETTY_FUNCTION__);
+    }else{
+        if (locationImage){
+            SignalAttachment *attachment = [SignalAttachment imageAttachmentWithImage:locationImage dataUTI:(NSString *) kUTTypeJPEG filename:@"location" imageQuality:TSImageQualityMedium];
+            [attachment setCaptionText:messageBody];
+            if (!attachment ||
+                [attachment hasError]) {
+                DDLogWarn(@"%@ %s Invalid attachment: %@.",
+                          self.logTag,
+                          __PRETTY_FUNCTION__,
+                          attachment ? [attachment errorName] : @"Missing data");
+                [self tryToSendTextMessage:messageBody updateKeyboardState:NO];
+            }else{
+                [self sendMessageAttachment:attachment];
+            }
+        }else{
+            [self tryToSendTextMessage:messageBody updateKeyboardState:NO];
+        }
     }
 }
 

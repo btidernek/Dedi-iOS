@@ -77,8 +77,10 @@
 	<string>Dedi, tanıdığınız kullanıcıları bulmak için kişilerinizi kullanır. Kişilerinizi sunucuda saklamıyoruz.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>Dedi Ekran Kilidi Yüz Kimliği kullanır.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Dedi konumunuzu bir konuşmaya göndermek istediğinizde kullanır.</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Telefon görüşmeleri yapmak ve almak ve sesli mesaj kaydetmek için Dedi&apos;nin mikrofonunuza erişmesi gerekir.</string>
+	<string>Telefon görüşmeleri yapmak ve almak ve sesli mesaj kaydetmek için Dedi'nin mikrofonunuza erişmesi gerekir.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Dedi, fotoğrafları kütüphanenize kaydedecektir.</string>
 	<key>NSPhotoLibraryUsageDescription</key>

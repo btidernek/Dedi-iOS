@@ -1670,10 +1670,10 @@
 "REGISTRATION_LEGAL_TERMS_LINK" = "Şartlar ve Gizlilik Politikası";
 
 /* legal disclaimer, embeds a tappable {{link title}} which is styled as a hyperlink */
-"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Bu cihazı kaydederek Dedi'nin %@kabul etmiş olursunuz.";
+"REGISTRATION_LEGAL_TOP_MATTER_FORMAT" = "Bu cihazı kaydederek Dedi'nin %@ kabul etmiş olursunuz.";
 
 /* embedded in legal topmatter, styled as a link */
-"REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "şartlar";
+"REGISTRATION_LEGAL_TOP_MATTER_LINK_TITLE" = "şartlarını";
 
 /* No comment provided by engineer. */
 "REGISTRATION_NON_VALID_NUMBER" = "Bu telefon numarası formatı desteklenmiyor, lütfen destek ile iletişime geç.";
@@ -2343,3 +2343,36 @@
 "accessory_button_accessibility_label" = "Medya Paylaş";
 
 "new_message_received_accessibility_announcement" = "Yeni mesaj alındı";
+
+/* Alert title when getting the location failed */
+"FAILED_GET_LOCATION_TITLE" = "Konum bulunamadı";
+
+/* Alert body when getting the location failed */
+"FAILED_GET_LOCATION_BODY" = "Dedi konumunuzu bulamadı.";
+
+/* Alert title when getting the location failed */
+"FAILED_GET_STATIC_MAP_TITLE" = "Konum algılanamadı";
+
+/* Alert body when getting the location failed */
+"FAILED_GET_STATIC_MAP_BODY" = "Mevcut konumunuzu göndermek için internet bağlantısı gerekli";
+
+/* Alert body when location services are not authorized */
+"MISSING_LOCATION_PERMISSION_BODY" = "Şu anki konumunuzu gönderebilmesi için Dedi'nin konum servislerine erişim izni gerekiyor. Bu izni şuradan verebilirsiniz: Ayarlar >> Gizlilik >> Konum Servisleri >> Dedi";
+
+/* Alert title when location services are not authorized */
+"MISSING_LOCATION_PERMISSION_TITLE" = "Dedi konumunuza erişmek istiyor";
+
+/* No comment */
+"CONFIRM_DELETE_CONVERSATION_TITLE" = "Bu konuşmayı silmek istediğinize emin misiniz?";
+
+/* No comment */
+"CONFIRM_DELETE_CONVERSATION_DESCRIPTION" = "Bu konuşmadaki tüm mesajlar silinecek";
+
+/* No comment */
+"MEDIA_CURRENT_LOCATION_BUTTON" = "Konum";
+
+/* No comment */
+"LOCATION_SEND_FREQUENCY_WARNING_TITLE" = "Uyarı";
+
+/* No comment */
+"LOCATION_SEND_FREQUENCY_WARNING_DESCRIPTION" = "Konumunuzu bu kadar sık gönderemezsiniz.";
