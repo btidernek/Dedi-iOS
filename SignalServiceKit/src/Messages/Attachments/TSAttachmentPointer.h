@@ -11,6 +11,7 @@ typedef NS_ENUM(NSUInteger, TSAttachmentPointerState) {
     TSAttachmentPointerStateEnqueued = 0,
     TSAttachmentPointerStateDownloading = 1,
     TSAttachmentPointerStateFailed = 2,
+    TSAttachmentPointerStateOnHold = 3,
 };
 
 /**

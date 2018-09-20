@@ -103,7 +103,8 @@ class AttachmentPointerView: UIStackView {
 
     func updateViews() {
         let emoji = TSAttachment.emoji(forMimeType: self.attachmentPointer.contentType)
-        nameLabel.text = "\(emoji) \(self.filename)"
+        let fileSize = Units(bytes: Int64(self.attachmentPointer.byteCount)).getReadableUnit()
+        nameLabel.text = "\(emoji) \(self.filename) (\(fileSize))"
 
         statusLabel.text = {
             switch self.attachmentPointer.state {
@@ -113,6 +114,8 @@ class AttachmentPointerView: UIStackView {
                 return NSLocalizedString("ATTACHMENT_DOWNLOADING_STATUS_IN_PROGRESS", comment: "Status label when an attachment is currently downloading")
             case .failed:
                 return self.attachmentPointer.mostRecentFailureLocalizedText ?? NSLocalizedString("ATTACHMENT_DOWNLOADING_STATUS_FAILED", comment: "Status label when an attachment download has failed.")
+            case .onHold:
+                return NSLocalizedString("TAP_TO_DOWNLOAD_STATUS_TEXT", comment: "Status label when an attachment is on hold, but hasn't yet started downloading")
             }
         }()
 

@@ -105,13 +105,15 @@ static const CGFloat kAttachmentDownloadProgressTheta = 0.001f;
                            failure:(void (^)(NSError *error))failureHandler
 {
     OWSAssert(transaction);
-
+    
     for (TSAttachmentPointer *attachmentPointer in self.attachmentPointers) {
-        [self retrieveAttachment:attachmentPointer
-                         message:message
-                     transaction:transaction
-                         success:successHandler
-                         failure:failureHandler];
+        if (attachmentPointer.state != TSAttachmentPointerStateOnHold){
+            [self retrieveAttachment:attachmentPointer
+                             message:message
+                         transaction:transaction
+                             success:successHandler
+                             failure:failureHandler];
+        }
     }
 }
 
@@ -266,7 +268,8 @@ static const CGFloat kAttachmentDownloadProgressTheta = 0.001f;
     manager.completionQueue    = dispatch_get_main_queue();
 
     // We want to avoid large downloads from a compromised or buggy service.
-    const long kMaxDownloadSize = 150 * 1024 * 1024;
+    const long kMaxDownloadSize = 100 * 1024 * 1024;
+    const long kMaxDownloadSizeIfLowDataEnabled = 20 * 1024 * 1024;
     // TODO stream this download rather than storing the entire blob.
     __block NSURLSessionDataTask *task = nil;
     __block BOOL hasCheckedContentLength = NO;
@@ -281,16 +284,20 @@ static const CGFloat kAttachmentDownloadProgressTheta = 0.001f;
             }
 
             void (^abortDownload)(void) = ^{
-                OWSFail(@"%@ Download aborted.", self.logTag);
+                // -BTIDER DISABLED-
+                //OWSFail(@"%@ Download aborted.", self.logTag);
                 [task cancel];
             };
-
-            if (progress.totalUnitCount > kMaxDownloadSize || progress.completedUnitCount > kMaxDownloadSize) {
+            // -BTIDER UPDATE- Low Data Mode
+            BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
+            const long maxDownloadSize = isLowDataModeOn ? kMaxDownloadSizeIfLowDataEnabled : kMaxDownloadSize;
+            if (progress.totalUnitCount > maxDownloadSize || progress.completedUnitCount > maxDownloadSize) {
                 // A malicious service might send a misleading content length header,
                 // so....
                 //
                 // If the current downloaded bytes or the expected total byes
                 // exceed the max download size, abort the download.
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MaxDownloadSizeExcededNotification" object:nil];
                 DDLogError(@"%@ Attachment download exceed expected content length: %lld, %lld.",
                     self.logTag,
                     (long long)progress.totalUnitCount,
@@ -335,8 +342,8 @@ static const CGFloat kAttachmentDownloadProgressTheta = 0.001f;
                 return;
             }
             
-            
-            if (contentLength.longLongValue > kMaxDownloadSize) {
+            if (contentLength.longLongValue > maxDownloadSize) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"MAX_DOWNLOAD_EXCEEDED_NOTIFICATION" object:nil];
                 DDLogError(@"%@ Attachment download content length exceeds max download size.", self.logTag);
                 abortDownload();
                 return;
@@ -392,7 +399,10 @@ static const CGFloat kAttachmentDownloadProgressTheta = 0.001f;
      didFailInMessage:(nullable TSMessage *)message
                 error:(NSError *)error
 {
-    pointer.mostRecentFailureLocalizedText = error.localizedDescription;
+    BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
+    NSString* alertMessage =
+    pointer.mostRecentFailureLocalizedText = isLowDataModeOn ? NSLocalizedString(@"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_ON", @"") : NSLocalizedString(@"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_OFF", @"");
+    //error.localizedDescription
     pointer.state = TSAttachmentPointerStateFailed;
     [pointer save];
     if (message) {

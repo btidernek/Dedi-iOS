@@ -119,6 +119,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (UIFont *)textMessageFont
 {
+    
     OWSAssert(DisplayableText.kMaxJumbomojiCount == 5);
 
     CGFloat basePointSize = UIFont.ows_dynamicTypeBodyFont.pointSize;
@@ -1421,6 +1422,8 @@ NS_ASSUME_NONNULL_BEGIN
 
             if (attachmentPointer.state == TSAttachmentPointerStateFailed) {
                 [self.delegate didTapFailedIncomingAttachment:self.viewItem attachmentPointer:attachmentPointer];
+            }else if (attachmentPointer.state == TSAttachmentPointerStateOnHold){
+                [self.delegate didTapOnHoldIncomingAttachment:self.viewItem attachmentPointer:attachmentPointer];
             }
             break;
         }

@@ -686,6 +686,10 @@ class MessageDetailViewController: OWSViewController, MediaGalleryDataSourceDele
     func didTapFailedIncomingAttachment(_ viewItem: ConversationViewItem, attachmentPointer: TSAttachmentPointer) {
         // no - op
     }
+    
+    func didTap(onHoldIncomingAttachment viewItem: ConversationViewItem, attachmentPointer: TSAttachmentPointer) {
+        // no - op
+    }
 
     func didTapFailedOutgoingMessage(_ message: TSOutgoingMessage) {
         // no - op

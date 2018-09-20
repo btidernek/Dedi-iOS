@@ -852,8 +852,11 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
 
                 return promise
             }
-
-            let attachment = SignalAttachment.attachment(dataSource: dataSource, dataUTI: specificUTIType, imageQuality: .medium)
+            
+            //-BTIDER UPDATE- Low Data Mode for Images
+            let isLowDataModeOn = UserDefaults.standard.bool(forKey: "IS_LOW_DATA_MODE_ON")
+            let quality = isLowDataModeOn ? TSImageQuality.compact : TSImageQuality.medium
+            let attachment = SignalAttachment.attachment(dataSource: dataSource, dataUTI: specificUTIType, imageQuality: quality)
             if isConvertibleToContactShare {
                 Logger.info("\(strongSelf.logTag) isConvertibleToContactShare")
                 attachment.isConvertibleToContactShare = isConvertibleToContactShare

@@ -237,7 +237,7 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
                          forConstraints:^{
                              [reminderStackView autoSetDimension:ALDimensionHeight toSize:0];
                          }];
-
+    
     __weak HomeViewController *weakSelf = self;
     ReminderView *deregisteredView =
         [ReminderView nagWithText:NSLocalizedString(@"DEREGISTRATION_WARNING",
@@ -911,7 +911,16 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
 // -BTIDER UPDATE- Leave Group Alert Added
 - (void)didTapLeaveGroupForIndexPath:(NSIndexPath *)indexPath
 {
-    [self showAlertForDeletingConversation:indexPath isGroup:[[self threadForIndexPath:indexPath] isKindOfClass:[TSGroupThread class]]];
+    if ([[self threadForIndexPath:indexPath] isKindOfClass:[TSGroupThread class]]){
+        TSGroupThread* groupThread = (TSGroupThread*) [self threadForIndexPath:indexPath];
+        if ([groupThread.groupModel.groupMemberIds containsObject:[TSAccountManager localNumber]]){
+            [self showAlertForDeletingConversation:indexPath isGroup: YES];
+        }else{
+            [self tableViewCellTappedDelete:indexPath];
+        }
+    }else{
+        [self showAlertForDeletingConversation:indexPath isGroup: NO];
+    }
 }
 
 // -BTIDER UPDATE- Leave Group Alert Added

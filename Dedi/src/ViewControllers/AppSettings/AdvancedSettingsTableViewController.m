@@ -166,6 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
             || (!OWSSignalService.sharedInstance.hasCensoredPhoneNumber &&
                    [TSSocketManager sharedManager].state != SocketManagerStateOpen
                    && weakSelf.reachability.isReachable));
+    
     BOOL isCensorshipCircumventionOn = NO;
     if (OWSSignalService.sharedInstance.hasCensoredPhoneNumber) {
         isCensorshipCircumventionOn = YES;
@@ -195,7 +196,7 @@ NS_ASSUME_NONNULL_BEGIN
                                                             }]];
     }
     [contents addSection:censorshipSection];
-
+    
     self.contents = contents;
 }
 

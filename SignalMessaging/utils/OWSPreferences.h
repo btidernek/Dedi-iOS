@@ -13,6 +13,13 @@ typedef NS_ENUM(NSUInteger, NotificationType) {
     NotificationNamePreview,
 };
 
+typedef NS_ENUM(NSUInteger, AutomaticDownloadMode) {
+    Unassigned,
+    DownloadNever,
+    DownloadOnlyOnWifi,
+    DownloadOnWifiAndCellular,
+};
+
 // Used when migrating logging to NSUserDefaults.
 extern NSString *const OWSPreferencesSignalDatabaseCollection;
 extern NSString *const OWSPreferencesKeyEnableDebugLog;
@@ -48,6 +55,7 @@ extern NSString *const OWSPreferencesCallLoggingDidChangeNotification;
 - (NotificationType)notificationPreviewType;
 - (void)setNotificationPreviewType:(NotificationType)type;
 - (NSString *)nameForNotificationPreviewType:(NotificationType)notificationType;
+- (NSString *)nameForAutomaticDownloadMode:(AutomaticDownloadMode)automaticDownloadMode;
 
 - (BOOL)soundInForeground;
 - (void)setSoundInForeground:(BOOL)enabled;

@@ -3,6 +3,8 @@
 //
 
 #import "TSAttachmentPointer.h"
+#import "MIMETypeUtil.h"
+#import <Reachability/Reachability.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -44,7 +46,27 @@ NS_ASSUME_NONNULL_BEGIN
     }
 
     _digest = digest;
-    _state = TSAttachmentPointerStateEnqueued;
+    
+    // -BTIDER UPDATE- Automatic Download
+    NSInteger autoDownMode = 0;
+    BOOL isReachableViaWiFi = [[Reachability reachabilityForInternetConnection] isReachableViaWiFi];
+    if ([MIMETypeUtil isImage:contentType] || [MIMETypeUtil isAnimated:contentType]){
+         autoDownMode= [[NSUserDefaults standardUserDefaults] integerForKey:@"AUTOMATIC_DOWNLOAD_MODE_FOR_IMAGES"];
+    }else if ([MIMETypeUtil isAudio:contentType]){
+         autoDownMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"AUTOMATIC_DOWNLOAD_MODE_FOR_SOUND"];
+    }else if ([MIMETypeUtil isVideo:contentType]){
+         autoDownMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"AUTOMATIC_DOWNLOAD_MODE_FOR_VIDEOS"];
+    }else {
+         autoDownMode = [[NSUserDefaults standardUserDefaults] integerForKey:@"AUTOMATIC_DOWNLOAD_MODE_FOR_DOCS"];
+    }
+
+    /* AutomaticDownloadMode -> Unassigned = 0, DownloadNever = 1, DownloadOnlyOnWifi = 2, DownloadOnWifiAndCellular = 3 */
+    if (autoDownMode == 3 || ((autoDownMode == 2) && isReachableViaWiFi)){
+        _state = TSAttachmentPointerStateEnqueued;
+    }else{
+        _state = TSAttachmentPointerStateOnHold;
+    }
+    
     _relay = relay;
     self.attachmentType = attachmentType;
 

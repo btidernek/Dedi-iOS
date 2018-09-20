@@ -140,7 +140,7 @@
 "ATTACHMENT_ERROR_COULD_NOT_RESIZE_IMAGE" = "Resim yeniden boyutlandırılamadı.";
 
 /* Attachment error message for attachments whose data exceed file size limits */
-"ATTACHMENT_ERROR_FILE_SIZE_TOO_LARGE" = "Ek çok büyük.";
+"ATTACHMENT_ERROR_FILE_SIZE_TOO_LARGE" = "Ek çok büyük. Düşük veri modu açıksa kapatarak göndermeyi deneyin.";
 
 /* Attachment error message for attachments with invalid data */
 "ATTACHMENT_ERROR_INVALID_DATA" = "Ekte geçersiz içerik var.";
@@ -1125,7 +1125,7 @@
 "LINKING_DEVICE_FAILED_TITLE" = "Cihaz bağlaması başarısız oldu";
 
 /* table cell label in conversation settings */
-"LIST_GROUP_MEMBERS_ACTION" = "Grup Üyeleri";
+"LIST_GROUP_MEMBERS_ACTION" = "Grup üyeleri";
 
 /* Label for button that loads more messages in conversation view. */
 "load_earlier_messages" = "Önceki Mesajları Yükle";
@@ -2376,3 +2376,49 @@
 
 /* No comment */
 "LOCATION_SEND_FREQUENCY_WARNING_DESCRIPTION" = "Konumunuzu bu kadar sık gönderemezsiniz.";
+
+/* Low Data Usage Strings */
+"MAX_VIDEO_SIZE_ALERT_TITLE" = "Uyarı";
+
+"MAX_VIDEO_SIZE_ALERT_MESSAGE" = "Video dosyalarınız 100MB\'den büyük olamaz.";
+
+"MAX_VIDEO_SIZE_FOR_LOW_DATA_ALERT_MESSAGE" = "Düşük veri kullanımız açık 20MB\'dan büyük video gönderemezsiniz.";
+
+"SETTINGS_LOW_DATA_MODE_HEADER" = "DÜŞÜK VERİ KULLANIMI";
+
+"SETTINGS_LOW_DATA_MODE_HEADER_FOOTER" = "Verileriniz düşük kalitede gönderilir. İndirilebilir ve yüklenebilir dosya boyutunuz azaltılır.";
+
+"SETTINGS_LOW_DATA_MODE" = "Düşük Veri Kullanımı";
+
+/* Automatic Download Mode Strings */
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_TITLE" = "Otomatik Medya İndirme";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_IMAGES" = "Fotoğraflar";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_SOUND" = "Ses";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_VIDEOS" = "Videolar";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_DOCS" = "Dökümanlar";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_DESCRIPTION" = "Otomatik indirme seçeneklerini farklı medya türlerine göre ayarlayabilirsiniz.";
+
+"AUTOMATIC_DOWNLOAD_NEVER" = "Hiçbir Zaman";
+
+"AUTOMATIC_DOWNLOAD_WIFI_ONLY" = "WiFi";
+
+"AUTOMATIC_DOWNLOAD_WIFI_AND_CELLULAR" = "WiFi ve Hücresel";
+
+"MEDIA_AND_DATA_USAGE_TITLE" = "Medya ve Veri Kullanımı";
+
+"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_ON" = "İndirilemedi, ek 20MB'dan büyük.";
+
+"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_OFF" = "İndirilemedi, ek 100MB'dan büyük.";
+
+"MAXDOWN_EXCEED_ALERT_TITLE" = "Medya İndirilemedi";
+
+"MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_ON" = "Düşük veri modu açıkken 20MB'den büyük dosyaları indiremezsiniz.";
+
+"MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_OFF" = "100MB'den büyük dosyaları indiremezsiniz.";
+
+"TAP_TO_DOWNLOAD_STATUS_TEXT" = "İndirmek için Dokunun";

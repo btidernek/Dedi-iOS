@@ -81,7 +81,8 @@ static NSString *const OWSFailedAttachmentDownloadsJobAttachmentStateIndex = @"i
         readWriteWithBlock:^(YapDatabaseReadWriteTransaction *_Nonnull transaction) {
             [self enumerateAttemptingOutAttachmentsWithBlock:^(TSAttachmentPointer *attachment) {
                 // sanity check
-                if (attachment.state != TSAttachmentPointerStateFailed) {
+                // -BTIDER UPDATE-
+                if ((attachment.state != TSAttachmentPointerStateFailed) && (attachment.state != TSAttachmentPointerStateOnHold)) {
                     attachment.state = TSAttachmentPointerStateFailed;
                     [attachment saveWithTransaction:transaction];
                     count++;

@@ -410,6 +410,8 @@
 		45F659821E1BE77000444429 /* NonCallKitCallUIAdaptee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F659811E1BE77000444429 /* NonCallKitCallUIAdaptee.swift */; };
 		45FBC5C81DF8575700E9B410 /* CallKitCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC59A1DF8575700E9B410 /* CallKitCallManager.swift */; };
 		45FBC5D11DF8592E00E9B410 /* SignalCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC5D01DF8592E00E9B410 /* SignalCall.swift */; };
+		498229E52149499A00C0567F /* MediaAndDataUsageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */; };
+		498229E82149559D00C0567F /* AutomaticMediaSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */; };
 		498A873E21183E4100937050 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A873D21183E4100937050 /* CoreLocation.framework */; };
 		498A874021183F2C00937050 /* ShareLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A873F21183F2C00937050 /* ShareLocationManager.swift */; };
 		4C13C9F620E57BA30089A98B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */; };
@@ -1069,6 +1071,10 @@
 		45FBC59A1DF8575700E9B410 /* CallKitCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKitCallManager.swift; sourceTree = "<group>"; };
 		45FBC5D01DF8592E00E9B410 /* SignalCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCall.swift; sourceTree = "<group>"; };
 		45FDA43420A4D22700396358 /* OWSNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWSNavigationBar.swift; sourceTree = "<group>"; };
+		498229E32149499A00C0567F /* MediaAndDataUsageSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaAndDataUsageSettingsViewController.h; sourceTree = "<group>"; };
+		498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaAndDataUsageSettingsViewController.m; sourceTree = "<group>"; };
+		498229E62149559D00C0567F /* AutomaticMediaSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticMediaSettingsViewController.h; sourceTree = "<group>"; };
+		498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticMediaSettingsViewController.m; sourceTree = "<group>"; };
 		498A873D21183E4100937050 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		498A873F21183F2C00937050 /* ShareLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLocationManager.swift; sourceTree = "<group>"; };
 		4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
@@ -1377,6 +1383,10 @@
 				340FC883204DAC8C007AEB0F /* OWSSoundSettingsViewController.m */,
 				340FC88F204DAC8C007AEB0F /* PrivacySettingsTableViewController.h */,
 				340FC87E204DAC8C007AEB0F /* PrivacySettingsTableViewController.m */,
+				498229E32149499A00C0567F /* MediaAndDataUsageSettingsViewController.h */,
+				498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */,
+				498229E62149559D00C0567F /* AutomaticMediaSettingsViewController.h */,
+				498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */,
 			);
 			path = AppSettings;
 			sourceTree = "<group>";
@@ -3261,6 +3271,7 @@
 				452037D11EE84975004E4CDF /* DebugUISessionState.m in Sources */,
 				D221A09A169C9E5E00537ABF /* main.m in Sources */,
 				34B3F87B1E8DF1700035BE1A /* ExperienceUpgradesPageViewController.swift in Sources */,
+				498229E52149499A00C0567F /* MediaAndDataUsageSettingsViewController.m in Sources */,
 				34E5DC8220D8050D00C08145 /* RegistrationUtils.m in Sources */,
 				452EA09E1EA7ABE00078744B /* AttachmentPointerView.swift in Sources */,
 				45638BDC1F3DD0D400128435 /* DebugUICalling.swift in Sources */,
@@ -3313,6 +3324,7 @@
 				45638BDF1F3DDB2200128435 /* MessageSender+Promise.swift in Sources */,
 				45FBC5C81DF8575700E9B410 /* CallKitCallManager.swift in Sources */,
 				4539B5861F79348F007141FF /* PushRegistrationManager.swift in Sources */,
+				498229E82149559D00C0567F /* AutomaticMediaSettingsViewController.m in Sources */,
 				45FBC5D11DF8592E00E9B410 /* SignalCall.swift in Sources */,
 				340FC8BB204DAC8D007AEB0F /* OWSAddToContactViewController.m in Sources */,
 				4523149E1F7E916B003A428C /* SlideOffAnimatedTransition.swift in Sources */,
@@ -3695,6 +3707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9DCF49973DDB1188769ED0BA /* Pods-DediShareExtension.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3745,6 +3758,7 @@
 			baseConfigurationReference = 0CB333B627981AA55EB03C51 /* Pods-DediShareExtension.test.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3815,6 +3829,7 @@
 			baseConfigurationReference = 7660FB7B34BAE673C32CB4C2 /* Pods-DediShareExtension.app store release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

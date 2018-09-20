@@ -2371,3 +2371,49 @@
 
 /* No comment */
 "LOCATION_SEND_FREQUENCY_WARNING_DESCRIPTION" = "You cannot send location frequently";
+
+/* Low Data Usage Strings */
+"MAX_VIDEO_SIZE_ALERT_TITLE" = "Warning";
+
+"MAX_VIDEO_SIZE_ALERT_MESSAGE" = "You cannot send video files larger than 100MB.";
+
+"MAX_VIDEO_SIZE_FOR_LOW_DATA_ALERT_MESSAGE" = "Low data usage is enabled. You cannot send video files larger than 20MB.";
+
+"SETTINGS_LOW_DATA_MODE_HEADER" = "LOW DATA USAGE";
+
+"SETTINGS_LOW_DATA_MODE_HEADER_FOOTER" = "Your photos and videos are delivered at low quality";
+
+"SETTINGS_LOW_DATA_MODE" = "Low Data Usage";
+
+/* Automatic Download Mode Strings */
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_TITLE" = "Automatic Media Download";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_IMAGES" = "Photos";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_SOUND" = "Sound";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_VIDEOS" = "Videos";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_DOCS" = "Documents";
+
+"SETTINGS_AUTOMATIC_MEDIA_DOWNLOAD_DESCRIPTION" = "You can set automatic download options for different media types.";
+
+"AUTOMATIC_DOWNLOAD_NEVER" = "Never";
+
+"AUTOMATIC_DOWNLOAD_WIFI_ONLY" = "WiFi";
+
+"AUTOMATIC_DOWNLOAD_WIFI_AND_CELLULAR" = "WiFi and Cellular";
+
+"MEDIA_AND_DATA_USAGE_TITLE" = "Media and Data Usage";
+
+"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_ON" = "Unable to download, attachment is larger than 20MB.";
+
+"MAXDOWN_EXCEED_STATUS_TEXT_LOW_DATA_OFF" = "Unable to download, attachment is larger than 100MB.";
+
+"MAXDOWN_EXCEED_ALERT_TITLE" = "Unable to Download";
+
+"MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_ON" = "You cannot download files larger than 20MB when low data mode is turned on.";
+
+"MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_OFF" = "You cannot download files larger than 100MB";
+
+"TAP_TO_DOWNLOAD_STATUS_TEXT" = "Tap to Download";

@@ -414,6 +414,21 @@ NSString *const OWSPreferencesKeySystemCallLogEnabled = @"OWSPreferencesKeySyste
     }
 }
 
+- (NSString *)nameForAutomaticDownloadMode:(AutomaticDownloadMode)automaticDownloadMode
+{
+    switch (automaticDownloadMode) {
+        case DownloadNever:
+            return NSLocalizedString(@"AUTOMATIC_DOWNLOAD_NEVER", nil);
+        case DownloadOnlyOnWifi:
+            return NSLocalizedString(@"AUTOMATIC_DOWNLOAD_WIFI_ONLY", nil);
+        case DownloadOnWifiAndCellular:
+            return NSLocalizedString(@"AUTOMATIC_DOWNLOAD_WIFI_AND_CELLULAR", nil);
+        default:
+            DDLogWarn(@"Undefined AutomaticDownloadMode in Settings");
+            return @"";
+    }
+}
+
 #pragma mark - Push Tokens
 
 - (void)setPushToken:(NSString *)value
