@@ -33,6 +33,9 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
 @property (nonatomic, readonly) UIProgressView *progressView;
 @property (nonatomic, readonly) YapDatabaseConnection *editingDBConnection;
 @property (atomic, nullable) TSOutgoingMessage *outgoingMessage;
+@property (nonatomic) NSTimer *multipleMessageTimer;
+@property (nonatomic) NSUInteger attachmentCount;
+@property (nonatomic) UIAlertController* progressAlert;
 
 @end
 
@@ -69,6 +72,8 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
 {
     [super viewDidLoad];
 
+    self.attachmentCount = self.attachments.count;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(attachmentUploadProgress:)
                                                  name:kAttachmentUploadProgressNotification
@@ -128,85 +133,178 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
 
 - (nullable NSString *)convertAttachmentToMessageTextIfPossible
 {
-    if (!self.attachment.isConvertibleToTextMessage) {
-        return nil;
+    if (self.attachments.count == 1){
+        SignalAttachment* attachment = (SignalAttachment*) self.attachments.firstObject;
+        if (!attachment.isConvertibleToTextMessage) {
+            return nil;
+        }
+        if (attachment.dataLength >= kOversizeTextMessageSizeThreshold) {
+            return nil;
+        }
+        NSData *data = attachment.data;
+        OWSAssert(data.length < kOversizeTextMessageSizeThreshold);
+        NSString *_Nullable messageText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        DDLogVerbose(@"%@ messageTextForAttachment: %@", self.logTag, messageText);
+        return [messageText filterStringForDisplay];
+    }else{
+        // FIXME: Return error or something
+        return @"";
     }
-    if (self.attachment.dataLength >= kOversizeTextMessageSizeThreshold) {
-        return nil;
-    }
-    NSData *data = self.attachment.data;
-    OWSAssert(data.length < kOversizeTextMessageSizeThreshold);
-    NSString *_Nullable messageText = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    DDLogVerbose(@"%@ messageTextForAttachment: %@", self.logTag, messageText);
-    return [messageText filterStringForDisplay];
 }
 
 - (void)threadWasSelected:(TSThread *)thread
 {
-    OWSAssert(self.attachment);
+    OWSAssert(self.attachments);
     OWSAssert(thread);
 
     self.thread = thread;
-
-    if (self.attachment.isConvertibleToContactShare) {
-        [self showContactShareApproval];
-        return;
-    }
-
-    NSString *_Nullable messageText = [self convertAttachmentToMessageTextIfPossible];
-
-    if (messageText) {
-        MessageApprovalViewController *approvalVC =
+    
+    if (self.attachments.count == 1){
+        SignalAttachment* attachment = (SignalAttachment*) self.attachments.firstObject;
+        if (attachment.isConvertibleToContactShare) {
+            [self showContactShareApproval];
+            return;
+        }
+        
+        NSString *_Nullable messageText = [self convertAttachmentToMessageTextIfPossible];
+        
+        if (messageText) {
+            MessageApprovalViewController *approvalVC =
             [[MessageApprovalViewController alloc] initWithMessageText:messageText
                                                                 thread:thread
                                                        contactsManager:self.contactsManager
                                                               delegate:self];
+            
+            [self.navigationController pushViewController:approvalVC animated:YES];
+        } else {
+            OWSNavigationController *approvalModal =
+            [AttachmentApprovalViewController wrappedInNavControllerWithAttachment:attachment delegate:self];
+            [self presentViewController:approvalModal animated:YES completion:nil];
+        }
+    }else{
+        if (self.attachments.count > 10) {
+            //LOCALIZE
+            NSString *alertTitle = NSLocalizedString(@"ALERT_TITLE_WARNING", @"Alert title");
+            NSString *alertMessage = NSLocalizedString(@"SHARE_MEDIA_COUNT_EXCEEDED_ALERT_BODY", @"Alert title");
+            NSString *actionTitle = NSLocalizedString(@"BUTTON_DONE", @"Alert title");
+            UIAlertController *alertController = [UIAlertController
+                                                  alertControllerWithTitle:alertTitle
+                                                  message:alertMessage
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:actionTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self.shareViewDelegate shareViewWasCancelled];
+            }]];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }else{
+            NSString *progressTitle = NSLocalizedString(@"SHARE_EXTENSION_SENDING_IN_PROGRESS_TITLE", @"Alert title");
+            NSString *progressMessage = [NSString stringWithFormat:@"1 / %lu", (unsigned long)self.attachmentCount];
+            self.progressAlert = [UIAlertController alertControllerWithTitle:progressTitle
+                                                                     message:progressMessage
+                                                              preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction *progressCancelAction = [UIAlertAction actionWithTitle:[CommonStrings cancelButton]
+                                                                           style:UIAlertActionStyleCancel
+                                                                         handler:^(UIAlertAction *_Nonnull action) {
+                                                                             [self.shareViewDelegate shareViewWasCancelled];
+                                                                         }];
+            [self.progressAlert addAction:progressCancelAction];
+            
+            self.progressView.progress = 0;
+            [self.progressAlert.view addSubview:self.progressView];
+            [self.progressView autoPinWidthToSuperviewWithMargin:24];
+            [self.progressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.progressAlert.view withOffset:4];
+            
+            [self presentViewController:self.progressAlert animated:YES completion:nil];
+            
+            self.multipleMessageTimer = [NSTimer scheduledTimerWithTimeInterval:0.5
+                                                                         target:self
+                                                                       selector:@selector(sendMultipleAttachments)
+                                                                       userInfo:nil
+                                                                        repeats:NO];
+        }
+    }
+}
 
-        [self.navigationController pushViewController:approvalVC animated:YES];
-    } else {
-        OWSNavigationController *approvalModal =
-            [AttachmentApprovalViewController wrappedInNavControllerWithAttachment:self.attachment delegate:self];
-        [self presentViewController:approvalModal animated:YES completion:nil];
+-(void)sendMultipleAttachments{
+    if (self.attachments.count > 0){
+        __block TSOutgoingMessage *outgoingMessage = nil;
+        outgoingMessage = [ThreadUtil sendMessageWithAttachment:self.attachments.lastObject
+                                     inThread:self.thread
+                             quotedReplyModel:nil
+                                messageSender:self.messageSender
+                                   completion:^(NSError * _Nullable error) {
+                                       if (error) {
+                                           //LOCALIZE
+                                           NSString *alertTitle = NSLocalizedString(@"ALERT_ERROR_TITLE", @"Alert title");
+                                           NSString *alertMessage = NSLocalizedString(@"SHARE_MEDIA_ERROR_ALERT_BODY", @"Alert title");
+                                           NSString *actionTitle = NSLocalizedString(@"BUTTON_DONE", @"Alert title");
+                                           UIAlertController *alertController = [UIAlertController
+                                                                                 alertControllerWithTitle:alertTitle
+                                                                                 message:alertMessage
+                                                                                 preferredStyle:UIAlertControllerStyleAlert];
+                                           [alertController addAction:
+                                            [UIAlertAction actionWithTitle:actionTitle
+                                                                     style:UIAlertActionStyleDefault
+                                                                   handler:^(UIAlertAction * _Nonnull action) {
+                                               [self.shareViewDelegate shareViewWasCancelled];
+                                           }]];
+                                           [self presentViewController:alertController animated:YES completion:nil];
+                                       }else{
+                                           self.progressView.progress = 0;
+                                           [self sendMultipleAttachments];
+                                       }
+                                   }];
+        self.outgoingMessage = outgoingMessage;
+        NSUInteger completedCount = self.attachmentCount - self.attachments.count;
+        self.progressAlert.message = [NSString stringWithFormat:@"%lu / %lu", completedCount+1, self.attachmentCount];
+        [self.attachments removeLastObject];
+        
+    }else{
+        [self.multipleMessageTimer invalidate];
+        self.multipleMessageTimer = nil;
+        [self.shareViewDelegate shareViewWasCompleted];
     }
 }
 
 - (void)showContactShareApproval
 {
-    OWSAssert(self.attachment);
+    OWSAssert(self.attachments);
     OWSAssert(self.thread);
-    OWSAssert(self.attachment.isConvertibleToContactShare);
-
-    NSData *data = self.attachment.data;
-
-    CNContact *_Nullable cnContact = [Contact cnContactWithVCardData:data];
-    Contact *_Nullable contact = [[Contact alloc] initWithSystemContact:cnContact];
-    OWSContact *_Nullable contactShareRecord = [OWSContacts contactForSystemContact:cnContact];
-    if (!contactShareRecord) {
-        DDLogError(@"%@ Could not convert system contact.", self.logTag);
-        return;
-    }
-
-    BOOL isProfileAvatar = NO;
-    NSData *_Nullable avatarImageData = [self.contactsManager avatarDataForCNContactId:contact.cnContactId];
-    for (NSString *recipientId in contact.textSecureIdentifiers) {
-        if (avatarImageData) {
-            break;
+    if (self.attachments.count == 1){
+        SignalAttachment* attachment = (SignalAttachment*) self.attachments.firstObject;
+        OWSAssert(attachment.isConvertibleToContactShare);
+        NSData *data = attachment.data;
+        
+        CNContact *_Nullable cnContact = [Contact cnContactWithVCardData:data];
+        Contact *_Nullable contact = [[Contact alloc] initWithSystemContact:cnContact];
+        OWSContact *_Nullable contactShareRecord = [OWSContacts contactForSystemContact:cnContact];
+        if (!contactShareRecord) {
+            DDLogError(@"%@ Could not convert system contact.", self.logTag);
+            return;
         }
-        avatarImageData = [self.contactsManager profileImageDataForPhoneIdentifier:recipientId];
-        if (avatarImageData) {
-            isProfileAvatar = YES;
+        
+        BOOL isProfileAvatar = NO;
+        NSData *_Nullable avatarImageData = [self.contactsManager avatarDataForCNContactId:contact.cnContactId];
+        for (NSString *recipientId in contact.textSecureIdentifiers) {
+            if (avatarImageData) {
+                break;
+            }
+            avatarImageData = [self.contactsManager profileImageDataForPhoneIdentifier:recipientId];
+            if (avatarImageData) {
+                isProfileAvatar = YES;
+            }
         }
-    }
-    contactShareRecord.isProfileAvatar = isProfileAvatar;
-
-    ContactShareViewModel *contactShare =
+        contactShareRecord.isProfileAvatar = isProfileAvatar;
+        
+        ContactShareViewModel *contactShare =
         [[ContactShareViewModel alloc] initWithContactShareRecord:contactShareRecord avatarImageData:avatarImageData];
-
-    ContactShareApprovalViewController *approvalVC =
+        
+        ContactShareApprovalViewController *approvalVC =
         [[ContactShareApprovalViewController alloc] initWithContactShare:contactShare
                                                          contactsManager:self.contactsManager
                                                                 delegate:self];
-    [self.navigationController pushViewController:approvalVC animated:YES];
+        [self.navigationController pushViewController:approvalVC animated:YES];
+    }
 }
 
 // override
@@ -232,7 +330,14 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
 - (void)attachmentApproval:(AttachmentApprovalViewController *)approvalViewController
       didApproveAttachment:(SignalAttachment *)attachment
 {
+    [self approveAttachmentFor:approvalViewController attachment:attachment];
+}
+
+-(void)approveAttachmentFor:(UIViewController *)viewController
+     attachment:(SignalAttachment *)attachment{
+    
     [ThreadUtil addThreadToProfileWhitelistIfEmptyContactThread:self.thread];
+
     [self tryToSendMessageWithBlock:^(SendCompletionBlock sendCompletion) {
         OWSAssertIsOnMainThread();
 
@@ -244,11 +349,11 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
                                                      completion:^(NSError *_Nullable error) {
                                                          sendCompletion(error, outgoingMessage);
                                                      }];
-
+        
         // This is necessary to show progress.
         self.outgoingMessage = outgoingMessage;
     }
-                 fromViewController:approvalViewController];
+                 fromViewController:viewController];
 }
 
 - (void)attachmentApproval:(AttachmentApprovalViewController *)attachmentApproval
@@ -350,14 +455,17 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
                                                                      [self.shareViewDelegate shareViewWasCancelled];
                                                                  }];
     [progressAlert addAction:progressCancelAction];
-
-
+    
+    if(self.attachments.count == 1){
+        [progressAlert.view addSubview:self.progressView];
+        [self.progressView autoPinWidthToSuperviewWithMargin:24];
+        [self.progressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:progressAlert.view withOffset:4];
+    }
+    
     // We add a progress subview to an AlertController, which is a total hack.
     // ...but it looks good, and given how short a progress view is and how
     // little the alert controller changes, I'm not super worried about it.
-    [progressAlert.view addSubview:self.progressView];
-    [self.progressView autoPinWidthToSuperviewWithMargin:24];
-    [self.progressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:progressAlert.view withOffset:4];
+    
 #ifdef DEBUG
     if (@available(iOS 12, *)) {
         // TODO: Congratulations! You survived to see another iOS release.
@@ -366,21 +474,22 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
 #endif
 
     SendCompletionBlock sendCompletion = ^(NSError *_Nullable error, TSOutgoingMessage *message) {
-
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             if (error) {
                 [fromViewController
-                    dismissViewControllerAnimated:YES
-                                       completion:^(void) {
-                                           DDLogInfo(@"%@ Sending message failed with error: %@", self.logTag, error);
-                                           [self showSendFailureAlertWithError:error
-                                                                       message:message
-                                                            fromViewController:fromViewController];
-                                       }];
+                 dismissViewControllerAnimated:YES
+                 completion:^(void) {
+                     DDLogInfo(@"%@ Sending message failed with error: %@", self.logTag, error);
+                     [self showSendFailureAlertWithError:error
+                                                 message:message
+                                      fromViewController:fromViewController];
+                 }];
                 return;
             }
-
+            
             DDLogInfo(@"%@ Sending message succeeded.", self.logTag);
+            
             [self.shareViewDelegate shareViewWasCompleted];
         });
     };

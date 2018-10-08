@@ -533,32 +533,47 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
 
     private func buildAttachmentAndPresentConversationPicker() {
         SwiftAssertIsOnMainThread(#function)
-
-        self.buildAttachment().then { [weak self] attachment -> Void in
-            SwiftAssertIsOnMainThread(#function)
-            guard let strongSelf = self else { return }
-
-            strongSelf.progressPoller = nil
-            strongSelf.loadViewController = nil
-
-            let conversationPicker = SharingThreadPickerViewController(shareViewDelegate: strongSelf)
-            Logger.debug("\(strongSelf.logTag) presentConversationPicker: \(conversationPicker)")
-            conversationPicker.attachment = attachment
-            strongSelf.showPrimaryViewController(conversationPicker)
-            Logger.info("\(strongSelf.logTag) showing picker with attachment: \(attachment)")
-        }.catch {[weak self]  error in
-            SwiftAssertIsOnMainThread(#function)
-            guard let strongSelf = self else { return }
-
-            let alertTitle = NSLocalizedString("SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE",
-                                               comment: "Shown when trying to share content to a Signal user for the share extension. Followed by failure details.")
-            OWSAlerts.showAlert(title: alertTitle,
-                                message: error.localizedDescription,
-                                buttonTitle: CommonStrings.cancelButton) { _ in
-                                    strongSelf.shareViewWasCancelled()
+        var attachments = [SignalAttachment]()
+        guard let extensionItems = self.extensionContext?.inputItems as? [NSExtensionItem] else{
+//            let error = ShareViewControllerError.assertionError(description: "no input item")
+//            return Promise(error: error)
+            return
+        }
+        for extensionItem in extensionItems{
+            if let itemProviders = extensionItem.attachments as? [NSItemProvider]{
+                for itemProvider in itemProviders{
+                    self.buildAttachment(itemProvider:itemProvider).then { [weak self] attachment -> Void in
+                        SwiftAssertIsOnMainThread(#function)
+                        attachments.append(attachment)
+                        if itemProvider == itemProviders.last{
+                            guard let strongSelf = self else { return }
+                            strongSelf.progressPoller = nil
+                            strongSelf.loadViewController = nil
+                            let conversationPicker = SharingThreadPickerViewController(shareViewDelegate: strongSelf)
+                            Logger.debug("\(strongSelf.logTag) presentConversationPicker: \(conversationPicker)")
+                            conversationPicker.attachments = NSMutableArray(array: attachments)
+                            strongSelf.showPrimaryViewController(conversationPicker)
+                            Logger.info("\(strongSelf.logTag) showing picker with attachment: \(attachment)")
+                        }
+                        }.catch {[weak self]  error in
+                            SwiftAssertIsOnMainThread(#function)
+                            guard let strongSelf = self else { return }
+                            
+                            let alertTitle = NSLocalizedString("SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE",
+                                                               comment: "Shown when trying to share content to a Signal user for the share extension. Followed by failure details.")
+                            OWSAlerts.showAlert(title: alertTitle,
+                                                message: error.localizedDescription,
+                                                buttonTitle: CommonStrings.cancelButton) { _ in
+                                                    strongSelf.shareViewWasCancelled()
+                            }
+                            owsFail("\(strongSelf.logTag) building attachment failed with error: \(error)")
+                        }.retainUntilComplete()
+                }
+            }else{
+//                let error = ShareViewControllerError.assertionError(description: "No item provider in input item attachments")
+//                return Promise(error: error)
             }
-            owsFail("\(strongSelf.logTag) building attachment failed with error: \(error)")
-        }.retainUntilComplete()
+        }
     }
 
     private func presentScreenLock() {
@@ -656,12 +671,8 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
         }
     }
 
-    private func buildAttachment() -> Promise<SignalAttachment> {
-        guard let inputItem: NSExtensionItem = self.extensionContext?.inputItems.first as? NSExtensionItem else {
-            let error = ShareViewControllerError.assertionError(description: "no input item")
-            return Promise(error: error)
-        }
-
+    private func buildAttachment(itemProvider:NSItemProvider) -> Promise<SignalAttachment> {
+        
         // A single inputItem can have multiple attachments, e.g. sharing from Firefox gives
         // one url attachment and another text attachment, where the the url would be https://some-news.com/articles/123-cat-stuck-in-tree
         // and the text attachment would be something like "Breaking news - cat stuck in tree"
@@ -669,10 +680,11 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
         // FIXME: For now, we prefer the URL provider and discard the text provider, since it's more useful to share the URL than the caption
         // but we *should* include both. This will be a bigger change though since our share extension is currently heavily predicated
         // on one itemProvider per share.
-        guard let itemProvider: NSItemProvider = type(of: self).preferredItemProvider(inputItem: inputItem) else {
-            let error = ShareViewControllerError.assertionError(description: "No item provider in input item attachments")
-            return Promise(error: error)
-        }
+        // -BTIDER DISABLED-
+//        guard let itemProvider: NSItemProvider = type(of: self).preferredItemProvider(inputItem: inputItem) else {
+//            let error = ShareViewControllerError.assertionError(description: "No item provider in input item attachments")
+//            return Promise(error: error)
+//        }
         Logger.info("\(self.logTag) attachment: \(itemProvider)")
 
         // We need to be very careful about which UTI type we use.

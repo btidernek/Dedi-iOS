@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SharingThreadPickerViewController : SelectThreadViewController
 
-@property (nonatomic) SignalAttachment *attachment;
+@property (nonatomic) NSMutableArray<SignalAttachment *> *attachments;
 
 - (instancetype)initWithShareViewDelegate:(id<ShareViewDelegate>)shareViewDelegate;
 
