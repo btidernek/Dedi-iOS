@@ -2422,3 +2422,14 @@
 "MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_OFF" = "100MB'den büyük dosyaları indiremezsiniz.";
 
 "TAP_TO_DOWNLOAD_STATUS_TEXT" = "İndirmek için Dokunun";
+
+/* Multiple Media Sending Strings */
+"PREPARING_TITLE" = "Hazırlanıyor...";
+
+"ALERT_TITLE_WARNING" = "Uyarı";
+
+"SHARE_MEDIA_COUNT_EXCEEDED_ALERT_BODY" = "Aynı anda 10 medya dosyası gönderebilirsiniz!";
+
+"ALERT_TITLE_ERROR" = "Hata";
+
+"SHARE_MEDIA_ERROR_ALERT_BODY" = "Medya gönderilirken bir hata oluştu";

@@ -2418,3 +2418,14 @@
 "MAXDOWN_EXCEED_ALERT_TEXT_LOW_DATA_OFF" = "You cannot download files larger than 100MB";
 
 "TAP_TO_DOWNLOAD_STATUS_TEXT" = "Tap to Download";
+
+/* Multiple Media Sending Strings */
+"PREPARING_TITLE" = "Preparing...";
+
+"ALERT_TITLE_WARNING" = "Warning";
+
+"SHARE_MEDIA_COUNT_EXCEEDED_ALERT_BODY" = "You can send up to 10 media files at the same time!";
+
+"ALERT_TITLE_ERROR" = "Error";
+
+"SHARE_MEDIA_ERROR_ALERT_BODY" = "An error occured while sending attachment";

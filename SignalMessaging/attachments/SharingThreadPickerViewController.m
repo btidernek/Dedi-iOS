@@ -183,7 +183,6 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
         }
     }else{
         if (self.attachments.count > 10) {
-            //LOCALIZE
             NSString *alertTitle = NSLocalizedString(@"ALERT_TITLE_WARNING", @"Alert title");
             NSString *alertMessage = NSLocalizedString(@"SHARE_MEDIA_COUNT_EXCEEDED_ALERT_BODY", @"Alert title");
             NSString *actionTitle = NSLocalizedString(@"BUTTON_DONE", @"Alert title");
@@ -234,8 +233,7 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
                                 messageSender:self.messageSender
                                    completion:^(NSError * _Nullable error) {
                                        if (error) {
-                                           //LOCALIZE
-                                           NSString *alertTitle = NSLocalizedString(@"ALERT_ERROR_TITLE", @"Alert title");
+                                           NSString *alertTitle = NSLocalizedString(@"ALERT_TITLE_ERROR", @"Alert title");
                                            NSString *alertMessage = NSLocalizedString(@"SHARE_MEDIA_ERROR_ALERT_BODY", @"Alert title");
                                            NSString *actionTitle = NSLocalizedString(@"BUTTON_DONE", @"Alert title");
                                            UIAlertController *alertController = [UIAlertController

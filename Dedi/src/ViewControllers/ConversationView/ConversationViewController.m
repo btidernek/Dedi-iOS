@@ -86,6 +86,7 @@
 #import <YapDatabase/YapDatabaseAutoView.h>
 #import <YapDatabase/YapDatabaseViewChange.h>
 #import <YapDatabase/YapDatabaseViewConnection.h>
+#import <QBImagePickerController/QBImagePickerController.h>
 
 @import Photos;
 
@@ -142,7 +143,8 @@ typedef enum : NSUInteger {
     UITextViewDelegate,
     ConversationCollectionViewDelegate,
     ConversationInputToolbarDelegate,
-    GifPickerViewControllerDelegate>
+    GifPickerViewControllerDelegate,
+    QBImagePickerControllerDelegate>
 
 // Show message info animation
 @property (nullable, nonatomic) UIPercentDrivenInteractiveTransition *showMessageDetailsTransition;
@@ -237,6 +239,16 @@ typedef enum : NSUInteger {
 @property (nonatomic, nullable) NSNumber *previousLastTimestamp;
 @property (nonatomic, nullable) NSNumber *viewHorizonTimestamp;
 @property (nonatomic) ContactShareViewHelper *contactShareViewHelper;
+@property (nonatomic) NSMutableArray<SignalAttachment *> *multipleAttachmentsList;
+@property (nonatomic) NSMutableArray<NSURL *> *videoUrlsToProcess;
+@property NSUInteger assetsToBeSentCount;
+@property NSUInteger assetsCurrentSentCount;
+@property NSUInteger videosToBeProcessedCount;
+@property NSUInteger videosCurrentProcessedCount;
+@property BOOL isVideoBeingProcessed;
+
+@property (nonatomic) UIProgressView *multipleAttachmentProgressView;
+@property (nonatomic) UIAlertController *multipleAttachmentProgressAlert;
 
 @end
 
@@ -285,6 +297,15 @@ typedef enum : NSUInteger {
     _contactShareViewHelper = [[ContactShareViewHelper alloc] initWithContactsManager:self.contactsManager];
     _contactShareViewHelper.delegate = self;
     _locationManager = [[ShareLocationManager alloc] init];
+    _multipleAttachmentsList = [[NSMutableArray alloc] init];
+    _videoUrlsToProcess = [[NSMutableArray alloc] init];
+    _assetsToBeSentCount = 0;
+    _assetsCurrentSentCount = 0;
+    _videosToBeProcessedCount = 0;
+    _videosCurrentProcessedCount = 0;
+    _isVideoBeingProcessed = false;
+    
+     _multipleAttachmentProgressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
 
     NSString *audioActivityDescription = [NSString stringWithFormat:@"%@ voice note", self.logTag];
     _voiceNoteAudioActivity = [[AudioActivity alloc] initWithAudioDescription:audioActivityDescription];
@@ -2958,15 +2979,74 @@ typedef enum : NSUInteger {
             DDLogWarn(@"%@ Media Library permission denied.", self.logTag);
             return;
         }
-        
-        UIImagePickerController *picker = [UIImagePickerController new];
-        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        picker.delegate = self;
-        picker.mediaTypes = @[ (__bridge NSString *)kUTTypeImage, (__bridge NSString *)kUTTypeMovie ];
-        
         [self dismissKeyBoard];
-        [self presentViewController:picker animated:YES completion:[UIUtil modalCompletionBlock]];
+        
+        QBImagePickerController *pickerVC = [QBImagePickerController new];
+        pickerVC.delegate = self;
+        pickerVC.allowsMultipleSelection = YES;
+        pickerVC.maximumNumberOfSelection = 10;
+        pickerVC.mediaType = QBImagePickerMediaTypeAny;
+        pickerVC.showsNumberOfSelectedAssets = YES;
+        [self presentViewController:pickerVC animated:YES completion:nil];
     }];
+}
+
+// MARK: QBImagePickerDelegate
+
+- (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets {
+    
+    _assetsToBeSentCount = assets.count;
+    _assetsCurrentSentCount = 0;
+    _videosToBeProcessedCount = 0;
+    _videosCurrentProcessedCount = 0;
+    _isVideoBeingProcessed = false;
+    
+    for (PHAsset *asset in assets) {
+        if (asset.mediaType == PHAssetMediaTypeImage){
+            [self handleImageAssetWith:nil andReferenceUrl:nil andAsset:asset];
+        }
+        else if (asset.mediaType == PHAssetMediaTypeVideo){
+            _videosToBeProcessedCount += 1;
+            [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset *assetToRequest, AVAudioMix *audioMix, NSDictionary *info){
+                 if ([assetToRequest isKindOfClass:[AVURLAsset class]]){
+                     NSURL *url = [(AVURLAsset*)assetToRequest URL];
+                     [self.videoUrlsToProcess addObject:url];
+                 }
+             }];
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    
+    NSString *progressTitle = NSLocalizedString(@"PREPARING_TITLE", @"Alert title");
+    _multipleAttachmentProgressAlert = [UIAlertController alertControllerWithTitle:progressTitle
+                                                                           message:nil
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *progressCancelAction = [UIAlertAction actionWithTitle:[CommonStrings cancelButton]
+                                                                   style:UIAlertActionStyleCancel
+                                                                 handler:^(UIAlertAction *_Nonnull action) {
+                                                                     [self cancelMultipleAttachmentSend];
+                                                                     return;
+                                                                 }];
+    [_multipleAttachmentProgressAlert addAction:progressCancelAction];
+    
+    self.multipleAttachmentProgressView.progress = 0;
+    [self.multipleAttachmentProgressAlert.view addSubview:self.multipleAttachmentProgressView];
+    [self.multipleAttachmentProgressView autoPinWidthToSuperviewWithMargin:24];
+    [self.multipleAttachmentProgressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.multipleAttachmentProgressAlert.view withOffset:4];
+    
+    [self presentViewController:_multipleAttachmentProgressAlert animated:YES completion:nil];
+    [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(processMultipleVideos:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+- (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 /*
@@ -2996,7 +3076,8 @@ typedef enum : NSUInteger {
     [self resetFrame];
 
     NSURL *referenceURL = [info valueForKey:UIImagePickerControllerReferenceURL];
-    if (!referenceURL) {
+    NSURL *mediaUrl = [info valueForKey:UIImagePickerControllerMediaURL];
+    if (!referenceURL || !mediaUrl) {
         DDLogVerbose(@"Could not retrieve reference URL for picked asset");
         [self imagePickerController:picker didFinishPickingMediaWithInfo:info filename:nil];
         return;
@@ -3021,115 +3102,185 @@ typedef enum : NSUInteger {
                          filename:(NSString *_Nullable)filename
 {
     OWSAssertIsOnMainThread();
-
-    void (^failedToPickAttachment)(NSError *error) = ^void(NSError *error) {
-        DDLogError(@"failed to pick attachment with error: %@", error);
-    };
-
-    NSString *mediaType = info[UIImagePickerControllerMediaType];
-    if ([mediaType isEqualToString:(__bridge NSString *)kUTTypeMovie]) {
-        // Video picked from library or captured with camera
-
-        NSURL *videoURL = info[UIImagePickerControllerMediaURL];
-        [self dismissViewControllerAnimated:YES
-                                 completion:^{
-                                     [self sendQualityAdjustedAttachmentForVideo:videoURL
-                                                                        filename:filename
-                                                              skipApprovalDialog:NO];
-                                 }];
-    } else if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+    
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         // Static Image captured from camera
 
         UIImage *imageFromCamera = [info[UIImagePickerControllerOriginalImage] normalizedImage];
 
         [self dismissViewControllerAnimated:YES
                                  completion:^{
-                                     OWSAssertIsOnMainThread();
-
-                                     if (imageFromCamera) {
-                                         // "Camera" attachments _SHOULD_ be resized, if possible.
-                                         //-BTIDER UPDATE- Low Data Mode for Images
-                                         BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
-                                         TSImageQuality quality = isLowDataModeOn ? TSImageQualityCompact : TSImageQualityMedium;
-                                         SignalAttachment *attachment =
-                                             [SignalAttachment imageAttachmentWithImage:imageFromCamera
-                                                                                dataUTI:(NSString *)kUTTypeJPEG
-                                                                               filename:filename
-                                                                           imageQuality:quality];
-                                         if (!attachment || [attachment hasError]) {
-                                             DDLogWarn(@"%@ %s Invalid attachment: %@.",
-                                                 self.logTag,
-                                                 __PRETTY_FUNCTION__,
-                                                 attachment ? [attachment errorName] : @"Missing data");
-                                             [self showErrorAlertForAttachment:attachment];
-                                             failedToPickAttachment(nil);
-                                         } else {
-                                             [self tryToSendAttachmentIfApproved:attachment skipApprovalDialog:NO];
-                                         }
-                                     } else {
-                                         failedToPickAttachment(nil);
+                                     SignalAttachment *cameraAttachment = [self convertCameraImageAssetToAttachment:imageFromCamera imageName:filename];
+                                     if (cameraAttachment){
+                                         [self tryToSendAttachmentIfApproved:cameraAttachment skipApprovalDialog:NO];
+                                     }else{
+                                         DDLogError(@"failed to pick camera attachment");
                                      }
                                  }];
-    } else {
-        // Non-Video image picked from library
+    }else{
+        // Method call decision for media type
+        [info[UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeMovie] ?
+        [self handleVideoAssetWith:filename andMediaUrl:info[UIImagePickerControllerMediaURL]] :
+        [self handleImageAssetWith:filename andReferenceUrl:info[UIImagePickerControllerReferenceURL] andAsset:nil];
+    }
+}
 
-        // To avoid re-encoding GIF and PNG's as JPEG we have to get the raw data of
-        // the selected item vs. using the UIImagePickerControllerOriginalImage
-        NSURL *assetURL = info[UIImagePickerControllerReferenceURL];
-        PHAsset *asset = [[PHAsset fetchAssetsWithALAssetURLs:@[ assetURL ] options:nil] lastObject];
+- (SignalAttachment*)convertCameraImageAssetToAttachment:(UIImage*)image imageName:(NSString*)filename{
+    OWSAssertIsOnMainThread();
+    
+    if (image) {
+        // "Camera" attachments _SHOULD_ be resized, if possible.
+        //-BTIDER UPDATE- Low Data Mode for Images
+        BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
+        TSImageQuality quality = isLowDataModeOn ? TSImageQualityCompact : TSImageQualityMedium;
+        SignalAttachment *attachment =
+        [SignalAttachment imageAttachmentWithImage:image
+                                           dataUTI:(NSString *)kUTTypeJPEG
+                                          filename:filename
+                                      imageQuality:quality];
+        if (!attachment || [attachment hasError]) {
+            DDLogWarn(@"%@ %s Invalid attachment: %@.",
+                      self.logTag,
+                      __PRETTY_FUNCTION__,
+                      attachment ? [attachment errorName] : @"Missing data");
+            [self showErrorAlertForAttachment:attachment];
+            DDLogError(@"failed to pick attachment");
+        } else {
+            return attachment;
+        }
+    } else {
+        DDLogError(@"failed to pick attachment");
+    }
+    return nil;
+}
+
+
+-(void)sendMultipleAttachments:(NSTimer*)timer{
+    if (self.multipleAttachmentsList.count > 0){
+        DDLogVerbose(@"Found attachment on queue, sending.");
+        [self sendMessageAttachment:self.multipleAttachmentsList.lastObject];
+        _assetsCurrentSentCount += 1;
+        [self.multipleAttachmentsList removeLastObject];
+    }else{
+        DDLogVerbose(@"Waiting for all attachments to complete");
+        if (_assetsCurrentSentCount == _assetsToBeSentCount){
+            [timer invalidate];
+            timer = nil;
+            DDLogVerbose(@"All attachments are successfully sent.");
+        }
+    }
+}
+
+-(void)processMultipleVideos:(NSTimer*)timer{
+    if ((self.videoUrlsToProcess.count > 0) && !self.isVideoBeingProcessed){
+        DDLogVerbose(@"Found video on process queue, processing.");
+        [self handleVideoAssetWith:nil andMediaUrl:self.videoUrlsToProcess.lastObject];
+        _isVideoBeingProcessed = true;
+        [self.videoUrlsToProcess removeLastObject];
+    }else{
+        DDLogVerbose(@"Waiting for all videos to process");
+        if (_videosCurrentProcessedCount == _videosToBeProcessedCount){
+            [timer invalidate];
+            timer = nil;
+            [NSTimer scheduledTimerWithTimeInterval:0.8
+                                             target:self
+                                           selector:@selector(sendMultipleAttachments:)
+                                           userInfo:nil
+                                            repeats:YES];
+            DDLogVerbose(@"All videos are successfully processed.");
+        }
+    }
+}
+
+-(void)handleVideoAssetWith:(NSString *_Nullable)filename andMediaUrl:(NSURL*)mediaUrl{
+    // Video picked from library or captured with camera
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self sendQualityAdjustedAttachmentForVideo:mediaUrl
+                                        filename:filename
+                            skipApprovalDialog:NO];
+    });
+}
+
+-(void)handleImageAssetWith:(NSString *_Nullable)filename andReferenceUrl:(NSURL*_Nullable)referenceUrl andAsset:(PHAsset*_Nullable)imageAsset{
+    
+    void (^failedToPickAttachment)(NSError *error) = ^void(NSError *error) {
+        DDLogError(@"failed to pick attachment with error: %@", error);
+    };
+    
+    // Non-Video image picked from library
+    
+    // To avoid re-encoding GIF and PNG's as JPEG we have to get the raw data of
+    // the selected item vs. using the UIImagePickerControllerOriginalImage
+    PHAsset *asset;
+    if (referenceUrl){
+        asset = [[PHAsset fetchAssetsWithALAssetURLs:@[ referenceUrl ] options:nil] lastObject];
         if (!asset) {
             return failedToPickAttachment(nil);
         }
-
-        // Images chosen from the "attach document" UI should be sent as originals;
-        // images chosen from the "attach media" UI should be resized to "medium" size;
-        //-BTIDER UPDATE- Low Data Mode for Images
-        BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
-        TSImageQuality imageQuality = isLowDataModeOn ? TSImageQualityCompact : TSImageQualityMedium;
-        if (self.isPickingMediaAsDocument){
-            imageQuality = TSImageQualityOriginal;
+    }else{
+        if (imageAsset){
+            asset = imageAsset;
+        }else{
+            return failedToPickAttachment(nil);
         }
-
-        PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-        options.synchronous = YES; // We're only fetching one asset.
-        options.networkAccessAllowed = YES; // iCloud OK
-        options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat; // Don't need quick/dirty version
-        [[PHImageManager defaultManager]
-            requestImageDataForAsset:asset
-                             options:options
-                       resultHandler:^(NSData *_Nullable imageData,
-                           NSString *_Nullable dataUTI,
-                           UIImageOrientation orientation,
-                           NSDictionary *_Nullable assetInfo) {
-
-                           NSError *assetFetchingError = assetInfo[PHImageErrorKey];
-                           if (assetFetchingError || !imageData) {
-                               return failedToPickAttachment(assetFetchingError);
-                           }
-                           OWSAssertIsOnMainThread();
-
-                           DataSource *_Nullable dataSource =
-                               [DataSourceValue dataSourceWithData:imageData utiType:dataUTI];
-                           [dataSource setSourceFilename:filename];
-                           SignalAttachment *attachment = [SignalAttachment attachmentWithDataSource:dataSource
-                                                                                             dataUTI:dataUTI
-                                                                                        imageQuality:imageQuality];
-                           [self dismissViewControllerAnimated:YES
-                                                    completion:^{
-                                                        OWSAssertIsOnMainThread();
-                                                        if (!attachment || [attachment hasError]) {
-                                                            DDLogWarn(@"%@ %s Invalid attachment: %@.",
-                                                                self.logTag,
-                                                                __PRETTY_FUNCTION__,
-                                                                attachment ? [attachment errorName] : @"Missing data");
-                                                            [self showErrorAlertForAttachment:attachment];
-                                                            failedToPickAttachment(nil);
-                                                        } else {
-                                                            [self tryToSendAttachmentIfApproved:attachment];
-                                                        }
-                                                    }];
-                       }];
     }
+    
+    // Images chosen from the "attach document" UI should be sent as originals;
+    // images chosen from the "attach media" UI should be resized to "medium" size;
+    //-BTIDER UPDATE- Low Data Mode for Images
+    BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
+    TSImageQuality imageQuality = isLowDataModeOn ? TSImageQualityCompact : TSImageQualityMedium;
+    if (self.isPickingMediaAsDocument){
+        imageQuality = TSImageQualityOriginal;
+    }
+    
+    PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
+    options.synchronous = YES; // We're only fetching one asset.
+    options.networkAccessAllowed = YES; // iCloud OK
+    options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat; // Don't need quick/dirty version
+    [[PHImageManager defaultManager]
+     requestImageDataForAsset:asset
+     options:options
+     resultHandler:^(NSData *_Nullable imageData,
+                     NSString *_Nullable dataUTI,
+                     UIImageOrientation orientation,
+                     NSDictionary *_Nullable assetInfo) {
+         
+         NSError *assetFetchingError = assetInfo[PHImageErrorKey];
+         if (assetFetchingError || !imageData) {
+             return failedToPickAttachment(assetFetchingError);
+         }
+         OWSAssertIsOnMainThread();
+         
+         DataSource *_Nullable dataSource =
+         [DataSourceValue dataSourceWithData:imageData utiType:dataUTI];
+         [dataSource setSourceFilename:filename];
+         SignalAttachment *attachment = [SignalAttachment attachmentWithDataSource:dataSource
+                                                                           dataUTI:dataUTI
+                                                                      imageQuality:imageQuality];
+         if (!attachment || [attachment hasError]) {
+             DDLogWarn(@"%@ %s Invalid attachment: %@.",
+                       self.logTag,
+                       __PRETTY_FUNCTION__,
+                       attachment ? [attachment errorName] : @"Missing data");
+             [self showErrorAlertForAttachment:attachment];
+             failedToPickAttachment(nil);
+         } else {
+             [self.multipleAttachmentsList addObject:attachment];
+             DDLogVerbose(@"Added image attachment to queue.");
+         }
+     }];
+}
+
+-(void)cancelMultipleAttachmentSend{
+    [self.videoUrlsToProcess removeAllObjects];
+    [self.multipleAttachmentsList removeAllObjects];
+    self.isVideoBeingProcessed = false;
+    self.assetsCurrentSentCount = 0;
+    self.assetsToBeSentCount = 0;
+    self.videosToBeProcessedCount = 0;
+    self.videosCurrentProcessedCount = 0;
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)sendMessageAttachment:(SignalAttachment *)attachment
@@ -3198,50 +3349,50 @@ typedef enum : NSUInteger {
                            skipApprovalDialog:(BOOL)skipApprovalDialog
 {
     OWSAssertIsOnMainThread();
+    
+    DataSource *dataSource = [DataSourcePath dataSourceWithURL:movieURL];
+    dataSource.sourceFilename = filename;
+    VideoCompressionResult *compressionResult =
+    [SignalAttachment compressVideoAsMp4WithDataSource:dataSource
+                                               dataUTI:(NSString *)kUTTypeMPEG4];
+    [compressionResult.attachmentPromise retainUntilComplete];
+    
+    compressionResult.attachmentPromise.then(^(SignalAttachment *attachment) {
+        OWSAssertIsOnMainThread();
+        OWSAssert([attachment isKindOfClass:[SignalAttachment class]]);
+        BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
+        UInt64 maxVideoSize = isLowDataModeOn ? SignalAttachment.kMaxFileSizeVideoIfLowDataEnabled : SignalAttachment.kMaxFileSizeVideo;
+        NSString* alertMessage = isLowDataModeOn ? @"MAX_VIDEO_SIZE_FOR_LOW_DATA_ALERT_MESSAGE" : @"MAX_VIDEO_SIZE_ALERT_MESSAGE";
+        if (!attachment || [attachment hasError]) {
+            DDLogError(@"%@ %s Invalid attachment: %@.",
+                       self.logTag,
+                       __PRETTY_FUNCTION__,
+                       attachment ? [attachment errorName] : @"Missing data");
+            [self showErrorAlertForAttachment:attachment];
+        } else if ([attachment dataLength] > maxVideoSize) {
+            //-BTIDER UPDATE- Low Data Mode for Videos
+            UIAlertController* controller = [UIAlertController
+                                             alertControllerWithTitle: NSLocalizedString(@"MAX_VIDEO_SIZE_ALERT_TITLE", @"Alert title for video size")
+                                             message: NSLocalizedString(alertMessage, @"Alert message for video size")
+                                             preferredStyle: UIAlertControllerStyleAlert];
+            [controller addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"BUTTON_DONE", @"Done") style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:controller animated:YES completion:nil];
+        }else {
+            [self.multipleAttachmentsList addObject:attachment];
+            self.videosCurrentProcessedCount += 1;
+            self.isVideoBeingProcessed = false;
+            float progress = (float)self.videosCurrentProcessedCount / (float)self.videosToBeProcessedCount;
+            [self performSelectorOnMainThread:@selector(setVideoProcessProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:NO];
+            DDLogVerbose(@"Added video attachment to queue.");
+        }
+        if (self.videosCurrentProcessedCount == self.videosToBeProcessedCount){
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    });
+}
 
-    [ModalActivityIndicatorViewController
-        presentFromViewController:self
-                        canCancel:YES
-                  backgroundBlock:^(ModalActivityIndicatorViewController *modalActivityIndicator) {
-                      DataSource *dataSource = [DataSourcePath dataSourceWithURL:movieURL];
-                      dataSource.sourceFilename = filename;
-                      VideoCompressionResult *compressionResult =
-                          [SignalAttachment compressVideoAsMp4WithDataSource:dataSource
-                                                                     dataUTI:(NSString *)kUTTypeMPEG4];
-                      [compressionResult.attachmentPromise retainUntilComplete];
-
-                      compressionResult.attachmentPromise.then(^(SignalAttachment *attachment) {
-                          OWSAssertIsOnMainThread();
-                          OWSAssert([attachment isKindOfClass:[SignalAttachment class]]);
-
-                          if (modalActivityIndicator.wasCancelled) {
-                              return;
-                          }
-
-                          [modalActivityIndicator dismissWithCompletion:^{
-                              BOOL isLowDataModeOn = [[NSUserDefaults standardUserDefaults] boolForKey:@"IS_LOW_DATA_MODE_ON"];
-                              UInt64 maxVideoSize = isLowDataModeOn ? SignalAttachment.kMaxFileSizeVideoIfLowDataEnabled : SignalAttachment.kMaxFileSizeVideo;
-                              NSString* alertMessage = isLowDataModeOn ? @"MAX_VIDEO_SIZE_FOR_LOW_DATA_ALERT_MESSAGE" : @"MAX_VIDEO_SIZE_ALERT_MESSAGE";
-                              if (!attachment || [attachment hasError]) {
-                                  DDLogError(@"%@ %s Invalid attachment: %@.",
-                                      self.logTag,
-                                      __PRETTY_FUNCTION__,
-                                      attachment ? [attachment errorName] : @"Missing data");
-                                  [self showErrorAlertForAttachment:attachment];
-                              } else if ([attachment dataLength] > maxVideoSize) {
-                                  //-BTIDER UPDATE- Low Data Mode for Videos
-                                  UIAlertController* controller = [UIAlertController
-                                                                   alertControllerWithTitle: NSLocalizedString(@"MAX_VIDEO_SIZE_ALERT_TITLE", @"Alert title for video size")
-                                                                   message: NSLocalizedString(alertMessage, @"Alert message for video size")
-                                                                   preferredStyle: UIAlertControllerStyleAlert];
-                                  [controller addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"BUTTON_DONE", @"Done") style:UIAlertActionStyleDefault handler:nil]];
-                                  [self presentViewController:controller animated:YES completion:nil];
-                              }else {
-                                  [self tryToSendAttachmentIfApproved:attachment skipApprovalDialog:skipApprovalDialog];
-                              }
-                          }];
-                      });
-                  }];
+- (void)setVideoProcessProgress:(NSNumber *)number{
+    [self.multipleAttachmentProgressView setProgress:number.floatValue animated:YES];
 }
 
 #pragma mark - Storage access
