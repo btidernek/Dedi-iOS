@@ -531,47 +531,70 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
         }
     }
 
+    var attachments = [SignalAttachment]()
+    var itemProviders = [NSItemProvider]()
+    var totalAttachmentCountShouldBeSent = 0
+    var isAlreadyBuildingAnAttachment = false
+    
     private func buildAttachmentAndPresentConversationPicker() {
         SwiftAssertIsOnMainThread(#function)
-        var attachments = [SignalAttachment]()
         guard let extensionItems = self.extensionContext?.inputItems as? [NSExtensionItem] else{
 //            let error = ShareViewControllerError.assertionError(description: "no input item")
 //            return Promise(error: error)
             return
         }
         for extensionItem in extensionItems{
-            if let itemProviders = extensionItem.attachments as? [NSItemProvider]{
-                for itemProvider in itemProviders{
-                    self.buildAttachment(itemProvider:itemProvider).then { [weak self] attachment -> Void in
-                        SwiftAssertIsOnMainThread(#function)
-                        attachments.append(attachment)
-                        if itemProvider == itemProviders.last{
-                            guard let strongSelf = self else { return }
-                            strongSelf.progressPoller = nil
-                            strongSelf.loadViewController = nil
-                            let conversationPicker = SharingThreadPickerViewController(shareViewDelegate: strongSelf)
-                            Logger.debug("\(strongSelf.logTag) presentConversationPicker: \(conversationPicker)")
-                            conversationPicker.attachments = NSMutableArray(array: attachments)
-                            strongSelf.showPrimaryViewController(conversationPicker)
-                            Logger.info("\(strongSelf.logTag) showing picker with attachment: \(attachment)")
-                        }
-                        }.catch {[weak self]  error in
-                            SwiftAssertIsOnMainThread(#function)
-                            guard let strongSelf = self else { return }
-                            
-                            let alertTitle = NSLocalizedString("SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE",
-                                                               comment: "Shown when trying to share content to a Signal user for the share extension. Followed by failure details.")
-                            OWSAlerts.showAlert(title: alertTitle,
-                                                message: error.localizedDescription,
-                                                buttonTitle: CommonStrings.cancelButton) { _ in
-                                                    strongSelf.shareViewWasCancelled()
-                            }
-                            owsFail("\(strongSelf.logTag) building attachment failed with error: \(error)")
-                        }.retainUntilComplete()
+            if let itemProvidersLocal = extensionItem.attachments as? [NSItemProvider]{
+                for itemProvider in itemProvidersLocal{
+                    self.itemProviders.append(itemProvider)
                 }
             }else{
 //                let error = ShareViewControllerError.assertionError(description: "No item provider in input item attachments")
 //                return Promise(error: error)
+            }
+        }
+        totalAttachmentCountShouldBeSent = itemProviders.count
+        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(buildAttachmentAsynchronously(timer:)), userInfo: nil, repeats: true)
+    }
+    
+    @objc private func buildAttachmentAsynchronously(timer:Timer){
+        //autoreleasepool { () -> Void in}
+        SwiftAssertIsOnMainThread(#function)
+        if itemProviders.count > 0{
+            if !isAlreadyBuildingAnAttachment{
+                isAlreadyBuildingAnAttachment = true
+                guard let itemProvider = itemProviders.last else{ return }
+                self.buildAttachment(itemProvider:itemProvider).then { [weak self] attachment -> Void in
+                    guard let strongSelf = self else { return }
+                    SwiftAssertIsOnMainThread(#function)
+                    strongSelf.attachments.append(attachment)
+                }.catch {[weak self]  error in
+                    SwiftAssertIsOnMainThread(#function)
+                    guard let strongSelf = self else { return }
+                        
+                    let alertTitle = NSLocalizedString("SHARE_EXTENSION_UNABLE_TO_BUILD_ATTACHMENT_ALERT_TITLE",
+                                                        comment: "Shown when trying to share content to a Signal user for the share extension. Followed by failure details.")
+                    OWSAlerts.showAlert(title: alertTitle,
+                                        message: error.localizedDescription,
+                                        buttonTitle: CommonStrings.cancelButton) { _ in
+                                            strongSelf.shareViewWasCancelled()
+                    }
+                    owsFail("\(strongSelf.logTag) building attachment failed with error: \(error)")
+                }
+                    //.retainUntilComplete()
+                itemProviders.removeLast()
+                isAlreadyBuildingAnAttachment = false
+            }
+        }else{
+            if (attachments.count + itemProviders.count) == totalAttachmentCountShouldBeSent{
+                timer.invalidate()
+                self.progressPoller = nil
+                self.loadViewController = nil
+                let conversationPicker = SharingThreadPickerViewController(shareViewDelegate: self)
+                Logger.debug("\(self.logTag) presentConversationPicker: \(conversationPicker)")
+                conversationPicker.attachments = NSMutableArray(array: self.attachments)
+                self.showPrimaryViewController(conversationPicker)
+                //Logger.info("\(self.logTag) showing picker with attachment: \(attachments)")
             }
         }
     }
@@ -865,18 +888,20 @@ public class ShareViewController: UIViewController, ShareViewDelegate, SAEFailed
                 return promise
             }
             
-            //-BTIDER UPDATE- Low Data Mode for Images
-            let isLowDataModeOn = UserDefaults.standard.bool(forKey: "IS_LOW_DATA_MODE_ON")
-            let quality = isLowDataModeOn ? TSImageQuality.compact : TSImageQuality.medium
-            let attachment = SignalAttachment.attachment(dataSource: dataSource, dataUTI: specificUTIType, imageQuality: quality)
-            if isConvertibleToContactShare {
-                Logger.info("\(strongSelf.logTag) isConvertibleToContactShare")
-                attachment.isConvertibleToContactShare = isConvertibleToContactShare
-            } else if isConvertibleToTextMessage {
-                Logger.info("\(strongSelf.logTag) isConvertibleToTextMessage")
-                attachment.isConvertibleToTextMessage = isConvertibleToTextMessage
+            return autoreleasepool { () -> Promise<SignalAttachment> in
+                //-BTIDER UPDATE- Low Data Mode for Images
+                let isLowDataModeOn = UserDefaults.standard.bool(forKey: "IS_LOW_DATA_MODE_ON")
+                let quality = isLowDataModeOn ? TSImageQuality.compact : TSImageQuality.medium
+                let attachment = SignalAttachment.attachment(dataSource: dataSource, dataUTI: specificUTIType, imageQuality: quality)
+                if isConvertibleToContactShare {
+                    Logger.info("\(strongSelf.logTag) isConvertibleToContactShare")
+                    attachment.isConvertibleToContactShare = isConvertibleToContactShare
+                } else if isConvertibleToTextMessage {
+                    Logger.info("\(strongSelf.logTag) isConvertibleToTextMessage")
+                    attachment.isConvertibleToTextMessage = isConvertibleToTextMessage
+                }
+                return Promise(value: attachment)
             }
-            return Promise(value: attachment)
         }
     }
 

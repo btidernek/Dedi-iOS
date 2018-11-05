@@ -2433,3 +2433,20 @@
 "ALERT_TITLE_ERROR" = "Hata";
 
 "SHARE_MEDIA_ERROR_ALERT_BODY" = "Medya gönderilirken bir hata oluştu";
+
+/* Conversation history sending and privacy strings */
+"CONVERSATION_PRIVACY_BANNER_TITLE" = "Bu sohbete gönderdiğiniz mesajlar ve yaptığınız aramalar artık uçtan uca şifreleme ile korunmaktadır. Daha fazla bilgi için dokunun.";
+
+"CONVERSATION_PRIVACY_ALERT_BODY" = "Bu sohbete gönderdiğiniz mesajlar ve yaptığınız aramalar artık uçtan uca şifreleme ile korunmaktadır, yani Dedi ve üçüncü parti uygulamalar mesajları okuyamaz veya dinleyemez.";
+
+"CONVERSATION_HISTORY_ME" = "Ben";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_FOOTER" = "Sohbet geçmişinizi e-posta olarak gönderin.";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_HEADER" = "Sohbet Geçmişi";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_TITLE" = "Sohbeti E-posta ile Gönder";
+
+"CONVERSATION_HISTORY_FILE_POSTFIX" = "%@ ile Dedi Sohbeti";
+
+"CONVERSATION_HISTORY_MAIL_BODY" = "dosyası, sohbet geçmişi olarak bu e-postaya eklendi.";

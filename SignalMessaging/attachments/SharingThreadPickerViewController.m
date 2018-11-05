@@ -465,7 +465,7 @@ typedef void (^SendMessageBlock)(SendCompletionBlock completion);
     // little the alert controller changes, I'm not super worried about it.
     
 #ifdef DEBUG
-    if (@available(iOS 12, *)) {
+    if (@available(iOS 13, *)) {
         // TODO: Congratulations! You survived to see another iOS release.
         OWSFail(@"Make sure the progress view still looks good, and increment the version canary.");
     }

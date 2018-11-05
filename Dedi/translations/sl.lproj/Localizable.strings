@@ -2428,3 +2428,20 @@
 "ALERT_TITLE_ERROR" = "Error";
 
 "SHARE_MEDIA_ERROR_ALERT_BODY" = "An error occured while sending attachment";
+
+/* Conversation history sending and privacy strings */
+"CONVERSATION_PRIVACY_BANNER_TITLE" = "Messages to this chat and calls are now secured with end-to-end encryption. Tap for more info.";
+
+"CONVERSATION_PRIVACY_ALERT_BODY" = "Messages to this chat and calls are now secured with end-to-end encryption, which means Dedi and third parties can\'t read or listen to them.";
+
+"CONVERSATION_HISTORY_ME" = "Me";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_FOOTER" = "Send your conversation history by email.";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_HEADER" = "Conversation History";
+
+"CONVERSATION_SETTINGS_HISTORY_SECTION_TITLE" = "Send conversation by E-mail";
+
+"CONVERSATION_HISTORY_FILE_POSTFIX" = "Dedi Chat with %@";
+
+"CONVERSATION_HISTORY_MAIL_BODY" = "file, has attached to this e-mail as conversation history.";

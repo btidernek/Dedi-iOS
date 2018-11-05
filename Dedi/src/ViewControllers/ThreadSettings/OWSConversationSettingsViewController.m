@@ -32,6 +32,7 @@
 #import <SignalServiceKit/TSGroupThread.h>
 #import <SignalServiceKit/TSOutgoingMessage.h>
 #import <SignalServiceKit/TSThread.h>
+#import <MessageUI/MessageUI.h>
 
 @import ContactsUI;
 
@@ -39,7 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OWSConversationSettingsViewController () <ContactEditingDelegate,
     ContactsViewHelperDelegate,
-    ColorPickerDelegate>
+    ColorPickerDelegate,
+    MFMailComposeViewControllerDelegate>
 
 @property (nonatomic) TSThread *thread;
 @property (nonatomic) YapDatabaseConnection *uiDatabaseConnection;
@@ -647,9 +649,114 @@ NS_ASSUME_NONNULL_BEGIN
                                                    actionBlock:nil]];
         [contents addSection:section];
     }
+    
+    // Send conversation via email
+    OWSTableSection *section = [OWSTableSection new];
+    section.footerTitle = NSLocalizedString(@"CONVERSATION_SETTINGS_HISTORY_SECTION_FOOTER", @"Explanation for sending mail");
+    section.headerTitle = NSLocalizedString(@"CONVERSATION_SETTINGS_HISTORY_SECTION_HEADER", @"Title for sending conversation by mail");
+    [section addItem:[OWSTableItem itemWithTitle:NSLocalizedString(@"CONVERSATION_SETTINGS_HISTORY_SECTION_TITLE", @"Send conversation by email")
+         actionBlock:^{
+             NSArray<TSInteraction*> *interactions = [self.thread allInteractions];
+             NSMutableArray<NSString*> *messages = [[NSMutableArray alloc] init];
+             for (TSInteraction *interaction in interactions){
+                 NSDate* messageDate = [NSDate ows_dateWithMillisecondsSince1970:interaction.timestamp];
+                 NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+                 [formatter setDateFormat:@"dd.MM.yyyy HH:mm"];
+                 NSString* messageDateStr = [formatter stringFromDate:messageDate];
+                 if ([interaction isKindOfClass:[TSInfoMessage class]]){
+                     TSInfoMessage *infoMessage = (TSInfoMessage*)interaction;
+                     if (infoMessage.customMessage != nil){
+                        [messages addObject:[NSString stringWithFormat:@"%@ ----- %@ -----\n", messageDateStr, infoMessage.customMessage]];
+                     }
+                 }else if ([interaction isKindOfClass:[TSOutgoingMessage class]]){
+                     TSOutgoingMessage *outgoingMessage = (TSOutgoingMessage*)interaction;
+                     NSString *localName = NSLocalizedString(@"CONVERSATION_HISTORY_ME", @"For placeholder -Me-");
+                     if([OWSProfileManager.sharedManager localProfileName] != nil){
+                         localName = [OWSProfileManager.sharedManager localProfileName];
+                     }
+                     if (outgoingMessage != nil){
+                         if (outgoingMessage.body != nil && ![outgoingMessage.body isEqualToString:@""]){
+                             [messages addObject:[NSString stringWithFormat:@"%@ - %@: %@\n", messageDateStr, localName, outgoingMessage.body]];
+                         }
+                     }
+                 }else if ([interaction isKindOfClass:[TSIncomingMessage class]]){
+                     TSIncomingMessage *incomingMessage = (TSIncomingMessage*)interaction;
+                     NSString* contactName = @"???";
+                     if([self.contactsManager profileNameForRecipientId:incomingMessage.authorId] != nil){
+                         contactName = [self.contactsManager profileNameForRecipientId:incomingMessage.authorId];
+                     }
+                     if (incomingMessage != nil){
+                         if (incomingMessage.body != nil && ![incomingMessage.body isEqualToString:@""]){
+                             [messages addObject:[NSString stringWithFormat:@"%@ - %@: %@\n", messageDateStr, contactName, incomingMessage.body]];
+                         }
+                     }
+                 }
+             }
+             //DDLogInfo(@"Messages: %@", messages);
+             NSString* localizedFilename = [NSString stringWithFormat:NSLocalizedString(@"CONVERSATION_HISTORY_FILE_POSTFIX", nil),self.threadName];
+             NSString *filename = [NSString stringWithFormat:@"%@.txt", localizedFilename];
+             NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:filename];
+             if([[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil]){
+                 NSFileHandle *fileHandler = [NSFileHandle fileHandleForUpdatingAtPath:filePath];
+                 for (NSString* line in messages){
+                     [fileHandler seekToEndOfFile];
+                     [fileHandler writeData:[line dataUsingEncoding:NSUTF8StringEncoding]];
+                     //[line writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+                 }
+                 [fileHandler closeFile];
+                 
+                 NSData* fileData = [[NSData alloc] initWithContentsOfFile:filePath];
+                 if ([MFMailComposeViewController canSendMail]) {
+                     MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+                     mailVC.mailComposeDelegate = self;
+                     [mailVC setSubject:[NSString stringWithFormat: @"%@", localizedFilename]];
+                     NSString *localizedMailMessage = NSLocalizedString(@"CONVERSATION_HISTORY_MAIL_BODY", @"");
+                     [mailVC setMessageBody:[NSString stringWithFormat: @"%@.txt %@", localizedFilename, localizedMailMessage] isHTML:NO];
+                     [mailVC addAttachmentData:fileData mimeType:@"text/plain" fileName:filename];
+                     [self presentViewController:mailVC animated:YES completion:nil];
+                 }
+             }
+         }]];
+    [contents addSection:section];
 
     self.contents = contents;
 }
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *_Nullable)error{
+    switch (result) {
+        case MFMailComposeResultSent:
+            //Email sent
+            DDLogInfo(@"Email sent");
+            break;
+        case MFMailComposeResultSaved:
+            //Email saved
+            DDLogInfo(@"Email saved");
+            break;
+        case MFMailComposeResultCancelled:
+            //Handle cancelling of the email
+            DDLogInfo(@"Email canceled");
+            break;
+        case MFMailComposeResultFailed:
+            //Handle failure to send.
+            DDLogInfo(@"Email failed");
+            break;
+        default:
+            //A failure occurred while completing the email
+            break;
+    }
+    NSString* localizedFilenamePostfix = NSLocalizedString(@"CONVERSATION_HISTORY_FILE_POSTFIX", @"Conversation with x person");
+    NSString *filename = [NSString stringWithFormat:@"%@ %@.txt",self.threadName, localizedFilenamePostfix];
+    NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:filename];
+    NSError *deletionError;
+    if ([[NSFileManager defaultManager] isDeletableFileAtPath:filePath]) {
+        BOOL success = [[NSFileManager defaultManager] removeItemAtPath:filePath error:&deletionError];
+        if (!success) {
+            NSLog(@"Error removing file at path: %@", error.localizedDescription);
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 - (CGFloat)iconSpacing
 {

@@ -54,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return The number of interactions in this thread.
  */
 - (NSUInteger)numberOfInteractions;
+- (NSArray<TSInteraction *> *)allInteractions;
 
 /**
  * Get all messages in the thread we weren't able to decrypt

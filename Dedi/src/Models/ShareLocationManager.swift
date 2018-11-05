@@ -22,7 +22,7 @@ import CoreLocation
     case noImage = 3
 }
 
-typealias ShareLocationHandler = (String, UIImage) -> ()
+typealias ShareLocationHandler = (String, UIImage?) -> ()
 
 /**
  Manages the "share location" function. Request the current location with `requestLocation`, and handle the returned message or error in the completion handler.
@@ -55,7 +55,7 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
     // MARK: Reverse Geolocation variables
     
     /// A flag signaling that the request is finished
-    private var didFinishReverseLocation = false
+    //private var didFinishReverseLocation = false
     
     /// Save the coordinates and reverse location string when retreived
     private var messageString: String?
@@ -79,6 +79,8 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
     /// Flag indicating that the user has to authorize
     private var waitingForPermissions = false
     
+    private var isReturnedLocationMessageOnce = false
+    
     // MARK: Public Objective-C API
     // TODO: Figure out how to make the requestLocation() function available in Objective-C
     // Then this stuff can be removed
@@ -92,6 +94,7 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
     
     /// Request the location after setting completion handler
     func requestCurrentLocation() {
+        isReturnedLocationMessageOnce = false
         requestLocation { mess, img in
             self.message = mess
             self.image = img
@@ -130,7 +133,11 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
         
         switch status {
         case .noImage:
-            showNoImageError()
+            if let str = messageString{
+                onCompletion?(str, nil)
+            }else{
+                showNoImageError()
+            }
         case .noLocation:
             showNoLocationError()
         case .noPermission:
@@ -140,7 +147,7 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
                 if let img = staticImage{
                     onCompletion?(str, img)
                 }else{
-                    onCompletion?(str, UIImage())
+                    onCompletion?(str, nil)
                 }
             }else{
                 //showNoLocationError()
@@ -150,7 +157,7 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
     }
     
     private func cleanUp() {
-        messageString = nil
+        //messageString = nil
         staticImage = nil
         locationManager = nil
     }
@@ -205,27 +212,30 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
      - parameter coordinates: The coordinates of the location
      */
     private func processLocation(_ coordinates: CLLocationCoordinate2D) {
-        self.didFinishReverseLocation = false
+        //self.didFinishReverseLocation = false
         self.didFinishStaticMapImage = false
         self.staticImage = nil
-        self.messageString = nil
+        
+        let locationString = self.locationDegreesToString(coordinate: coordinates)
+        self.messageString = locationString + self.getMapURL(for: coordinates)
+        self.checkRequestsFinished()
         
         // Start address request
-        getGoogleMapsAddress(location: coordinates) { address in
-            let locationString = self.locationDegreesToString(coordinate: coordinates)
-            self.messageString = locationString +
-                //(address ?? "") +
-                self.getMapURL(for: coordinates)
-            self.didFinishReverseLocation = true
-            self.checkRequestsFinished()
-        }
+//        getGoogleMapsAddress(location: coordinates) { address in
+//            let locationString = self.locationDegreesToString(coordinate: coordinates)
+//            self.messageString = locationString +
+//                //(address ?? "") +
+//                self.getMapURL(for: coordinates)
+//            self.didFinishReverseLocation = true
+//            self.checkRequestsFinished()
+//        }
         
         // Start map image request
-        getGoogleMapsImage(for: coordinates) { image in
-            self.staticImage = image
-            self.didFinishStaticMapImage = true
-            self.checkRequestsFinished()
-        }
+//        getGoogleMapsImage(for: coordinates) { image in
+//            self.staticImage = image
+//            self.didFinishStaticMapImage = true
+//            self.checkRequestsFinished()
+//        }
     }
     
     /**
@@ -233,12 +243,17 @@ typealias ShareLocationHandler = (String, UIImage) -> ()
      Finish the request if both are done.
      */
     private func checkRequestsFinished() {
-        if didFinishStaticMapImage && didFinishReverseLocation {
-            if staticImage == nil {
-                finishRequest(withStatus: .noImage)
-            } else {
-                finishRequest(withStatus: .success)
-            }
+         //&& didFinishReverseLocation
+        if !isReturnedLocationMessageOnce{
+            isReturnedLocationMessageOnce = true
+            finishRequest(withStatus: .noImage)
+//            if didFinishStaticMapImage {
+//                if staticImage == nil {
+//                    finishRequest(withStatus: .noImage)
+//                } else {
+//                    finishRequest(withStatus: .success)
+//                }
+//            }
         }
     }
     

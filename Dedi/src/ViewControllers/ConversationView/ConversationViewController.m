@@ -438,7 +438,7 @@ typedef enum : NSUInteger {
         TSGroupThread *groupThread = (TSGroupThread *)self.thread;
         if ([groupThread.groupModel.groupId isEqualToData:groupId]) {
             [self ensureDynamicInteractions];
-            [self ensureBannerState];
+            [self ensureBannerStateWithIsMessageSent:NO];
         }
     }
 }
@@ -447,7 +447,7 @@ typedef enum : NSUInteger {
 {
     OWSAssertIsOnMainThread();
 
-    [self ensureBannerState];
+    [self ensureBannerStateWithIsMessageSent:NO];
 }
 
 - (void)identityStateDidChange:(NSNotification *)notification
@@ -455,7 +455,7 @@ typedef enum : NSUInteger {
     OWSAssertIsOnMainThread();
 
     [self updateNavigationBarSubtitleLabel];
-    [self ensureBannerState];
+    [self ensureBannerStateWithIsMessageSent:NO];
 }
 
 - (void)peekSetup
@@ -709,7 +709,7 @@ typedef enum : NSUInteger {
 {
     DDLogDebug(@"%@ viewWillAppear", self.logTag);
 
-    [self ensureBannerState];
+    [self ensureBannerStateWithIsMessageSent:NO];
 
     [super viewWillAppear:animated];
 
@@ -837,7 +837,7 @@ typedef enum : NSUInteger {
 {
     _userHasScrolled = userHasScrolled;
 
-    [self ensureBannerState];
+    [self ensureBannerStateWithIsMessageSent:NO];
 }
 
 // Returns a collection of the group members who are "no longer verified".
@@ -853,14 +853,24 @@ typedef enum : NSUInteger {
     return [result copy];
 }
 
-- (void)ensureBannerState
+- (void)ensureBannerStateWithIsMessageSent:(BOOL)isMessageJustSent
 {
     // This method should be called rarely, so it's simplest to discard and
     // rebuild the indicator view every time.
     [self.bannerView removeFromSuperview];
     self.bannerView = nil;
-
-    if (self.userHasScrolled) {
+    
+    if (self.userHasScrolled || isMessageJustSent) {
+        return;
+    }
+    
+    ConversationViewItem *item = self.viewItems.firstObject;
+    if(self.viewItems.count <= 1 && (item == nil || (item && item.isGroupThread))){
+        // For group created message
+        
+        [self createBannerWithTitle:NSLocalizedString(@"CONVERSATION_PRIVACY_BANNER_TITLE", nil)
+                        bannerColor:UIColor.ows_yellowColor
+                        tapSelector: @selector(presentPrivacyAlert)];
         return;
     }
 
@@ -892,8 +902,7 @@ typedef enum : NSUInteger {
 
     NSString *blockStateMessage = nil;
     if ([self isBlockedContactConversation]) {
-        blockStateMessage = NSLocalizedString(
-            @"MESSAGES_VIEW_CONTACT_BLOCKED", @"Indicates that this 1:1 conversation has been blocked.");
+        blockStateMessage = NSLocalizedString(@"MESSAGES_VIEW_CONTACT_BLOCKED", @"Indicates that this 1:1 conversation has been blocked.");
     } else if (self.isGroupConversation) {
         int blockedGroupMemberCount = [self blockedGroupMemberCount];
         if (blockedGroupMemberCount == 1) {
@@ -923,6 +932,18 @@ typedef enum : NSUInteger {
                         tapSelector:@selector(groupProfileWhitelistBannerWasTapped:)];
         return;
     }
+}
+
+-(void)presentPrivacyAlert{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"SETTINGS_INFORMATION_HEADER", @"Info")
+                                                                             message:NSLocalizedString(@"CONVERSATION_PRIVACY_ALERT_BODY", @"Privacy alert body")
+                                                                      preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addAction: [UIAlertAction actionWithTitle:NSLocalizedString(@"BUTTON_DONE", @"Done")
+                          style:UIAlertActionStyleDefault
+                        handler:^(UIAlertAction * _Nonnull action){
+                                [self.bannerView removeFromSuperview];
+                            }]];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)createBannerWithTitle:(NSString *)title bannerColor:(UIColor *)bannerColor tapSelector:(SEL)tapSelector
@@ -1011,7 +1032,7 @@ typedef enum : NSUInteger {
     }
 
     [self presentAddThreadToProfileWhitelistWithSuccess:^{
-        [self ensureBannerState];
+        [self ensureBannerStateWithIsMessageSent:NO];
     }];
 }
 
@@ -1608,7 +1629,7 @@ typedef enum : NSUInteger {
         DDLogDebug(@"%@ Ignoring request to show conversation settings, since user left group", self.logTag);
         return;
     }
-
+    
     OWSConversationSettingsViewController *settingsVC = [OWSConversationSettingsViewController new];
     settingsVC.conversationSettingsViewDelegate = self;
     [settingsVC configureWithThread:self.thread uiDatabaseConnection:self.uiDatabaseConnection];
@@ -2822,6 +2843,7 @@ typedef enum : NSUInteger {
     self.lastMessageSentDate = [NSDate new];
     [self clearUnreadMessagesIndicator];
     self.inputToolbar.quotedReply = nil;
+    [self ensureBannerStateWithIsMessageSent:YES];
 
     if ([Environment.preferences soundInForeground]) {
         SystemSoundID soundId = [OWSSounds systemSoundIDForSound:OWSSound_MessageSent quiet:YES];
@@ -2991,7 +3013,7 @@ typedef enum : NSUInteger {
     }];
 }
 
-// MARK: QBImagePickerDelegate
+#pragma mark - QBImagePickerDelegate
 
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets {
     
@@ -3011,13 +3033,49 @@ typedef enum : NSUInteger {
                  if ([assetToRequest isKindOfClass:[AVURLAsset class]]){
                      NSURL *url = [(AVURLAsset*)assetToRequest URL];
                      [self.videoUrlsToProcess addObject:url];
+                 }else if(([assetToRequest isKindOfClass:[AVComposition class]] && ((AVComposition *)assetToRequest).tracks.count > 1)){
+                     [self exportSlowMotionVideoAsAVURLAsset:assetToRequest];
                  }
              }];
         }
     }
     [self dismissViewControllerAnimated:YES completion:nil];
     
+    if (_videosToBeProcessedCount > 0){
+        [self presentProgressAlert];
+    }
     
+    [NSTimer scheduledTimerWithTimeInterval:0.2
+                                     target:self
+                                   selector:@selector(processMultipleVideos:)
+                                   userInfo:nil
+                                    repeats:YES];
+    
+}
+
+-(void)exportSlowMotionVideoAsAVURLAsset:(AVAsset*)slowMotionVideo{
+    NSURL* videoDir = [[NSURL fileURLWithPath:NSTemporaryDirectory()] URLByAppendingPathComponent:@"video"];
+    [OWSFileSystem ensureFileExists:videoDir.path];
+    NSURL* exportUrl = [videoDir URLByAppendingPathComponent:[[[NSUUID alloc] init].UUIDString stringByAppendingPathExtension:@"mp4"]];
+    
+    AVAssetExportSession *exporter = [[AVAssetExportSession alloc] initWithAsset:slowMotionVideo presetName:AVAssetExportPresetMediumQuality];
+    exporter.outputURL = exportUrl;
+    exporter.outputFileType = AVFileTypeMPEG4;
+    exporter.shouldOptimizeForNetworkUse = YES;
+    
+    [exporter exportAsynchronouslyWithCompletionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (exporter.status == AVAssetExportSessionStatusCompleted) {
+                NSURL *url = exporter.outputURL;
+                [self.videoUrlsToProcess addObject:url];
+            }else{
+                self.videosToBeProcessedCount -= 1;
+            }
+        });
+    }];
+}
+
+-(void)presentProgressAlert{
     NSString *progressTitle = NSLocalizedString(@"PREPARING_TITLE", @"Alert title");
     _multipleAttachmentProgressAlert = [UIAlertController alertControllerWithTitle:progressTitle
                                                                            message:nil
@@ -3037,12 +3095,6 @@ typedef enum : NSUInteger {
     [self.multipleAttachmentProgressView autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.multipleAttachmentProgressAlert.view withOffset:4];
     
     [self presentViewController:_multipleAttachmentProgressAlert animated:YES completion:nil];
-    [NSTimer scheduledTimerWithTimeInterval:0.2
-                                     target:self
-                                   selector:@selector(processMultipleVideos:)
-                                   userInfo:nil
-                                    repeats:YES];
-    
 }
 
 - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
@@ -3102,26 +3154,43 @@ typedef enum : NSUInteger {
                          filename:(NSString *_Nullable)filename
 {
     OWSAssertIsOnMainThread();
+    NSURL* videoUrl = [info valueForKey:UIImagePickerControllerMediaURL];
+    NSURL* imageUrl = [info valueForKey:UIImagePickerControllerReferenceURL];
     
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
-        // Static Image captured from camera
+        if (videoUrl){
+            [self clearQueuesAndCounts];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
+            self.videosToBeProcessedCount = 1;
+            self.assetsToBeSentCount = 1;
+            
+            [self.videoUrlsToProcess addObject:videoUrl];
+            [self presentProgressAlert];
+            [NSTimer scheduledTimerWithTimeInterval:0.2
+                                             target:self
+                                           selector:@selector(processMultipleVideos:)
+                                           userInfo:nil
+                                            repeats:YES];
+        }else{
+            // Static Image captured from camera
 
-        UIImage *imageFromCamera = [info[UIImagePickerControllerOriginalImage] normalizedImage];
-
-        [self dismissViewControllerAnimated:YES
-                                 completion:^{
-                                     SignalAttachment *cameraAttachment = [self convertCameraImageAssetToAttachment:imageFromCamera imageName:filename];
-                                     if (cameraAttachment){
-                                         [self tryToSendAttachmentIfApproved:cameraAttachment skipApprovalDialog:NO];
-                                     }else{
-                                         DDLogError(@"failed to pick camera attachment");
-                                     }
-                                 }];
+            [self dismissViewControllerAnimated:YES completion:^{
+                UIImage *imageFromCamera = [info[UIImagePickerControllerOriginalImage] normalizedImage];
+                
+                SignalAttachment *cameraAttachment = [self convertCameraImageAssetToAttachment:imageFromCamera imageName:filename];
+                if (cameraAttachment){
+                    [self tryToSendAttachmentIfApproved:cameraAttachment skipApprovalDialog:NO];
+                }else{
+                    DDLogError(@"failed to pick camera attachment");
+                }
+            }];
+        }
     }else{
         // Method call decision for media type
         [info[UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeMovie] ?
-        [self handleVideoAssetWith:filename andMediaUrl:info[UIImagePickerControllerMediaURL]] :
-        [self handleImageAssetWith:filename andReferenceUrl:info[UIImagePickerControllerReferenceURL] andAsset:nil];
+        [self handleVideoAssetWith:filename andMediaUrl:videoUrl] :
+        [self handleImageAssetWith:filename andReferenceUrl:imageUrl andAsset:nil];
     }
 }
 
@@ -3164,6 +3233,7 @@ typedef enum : NSUInteger {
     }else{
         DDLogVerbose(@"Waiting for all attachments to complete");
         if (_assetsCurrentSentCount == _assetsToBeSentCount){
+            [self dismissViewControllerAnimated:YES completion:nil];
             [timer invalidate];
             timer = nil;
             DDLogVerbose(@"All attachments are successfully sent.");
@@ -3182,6 +3252,7 @@ typedef enum : NSUInteger {
         if (_videosCurrentProcessedCount == _videosToBeProcessedCount){
             [timer invalidate];
             timer = nil;
+            [self dismissViewControllerAnimated:YES completion:nil];
             [NSTimer scheduledTimerWithTimeInterval:0.8
                                              target:self
                                            selector:@selector(sendMultipleAttachments:)
@@ -3273,6 +3344,11 @@ typedef enum : NSUInteger {
 }
 
 -(void)cancelMultipleAttachmentSend{
+    [self clearQueuesAndCounts];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)clearQueuesAndCounts{
     [self.videoUrlsToProcess removeAllObjects];
     [self.multipleAttachmentsList removeAllObjects];
     self.isVideoBeingProcessed = false;
@@ -3280,7 +3356,6 @@ typedef enum : NSUInteger {
     self.assetsToBeSentCount = 0;
     self.videosToBeProcessedCount = 0;
     self.videosCurrentProcessedCount = 0;
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)sendMessageAttachment:(SignalAttachment *)attachment
@@ -3377,16 +3452,13 @@ typedef enum : NSUInteger {
                                              preferredStyle: UIAlertControllerStyleAlert];
             [controller addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"BUTTON_DONE", @"Done") style:UIAlertActionStyleDefault handler:nil]];
             [self presentViewController:controller animated:YES completion:nil];
-        }else {
+        }else{
             [self.multipleAttachmentsList addObject:attachment];
             self.videosCurrentProcessedCount += 1;
             self.isVideoBeingProcessed = false;
             float progress = (float)self.videosCurrentProcessedCount / (float)self.videosToBeProcessedCount;
             [self performSelectorOnMainThread:@selector(setVideoProcessProgress:) withObject:[NSNumber numberWithFloat:progress] waitUntilDone:NO];
             DDLogVerbose(@"Added video attachment to queue.");
-        }
-        if (self.videosCurrentProcessedCount == self.videosToBeProcessedCount){
-            [self dismissViewControllerAnimated:YES completion:nil];
         }
     });
 }
