@@ -4045,16 +4045,17 @@ typedef enum : NSUInteger {
     [chooseMediaAction setValue:chooseMediaImage forKey:@"image"];
     [actionSheetController addAction:chooseMediaAction];
 
-    UIAlertAction *gifAction = [UIAlertAction
-        actionWithTitle:NSLocalizedString(@"SELECT_GIF_BUTTON", @"Label for 'select GIF to attach' action sheet button")
-                  style:UIAlertActionStyleDefault
-                handler:^(UIAlertAction *action) {
-                    [self showGifPicker];
-                }];
-    UIImage *gifImage = [UIImage imageNamed:@"actionsheet_gif_black"];
-    OWSAssert(gifImage);
-    [gifAction setValue:gifImage forKey:@"image"];
-    [actionSheetController addAction:gifAction];
+    // BTIDER-DISABLED
+//    UIAlertAction *gifAction = [UIAlertAction
+//        actionWithTitle:NSLocalizedString(@"SELECT_GIF_BUTTON", @"Label for 'select GIF to attach' action sheet button")
+//                  style:UIAlertActionStyleDefault
+//                handler:^(UIAlertAction *action) {
+//                    [self showGifPicker];
+//                }];
+//    UIImage *gifImage = [UIImage imageNamed:@"actionsheet_gif_black"];
+//    OWSAssert(gifImage);
+//    [gifAction setValue:gifImage forKey:@"image"];
+//    [actionSheetController addAction:gifAction];
 
     UIAlertAction *chooseDocumentAction =
         [UIAlertAction actionWithTitle:NSLocalizedString(@"MEDIA_FROM_DOCUMENT_PICKER_BUTTON",
