@@ -2450,3 +2450,18 @@
 "CONVERSATION_HISTORY_FILE_POSTFIX" = "%@ ile Dedi Sohbeti";
 
 "CONVERSATION_HISTORY_MAIL_BODY" = "dosyası, sohbet geçmişi olarak bu e-postaya eklendi.";
+
+/* Conversation history sending and privacy strings */
+"BULK_MESSAGE_RIGHT_BAR_BUTTON" = "İleri";
+
+"BULK_MESSAGE_ACCESSIBILITY" = "Çoklu mesaj gönder";
+
+"BULK_MESSAGE_SELECTED_CONTACTS" = "Gönderilecek Kişiler";
+
+"BULK_MESSAGE_SELECT_CONTACT" = "Seçildi";
+
+"NEW_BULK_MESSAGE_TITLE" = "Toplu Mesaj";
+
+"SEND_BULK_MESSAGE" = "Toplu Mesaj Gönder";
+
+"BULK_MESSAGE_USER_MIN_LIMIT_DESC" = "Toplu mesaj göndermek için en az iki kişi seçmelisiniz.";

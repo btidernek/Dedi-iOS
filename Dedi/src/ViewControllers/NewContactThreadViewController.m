@@ -296,6 +296,17 @@ NS_ASSUME_NONNULL_BEGIN
     __weak NewContactThreadViewController *weakSelf = self;
 
     OWSTableSection *staticSection = [OWSTableSection new];
+    
+    // Send Bulk Messages
+    [staticSection
+     addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SEND_BULK_MESSAGE",
+                                                                    @"A label the cell that lets you send bulk message.")
+                                  customRowHeight:UITableViewAutomaticDimension
+                                      actionBlock:^{
+                                          NewGroupViewController *newGroupViewController = [NewGroupViewController new];
+                                          newGroupViewController.isSendingBulkMessage = true;
+                                          [self.navigationController pushViewController:newGroupViewController animated:YES];
+                                      }]];
 
     // Find Non-Contacts by Phone Number
     [staticSection

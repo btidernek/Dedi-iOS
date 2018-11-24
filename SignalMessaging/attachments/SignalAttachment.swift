@@ -183,9 +183,9 @@ public class SignalAttachment: NSObject {
     static let kMaxFileSizeAnimatedImage = UInt(25 * 1024 * 1024)
     static let kMaxFileSizeImage = UInt(6 * 1024 * 1024)
     @objc
-    static let kMaxFileSizeVideo = UInt(100 * 1024 * 1024)
+    public static let kMaxFileSizeVideo = UInt(100 * 1024 * 1024)
     @objc
-    static let kMaxFileSizeVideoIfLowDataEnabled = UInt(20 * 1024 * 1024)
+    public static let kMaxFileSizeVideoIfLowDataEnabled = UInt(20 * 1024 * 1024)
     static let kMaxFileSizeAudio = UInt(100 * 1024 * 1024)
     static let kMaxFileSizeGeneric = UInt(100 * 1024 * 1024)
 

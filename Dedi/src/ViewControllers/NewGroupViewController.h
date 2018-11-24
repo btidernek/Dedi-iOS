@@ -10,6 +10,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NewGroupViewController : OWSViewController
 
 @property (nonatomic, weak) id<OWSConversationSettingsViewDelegate> delegate;
+@property (nonatomic) BOOL isSendingBulkMessage;
 
 @end
 

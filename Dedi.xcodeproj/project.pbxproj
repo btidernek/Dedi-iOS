@@ -410,10 +410,13 @@
 		45F659821E1BE77000444429 /* NonCallKitCallUIAdaptee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45F659811E1BE77000444429 /* NonCallKitCallUIAdaptee.swift */; };
 		45FBC5C81DF8575700E9B410 /* CallKitCallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC59A1DF8575700E9B410 /* CallKitCallManager.swift */; };
 		45FBC5D11DF8592E00E9B410 /* SignalCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FBC5D01DF8592E00E9B410 /* SignalCall.swift */; };
+		497F4C1A2191B94C00CBDC8E /* BulkConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F4C192191B94C00CBDC8E /* BulkConversationViewController.swift */; };
+		497F4C1C2191BDB800CBDC8E /* ChatInputContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F4C1B2191BDB800CBDC8E /* ChatInputContainerView.swift */; };
 		498229E52149499A00C0567F /* MediaAndDataUsageSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */; };
 		498229E82149559D00C0567F /* AutomaticMediaSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */; };
 		498A873E21183E4100937050 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A873D21183E4100937050 /* CoreLocation.framework */; };
 		498A874021183F2C00937050 /* ShareLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A873F21183F2C00937050 /* ShareLocationManager.swift */; };
+		49F231FE21A057160046ADB4 /* SKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F231FD21A057160046ADB4 /* SKActivityIndicator.swift */; };
 		4C13C9F620E57BA30089A98B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */; };
 		4C17C2DD7C70BFF29568FF04 /* Pods_DediTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FB63AFA0CEF1FA440EC6B /* Pods_DediTests.framework */; };
 		4C20B2B720CA0034001BAC90 /* ThreadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542DF51208B82E9007B4E76 /* ThreadViewModel.swift */; };
@@ -1071,12 +1074,15 @@
 		45FBC59A1DF8575700E9B410 /* CallKitCallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallKitCallManager.swift; sourceTree = "<group>"; };
 		45FBC5D01DF8592E00E9B410 /* SignalCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalCall.swift; sourceTree = "<group>"; };
 		45FDA43420A4D22700396358 /* OWSNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWSNavigationBar.swift; sourceTree = "<group>"; };
+		497F4C192191B94C00CBDC8E /* BulkConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkConversationViewController.swift; sourceTree = "<group>"; };
+		497F4C1B2191BDB800CBDC8E /* ChatInputContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatInputContainerView.swift; sourceTree = "<group>"; };
 		498229E32149499A00C0567F /* MediaAndDataUsageSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MediaAndDataUsageSettingsViewController.h; sourceTree = "<group>"; };
 		498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MediaAndDataUsageSettingsViewController.m; sourceTree = "<group>"; };
 		498229E62149559D00C0567F /* AutomaticMediaSettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutomaticMediaSettingsViewController.h; sourceTree = "<group>"; };
 		498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticMediaSettingsViewController.m; sourceTree = "<group>"; };
 		498A873D21183E4100937050 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		498A873F21183F2C00937050 /* ShareLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLocationManager.swift; sourceTree = "<group>"; };
+		49F231FD21A057160046ADB4 /* SKActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActivityIndicator.swift; sourceTree = "<group>"; };
 		4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		4C20B2B820CA10DE001BAC90 /* ConversationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationSearchViewController.swift; sourceTree = "<group>"; };
 		4C4AEC4420EC343B0020E72B /* DismissableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DismissableTextField.swift; path = ../../../Signal/src/views/DismissableTextField.swift; sourceTree = "<group>"; };
@@ -1530,6 +1536,9 @@
 				34D1F0701F8678AA0066283D /* ConversationViewItem.m */,
 				34D1F0711F8678AA0066283D /* ConversationViewLayout.h */,
 				34D1F0721F8678AA0066283D /* ConversationViewLayout.m */,
+				497F4C192191B94C00CBDC8E /* BulkConversationViewController.swift */,
+				497F4C1B2191BDB800CBDC8E /* ChatInputContainerView.swift */,
+				49F231FD21A057160046ADB4 /* SKActivityIndicator.swift */,
 			);
 			path = ConversationView;
 			sourceTree = "<group>";
@@ -3274,6 +3283,7 @@
 				340FC8A9204DAC8D007AEB0F /* NotificationSettingsOptionsViewController.m in Sources */,
 				452037D11EE84975004E4CDF /* DebugUISessionState.m in Sources */,
 				D221A09A169C9E5E00537ABF /* main.m in Sources */,
+				497F4C1A2191B94C00CBDC8E /* BulkConversationViewController.swift in Sources */,
 				34B3F87B1E8DF1700035BE1A /* ExperienceUpgradesPageViewController.swift in Sources */,
 				498229E52149499A00C0567F /* MediaAndDataUsageSettingsViewController.m in Sources */,
 				34E5DC8220D8050D00C08145 /* RegistrationUtils.m in Sources */,
@@ -3332,6 +3342,7 @@
 				45FBC5D11DF8592E00E9B410 /* SignalCall.swift in Sources */,
 				340FC8BB204DAC8D007AEB0F /* OWSAddToContactViewController.m in Sources */,
 				4523149E1F7E916B003A428C /* SlideOffAnimatedTransition.swift in Sources */,
+				49F231FE21A057160046ADB4 /* SKActivityIndicator.swift in Sources */,
 				340FC8C0204DB7D2007AEB0F /* OWSBackupExportJob.m in Sources */,
 				45F32C232057297A00A300D5 /* MediaPageViewController.swift in Sources */,
 				3466087420E5649700AFFE73 /* OWSLayerView.swift in Sources */,
@@ -3349,6 +3360,7 @@
 				458DE9D61DEE3FD00071BB03 /* PeerConnectionClient.swift in Sources */,
 				45DDA6242090CEB500DE97F8 /* ConversationHeaderView.swift in Sources */,
 				45F32C242057297A00A300D5 /* MessageDetailViewController.swift in Sources */,
+				497F4C1C2191BDB800CBDC8E /* ChatInputContainerView.swift in Sources */,
 				34D1F0841F8678AA0066283D /* ConversationInputToolbar.m in Sources */,
 				457F671B20746193000EABCD /* QuotedReplyPreview.swift in Sources */,
 				34DBF004206BD5A500025978 /* OWSBubbleView.m in Sources */,

@@ -2449,3 +2449,18 @@
 "CONVERSATION_HISTORY_FILE_POSTFIX" = "Dedi Chat with %@";
 
 "CONVERSATION_HISTORY_MAIL_BODY" = "file, has attached to this e-mail as conversation history.";
+
+/* Conversation history sending and privacy strings */
+"BULK_MESSAGE_RIGHT_BAR_BUTTON" = "Continue";
+
+"BULK_MESSAGE_ACCESSIBILITY" = "Send multiple messages";
+
+"BULK_MESSAGE_SELECTED_CONTACTS" = "Recipients";
+
+"BULK_MESSAGE_SELECT_CONTACT" = "Selected";
+
+"NEW_BULK_MESSAGE_TITLE" = "Bulk Message";
+
+"SEND_BULK_MESSAGE" = "Send Bulk Message";
+
+"BULK_MESSAGE_USER_MIN_LIMIT_DESC" = "You should select at least two contact to send bulk message.";

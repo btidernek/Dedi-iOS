@@ -24,6 +24,8 @@ import Foundation
 @objc public class MessageStrings: NSObject {
     @objc
     static public let newGroupDefaultTitle = NSLocalizedString("NEW_GROUP_DEFAULT_TITLE", comment: "Used in place of the group name when a group has not yet been named.")
+    @objc
+    static public let newBulkMessageTitle = NSLocalizedString("NEW_BULK_MESSAGE_TITLE", comment: "")
 }
 
 @objc public class CallStrings: NSObject {
