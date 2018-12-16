@@ -416,6 +416,7 @@
 		498229E82149559D00C0567F /* AutomaticMediaSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */; };
 		498A873E21183E4100937050 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 498A873D21183E4100937050 /* CoreLocation.framework */; };
 		498A874021183F2C00937050 /* ShareLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498A873F21183F2C00937050 /* ShareLocationManager.swift */; };
+		49CB660221C1461300BF1837 /* ServicesWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CB660121C1461300BF1837 /* ServicesWebViewController.swift */; };
 		49F231FE21A057160046ADB4 /* SKActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F231FD21A057160046ADB4 /* SKActivityIndicator.swift */; };
 		4C13C9F620E57BA30089A98B /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */; };
 		4C17C2DD7C70BFF29568FF04 /* Pods_DediTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0FB63AFA0CEF1FA440EC6B /* Pods_DediTests.framework */; };
@@ -1082,6 +1083,7 @@
 		498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutomaticMediaSettingsViewController.m; sourceTree = "<group>"; };
 		498A873D21183E4100937050 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		498A873F21183F2C00937050 /* ShareLocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareLocationManager.swift; sourceTree = "<group>"; };
+		49CB660121C1461300BF1837 /* ServicesWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesWebViewController.swift; sourceTree = "<group>"; };
 		49F231FD21A057160046ADB4 /* SKActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKActivityIndicator.swift; sourceTree = "<group>"; };
 		4C13C9F520E57BA30089A98B /* ColorPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
 		4C20B2B820CA10DE001BAC90 /* ConversationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationSearchViewController.swift; sourceTree = "<group>"; };
@@ -1393,6 +1395,7 @@
 				498229E42149499A00C0567F /* MediaAndDataUsageSettingsViewController.m */,
 				498229E62149559D00C0567F /* AutomaticMediaSettingsViewController.h */,
 				498229E72149559D00C0567F /* AutomaticMediaSettingsViewController.m */,
+				49CB660121C1461300BF1837 /* ServicesWebViewController.swift */,
 			);
 			path = AppSettings;
 			sourceTree = "<group>";
@@ -3309,6 +3312,7 @@
 				45D2AC02204885170033C692 /* OWS2FAReminderViewController.swift in Sources */,
 				4542DF54208D40AC007B4E76 /* LoadingViewController.swift in Sources */,
 				34D5CCA91EAE3D30005515DB /* AvatarViewHelper.m in Sources */,
+				49CB660221C1461300BF1837 /* ServicesWebViewController.swift in Sources */,
 				34D1F0B71F87F8850066283D /* OWSGenericAttachmentView.m in Sources */,
 				34D920E720E179C200D51158 /* OWSMessageFooterView.m in Sources */,
 				348BB25D20A0C5530047AEC2 /* ContactShareViewHelper.swift in Sources */,

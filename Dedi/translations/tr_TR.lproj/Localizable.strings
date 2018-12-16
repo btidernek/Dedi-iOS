@@ -2465,3 +2465,5 @@
 "SEND_BULK_MESSAGE" = "Toplu Mesaj Gönder";
 
 "BULK_MESSAGE_USER_MIN_LIMIT_DESC" = "Toplu mesaj göndermek için en az iki kişi seçmelisiniz.";
+
+"APP_SERVICES_TITLE" = "Dedi Servisleri";

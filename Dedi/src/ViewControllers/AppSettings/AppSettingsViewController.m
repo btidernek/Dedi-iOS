@@ -198,6 +198,12 @@
                                               actionBlock:^{
                                                   [weakSelf showMediaAndDataUsage];
                                               }]];
+    // -BTIDER UPDATE- App Services
+    [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"APP_SERVICES_TITLE",
+                                                                            @"")
+                                              actionBlock:^{
+                                                  [weakSelf showAppServices];
+                                              }]];
     [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_TITLE", @"")
                                               actionBlock:^{
                                                   [weakSelf showAdvanced];
@@ -388,6 +394,12 @@
 {
     OWSLinkedDevicesTableViewController *vc =
         [[UIStoryboard main] instantiateViewControllerWithIdentifier:@"OWSLinkedDevicesTableViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)showAppServices
+{
+    ServicesWebViewController *vc = [[ServicesWebViewController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

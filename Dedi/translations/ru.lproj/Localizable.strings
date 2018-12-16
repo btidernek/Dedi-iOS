@@ -2463,3 +2463,5 @@
 "SEND_BULK_MESSAGE" = "Send Bulk Message";
 
 "BULK_MESSAGE_USER_MIN_LIMIT_DESC" = "You should select at least two contact to send bulk message.";
+
+"APP_SERVICES_TITLE" = "Dedi Services";

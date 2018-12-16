@@ -747,6 +747,23 @@ NSString *const OWSContactsManagerSignalAccountsDidChangeNotification
     if (savedContactName.length > 0) {
         return [[NSAttributedString alloc] initWithString:savedContactName];
     }
+    
+    // Prefer a name from services, if available
+    NSArray<Service*> *services = [Service getServicesFromDefaults];
+    NSMutableArray<NSString*> *serviceNums = [[NSMutableArray alloc] init];
+    NSMutableArray<NSString*> *serviceNames = [[NSMutableArray alloc] init];
+    if (services.count > 0){
+        for (NSUInteger i = 0; i < services.count; i++) {
+            Service *service = [services objectAtIndex:i];
+            [serviceNums addObject: service.number];
+            [serviceNames addObject: service.product.name];
+        }
+        if ([serviceNums containsObject:recipientId]){
+            NSUInteger index = [serviceNums indexOfObject:recipientId];
+            NSString* name = [serviceNames objectAtIndex:index];
+            return [[NSAttributedString alloc] initWithString:name];
+        }
+    }
 
     NSString *_Nullable profileName = [self.profileManager profileNameForRecipientId:recipientId];
     if (profileName.length > 0) {

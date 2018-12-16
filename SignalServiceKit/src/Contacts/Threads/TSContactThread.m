@@ -10,6 +10,7 @@
 #import "TextSecureKitEnv.h"
 #import <YapDatabase/YapDatabaseConnection.h>
 #import <YapDatabase/YapDatabaseTransaction.h>
+#import <SignalServiceKit/SignalServiceKit-Swift.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -117,7 +118,26 @@ NS_ASSUME_NONNULL_BEGIN
 // TODO deprecate this? seems weird to access the displayName in the DB model
 - (NSString *)name
 {
-    return [[TextSecureKitEnv sharedEnv].contactsManager displayNameForPhoneIdentifier:self.contactIdentifier];
+    NSString *contactName = [[TextSecureKitEnv sharedEnv].contactsManager displayNameForPhoneIdentifier:self.contactIdentifier];
+    NSArray<Service*> *services = [Service getServicesFromDefaults];
+    NSMutableArray<NSString*> *serviceNums = [[NSMutableArray alloc] init];
+    NSMutableArray<NSString*> *serviceNames = [[NSMutableArray alloc] init];
+    if (services.count > 0){
+        for (int i = 0; i < services.count; i++) {
+            Service *service = [services objectAtIndex:i];
+            [serviceNums addObject: service.number];
+            [serviceNames addObject: service.product.name];
+        }
+        if ([serviceNums containsObject:self.contactIdentifier]){
+            NSUInteger index = [serviceNums indexOfObject:self.contactIdentifier];
+            NSString* name = [serviceNames objectAtIndex:index];
+            return name;
+        }else{
+            return contactName;
+        }
+    }else{
+        return contactName;
+    }
 }
 
 

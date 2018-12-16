@@ -62,9 +62,9 @@
 			</dict>
 			<key>dedi.com.tr</key>
 			<dict>
-				<key>NSIncludesSubdomains</key>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
 				<true/>
-				<key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+				<key>NSIncludesSubdomains</key>
 				<true/>
 			</dict>
 		</dict>
