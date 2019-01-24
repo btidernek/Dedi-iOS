@@ -246,6 +246,7 @@ typedef enum : NSUInteger {
 @property NSUInteger videosToBeProcessedCount;
 @property NSUInteger videosCurrentProcessedCount;
 @property BOOL isVideoBeingProcessed;
+@property (nonatomic) NSString *serviceConvName;
 
 @property (nonatomic) UIProgressView *multipleAttachmentProgressView;
 @property (nonatomic) UIAlertController *multipleAttachmentProgressAlert;
@@ -477,6 +478,7 @@ typedef enum : NSUInteger {
     OWSAssert(thread);
 
     _thread = thread;
+    _serviceConvName = [Service getNameOfServiceWithNumber: self.thread.uniqueId];
     self.actionOnOpen = action;
     self.focusMessageIdOnOpen = focusMessageId;
     _cellMediaCache = [NSCache new];
@@ -534,7 +536,7 @@ typedef enum : NSUInteger {
         return;
     }
 
-    if (self.userLeftGroup) {
+    if (self.userLeftGroup || ![_serviceConvName isEqualToString:@""]) {
         self.inputToolbar.hidden = YES; // user has requested they leave the group. further sends disallowed
         [self dismissKeyBoard];
     } else {
@@ -1363,7 +1365,7 @@ typedef enum : NSUInteger {
 
 - (void)updateBarButtonItems
 {
-    if (self.userLeftGroup) {
+    if (self.userLeftGroup || ![_serviceConvName isEqualToString:@""]) {
         self.navigationItem.rightBarButtonItems = @[];
         return;
     }
@@ -1434,6 +1436,10 @@ typedef enum : NSUInteger {
 - (void)updateNavigationBarSubtitleLabel
 {
     NSMutableAttributedString *subtitleText = [NSMutableAttributedString new];
+    
+    if(![_serviceConvName isEqualToString:@""]){
+        return;
+    }
 
     if (self.thread.isMuted) {
         // Show a "mute" icon before the navigation bar subtitle if this thread is muted.
@@ -4346,6 +4352,10 @@ typedef enum : NSUInteger {
 
 - (void)didTapConversationHeaderView:(ConversationHeaderView *)conversationHeaderView
 {
+    if (![_serviceConvName isEqualToString:@""]){
+        return;
+    }
+    
     [self showConversationSettings];
 }
 

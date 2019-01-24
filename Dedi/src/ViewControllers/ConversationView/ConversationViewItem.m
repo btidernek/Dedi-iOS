@@ -238,7 +238,8 @@ NSString *NSStringForOWSMessageCellType(OWSMessageCellType cellType)
     dispatch_once(&onceToken, ^{
         measurementCellCache = [NSMutableDictionary new];
     });
-
+    
+    NSString *serviceName = [Service getNameOfServiceWithNumber: _interaction.thread.uniqueId];
     NSNumber *cellCacheKey = @(self.interaction.interactionType);
     ConversationViewCell *_Nullable measurementCell = measurementCellCache[cellCacheKey];
     if (!measurementCell) {

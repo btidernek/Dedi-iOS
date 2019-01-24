@@ -472,6 +472,11 @@ NS_ASSUME_NONNULL_BEGIN
             return;
         }
     }
+    
+    BOOL isOneOfServiceNumbers = ![[Service getNameOfServiceWithNumber:self.viewItem.interaction.thread.uniqueId] isEqualToString:@""];
+    if(isOneOfServiceNumbers){
+        return;
+    }
 
     CGPoint locationInMessageBubble = [sender locationInView:self.messageBubbleView];
     switch ([self.messageBubbleView gestureLocationForLocation:locationInMessageBubble]) {

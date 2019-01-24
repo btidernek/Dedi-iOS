@@ -188,77 +188,79 @@ NS_ASSUME_NONNULL_BEGIN
     recentChatsSection.headerTitle = NSLocalizedString(
         @"SELECT_THREAD_TABLE_RECENT_CHATS_TITLE", @"Table section header for recently active conversations");
     for (TSThread *thread in [self filteredThreadsWithSearchText]) {
-        [recentChatsSection
-            addItem:[OWSTableItem
-                        itemWithCustomCellBlock:^{
-                            SelectThreadViewController *strongSelf = weakSelf;
-                            OWSCAssert(strongSelf);
-
-                            // To be consistent with the threads (above), we use ContactTableViewCell
-                            // instead of HomeViewCell to present contacts and threads.
-                            ContactTableViewCell *cell = [ContactTableViewCell new];
-
-                            if ([thread isKindOfClass:[TSContactThread class]]) {
-                                BOOL isBlocked = [helper isRecipientIdBlocked:thread.contactIdentifier];
-                                if (isBlocked) {
-                                    cell.accessoryMessage = NSLocalizedString(
-                                        @"CONTACT_CELL_IS_BLOCKED", @"An indicator that a contact has been blocked.");
-                                }
-                            }
-
-                            [cell configureWithThread:thread contactsManager:helper.contactsManager];
-
-                            if (!cell.hasAccessoryText) {
-                                // Don't add a disappearing messages indicator if we've already added a "blocked" label.
-                                __block OWSDisappearingMessagesConfiguration *disappearingMessagesConfiguration;
-                                [self.uiDatabaseConnection
-                                    readWithBlock:^(YapDatabaseReadTransaction *_Nonnull transaction) {
-                                        disappearingMessagesConfiguration = [OWSDisappearingMessagesConfiguration
-                                            fetchObjectWithUniqueID:thread.uniqueId
-                                                        transaction:transaction];
-                                    }];
-
-                                if (disappearingMessagesConfiguration && disappearingMessagesConfiguration.isEnabled) {
-                                    DisappearingTimerConfigurationView *disappearingTimerConfigurationView =
-                                        [[DisappearingTimerConfigurationView alloc]
-                                            initWithDurationSeconds:disappearingMessagesConfiguration.durationSeconds];
-
-                                    disappearingTimerConfigurationView.frame = CGRectMake(0, 0, 44, 44);
-                                    disappearingTimerConfigurationView.tintColor =
-                                        [UIColor colorWithWhite:0.5f alpha:1.f];
-
-                                    [cell ows_setAccessoryView:disappearingTimerConfigurationView];
-                                }
-                            }
-
-                            return cell;
-                        }
-                        customRowHeight:UITableViewAutomaticDimension
-                        actionBlock:^{
-                            typeof(self) strongSelf = weakSelf;
-                            if (!strongSelf) {
-                                return;
-                            }
-
-                            if ([thread isKindOfClass:[TSContactThread class]]) {
-                                BOOL isBlocked = [helper isRecipientIdBlocked:thread.contactIdentifier];
-                                if (isBlocked && ![strongSelf.selectThreadViewDelegate canSelectBlockedContact]) {
-                                    [BlockListUIUtils showUnblockPhoneNumberActionSheet:thread.contactIdentifier
-                                                                     fromViewController:strongSelf
-                                                                        blockingManager:helper.blockingManager
-                                                                        contactsManager:helper.contactsManager
-                                                                        completionBlock:^(BOOL isStillBlocked) {
-                                                                            if (!isStillBlocked) {
-                                                                                [strongSelf.selectThreadViewDelegate
-                                                                                    threadWasSelected:thread];
-                                                                            }
-                                                                        }];
-                                    return;
-                                }
-                            }
-
-                            [strongSelf.selectThreadViewDelegate threadWasSelected:thread];
-                        }]];
+        if(![thread.uniqueId containsString:@"999555"]){
+            [recentChatsSection
+             addItem:[OWSTableItem
+                      itemWithCustomCellBlock:^{
+                          SelectThreadViewController *strongSelf = weakSelf;
+                          OWSCAssert(strongSelf);
+                          
+                          // To be consistent with the threads (above), we use ContactTableViewCell
+                          // instead of HomeViewCell to present contacts and threads.
+                          ContactTableViewCell *cell = [ContactTableViewCell new];
+                          
+                          if ([thread isKindOfClass:[TSContactThread class]]) {
+                              BOOL isBlocked = [helper isRecipientIdBlocked:thread.contactIdentifier];
+                              if (isBlocked) {
+                                  cell.accessoryMessage = NSLocalizedString(
+                                                                            @"CONTACT_CELL_IS_BLOCKED", @"An indicator that a contact has been blocked.");
+                              }
+                          }
+                          
+                          [cell configureWithThread:thread contactsManager:helper.contactsManager];
+                          
+                          if (!cell.hasAccessoryText) {
+                              // Don't add a disappearing messages indicator if we've already added a "blocked" label.
+                              __block OWSDisappearingMessagesConfiguration *disappearingMessagesConfiguration;
+                              [self.uiDatabaseConnection
+                               readWithBlock:^(YapDatabaseReadTransaction *_Nonnull transaction) {
+                                   disappearingMessagesConfiguration = [OWSDisappearingMessagesConfiguration
+                                                                        fetchObjectWithUniqueID:thread.uniqueId
+                                                                        transaction:transaction];
+                               }];
+                              
+                              if (disappearingMessagesConfiguration && disappearingMessagesConfiguration.isEnabled) {
+                                  DisappearingTimerConfigurationView *disappearingTimerConfigurationView =
+                                  [[DisappearingTimerConfigurationView alloc]
+                                   initWithDurationSeconds:disappearingMessagesConfiguration.durationSeconds];
+                                  
+                                  disappearingTimerConfigurationView.frame = CGRectMake(0, 0, 44, 44);
+                                  disappearingTimerConfigurationView.tintColor =
+                                  [UIColor colorWithWhite:0.5f alpha:1.f];
+                                  
+                                  [cell ows_setAccessoryView:disappearingTimerConfigurationView];
+                              }
+                          }
+                          
+                          return cell;
+                      }
+                      customRowHeight:UITableViewAutomaticDimension
+                      actionBlock:^{
+                          typeof(self) strongSelf = weakSelf;
+                          if (!strongSelf) {
+                              return;
+                          }
+                          
+                          if ([thread isKindOfClass:[TSContactThread class]]) {
+                              BOOL isBlocked = [helper isRecipientIdBlocked:thread.contactIdentifier];
+                              if (isBlocked && ![strongSelf.selectThreadViewDelegate canSelectBlockedContact]) {
+                                  [BlockListUIUtils showUnblockPhoneNumberActionSheet:thread.contactIdentifier
+                                                                   fromViewController:strongSelf
+                                                                      blockingManager:helper.blockingManager
+                                                                      contactsManager:helper.contactsManager
+                                                                      completionBlock:^(BOOL isStillBlocked) {
+                                                                          if (!isStillBlocked) {
+                                                                              [strongSelf.selectThreadViewDelegate
+                                                                               threadWasSelected:thread];
+                                                                          }
+                                                                      }];
+                                  return;
+                              }
+                          }
+                          
+                          [strongSelf.selectThreadViewDelegate threadWasSelected:thread];
+                      }]];
+        }
     }
 
     if (recentChatsSection.itemCount > 0) {

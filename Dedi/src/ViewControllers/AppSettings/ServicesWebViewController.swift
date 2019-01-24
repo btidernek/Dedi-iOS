@@ -10,14 +10,22 @@ import UIKit
 import WebKit
 import SignalServiceKit
 
-let servicesApiAddress = "http://test.dedi.com.tr/DediServiceWeb/rest/getRemoteProduct"
-let servicesWebpageAddress = "http://test.dedi.com.tr/DediServiceWeb/dashboard?phone="
+let servicesApiAddress = "https://dediservicesweb.btk.gov.tr/DediServiceWeb/rest/getRemoteProduct"
+let servicesWebpageAddress = "https://dediservicesweb.btk.gov.tr/DediServiceWeb/dashboard?os=ios&phone="
 
 class ServicesWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
     
     var webView: WKWebView!
     fileprivate let staticHTTPHeaderKey = "879+zqw&e134*M00O08552BTider*&a"
     fileprivate lazy var staticApiBody = "{\"data\":\"\(staticHTTPHeaderKey)\"}"
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIBarButtonItem.appearance().tintColor = UIColor.ows_materialBlue
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIBarButtonItem.appearance().tintColor = .white
+    }
     
     override func loadView() {
         webView = WKWebView()
@@ -83,6 +91,11 @@ class ServicesWebViewController: UIViewController, WKNavigationDelegate, WKUIDel
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         title = webView.title
+    }
+    
+    func webView(_ webView: WKWebView, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let cred = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        completionHandler(.useCredential, cred)
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {

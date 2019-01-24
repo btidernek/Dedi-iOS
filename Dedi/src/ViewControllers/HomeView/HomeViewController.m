@@ -450,10 +450,12 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
         = NSLocalizedString(@"SETTINGS_BUTTON_ACCESSIBILITY", @"Accessibility hint for the settings button");
     self.navigationItem.leftBarButtonItem = settingsButton;
 
-    self.navigationItem.rightBarButtonItem =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
-                                                      target:self
-                                                      action:@selector(showNewConversationView)];
+    UIBarButtonItem *servicesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"button_services_white"] style:UIBarButtonItemStylePlain target:self action:@selector(showServicesView)];
+    UIBarButtonItem *composeButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose
+                                                                                   target:self
+                                                                                   action:@selector(showNewConversationView)];
+    
+    self.navigationItem.rightBarButtonItems = @[composeButton, servicesButton];
 }
 
 - (void)settingsButtonPressed:(id)sender
@@ -516,6 +518,15 @@ NSString *const kArchivedConversationsReuseIdentifier = @"kArchivedConversations
             [[OWSNavigationController alloc] initWithRootViewController:viewController];
         [self presentTopLevelModalViewController:navigationController animateDismissal:YES animatePresentation:YES];
     }];
+}
+
+- (void)showServicesView
+{
+    OWSAssertIsOnMainThread();
+    
+    DDLogInfo(@"%@ %s", self.logTag, __PRETTY_FUNCTION__);
+    ServicesWebViewController *vc = [[ServicesWebViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)viewWillAppear:(BOOL)animated

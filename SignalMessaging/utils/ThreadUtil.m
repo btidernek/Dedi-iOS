@@ -237,6 +237,7 @@ NS_ASSUME_NONNULL_BEGIN
 
     // Many OWSProfileManager methods aren't safe to call from inside a database
     // transaction, so do this work now.
+    BOOL isNotOneOfServiceNumbers = [[Service getNameOfServiceWithNumber: thread.uniqueId] isEqualToString:@""];
     OWSProfileManager *profileManager = OWSProfileManager.sharedManager;
     BOOL hasLocalProfile = [profileManager hasLocalProfile];
     BOOL isThreadInProfileWhitelist = [profileManager isThreadInProfileWhitelist:thread];
@@ -266,7 +267,6 @@ NS_ASSUME_NONNULL_BEGIN
             enumerateRowsInGroup:thread.uniqueId
                       usingBlock:^(
                           NSString *collection, NSString *key, id object, id metadata, NSUInteger index, BOOL *stop) {
-
                           if ([object isKindOfClass:[OWSUnknownContactBlockOfferMessage class]]) {
                               // Delete this legacy interactions, which has been superseded by
                               // the OWSContactOffersInteraction.
@@ -296,11 +296,15 @@ NS_ASSUME_NONNULL_BEGIN
                               }
                               existingContactOffers = (OWSContactOffersInteraction *)object;
                           } else if ([object isKindOfClass:[TSInvalidIdentityKeyErrorMessage class]]) {
-                              [blockingSafetyNumberChanges addObject:object];
+                              if(isNotOneOfServiceNumbers){
+                                  [blockingSafetyNumberChanges addObject:object];
+                              }
                           } else if ([object isKindOfClass:[TSErrorMessage class]]) {
-                              TSErrorMessage *errorMessage = (TSErrorMessage *)object;
-                              OWSAssert(errorMessage.errorType == TSErrorMessageNonBlockingIdentityChange);
-                              [nonBlockingSafetyNumberChanges addObject:errorMessage];
+                              if(isNotOneOfServiceNumbers){
+                                  TSErrorMessage *errorMessage = (TSErrorMessage *)object;
+                                  OWSAssert(errorMessage.errorType == TSErrorMessageNonBlockingIdentityChange);
+                                  [nonBlockingSafetyNumberChanges addObject:errorMessage];
+                              }
                           } else {
                               OWSFail(@"Unexpected dynamic interaction type: %@", [object class]);
                           }
@@ -464,20 +468,22 @@ NS_ASSUME_NONNULL_BEGIN
             [existingContactOffers removeWithTransaction:transaction];
         } else if (!existingContactOffers && shouldHaveContactOffers) {
             NSString *recipientId = ((TSContactThread *)thread).contactIdentifier;
-
-            TSInteraction *offersMessage =
+            BOOL isNotOneOfServiceNumbers = [[Service getNameOfServiceWithNumber: recipientId] isEqualToString:@""];
+            if(isNotOneOfServiceNumbers){
+                TSInteraction *offersMessage =
                 [[OWSContactOffersInteraction alloc] initContactOffersWithTimestamp:contactOffersTimestamp
                                                                              thread:thread
                                                                       hasBlockOffer:shouldHaveBlockOffer
                                                               hasAddToContactsOffer:shouldHaveAddToContactsOffer
                                                       hasAddToProfileWhitelistOffer:shouldHaveAddToProfileWhitelistOffer
                                                                         recipientId:recipientId];
-            [offersMessage saveWithTransaction:transaction];
-
-            DDLogInfo(@"%@ Creating contact offers: %@ (%llu)",
-                self.logTag,
-                offersMessage.uniqueId,
-                offersMessage.timestampForSorting);
+                [offersMessage saveWithTransaction:transaction];
+                
+                DDLogInfo(@"%@ Creating contact offers: %@ (%llu)",
+                          self.logTag,
+                          offersMessage.uniqueId,
+                          offersMessage.timestampForSorting);
+            }
         }
 
         [self ensureUnreadIndicator:result

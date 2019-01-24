@@ -198,12 +198,12 @@
                                               actionBlock:^{
                                                   [weakSelf showMediaAndDataUsage];
                                               }]];
-    // -BTIDER UPDATE- App Services
-    [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"APP_SERVICES_TITLE",
-                                                                            @"")
-                                              actionBlock:^{
-                                                  [weakSelf showAppServices];
-                                              }]];
+//    // -BTIDER UPDATE- App Services
+//    [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"APP_SERVICES_TITLE",
+//                                                                            @"")
+//                                              actionBlock:^{
+//                                                  [weakSelf showAppServices];
+//                                              }]];
     [section addItem:[OWSTableItem disclosureItemWithText:NSLocalizedString(@"SETTINGS_ADVANCED_TITLE", @"")
                                               actionBlock:^{
                                                   [weakSelf showAdvanced];

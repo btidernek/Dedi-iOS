@@ -29,10 +29,24 @@ import Foundation
         guard let nums = UserDefaults.standard.stringArray(forKey: "serviceNumbers") else{ return [Service]() }
         guard let names = UserDefaults.standard.stringArray(forKey: "serviceNames") else{ return [Service]() }
         for (num, name) in zip(nums, names) {
-            print("\(num) - \(name)")
             let service = Service(number: num, product: Product(name: name, color: ""))
             services.append(service)
         }
         return services
+    }
+    
+    @objc public static func getNameOfService(withNumber num: String) -> String{
+        let services = Service.getServicesFromDefaults()
+        let isContaining = services.contains(where: {num.contains($0.number)})
+        if isContaining{
+            for service in services{
+                if num.contains(service.number){
+                    return service.product.name
+                }
+            }
+            return ""
+        }else{
+            return ""
+        }
     }
 }
